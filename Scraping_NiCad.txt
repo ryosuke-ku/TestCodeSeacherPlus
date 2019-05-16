@@ -1,8 +1,0 @@
-Lines 6 - 19 of systems/utility/devst_devst_awaji_bird/devst_awaji_bird/src/main/java/features/bird/FizzBuzz.java
-Lines 6 - 20 of systems/utility/devst_devst_awaji_elephant/devst_awaji_elephant/src/main/java/features/elephant/FizzBuzz.java
-Lines 4 - 14 of systems/utility/FizzBuzz.java
-Lines 193 - 213 of systems/utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/main/java/features/monkey/Poker.java
-Lines 221 - 241 of systems/utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/main/java/features/monkey/Poker.java
-Lines 181 - 191 of systems/utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/CoinTest.java
-Lines 141 - 151 of systems/utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/RomanConverterTest.java
-Lines 200 - 210 of systems/utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/PokerTest.java
