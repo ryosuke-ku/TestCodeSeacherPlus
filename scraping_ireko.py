@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from collections import defaultdict
 import urllib.request as req
+import re
 
 
 # テスト用のHTML
@@ -25,13 +26,22 @@ product_div = soup.find('body')
 for product in product_div.find_all(['h3', 'td']):
 	if product.name == 'h3':
 		key = product.text.replace('\n','').replace('\r','')
+		f.write(key)
+		f.write("\n")
 	if key and product.name == 'td':
 		try:
 			product.find('pre').decompose()
 		except AttributeError:
 			pass
-		data[key].append(product.text.replace('\n','').replace('\r',''))
-
+		# path = product.text.replace('\n','').replace('\r','')
+		path = product.text
+		path = product.text.replace('\n','').replace('\r','')
+		edit_path = re.sub(r"Lines.*?systems/", "", path)
+		edit_path2 = re.sub(r"\n", "", edit_path)
+	
+		data[key].append(edit_path)
+		f.write(edit_path)
+		f.write("\n")
 print(data)
 # src = soup.select("table > tr > td")
 # # print(type(src))

@@ -1,0 +1,11 @@
+Clone class 1, 3 fragments, nominal size 13 lines, similarity 71%
+utility/devst_devst_awaji_bird/devst_awaji_bird/src/main/java/features/bird/FizzBuzz.java
+utility/devst_devst_awaji_elephant/devst_awaji_elephant/src/main/java/features/elephant/FizzBuzz.java
+utility/FizzBuzz.java
+Clone class 2, 2 fragments, nominal size 12 lines, similarity 75%
+utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/main/java/features/monkey/Poker.java
+utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/main/java/features/monkey/Poker.java
+Clone class 3, 3 fragments, nominal size 10 lines, similarity 80%
+utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/CoinTest.java
+utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/RomanConverterTest.java
+utility/devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/PokerTest.java
