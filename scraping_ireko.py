@@ -1,44 +1,18 @@
 from bs4 import BeautifulSoup
 from collections import defaultdict
+import urllib.request as req
 
 
 # テスト用のHTML
-html = """
-<html>
-<head>
-<style type="text/css">
-body {font-family:Arial}
-table {background-color:white; border:0px solid white; width:95%; margin-left:auto; margin-right: auto}
-td {background-color:#b0c4de; patding:16px; border:4px solid white}
-pre {background-color:white; patding:4px}
-</style>
-<title>
-NiCad Clone Report
-</title>
-</head>
-<body>
-<div class="products">	
-<dl>
-<h3>車</h3>		
-<td>レクサス<pre>トヨタ</pre></td>		
-<td>クラウン<pre>トヨタ</pre></td>
-<h3>バイク</h3>		
-<td>ホンダ</td>
-<td>トヨタ</td>
-<td>ヤマハ
-<pre>静岡</pre></td>
-</dl>
-</div>
-</body>
-</html>
-
-"""
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
+res = req.urlopen(url)
 
 #
 # .textで取得する方法
 #
 # soup = BeautifulSoup(html) と書いたらWarningが出るため下記コードにする
-soup = BeautifulSoup(html, 'lxml')
+# HTMLを解析
+soup = BeautifulSoup(res, "html.parser")
 
 f = open('Scraping_NiCad.txt','w')
 
@@ -50,13 +24,13 @@ product_div = soup.find('body')
 
 for product in product_div.find_all(['h3', 'td']):
 	if product.name == 'h3':
-		key = product.text
+		key = product.text.replace('\n','').replace('\r','')
 	if key and product.name == 'td':
 		try:
 			product.find('pre').decompose()
 		except AttributeError:
 			pass
-		data[key].append(product.text.replace('\n',''))
+		data[key].append(product.text.replace('\n','').replace('\r',''))
 
 print(data)
 # src = soup.select("table > tr > td")
