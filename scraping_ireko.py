@@ -5,7 +5,8 @@ import re
 
 
 # テスト用のHTML
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
 res = req.urlopen(url)
 
 # HTMLを解析
@@ -32,7 +33,7 @@ for product in product_div.find_all(['h3', 'td']):
 		path = product.text.replace('\n','').replace('\r','')
 		edit_path = re.sub(r"Lines.*?systems/", "", path)
 		edit_path2 = re.sub(r"\n", "", edit_path)
-	
+
 		data[key].append(edit_path)
 		f.write(edit_path)
 		f.write("\n")
@@ -40,22 +41,39 @@ for product in product_div.find_all(['h3', 'td']):
 
 production = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\ProductionCodePath.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
+PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
+
 production.close()
 #print(ProductionPath)
 
 Test = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\TestCodePath.txt','r',encoding="utf-8_sig")
 TestPath = Test.readlines()
+TPath = [Tline.replace('\n', '') for Tline in TestPath]
+
 Test.close()
 #print(TestPath)
 
-dic = dict(zip(ProductionPath,TestPath))
-# path = dic["devst_devst_awaji_bird/devst_awaji_bird/src/main/java/features/bird/FizzBuzz.java\n"]
+dic = dict(zip(PPath,TPath))
+# path = dic["apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/AbstractCvsTask.java"]
 # path = dic["a"]
 # print(path)
+
+f = open('DetectedTestCodePath.txt','w')
+
 for i in data:
+	print(i)
 	for j in data[i]:
+		# print(j)
 		try:
 			path = dic.get(j)
+
 		except KeyError:
 			pass
-		print(path)
+#		print(path)
+		if path is None:
+			pass
+		else:
+			f.write(path)
+			f.write("\n")
+			print(path)
+			# print("\n")
