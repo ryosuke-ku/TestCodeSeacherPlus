@@ -54,14 +54,18 @@ Test.close()
 #print(TestPath)
 
 dic = dict(zip(PPath,TPath))
-# path = dic["apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/AbstractCvsTask.java"]
-# path = dic["a"]
-# print(path)
 
 f = open('DetectedTestCodePath.txt','w')
 
+nt = 0
+at = 0
+pt = 0
 for i in data:
 	print(i)
+	fragments = len(data[i])
+	# print(len(data[i]))
+	count = 0
+
 	for j in data[i]:
 		# print(j)
 		try:
@@ -75,5 +79,26 @@ for i in data:
 		else:
 			f.write(path)
 			f.write("\n")
+			count += 1
 			print(path)
-			# print("\n")
+	
+	# print(count)
+	judgment = fragments - count
+	if judgment == fragments:
+		print("テストコードが見つかりませんでした")
+		nt += 1
+	elif judgment == 0:
+		print("すべてのコードフラグメントがテストコードを持っています")
+		at += 1
+	elif 0 < judgment < fragments :
+		print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
+		pt +=1
+
+print("\n")
+print("-----------------------------------------------------------------------------------")
+print("テストコードが見つかりませんでした" + str(nt))
+print("すべてのコードフラグメントがテストコードを持っています" + str(at))
+print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています" + str(pt))
+print("-----------------------------------------------------------------------------------")
+# for k in data:
+# 	print(len(data[k]))
