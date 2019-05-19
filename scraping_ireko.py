@@ -36,9 +36,26 @@ for product in product_div.find_all(['h3', 'td']):
 		data[key].append(edit_path)
 		f.write(edit_path)
 		f.write("\n")
-print(data)
+# print(data)
 
+production = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\ProductionCodePath.txt','r',encoding="utf-8_sig")
+ProductionPath = production.readlines()
+production.close()
+#print(ProductionPath)
 
-    
+Test = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\TestCodePath.txt','r',encoding="utf-8_sig")
+TestPath = Test.readlines()
+Test.close()
+#print(TestPath)
 
-
+dic = dict(zip(ProductionPath,TestPath))
+# path = dic["devst_devst_awaji_bird/devst_awaji_bird/src/main/java/features/bird/FizzBuzz.java\n"]
+# path = dic["a"]
+# print(path)
+for i in data:
+	for j in data[i]:
+		try:
+			path = dic.get(j)
+		except KeyError:
+			pass
+		print(path)
