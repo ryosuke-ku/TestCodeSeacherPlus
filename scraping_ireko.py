@@ -10,6 +10,10 @@ url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_function
 res = req.urlopen(url)
 
 # HTMLを解析
+
+
+
+
 soup = BeautifulSoup(res, "html.parser")
 
 # 任意のデータを抽出 --- (※1)
