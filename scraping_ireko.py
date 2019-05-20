@@ -6,7 +6,10 @@ import re
 
 # テスト用のHTML
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_project_functions-blind-clones/android_project_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/apache_2_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
 res = req.urlopen(url)
 
 # HTMLを解析
@@ -35,7 +38,7 @@ for product in product_div.find_all(['h3', 'td']):
 			pass
 		path = product.text
 		path = product.text.replace('\n','').replace('\r','')
-		edit_path = re.sub(r"Lines.*?systems/", "", path)
+		edit_path = re.sub(r"Lines.*?systems/android_platform_packages/", "", path)
 		edit_path2 = re.sub(r"\n", "", edit_path)
 
 		data[key].append(edit_path)
@@ -81,7 +84,7 @@ for i in data:
 		if path is None:
 			pass
 		else:
-			f.write(path)
+			f.write(path) 
 			f.write("\n")
 			count += 1
 			print(path)
@@ -100,9 +103,9 @@ for i in data:
 
 print("\n")
 print("-----------------------------------------------------------------------------------")
-print("テストコードが見つかりませんでした" + str(nt))
-print("すべてのコードフラグメントがテストコードを持っています" + str(at))
-print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています" + str(pt))
+print("テストコードが見つかりませんでした " + str(nt))
+print("すべてのコードフラグメントがテストコードを持っています " + str(at))
+print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています " + str(pt))
 print("-----------------------------------------------------------------------------------")
 # for k in data:
 # 	print(len(data[k]))
