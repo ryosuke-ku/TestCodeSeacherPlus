@@ -9,7 +9,9 @@ import re
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_project_functions-blind-clones/android_project_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/apache_2_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_activemq_projects_functions-blind-clones/apache_activemq_projects_functions-blind-clones-0.30-classes-withsource.html"
+
 res = req.urlopen(url)
 
 # HTMLを解析
@@ -38,7 +40,7 @@ for product in product_div.find_all(['h3', 'td']):
 			pass
 		path = product.text
 		path = product.text.replace('\n','').replace('\r','')
-		edit_path = re.sub(r"Lines.*?systems/android_platform_packages/", "", path)
+		edit_path = re.sub(r"Lines.*?systems/apache_activemq_projects/", "", path)
 		edit_path2 = re.sub(r"\n", "", edit_path)
 
 		data[key].append(edit_path)
