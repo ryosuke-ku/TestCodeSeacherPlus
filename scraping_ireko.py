@@ -10,7 +10,9 @@ import re
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_project_functions-blind-clones/android_project_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/apache_2_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_activemq_projects_functions-blind-clones/apache_activemq_projects_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_activemq_projects_functions-blind-clones/apache_activemq_projects_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_maven_functions-blind-clones/apache_ant_maven_functions-blind-clones-0.30-classes-withsource.html"
 
 res = req.urlopen(url)
 
@@ -22,7 +24,7 @@ res = req.urlopen(url)
 soup = BeautifulSoup(res, "html.parser")
 
 # 任意のデータを抽出 --- (※1)
-f = open('Scraping_NiCad.txt','w')
+f = open('DetectedProductionCodePath.txt','w')
 
 data = defaultdict(list)
 product_div = soup.find('body')
@@ -40,7 +42,7 @@ for product in product_div.find_all(['h3', 'td']):
 			pass
 		path = product.text
 		path = product.text.replace('\n','').replace('\r','')
-		edit_path = re.sub(r"Lines.*?systems/apache_activemq_projects/", "", path)
+		edit_path = re.sub(r"Lines.*?systems/", "", path)
 		edit_path2 = re.sub(r"\n", "", edit_path)
 
 		data[key].append(edit_path)
@@ -65,15 +67,18 @@ Test.close()
 dic = dict(zip(PPath,TPath))
 
 f = open('DetectedTestCodePath.txt','w')
-
+r = open('apache_maven_result.txt','w', encoding='utf-8')
 nt = 0
 at = 0
 pt = 0
 for i in data:
+	f.write(i)
+	f.write("\n") 
 	print(i)
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
+
 
 	for j in data[i]:
 		# print(j)
@@ -106,8 +111,16 @@ for i in data:
 print("\n")
 print("-----------------------------------------------------------------------------------")
 print("テストコードが見つかりませんでした " + str(nt))
+print("クローンClassのうち少なくとも一つのコードフラグメントはテストコードを持っています " + str(pt))
 print("すべてのコードフラグメントがテストコードを持っています " + str(at))
-print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています " + str(pt))
 print("-----------------------------------------------------------------------------------")
-# for k in data:
-# 	print(len(data[k]))
+
+r.write("-----------------------------------------------------------------------------------")
+r.write("\n")
+r.write(str(nt) + " テストコードが見つかりませんでした ")
+r.write("\n")
+r.write(str(pt) + " クローンClassのうち少なくとも一つのコードフラグメントはテストコードを持っています ")
+r.write("\n")
+r.write(str(at) + " すべてのコードフラグメントがテストコードを持っています ")
+r.write("\n")
+r.write("-----------------------------------------------------------------------------------")
