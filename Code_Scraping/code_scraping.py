@@ -5,8 +5,8 @@ import re
 import csv
 
 # テスト用のHTML
-#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_project_functions-blind-clones/android_project_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/apache_2_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
@@ -27,35 +27,58 @@ f = open('DetectedProductionCodePath.txt','w')
 data = defaultdict(list)
 product_div = soup.find('body')
 
+csvcode =[]
+source = soup.find_all("pre")
+for src in source:
+	csvcode.append(src.get_text())
+	# print(src.text)
+
+csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf-8')
+writer = csv.writer(csvFile)
+
+csvarray = defaultdict(list)
+
 # クローンクラス<h3>の配列を作成し,類似コードが存在するファイルパス<td>を要素として配列に格納する処理
 for product in product_div.find_all(['h3', 'td']):
 	if product.name == 'h3':
 		key = product.text.replace('\n','').replace('\r','')
 		f.write(key)
 		f.write("\n")
+		# csvarray.append(key)
 	if key and product.name == 'td':
 		try:
+			srccode = product.find('pre')
+			csvarray[key].append(srccode.string)
+			print(srccode.string)
+			# csvarray.append(srccode.text)
 			product.find('pre').decompose()
 		except AttributeError:
 			pass
 		path = product.text
 		path = product.text.replace('\n','').replace('\r','')
-		edit_path = re.sub(r"Lines.*?systems/", "", path)
+		edit_path = re.sub(r"Lines.*?systems/utility/", "", path)
 		edit_path2 = re.sub(r"\n", "", edit_path)
+	
+		# csvarray.append(edit_path2)
+		csvarray[key].append(edit_path2)
 
 		data[key].append(edit_path)
 		f.write(edit_path)
 		f.write("\n")
+	
+
+writer.writerow(csvarray[key])
+
 # print(data)
 
-production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
+production = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\ProductionCodePath.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
 PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
 
 production.close()
 #print(ProductionPath)
 
-Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
+Test = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\TestCodePath.txt','r',encoding="utf-8_sig")
 TestPath = Test.readlines()
 TPath = [Tline.replace('\n', '') for Tline in TestPath]
 
@@ -64,8 +87,7 @@ Test.close()
 
 dic = dict(zip(PPath,TPath))
 
-# csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf-8')
-# writer = csv.writer(csvFile)
+
 
 
 f = open('DetectedTestCodePath.txt','w')
@@ -84,7 +106,7 @@ for i in data:
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
-	# writer.writerow(data[i])
+	
 
 	for j in data[i]:
 		# print(j)
@@ -120,7 +142,7 @@ for i in data:
 	totalpairs += len(data[i])*(len(data[i])-1)/2
 	totalfragments += fragments
 
-# csvFile.close()
+csvFile.close()
 print("\n")
 print("-----------------------------------------------------------------------------------")
 print("テストコードが見つかりませんでした " + str(nt))

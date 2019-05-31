@@ -1,0 +1,37 @@
+"
+	private void assertRuntimeExceptionThrown(int arg) {
+		try {
+			this.sut.coinUsage(arg);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""RuntimeException以外の例外が投げられた。"");
+			}
+			// success.
+		}
+	}
+",devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/CoinTest.java,"
+	private void assertRuntimeExceptionThrown(String arg) {
+		try {
+			this.sut.toArabic(arg);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""RuntimeException以外の例外が投げられた。"");
+			}
+			// success.
+		}
+	}
+",devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/RomanConverterTest.java,"
+	private void assertRuntimeExceptionThrown(String... cards) {
+		try {
+			this.sut.poker(cards);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""例外"" + e.getClass().getName() + ""が投げられた。"");
+			}
+			// success.
+		}
+	}
+",devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/PokerTest.java
