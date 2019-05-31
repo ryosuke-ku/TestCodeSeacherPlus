@@ -1,4 +1,91 @@
 "
+	public String fizzBuzz(int number) {
+		if (number <= 0) {
+			throw new RuntimeException();
+		}
+		if (number % 15 == 0) {
+			return ""FizzBuzz"";
+		} else if (number % 3 == 0) {
+			return ""Fizz"";
+		} else if (number % 5 == 0) {
+			return ""Buzz"";
+		} else {
+			return Integer.toString(number);
+		}
+	}
+","
+	public String fizzBuzz(int i) {
+		if(i <= 0){
+			throw new RuntimeException();
+		}
+
+		if (i % 15 == 0) {
+			return ""FizzBuzz"";
+		} else if (i % 5 == 0) {
+			return ""Buzz"";
+		} else if (i % 3 == 0) {
+			return ""Fizz"";
+		}
+
+		return String.valueOf(i);
+	}
+","
+	public static String apply(int num) {
+        if (num % 15 == 0) {
+            return ""FizzBuzz"";
+        } else if (num % 3 == 0) {
+            return ""Fizz"";
+        } else if (num % 5 == 0) {
+            return ""Buzz"";
+        } else {
+            return String.valueOf(num);
+        }
+    }
+","
+	private boolean isThreeOfAKind(Card[] hand) {
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		return false;
+	}
+","
+	private boolean isTwoPair(Card[] hand) {
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		return false;
+	}
+","
 	private void assertRuntimeExceptionThrown(int arg) {
 		try {
 			this.sut.coinUsage(arg);
@@ -10,7 +97,7 @@
 			// success.
 		}
 	}
-",devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/CoinTest.java,"
+","
 	private void assertRuntimeExceptionThrown(String arg) {
 		try {
 			this.sut.toArabic(arg);
@@ -22,7 +109,7 @@
 			// success.
 		}
 	}
-",devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/RomanConverterTest.java,"
+","
 	private void assertRuntimeExceptionThrown(String... cards) {
 		try {
 			this.sut.poker(cards);
@@ -34,4 +121,252 @@
 			// success.
 		}
 	}
-",devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/PokerTest.java
+"
+"
+	public String fizzBuzz(int number) {
+		if (number <= 0) {
+			throw new RuntimeException();
+		}
+		if (number % 15 == 0) {
+			return ""FizzBuzz"";
+		} else if (number % 3 == 0) {
+			return ""Fizz"";
+		} else if (number % 5 == 0) {
+			return ""Buzz"";
+		} else {
+			return Integer.toString(number);
+		}
+	}
+","
+	public String fizzBuzz(int i) {
+		if(i <= 0){
+			throw new RuntimeException();
+		}
+
+		if (i % 15 == 0) {
+			return ""FizzBuzz"";
+		} else if (i % 5 == 0) {
+			return ""Buzz"";
+		} else if (i % 3 == 0) {
+			return ""Fizz"";
+		}
+
+		return String.valueOf(i);
+	}
+","
+	public static String apply(int num) {
+        if (num % 15 == 0) {
+            return ""FizzBuzz"";
+        } else if (num % 3 == 0) {
+            return ""Fizz"";
+        } else if (num % 5 == 0) {
+            return ""Buzz"";
+        } else {
+            return String.valueOf(num);
+        }
+    }
+","
+	private boolean isThreeOfAKind(Card[] hand) {
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		return false;
+	}
+","
+	private boolean isTwoPair(Card[] hand) {
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		return false;
+	}
+","
+	private void assertRuntimeExceptionThrown(int arg) {
+		try {
+			this.sut.coinUsage(arg);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""RuntimeException以外の例外が投げられた。"");
+			}
+			// success.
+		}
+	}
+","
+	private void assertRuntimeExceptionThrown(String arg) {
+		try {
+			this.sut.toArabic(arg);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""RuntimeException以外の例外が投げられた。"");
+			}
+			// success.
+		}
+	}
+","
+	private void assertRuntimeExceptionThrown(String... cards) {
+		try {
+			this.sut.poker(cards);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""例外"" + e.getClass().getName() + ""が投げられた。"");
+			}
+			// success.
+		}
+	}
+"
+"
+	public String fizzBuzz(int number) {
+		if (number <= 0) {
+			throw new RuntimeException();
+		}
+		if (number % 15 == 0) {
+			return ""FizzBuzz"";
+		} else if (number % 3 == 0) {
+			return ""Fizz"";
+		} else if (number % 5 == 0) {
+			return ""Buzz"";
+		} else {
+			return Integer.toString(number);
+		}
+	}
+","
+	public String fizzBuzz(int i) {
+		if(i <= 0){
+			throw new RuntimeException();
+		}
+
+		if (i % 15 == 0) {
+			return ""FizzBuzz"";
+		} else if (i % 5 == 0) {
+			return ""Buzz"";
+		} else if (i % 3 == 0) {
+			return ""Fizz"";
+		}
+
+		return String.valueOf(i);
+	}
+","
+	public static String apply(int num) {
+        if (num % 15 == 0) {
+            return ""FizzBuzz"";
+        } else if (num % 3 == 0) {
+            return ""Fizz"";
+        } else if (num % 5 == 0) {
+            return ""Buzz"";
+        } else {
+            return String.valueOf(num);
+        }
+    }
+","
+	private boolean isThreeOfAKind(Card[] hand) {
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		return false;
+	}
+","
+	private boolean isTwoPair(Card[] hand) {
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& hand[2].getLank().equals(hand[3].getLank())
+				&& !hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (hand[0].getLank().equals(hand[1].getLank())
+				&& !hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		if (!hand[0].getLank().equals(hand[1].getLank())
+				&& hand[1].getLank().equals(hand[2].getLank())
+				&& !hand[2].getLank().equals(hand[3].getLank())
+				&& hand[3].getLank().equals(hand[4].getLank())) {
+			return true;
+		}
+		return false;
+	}
+","
+	private void assertRuntimeExceptionThrown(int arg) {
+		try {
+			this.sut.coinUsage(arg);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""RuntimeException以外の例外が投げられた。"");
+			}
+			// success.
+		}
+	}
+","
+	private void assertRuntimeExceptionThrown(String arg) {
+		try {
+			this.sut.toArabic(arg);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""RuntimeException以外の例外が投げられた。"");
+			}
+			// success.
+		}
+	}
+","
+	private void assertRuntimeExceptionThrown(String... cards) {
+		try {
+			this.sut.poker(cards);
+			fail(""例外が投げられなかった。"");
+		} catch (Exception e) {
+			if (!RuntimeException.class.equals(e.getClass())) {
+				fail(""例外"" + e.getClass().getName() + ""が投げられた。"");
+			}
+			// success.
+		}
+	}
+"

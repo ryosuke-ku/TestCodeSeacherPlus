@@ -1,7 +1,3 @@
 Clone class 1, 3 fragments, nominal size 13 lines, similarity 71%
-devst_devst_awaji_bird/devst_awaji_bird/src/test/java/features/bird/FizzBuzzTest.java
-devst_devst_awaji_elephant/devst_awaji_elephant/src/test/java/features/elephant/FizzBuzzTest.java
 Clone class 2, 2 fragments, nominal size 12 lines, similarity 75%
-devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/PokerTest.java
-devst_devst_awaji_monkey/devst_awaji_monkey/src/test/java/features/monkey/PokerTest.java
 Clone class 3, 3 fragments, nominal size 10 lines, similarity 80%

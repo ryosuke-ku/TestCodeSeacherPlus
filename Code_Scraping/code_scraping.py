@@ -27,17 +27,15 @@ f = open('DetectedProductionCodePath.txt','w')
 data = defaultdict(list)
 product_div = soup.find('body')
 
-csvcode =[]
-source = soup.find_all("pre")
-for src in source:
-	csvcode.append(src.get_text())
-	# print(src.text)
-
-csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf-8')
+csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf_8')
 writer = csv.writer(csvFile)
 
-csvarray = defaultdict(list)
+csvarray = []
+# csvarray = defaultdict(list)
 
+countarray = []
+count = 0 
+countarray.append(count)
 # クローンクラス<h3>の配列を作成し,類似コードが存在するファイルパス<td>を要素として配列に格納する処理
 for product in product_div.find_all(['h3', 'td']):
 	if product.name == 'h3':
@@ -48,9 +46,9 @@ for product in product_div.find_all(['h3', 'td']):
 	if key and product.name == 'td':
 		try:
 			srccode = product.find('pre')
-			csvarray[key].append(srccode.string)
+			# csvarray[key].append(srccode.string)
 			print(srccode.string)
-			# csvarray.append(srccode.text)
+			csvarray.append(srccode.text)
 			product.find('pre').decompose()
 		except AttributeError:
 			pass
@@ -60,14 +58,18 @@ for product in product_div.find_all(['h3', 'td']):
 		edit_path2 = re.sub(r"\n", "", edit_path)
 	
 		# csvarray.append(edit_path2)
-		csvarray[key].append(edit_path2)
+		# csvarray[key].append(edit_path2)
 
 		data[key].append(edit_path)
 		f.write(edit_path)
 		f.write("\n")
-	
+		count +=1
+		countarray.append(count)
 
-writer.writerow(csvarray[key])
+		# writer.writerow(csvarray[key])
+
+# writer.writerow(csvarray)
+# print(countarray)
 
 # print(data)
 
@@ -87,6 +89,7 @@ Test.close()
 
 dic = dict(zip(PPath,TPath))
 
+dic = dict(zip(countarray,csvarray))
 
 
 
@@ -98,6 +101,7 @@ pt = 0
 totalpairs = 0
 totalfragments = 0
 notest = 0
+codearray = []
 
 for i in data:
 	f.write(i)
@@ -107,7 +111,6 @@ for i in data:
 	# print(len(data[i]))
 	count = 0
 	
-
 	for j in data[i]:
 		# print(j)
 		try:
@@ -117,13 +120,16 @@ for i in data:
 			pass
 		# print(path)
 		if path is None:
-			pass
+			codearray.append(dic.get(count))
 		else:
 			f.write(path) 
 			f.write("\n")
 			count += 1
 			print(path)
-	
+
+	print(codearray)
+	writer.writerow(csvarray)
+
 	# print(count)
 	judgment = fragments - count
 	if judgment == fragments:
