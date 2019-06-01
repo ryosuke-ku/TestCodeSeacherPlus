@@ -27,28 +27,14 @@ f = open('DetectedProductionCodePath.txt','w')
 data = defaultdict(list)
 product_div = soup.find('body')
 
-csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf_8')
-writer = csv.writer(csvFile)
-
-csvarray = []
-# csvarray = defaultdict(list)
-
-countarray = []
-count = 0 
-countarray.append(count)
 # クローンクラス<h3>の配列を作成し,類似コードが存在するファイルパス<td>を要素として配列に格納する処理
 for product in product_div.find_all(['h3', 'td']):
 	if product.name == 'h3':
 		key = product.text.replace('\n','').replace('\r','')
 		f.write(key)
 		f.write("\n")
-		# csvarray.append(key)
 	if key and product.name == 'td':
 		try:
-			srccode = product.find('pre')
-			# csvarray[key].append(srccode.string)
-			print(srccode.string)
-			csvarray.append(srccode.text)
 			product.find('pre').decompose()
 		except AttributeError:
 			pass
@@ -56,31 +42,20 @@ for product in product_div.find_all(['h3', 'td']):
 		path = product.text.replace('\n','').replace('\r','')
 		edit_path = re.sub(r"Lines.*?systems/", "", path)
 		edit_path2 = re.sub(r"\n", "", edit_path)
-	
-		# csvarray.append(edit_path2)
-		# csvarray[key].append(edit_path2)
 
 		data[key].append(edit_path)
 		f.write(edit_path)
 		f.write("\n")
-		count +=1
-		countarray.append(count)
-
-		# writer.writerow(csvarray[key])
-
-# writer.writerow(csvarray)
-# print(countarray)
-
 # print(data)
 
-production = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\ProductionCodePath.txt','r',encoding="utf-8_sig")
+production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
 PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
 
 production.close()
 #print(ProductionPath)
 
-Test = open(r'C:\Users\ryosuke-ku\Desktop\SCRAPING\TestCodePath.txt','r',encoding="utf-8_sig")
+Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
 TestPath = Test.readlines()
 TPath = [Tline.replace('\n', '') for Tline in TestPath]
 
@@ -89,8 +64,8 @@ Test.close()
 
 dic = dict(zip(PPath,TPath))
 
-dic = dict(zip(countarray,csvarray))
-
+# csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf-8')
+# writer = csv.writer(csvFile)
 
 
 f = open('DetectedTestCodePath.txt','w')
@@ -101,7 +76,6 @@ pt = 0
 totalpairs = 0
 totalfragments = 0
 notest = 0
-codearray = []
 
 for i in data:
 	f.write(i)
@@ -110,7 +84,8 @@ for i in data:
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
-	
+	# writer.writerow(data[i])
+
 	for j in data[i]:
 		# print(j)
 		try:
@@ -120,16 +95,13 @@ for i in data:
 			pass
 		# print(path)
 		if path is None:
-			codearray.append(dic.get(count))
+			pass
 		else:
 			f.write(path) 
 			f.write("\n")
 			count += 1
 			print(path)
-
-	print(codearray)
-	writer.writerow(codearray)
-
+	
 	# print(count)
 	judgment = fragments - count
 	if judgment == fragments:
@@ -148,7 +120,7 @@ for i in data:
 	totalpairs += len(data[i])*(len(data[i])-1)/2
 	totalfragments += fragments
 
-csvFile.close()
+# csvFile.close()
 print("\n")
 print("-----------------------------------------------------------------------------------")
 print("テストコードが見つかりませんでした " + str(nt))
