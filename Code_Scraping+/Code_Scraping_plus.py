@@ -27,6 +27,10 @@ f = open('DetectedProductionCodePath.txt','w')
 data = defaultdict(list)
 product_div = soup.find('body')
 
+codearray = []
+countarray = []
+count = 0 
+
 # クローンクラス<h3>の配列を作成し,類似コードが存在するファイルパス<td>を要素として配列に格納する処理
 for product in product_div.find_all(['h3', 'td']):
 	if product.name == 'h3':
@@ -35,6 +39,9 @@ for product in product_div.find_all(['h3', 'td']):
 		f.write("\n")
 	if key and product.name == 'td':
 		try:
+			srccode = product.find('pre')
+			print(srccode.string)
+			codearray.append(srccode.text)
 			product.find('pre').decompose()
 		except AttributeError:
 			pass
@@ -46,6 +53,12 @@ for product in product_div.find_all(['h3', 'td']):
 		data[key].append(edit_path)
 		f.write(edit_path)
 		f.write("\n")
+		countarray.append(count)
+		count +=1
+
+
+print(countarray)
+print(len(codearray))
 # print(data)
 
 production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
@@ -80,7 +93,7 @@ notest = 0
 for i in data:
 	f.write(i)
 	f.write("\n") 
-	print(i)
+#	print(i)
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
@@ -100,23 +113,23 @@ for i in data:
 			f.write(path) 
 			f.write("\n")
 			count += 1
-			print(path)
+			# print(path)
 	
 	# print(count)
 	judgment = fragments - count
 	if judgment == fragments:
-		print("テストコードが見つかりませんでした")
+		# print("テストコードが見つかりませんでした")
 		nt += 1
 	elif judgment == 0:
-		print("すべてのコードフラグメントがテストコードを持っています")
+		#print("すべてのコードフラグメントがテストコードを持っています")
 		at += 1
 	elif 0 < judgment < fragments :
-		print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
-		print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
+		#print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
+		#print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
 		notest += judgment
 		pt +=1
 
-	print(len(data[i])*(len(data[i])-1)/2)
+#	print(len(data[i])*(len(data[i])-1)/2)
 	totalpairs += len(data[i])*(len(data[i])-1)/2
 	totalfragments += fragments
 
