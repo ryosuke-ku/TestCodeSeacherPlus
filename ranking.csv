@@ -1,0 +1,130 @@
+"
+Lines 108 - 117 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
+
+    public Response deleteCommentByCid(@PathParam(""cid"") String idString){
+        int cid = toInteger(idString);
+        if(cid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        CommentModel model = new CommentModel();
+        model.deleteCommentByCid(cid);
+        return Response.status(200)
+                .build();
+    }
+
+","
+    public Response deleteCommentByCid(@PathParam(""cid"") String idString){
+        int cid = toInteger(idString);
+        if(cid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        CommentModel model = new CommentModel();
+        model.deleteCommentByCid(cid);
+        return Response.status(200)
+                .build();
+    }
+"
+"
+Lines 73 - 82 of systems/main/java/jp/enpit/facibot/rest/UsersRest.java
+
+    public Response deleteUser(@PathParam(""uid"") String idString){
+        int uid = toInteger(idString);
+        if(uid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        UserModel model = new UserModel();
+        model.deleteUser(uid);
+        return Response.status(200)
+                .build();
+    }
+
+","
+    public Response deleteUser(@PathParam(""uid"") String idString){
+        int uid = toInteger(idString);
+        if(uid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        UserModel model = new UserModel();
+        model.deleteUser(uid);
+        return Response.status(200)
+                .build();
+    }
+"
+"
+Lines 122 - 131 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
+
+    public Response deleteCommentsByUid(@PathParam(""uid"") String idString){
+        int uid = toInteger(idString);
+        if(uid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        CommentModel model = new CommentModel();
+        model.deleteCommentsByUid(uid);
+        return Response.status(200)
+                .build();
+    }
+
+","
+    public Response deleteCommentsByUid(@PathParam(""uid"") String idString){
+        int uid = toInteger(idString);
+        if(uid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        CommentModel model = new CommentModel();
+        model.deleteCommentsByUid(uid);
+        return Response.status(200)
+                .build();
+    }
+"
+"
+Lines 136 - 145 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
+
+    public Response deleteCommentByRid(@PathParam(""rid"") String idString){
+        int rid = toInteger(idString);
+        if(rid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        CommentModel model = new CommentModel();
+        model.deleteCommentsByRid(rid);
+        return Response.status(200)
+                .build();
+    }
+
+","
+    public Response deleteCommentByRid(@PathParam(""rid"") String idString){
+        int rid = toInteger(idString);
+        if(rid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        CommentModel model = new CommentModel();
+        model.deleteCommentsByRid(rid);
+        return Response.status(200)
+                .build();
+    }
+"
+"
+Lines 73 - 82 of systems/main/java/jp/enpit/facibot/rest/TalkroomRest.java
+
+    public Response deleteComment(@PathParam(""rid"") String idString){
+        int rid = toInteger(idString);
+        if(rid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        TalkroomModel model = new TalkroomModel();
+        model.deleteTalkroom(rid);
+        return Response.status(200)
+                .build();
+    }
+
+","
+    public Response deleteComment(@PathParam(""rid"") String idString){
+        int rid = toInteger(idString);
+        if(rid <= 0){
+            return errorMessage(400, ""Bad request"");
+        }
+        TalkroomModel model = new TalkroomModel();
+        model.deleteTalkroom(rid);
+        return Response.status(200)
+                .build();
+    }
+"

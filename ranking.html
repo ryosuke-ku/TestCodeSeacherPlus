@@ -1,0 +1,73 @@
+
+<html>
+  <head><meta charset="UTF-8">
+  <title>J2 Ranking</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css"/>
+  <body>
+    <table border="1" class="dataframe mystyle">
+  <thead>
+    <tr style="text-align: left;">
+      <th><pre>Lines 108 - 117 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
+
+    public Response deleteCommentByCid(@PathParam("cid") String idString){
+
+        int cid = toInteger(idString);
+
+        if(cid &lt;= 0){
+
+            return errorMessage(400, "Bad request");
+
+        }
+
+        CommentModel model = new CommentModel();
+
+        model.deleteCommentByCid(cid);
+
+        return Response.status(200)
+
+                .build();
+
+    }</pre></th>
+      <th>public Response deleteCommentByCid(@PathParam("cid") String idString){
+
+        int cid = toInteger(idString);
+
+        if(cid &lt;= 0){
+
+            return errorMessage(400, "Bad request");
+
+        }
+
+        CommentModel model = new CommentModel();
+
+        model.deleteCommentByCid(cid);
+
+        return Response.status(200)
+
+                .build();
+
+    }</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\nLines 73 - 82 of systems/main/java/jp/enpit/...</td>
+      <td>\n    public Response deleteUser(@PathParam("u...</td>
+    </tr>
+    <tr>
+      <td>\nLines 122 - 131 of systems/main/java/jp/enpi...</td>
+      <td>\n    public Response deleteCommentsByUid(@Pat...</td>
+    </tr>
+    <tr>
+      <td>\nLines 136 - 145 of systems/main/java/jp/enpi...</td>
+      <td>\n    public Response deleteCommentByRid(@Path...</td>
+    </tr>
+    <tr>
+      <td>\nLines 73 - 82 of systems/main/java/jp/enpit/...</td>
+      <td>\n    public Response deleteComment(@PathParam...</td>
+    </tr>
+  </tbody>
+</table>
+  </body>
+</html>

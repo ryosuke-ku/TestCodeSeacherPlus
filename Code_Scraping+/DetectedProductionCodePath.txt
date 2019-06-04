@@ -1,794 +1,139 @@
-Clone class 1, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/AntClassLoader.java
-apache_ant/ant/src/main/org/apache/tools/ant/AntClassLoader.java
-Clone class 2, 2 fragments, nominal size 26 lines, similarity 74%
-apache_ant/ant/src/main/org/apache/tools/ant/ArgumentProcessorRegistry.java
-apache_ant/ant/src/main/org/apache/tools/ant/ProjectHelperRepository.java
-Clone class 3, 2 fragments, nominal size 20 lines, similarity 95%
-apache_ant/ant/src/main/org/apache/tools/ant/ComponentHelper.java
-apache_ant/ant/src/main/org/apache/tools/ant/ComponentHelper.java
-Clone class 4, 2 fragments, nominal size 15 lines, similarity 81%
-apache_ant/ant/src/main/org/apache/tools/ant/ComponentHelper.java
-apache_ant/ant/src/main/org/apache/tools/ant/ComponentHelper.java
-Clone class 5, 2 fragments, nominal size 22 lines, similarity 86%
-apache_ant/ant/src/main/org/apache/tools/ant/DemuxOutputStream.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/LineOrientedOutputStream.java
-Clone class 6, 2 fragments, nominal size 13 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/Diagnostics.java
-apache_ant/ant/src/main/org/apache/tools/ant/Diagnostics.java
-Clone class 7, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/DirectoryScanner.java
-apache_ant/ant/src/main/org/apache/tools/ant/DirectoryScanner.java
-Clone class 8, 2 fragments, nominal size 13 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/DirectoryScanner.java
-apache_ant/ant/src/main/org/apache/tools/ant/DirectoryScanner.java
-Clone class 9, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/DirectoryScanner.java
-apache_ant/ant/src/main/org/apache/tools/ant/DirectoryScanner.java
-Clone class 10, 2 fragments, nominal size 22 lines, similarity 82%
-apache_ant/ant/src/main/org/apache/tools/ant/filters/HeadFilter.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/TailFilter.java
-Clone class 11, 8 fragments, nominal size 14 lines, similarity 71%
-apache_ant/ant/src/main/org/apache/tools/ant/filters/HeadFilter.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/TabsToSpaces.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/TailFilter.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/LineContains.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/StripLineComments.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/PrefixLines.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/StripLineBreaks.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/SuffixLines.java
-Clone class 12, 3 fragments, nominal size 34 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/filters/LineContains.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/StripLineComments.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/LineContainsRegExp.java
-Clone class 13, 2 fragments, nominal size 31 lines, similarity 79%
-apache_ant/ant/src/main/org/apache/tools/ant/filters/PrefixLines.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/SuffixLines.java
-Clone class 14, 2 fragments, nominal size 14 lines, similarity 71%
-apache_ant/ant/src/main/org/apache/tools/ant/filters/ReplaceTokens.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Replace.java
-Clone class 15, 2 fragments, nominal size 17 lines, similarity 88%
-apache_ant/ant/src/main/org/apache/tools/ant/filters/TokenFilter.java
-apache_ant/ant/src/main/org/apache/tools/ant/filters/TokenFilter.java
-Clone class 16, 2 fragments, nominal size 21 lines, similarity 73%
-apache_ant/ant/src/main/org/apache/tools/ant/helper/DefaultExecutor.java
-apache_ant/ant/src/main/org/apache/tools/ant/helper/IgnoreDependenciesExecutor.java
-Clone class 17, 2 fragments, nominal size 20 lines, similarity 71%
-apache_ant/ant/src/main/org/apache/tools/ant/helper/ProjectHelper2.java
-apache_ant/ant/src/main/org/apache/tools/ant/helper/ProjectHelperImpl.java
-Clone class 18, 4 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
-apache_ant/ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
-apache_ant/ant/src/main/org/apache/tools/ant/listener/Log4jListener.java
-apache_ant/ant/src/main/org/apache/tools/ant/listener/Log4jListener.java
-Clone class 19, 2 fragments, nominal size 18 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
-apache_ant/ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
-Clone class 20, 2 fragments, nominal size 11 lines, similarity 81%
-apache_ant/ant/src/main/org/apache/tools/ant/Main.java
-apache_ant/ant/src/main/org/apache/tools/ant/Main.java
-Clone class 21, 2 fragments, nominal size 12 lines, similarity 91%
-apache_ant/ant/src/main/org/apache/tools/ant/Project.java
-apache_ant/ant/src/main/org/apache/tools/ant/Project.java
-Clone class 22, 3 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/Project.java
-apache_ant/ant/src/main/org/apache/tools/ant/Project.java
-apache_ant/ant/src/main/org/apache/tools/ant/Project.java
-Clone class 23, 2 fragments, nominal size 13 lines, similarity 92%
-apache_ant/ant/src/main/org/apache/tools/ant/ProjectHelperRepository.java
-apache_ant/ant/src/main/org/apache/tools/ant/ProjectHelperRepository.java
-Clone class 24, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/property/LocalPropertyStack.java
-apache_ant/ant/src/main/org/apache/tools/ant/property/LocalPropertyStack.java
-Clone class 25, 2 fragments, nominal size 13 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/PropertyHelper.java
-apache_ant/ant/src/main/org/apache/tools/ant/PropertyHelper.java
-Clone class 26, 2 fragments, nominal size 12 lines, similarity 83%
-apache_ant/ant/src/main/org/apache/tools/ant/Target.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
-Clone class 27, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/Target.java
-apache_ant/ant/src/main/org/apache/tools/ant/Target.java
-Clone class 28, 2 fragments, nominal size 14 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/AbstractCvsTask.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/AbstractCvsTask.java
-Clone class 29, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/AntStructure.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Replace.java
-Clone class 30, 3 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Concat.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Delete.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/SQLExec.java
-Clone class 31, 2 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/condition/And.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/condition/Or.java
-Clone class 32, 3 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/condition/HasMethod.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/SplitClassLoader.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/condition/HasMethod.java
+Clone class 1, 2 fragments, nominal size 15 lines, similarity 75%
+JHotDraw54b1/src/CH/ifa/draw/applet/DrawApplet.java
+JHotDraw54b1/src/CH/ifa/draw/applet/DrawApplet.java
+Clone class 2, 3 fragments, nominal size 18 lines, similarity 70%
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+JHotDraw54b1/src/CH/ifa/draw/samples/javadraw/JavaDrawApp.java
+JHotDraw54b1/src/CH/ifa/draw/samples/javadraw/JavaDrawApp.java
+Clone class 3, 2 fragments, nominal size 10 lines, similarity 80%
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+Clone class 4, 6 fragments, nominal size 11 lines, similarity 75%
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/DesktopEventService.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/DesktopEventService.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/DesktopEventService.java
+Clone class 5, 2 fragments, nominal size 14 lines, similarity 86%
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+JHotDraw54b1/src/CH/ifa/draw/application/DrawApplication.java
+Clone class 6, 2 fragments, nominal size 16 lines, similarity 76%
+JHotDraw54b1/src/CH/ifa/draw/contrib/CompositeFigureCreationTool.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/NestedCreationTool.java
+Clone class 7, 2 fragments, nominal size 10 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/contrib/CTXCommandMenu.java
+JHotDraw54b1/src/CH/ifa/draw/util/CommandMenu.java
+Clone class 8, 2 fragments, nominal size 30 lines, similarity 70%
+JHotDraw54b1/src/CH/ifa/draw/contrib/CTXWindowMenu.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/WindowMenu.java
+Clone class 9, 3 fragments, nominal size 10 lines, similarity 72%
+JHotDraw54b1/src/CH/ifa/draw/contrib/DesktopEventService.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/SplitPaneDesktop.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+Clone class 10, 2 fragments, nominal size 14 lines, similarity 78%
+JHotDraw54b1/src/CH/ifa/draw/contrib/DesktopEventService.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+Clone class 11, 2 fragments, nominal size 14 lines, similarity 85%
+JHotDraw54b1/src/CH/ifa/draw/contrib/html/ResourceContentProducer.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/html/URLContentProducer.java
+Clone class 12, 2 fragments, nominal size 16 lines, similarity 82%
+JHotDraw54b1/src/CH/ifa/draw/contrib/JPanelDesktop.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+Clone class 13, 3 fragments, nominal size 15 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+Clone class 14, 2 fragments, nominal size 20 lines, similarity 95%
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+Clone class 15, 2 fragments, nominal size 42 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java
+Clone class 16, 6 fragments, nominal size 12 lines, similarity 72%
+JHotDraw54b1/src/CH/ifa/draw/contrib/PolygonHandle.java
+JHotDraw54b1/src/CH/ifa/draw/figures/PolyLineHandle.java
+JHotDraw54b1/src/CH/ifa/draw/figures/RadiusHandle.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/PolygonScaleHandle.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/TriangleRotationHandle.java
+JHotDraw54b1/src/CH/ifa/draw/standard/BoxHandleKit.java
+Clone class 17, 2 fragments, nominal size 15 lines, similarity 86%
+JHotDraw54b1/src/CH/ifa/draw/contrib/PolygonScaleHandle.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/TriangleRotationHandle.java
+Clone class 18, 2 fragments, nominal size 11 lines, similarity 90%
+JHotDraw54b1/src/CH/ifa/draw/contrib/PolygonTool.java
+JHotDraw54b1/src/CH/ifa/draw/figures/ScribbleTool.java
+Clone class 19, 2 fragments, nominal size 23 lines, similarity 75%
+JHotDraw54b1/src/CH/ifa/draw/contrib/TextAreaFigure.java
+JHotDraw54b1/src/CH/ifa/draw/figures/TextFigure.java
+Clone class 20, 2 fragments, nominal size 21 lines, similarity 90%
+JHotDraw54b1/src/CH/ifa/draw/contrib/TextAreaTool.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/TextAreaTool.java
+Clone class 21, 3 fragments, nominal size 10 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ScalingGraphics.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ScalingGraphics.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ScalingGraphics.java
+Clone class 22, 3 fragments, nominal size 19 lines, similarity 78%
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.java
+Clone class 23, 2 fragments, nominal size 10 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.java
+JHotDraw54b1/src/CH/ifa/draw/standard/StandardDrawingView.java
+Clone class 24, 2 fragments, nominal size 11 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.java
+JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.java
+Clone class 25, 11 fragments, nominal size 14 lines, similarity 70%
+JHotDraw54b1/src/CH/ifa/draw/figures/ConnectedTextTool.java
+JHotDraw54b1/src/CH/ifa/draw/figures/ConnectedTextTool.java
+JHotDraw54b1/src/CH/ifa/draw/figures/ConnectedTextTool.java
+JHotDraw54b1/src/CH/ifa/draw/figures/ConnectedTextTool.java
+JHotDraw54b1/src/CH/ifa/draw/standard/AlignCommand.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ChangeAttributeCommand.java
+JHotDraw54b1/src/CH/ifa/draw/standard/SendToBackCommand.java
+JHotDraw54b1/src/CH/ifa/draw/figures/UngroupCommand.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ChangeAttributeCommand.java
+JHotDraw54b1/src/CH/ifa/draw/standard/PasteCommand.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ConnectionTool.java
+Clone class 26, 2 fragments, nominal size 21 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/figures/ElbowHandle.java
+JHotDraw54b1/src/CH/ifa/draw/figures/ElbowHandle.java
+Clone class 27, 2 fragments, nominal size 19 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/samples/nothing/NothingApp.java
+JHotDraw54b1/src/CH/ifa/draw/samples/nothing/NothingApplet.java
+Clone class 28, 2 fragments, nominal size 11 lines, similarity 90%
+JHotDraw54b1/src/CH/ifa/draw/samples/pert/PertApplet.java
+JHotDraw54b1/src/CH/ifa/draw/samples/pert/PertApplication.java
+Clone class 29, 2 fragments, nominal size 11 lines, similarity 83%
+JHotDraw54b1/src/CH/ifa/draw/standard/AbstractTool.java
+JHotDraw54b1/src/CH/ifa/draw/standard/AbstractTool.java
+Clone class 30, 3 fragments, nominal size 10 lines, similarity 90%
+JHotDraw54b1/src/CH/ifa/draw/standard/BringToFrontCommand.java
+JHotDraw54b1/src/CH/ifa/draw/standard/SendToBackCommand.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ChangeAttributeCommand.java
+Clone class 31, 2 fragments, nominal size 18 lines, similarity 94%
+JHotDraw54b1/src/CH/ifa/draw/standard/ChangeConnectionHandle.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ConnectionHandle.java
+Clone class 32, 7 fragments, nominal size 10 lines, similarity 70%
+JHotDraw54b1/src/CH/ifa/draw/standard/ChangeConnectionHandle.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ConnectionHandle.java
+JHotDraw54b1/src/CH/ifa/draw/standard/CompositeFigure.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ConnectionTool.java
+JHotDraw54b1/src/CH/ifa/draw/standard/CompositeFigure.java
+JHotDraw54b1/src/CH/ifa/draw/standard/StandardDrawingView.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ConnectionTool.java
 Clone class 33, 2 fragments, nominal size 11 lines, similarity 90%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/condition/IsLastModified.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Touch.java
-Clone class 34, 2 fragments, nominal size 15 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/condition/ParserSupports.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/condition/ParserSupports.java
-Clone class 35, 2 fragments, nominal size 18 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.java
-Clone class 36, 3 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/cvslib/CvsUser.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/resolvers/AntResolver.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/JarLibResolveTask.java
-Clone class 37, 2 fragments, nominal size 10 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Ear.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/War.java
-Clone class 38, 2 fragments, nominal size 17 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Jar.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Jar.java
-Clone class 39, 2 fragments, nominal size 23 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/launcher/PerlScriptCommandLauncher.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/launcher/ScriptCommandLauncher.java
-Clone class 40, 2 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/MacroDef.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/Directory.java
-Clone class 41, 2 fragments, nominal size 24 lines, similarity 91%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/MakeUrl.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/MakeUrl.java
-Clone class 42, 2 fragments, nominal size 14 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ANTLR.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.java
-Clone class 43, 2 fragments, nominal size 12 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheck.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ccm/CCMReconfigure.java
-Clone class 44, 4 fragments, nominal size 12 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ccm/Continuus.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOS.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/ClearCase.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/pvcs/Pvcs.java
-Clone class 45, 13 fragments, nominal size 19 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCLock.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCUpdate.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkdir.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnCheckout.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnlock.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkelem.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.java
-Clone class 46, 3 fragments, nominal size 25 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkelem.java
-Clone class 47, 2 fragments, nominal size 31 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.java
-Clone class 48, 3 fragments, nominal size 24 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.java
-Clone class 49, 6 fragments, nominal size 15 lines, similarity 86%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
-Clone class 50, 3 fragments, nominal size 10 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/FieldRefCPInfo.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/MethodRefCPInfo.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/InterfaceMethodRefCPInfo.java
-Clone class 51, 2 fragments, nominal size 23 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/BorlandDeploymentTool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicDeploymentTool.java
-Clone class 52, 2 fragments, nominal size 23 lines, similarity 73%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.java
-Clone class 53, 2 fragments, nominal size 18 lines, similarity 77%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/DescriptorHandler.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/DescriptorHandler.java
-Clone class 54, 2 fragments, nominal size 10 lines, similarity 90%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/GenericDeploymentTool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.java
-Clone class 55, 2 fragments, nominal size 121 lines, similarity 95%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicDeploymentTool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.java
-Clone class 56, 2 fragments, nominal size 24 lines, similarity 95%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/Extension.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/Specification.java
-Clone class 57, 2 fragments, nominal size 41 lines, similarity 86%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/Extension.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/Specification.java
-Clone class 58, 2 fragments, nominal size 16 lines, similarity 77%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/JarLibAvailableTask.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/JarLibDisplayTask.java
-Clone class 59, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/j2ee/JonasHotDeploymentTool.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/j2ee/WebLogicHotDeploymentTool.java
-Clone class 60, 2 fragments, nominal size 26 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/javacc/JJDoc.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/javacc/JJTree.java
-Clone class 61, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Gcjh.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Kaffeh.java
-Clone class 62, 2 fragments, nominal size 30 lines, similarity 93%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Gcjh.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Kaffeh.java
-Clone class 63, 2 fragments, nominal size 13 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/JavahAdapterFactory.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/native2ascii/Native2AsciiAdapterFactory.java
-Clone class 64, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/jsp/JspC.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/UpToDate.java
-Clone class 65, 2 fragments, nominal size 14 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.java
-Clone class 66, 2 fragments, nominal size 18 lines, similarity 73%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.java
-Clone class 67, 2 fragments, nominal size 15 lines, similarity 93%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.java
-Clone class 68, 3 fragments, nominal size 10 lines, similarity 90%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.java
-Clone class 69, 4 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTest.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/BaseResourceCollectionContainer.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/MappedResourceCollection.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/PatternSet.java
-Clone class 70, 2 fragments, nominal size 10 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/native2ascii/KaffeNative2Ascii.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/rmic/KaffeRmic.java
-Clone class 71, 2 fragments, nominal size 24 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 72, 2 fragments, nominal size 71 lines, similarity 91%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 73, 2 fragments, nominal size 55 lines, similarity 98%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 74, 2 fragments, nominal size 13 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 75, 2 fragments, nominal size 34 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 76, 2 fragments, nominal size 29 lines, similarity 89%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 77, 2 fragments, nominal size 43 lines, similarity 90%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 78, 2 fragments, nominal size 14 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 79, 2 fragments, nominal size 36 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 80, 2 fragments, nominal size 13 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 81, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 82, 2 fragments, nominal size 28 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 83, 2 fragments, nominal size 16 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 84, 2 fragments, nominal size 10 lines, similarity 90%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 85, 2 fragments, nominal size 34 lines, similarity 91%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 86, 2 fragments, nominal size 15 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
-Clone class 87, 2 fragments, nominal size 30 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
-Clone class 88, 2 fragments, nominal size 87 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 89, 2 fragments, nominal size 20 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 90, 2 fragments, nominal size 40 lines, similarity 97%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 91, 2 fragments, nominal size 27 lines, similarity 96%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 92, 2 fragments, nominal size 29 lines, similarity 96%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 93, 2 fragments, nominal size 34 lines, similarity 79%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 94, 2 fragments, nominal size 17 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 95, 2 fragments, nominal size 33 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 96, 4 fragments, nominal size 17 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 97, 2 fragments, nominal size 40 lines, similarity 80%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 98, 2 fragments, nominal size 11 lines, similarity 81%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 99, 2 fragments, nominal size 38 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
-Clone class 100, 2 fragments, nominal size 21 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
-Clone class 101, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
-Clone class 102, 2 fragments, nominal size 32 lines, similarity 96%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/RExecTask.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.java
-Clone class 103, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/RExecTask.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.java
-Clone class 104, 2 fragments, nominal size 38 lines, similarity 79%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/RExecTask.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.java
-Clone class 105, 2 fragments, nominal size 10 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/PropertyFile.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Tstamp.java
-Clone class 106, 2 fragments, nominal size 10 lines, similarity 90%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/SchemaValidate.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/SchemaValidate.java
-Clone class 107, 2 fragments, nominal size 16 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOS.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.java
-Clone class 108, 3 fragments, nominal size 19 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckin.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckout.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOSGet.java
-Clone class 109, 2 fragments, nominal size 25 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.java
-Clone class 110, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessageBySftp.java
-Clone class 111, 2 fragments, nominal size 16 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/SSHSession.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/SSHSession.java
-Clone class 112, 2 fragments, nominal size 18 lines, similarity 94%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/TraXLiaison.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/TraXLiaison.java
-Clone class 113, 2 fragments, nominal size 12 lines, similarity 83%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.java
-Clone class 114, 8 fragments, nominal size 17 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSADD.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCREATE.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSHISTORY.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCP.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKOUT.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKIN.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSLABEL.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSGET.java
-Clone class 115, 3 fragments, nominal size 14 lines, similarity 71%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/PumpStreamHandler.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/JarTest.java
-apache_ant/ant/src/main/org/apache/tools/mail/MailMessage.java
-Clone class 116, 2 fragments, nominal size 11 lines, similarity 83%
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Replace.java
-apache_ant/ant/src/main/org/apache/tools/ant/taskdefs/Replace.java
-Clone class 117, 2 fragments, nominal size 12 lines, similarity 83%
-apache_ant/ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Files.java
-Clone class 118, 4 fragments, nominal size 11 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Files.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Files.java
-Clone class 119, 2 fragments, nominal size 15 lines, similarity 73%
-apache_ant/ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Files.java
-Clone class 120, 2 fragments, nominal size 15 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/DirSet.java
-Clone class 121, 26 fragments, nominal size 15 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/BaseResourceCollectionContainer.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Resources.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/selectors/ResourceSelectorContainer.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/BaseSelectorContainer.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/AbstractResourceCollectionWrapper.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/PropertySet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/AbstractSelectorContainer.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/MappedResourceCollection.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/ResourceList.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/FilterChain.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/comparators/DelegatedResourceComparator.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/AntFilterReader.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Tokens.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/selectors/Compare.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/Path.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/comparators/Reverse.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/AbstractClasspathResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/ArchiveResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/ArchiveFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Archives.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/ResourceDecorator.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/depend/ClassfileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Sort.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Restrict.java
-Clone class 122, 4 fragments, nominal size 11 lines, similarity 81%
-apache_ant/ant/src/main/org/apache/tools/ant/types/AntFilterReader.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/Mapper.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/ExtendSelector.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
-Clone class 123, 4 fragments, nominal size 10 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/types/AntFilterReader.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/Mapper.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
-Clone class 124, 2 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/main/org/apache/tools/ant/types/ArchiveFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/ArchiveFileSet.java
-Clone class 125, 2 fragments, nominal size 16 lines, similarity 93%
-apache_ant/ant/src/main/org/apache/tools/ant/types/Assertions.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/Assertions.java
-Clone class 126, 3 fragments, nominal size 29 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/image/Arc.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/image/Ellipse.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/image/Rectangle.java
-Clone class 127, 2 fragments, nominal size 13 lines, similarity 84%
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/image/Rotate.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/image/Scale.java
-Clone class 128, 2 fragments, nominal size 12 lines, similarity 83%
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/image/Scale.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/optional/image/Scale.java
-Clone class 129, 2 fragments, nominal size 20 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/types/PatternSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/PatternSet.java
-Clone class 130, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/types/PatternSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/PatternSet.java
-Clone class 131, 3 fragments, nominal size 14 lines, similarity 85%
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-Clone class 132, 7 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/selectors/ResourceSelectorContainer.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Restrict.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/comparators/DelegatedResourceComparator.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Tokens.java
-Clone class 133, 4 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Files.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
-Clone class 134, 2 fragments, nominal size 23 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/AbstractClasspathResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/ZipResource.java
-Clone class 135, 2 fragments, nominal size 19 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/AbstractResourceCollectionWrapper.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/BaseResourceCollectionContainer.java
-Clone class 136, 5 fragments, nominal size 16 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/AbstractResourceCollectionWrapper.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Resources.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/Files.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/MappedResourceCollection.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/BaseResourceCollectionContainer.java
-Clone class 137, 4 fragments, nominal size 13 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/ArchiveResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/FileResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/comparators/DelegatedResourceComparator.java
-Clone class 138, 2 fragments, nominal size 15 lines, similarity 75%
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/TarResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/ZipResource.java
-Clone class 139, 2 fragments, nominal size 14 lines, similarity 92%
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
-Clone class 140, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
-Clone class 141, 2 fragments, nominal size 13 lines, similarity 84%
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/AbstractSelectorContainer.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/BaseSelectorContainer.java
-Clone class 142, 3 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/AndSelector.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/OrSelector.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/NoneSelector.java
-Clone class 143, 4 fragments, nominal size 19 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/ContainsRegexpSelector.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/FilenameSelector.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/ContainsSelector.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/TypeSelector.java
-Clone class 144, 2 fragments, nominal size 15 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/MappingSelector.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/selectors/PresentSelector.java
-Clone class 145, 2 fragments, nominal size 14 lines, similarity 92%
-apache_ant/ant/src/main/org/apache/tools/ant/types/TarFileSet.java
-apache_ant/ant/src/main/org/apache/tools/ant/types/ZipFileSet.java
-Clone class 146, 2 fragments, nominal size 13 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/ant/util/CollectionUtils.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/CollectionUtils.java
-Clone class 147, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/util/ConcatFileInputStream.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/LeadPipeInputStream.java
-Clone class 148, 2 fragments, nominal size 55 lines, similarity 74%
-apache_ant/ant/src/main/org/apache/tools/ant/util/depend/bcel/AncestorAnalyzer.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/depend/bcel/FullAnalyzer.java
-Clone class 149, 4 fragments, nominal size 13 lines, similarity 73%
-apache_ant/ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
-Clone class 150, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/ant/util/FileUtils.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/FileUtils.java
-Clone class 151, 2 fragments, nominal size 16 lines, similarity 82%
-apache_ant/ant/src/main/org/apache/tools/ant/util/GlobPatternMapper.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/GlobPatternMapper.java
-Clone class 152, 2 fragments, nominal size 17 lines, similarity 88%
-apache_ant/ant/src/main/org/apache/tools/ant/util/JavaEnvUtils.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/JavaEnvUtils.java
-Clone class 153, 2 fragments, nominal size 17 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/util/optional/ScriptRunner.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/optional/ScriptRunner.java
-Clone class 154, 4 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/main/org/apache/tools/ant/util/ReflectUtil.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/ReflectUtil.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/ReflectUtil.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/ReflectUtil.java
-Clone class 155, 3 fragments, nominal size 17 lines, similarity 76%
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/JakartaOroMatcher.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/JakartaRegexpMatcher.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/Jdk14RegexpMatcher.java
-Clone class 156, 3 fragments, nominal size 13 lines, similarity 92%
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/JakartaOroMatcher.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/JakartaRegexpMatcher.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/Jdk14RegexpMatcher.java
-Clone class 157, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/RegexpFactory.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/regexp/RegexpMatcherFactory.java
-Clone class 158, 2 fragments, nominal size 44 lines, similarity 73%
-apache_ant/ant/src/main/org/apache/tools/ant/util/ResourceUtils.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/ResourceUtils.java
-Clone class 159, 2 fragments, nominal size 10 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/ant/util/XMLFragment.java
-apache_ant/ant/src/main/org/apache/tools/ant/util/XMLFragment.java
-Clone class 160, 2 fragments, nominal size 114 lines, similarity 94%
-apache_ant/ant/src/main/org/apache/tools/bzip2/CBZip2OutputStream.java
-apache_ant/ant/src/main/org/apache/tools/bzip2/CBZip2OutputStream.java
-Clone class 161, 2 fragments, nominal size 19 lines, similarity 78%
-apache_ant/ant/src/main/org/apache/tools/tar/TarBuffer.java
-apache_ant/ant/src/main/org/apache/tools/tar/TarBuffer.java
-Clone class 162, 2 fragments, nominal size 11 lines, similarity 81%
-apache_ant/ant/src/main/org/apache/tools/tar/TarEntry.java
-apache_ant/ant/src/main/org/apache/tools/tar/TarEntry.java
-Clone class 163, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/main/org/apache/tools/tar/TarUtils.java
-apache_ant/ant/src/main/org/apache/tools/tar/TarUtils.java
-Clone class 164, 2 fragments, nominal size 23 lines, similarity 100%
-apache_ant/ant/src/main/org/apache/tools/zip/ExtraFieldUtils.java
-apache_ant/ant/src/main/org/apache/tools/zip/ExtraFieldUtils.java
-Clone class 165, 2 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/AntClassLoaderTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/AntClassLoaderTest.java
-Clone class 166, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/BuildFileRule.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
-Clone class 167, 2 fragments, nominal size 12 lines, similarity 91%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/BuildFileRule.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
-Clone class 168, 2 fragments, nominal size 12 lines, similarity 83%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
-Clone class 169, 2 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/IncludeTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/IncludeTest.java
-Clone class 170, 2 fragments, nominal size 13 lines, similarity 76%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
-Clone class 171, 2 fragments, nominal size 19 lines, similarity 94%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
-Clone class 172, 2 fragments, nominal size 11 lines, similarity 90%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/ProjectTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/FileUtilsTest.java
-Clone class 173, 3 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/SubAntTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
-Clone class 174, 3 fragments, nominal size 13 lines, similarity 73%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/SubAntTest.java
-Clone class 175, 2 fragments, nominal size 52 lines, similarity 74%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapterTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapterTest.java
-Clone class 176, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapterTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
-Clone class 177, 2 fragments, nominal size 14 lines, similarity 92%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/cvslib/ChangeLogParserTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/cvslib/ChangeLogParserTest.java
-Clone class 178, 3 fragments, nominal size 10 lines, similarity 90%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ExecuteJavaTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ExecuteWatchdogTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ExecuteJavaTest.java
-Clone class 179, 2 fragments, nominal size 15 lines, similarity 80%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/FailTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/FailTest.java
-Clone class 180, 2 fragments, nominal size 24 lines, similarity 100%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/FixCrLfTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ReplaceTest.java
-Clone class 181, 2 fragments, nominal size 17 lines, similarity 77%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/JavaTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/JavaTest.java
-Clone class 182, 2 fragments, nominal size 17 lines, similarity 70%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ManifestTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ManifestTest.java
-Clone class 183, 2 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/depend/DependTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/depend/DependTest.java
-Clone class 184, 2 fragments, nominal size 25 lines, similarity 92%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/i18n/TranslateTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/FilterSetTest.java
-Clone class 185, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
-Clone class 186, 2 fragments, nominal size 49 lines, similarity 88%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
-Clone class 187, 10 fragments, nominal size 10 lines, similarity 70%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-Clone class 188, 2 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-Clone class 189, 3 fragments, nominal size 12 lines, similarity 83%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-Clone class 190, 2 fragments, nominal size 14 lines, similarity 92%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
-Clone class 191, 8 fragments, nominal size 18 lines, similarity 73%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
-Clone class 192, 2 fragments, nominal size 11 lines, similarity 100%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/TraXLiaisonTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/JAXPUtilsTest.java
-Clone class 193, 4 fragments, nominal size 12 lines, similarity 76%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
-Clone class 194, 2 fragments, nominal size 13 lines, similarity 76%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
-Clone class 195, 2 fragments, nominal size 15 lines, similarity 73%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/SQLExecTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/SQLExecTest.java
-Clone class 196, 2 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/SyncTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/SyncTest.java
-Clone class 197, 2 fragments, nominal size 13 lines, similarity 84%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/TStampTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/TStampTest.java
-Clone class 198, 4 fragments, nominal size 13 lines, similarity 76%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ZipTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ZipTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ZipTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/taskdefs/ZipTest.java
-Clone class 199, 5 fragments, nominal size 17 lines, similarity 70%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/optional/depend/ClassFileSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/optional/depend/ClassFileSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/optional/depend/ClassFileSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/optional/depend/ClassFileSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/optional/depend/ClassFileSetTest.java
-Clone class 200, 2 fragments, nominal size 18 lines, similarity 73%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
-Clone class 201, 3 fragments, nominal size 11 lines, similarity 81%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
-Clone class 202, 3 fragments, nominal size 11 lines, similarity 81%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PermissionsTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PermissionsTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/PermissionsTest.java
-Clone class 203, 2 fragments, nominal size 12 lines, similarity 100%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/BaseSelectorRule.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/BaseSelectorTest.java
-Clone class 204, 2 fragments, nominal size 11 lines, similarity 90%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/BaseSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
-Clone class 205, 2 fragments, nominal size 12 lines, similarity 75%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/BaseSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
-Clone class 206, 2 fragments, nominal size 21 lines, similarity 85%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ContainsSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/FilenameSelectorTest.java
-Clone class 207, 3 fragments, nominal size 11 lines, similarity 72%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
-Clone class 208, 3 fragments, nominal size 13 lines, similarity 71%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
-Clone class 209, 3 fragments, nominal size 10 lines, similarity 80%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
-Clone class 210, 2 fragments, nominal size 11 lines, similarity 90%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
-Clone class 211, 2 fragments, nominal size 56 lines, similarity 89%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/TarFileSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/ZipFileSetTest.java
-Clone class 212, 2 fragments, nominal size 11 lines, similarity 90%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
-Clone class 213, 2 fragments, nominal size 27 lines, similarity 79%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
-Clone class 214, 2 fragments, nominal size 18 lines, similarity 94%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/DOMElementWriterTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/DOMElementWriterTest.java
-Clone class 215, 2 fragments, nominal size 14 lines, similarity 85%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/LayoutPreservingPropertiesTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/LayoutPreservingPropertiesTest.java
-Clone class 216, 2 fragments, nominal size 15 lines, similarity 93%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/PermissionUtilsTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/PermissionUtilsTest.java
-Clone class 217, 2 fragments, nominal size 10 lines, similarity 90%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
-Clone class 218, 3 fragments, nominal size 15 lines, similarity 93%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
-Clone class 219, 2 fragments, nominal size 11 lines, similarity 75%
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
-Clone class 220, 6 fragments, nominal size 20 lines, similarity 77%
-apache_ant/ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
-apache_ant/ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ChopBoxConnector.java
+JHotDraw54b1/src/CH/ifa/draw/standard/ChopBoxConnector.java
+Clone class 34, 2 fragments, nominal size 11 lines, similarity 90%
+JHotDraw54b1/src/CH/ifa/draw/standard/CompositeFigure.java
+JHotDraw54b1/src/CH/ifa/draw/standard/CompositeFigure.java
+Clone class 35, 2 fragments, nominal size 14 lines, similarity 71%
+JHotDraw54b1/src/CH/ifa/draw/standard/CompositeFigure.java
+JHotDraw54b1/src/CH/ifa/draw/standard/CompositeFigure.java
+Clone class 36, 2 fragments, nominal size 14 lines, similarity 78%
+JHotDraw54b1/src/CH/ifa/draw/standard/StandardDrawingView.java
+JHotDraw54b1/src/CH/ifa/draw/standard/StandardDrawingView.java
+Clone class 37, 2 fragments, nominal size 14 lines, similarity 100%
+JHotDraw54b1/src/CH/ifa/draw/util/RedoCommand.java
+JHotDraw54b1/src/CH/ifa/draw/util/UndoCommand.java
