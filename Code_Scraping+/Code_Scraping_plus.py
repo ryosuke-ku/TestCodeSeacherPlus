@@ -6,7 +6,7 @@ import csv
 
 # テスト用のHTML
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
-#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_project_functions-blind-clones/android_project_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/apache_2_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
@@ -15,7 +15,7 @@ import csv
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_maven_functions-blind-clones/apache_ant_maven_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/Server_Projects_functions-blind-clones/Server_Projects_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/RxJava_functions-blind-clones/RxJava_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/RYOSUKE/Desktop/NiCad-5.1/systems/JHotDraw54b1_functions-blind-clones/JHotDraw54b1_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/RYOSUKE/Desktop/NiCad-5.1/systems/JHotDraw54b1_functions-blind-clones/JHotDraw54b1_functions-blind-clones-0.30-classes-withsource.html"
 res = req.urlopen(url)
 
 # HTMLを解析
@@ -66,14 +66,14 @@ codedic = dict(zip(countarray,codearray))
 
 print(codedic.get(1))
 
-production = open(r'C:\Users\RYOSUKE\Desktop\TestCodeSeacherPlus\ProductionCodePath.txt','r',encoding="utf-8_sig")
+production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
 PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
 
 production.close()
 #print(ProductionPath)
 
-Test = open(r'C:\Users\RYOSUKE\Desktop\TestCodeSeacherPlus\TestCodePath.txt','r',encoding="utf-8_sig")
+Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
 TestPath = Test.readlines()
 TPath = [Tline.replace('\n', '') for Tline in TestPath]
 
@@ -171,7 +171,7 @@ for k in data:
 			pass
 
 		if path is None:
-			# print(codedic.get(cnt))
+			print(codedic.get(cnt))
 			cnt += 1
 
 		else:
