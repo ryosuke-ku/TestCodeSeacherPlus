@@ -76,6 +76,13 @@ Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8
 TestPath = Test.readlines()
 TPath = [Tline.replace('\n', '') for Tline in TestPath]
 
+alltest=0
+for p in TPath:
+	if re.match('apache_ant.*?/', p):
+		alltest += 1
+
+print(alltest)
+
 Test.close()
 #print(TestPath)
 
@@ -93,6 +100,7 @@ pt = 0
 totalpairs = 0
 totalfragments = 0
 notest = 0
+reusetest = 0
 
 for i in data:
 	f.write(i)
@@ -115,7 +123,7 @@ for i in data:
 		else:
 			f.write(path) 
 			f.write("\n")
-	
+			reusetest += 1
 			count += 1
 			# print(path)
 	
@@ -151,6 +159,8 @@ print("＜クローンペア＞")
 print("クローンペアの合計数："+ str(round(totalpairs)))
 print("コードフラグメントの合計数："+ str(totalfragments))
 print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
+print("プロジェクト内のすべてのテストの数："+ str(alltest))
+print("再利用候補のテストの数："+ str(reusetest) + " (" + str(round(reusetest/alltest*100, 1)) + "％)")
 print("----------------------------------------------------------------------------------------------------")
 
 r.write("-----------------------------------------------------------------------------------")
@@ -181,4 +191,6 @@ for k in data:
 			# print(s)
 
 		else:
-			cnt += 1 
+			cnt += 1
+
+
