@@ -41,7 +41,7 @@ for product in product_div.find_all(['h3', 'td']):
 	if key and product.name == 'td':
 		try:
 			srccode = product.find('pre')
-			print(srccode.string)
+			# print(srccode.string)
 			codearray.append(srccode.text)
 			product.find('pre').decompose()
 		except AttributeError:
@@ -58,13 +58,12 @@ for product in product_div.find_all(['h3', 'td']):
 		count +=1
 
 
-print(countarray)
+print(len(countarray))
 print(len(codearray))
 # print(data)
 
 codedic = dict(zip(countarray,codearray))
 
-print(codedic.get(1))
 
 production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
@@ -116,6 +115,7 @@ for i in data:
 		else:
 			f.write(path) 
 			f.write("\n")
+	
 			count += 1
 			# print(path)
 	
@@ -140,14 +140,18 @@ for i in data:
 
 # csvFile.close()
 print("\n")
-print("-----------------------------------------------------------------------------------")
-print("テストコードが見つかりませんでした " + str(nt))
-print("クローンClassのうち少なくとも一つのコードフラグメントはテストコードを持っています " + str(pt))
-print("すべてのコードフラグメントがテストコードを持っています " + str(at))
-print("クローンペアの合計数："+ str(totalpairs))
+print("----------------------------------------------------------------------------------------------------")
+print("＜クローンクラス＞")
+print("すべてのクローンClassの数：" + str(nt + pt + at))
+print("テストコードが見つからなかったクローンClassの数：" + str(nt) + " (" + str(round(nt/(nt + pt + at)*100,1)) + "％)")
+print("少なくとも一つのコードフラグメントはテストコードを持っているクローンClassの数：" + str(pt)+ " (" + str(round(pt/(nt + pt + at)*100,1)) + "％)")
+print("すべてのコードフラグメントがテストコードを持っているクローンClassの数：" + str(at) + " (" + str(round(at/(nt + pt + at)*100,1)) + "％)")
+print("----------------------------------------------------------------------------------------------------")
+print("＜クローンペア＞")
+print("クローンペアの合計数："+ str(round(totalpairs)))
 print("コードフラグメントの合計数："+ str(totalfragments))
-print("他のテストを再利用できそうなフラグメントの数："+ str(notest))
-print("-----------------------------------------------------------------------------------")
+print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
+print("----------------------------------------------------------------------------------------------------")
 
 r.write("-----------------------------------------------------------------------------------")
 r.write("\n")
@@ -170,9 +174,11 @@ for k in data:
 		except KeyError:
 			pass
 
-		if path is None:
-			print(codedic.get(cnt))
+
+		if codepath is None:
+			# print(codedic.get(cnt))
 			cnt += 1
+			# print(s)
 
 		else:
 			cnt += 1 
