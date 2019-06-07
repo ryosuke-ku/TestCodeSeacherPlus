@@ -6,7 +6,7 @@ import csv
 
 # テスト用のHTML
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/utility_functions-blind-clones/utility_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_functions-blind-clones/apache_ant_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_project_functions-blind-clones/android_project_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/apache_2_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
@@ -16,6 +16,10 @@ url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_function
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/Server_Projects_functions-blind-clones/Server_Projects_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/RxJava_functions-blind-clones/RxJava_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/RYOSUKE/Desktop/NiCad-5.1/systems/JHotDraw54b1_functions-blind-clones/JHotDraw54b1_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jetty.project_functions-blind-clones/jetty.project_functions-blind-clones-0.30-classes-withsource.html"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jacoco_functions-blind-clones/jacoco_functions-blind-clones-0.30-classes-withsource.html"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/dubbo_functions-blind-clones/dubbo_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30-classes-withsource.html"
 res = req.urlopen(url)
 
 # HTMLを解析
@@ -78,7 +82,7 @@ TPath = [Tline.replace('\n', '') for Tline in TestPath]
 
 alltest=0
 for p in TPath:
-	if re.match('apache_ant.*?/', p):
+	if re.match('flink.*?/', p):
 		alltest += 1
 
 print(alltest)
@@ -88,8 +92,6 @@ Test.close()
 
 dic = dict(zip(PPath,TPath))
 
-# csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf-8')
-# writer = csv.writer(csvFile)
 
 
 f = open('DetectedTestCodePath.txt','w')
@@ -100,7 +102,7 @@ pt = 0
 totalpairs = 0
 totalfragments = 0
 notest = 0
-reusetest = 0
+reusetest = []
 
 for i in data:
 	f.write(i)
@@ -123,10 +125,10 @@ for i in data:
 		else:
 			f.write(path) 
 			f.write("\n")
-			reusetest += 1
+			reusetest.append(path)
 			count += 1
 			# print(path)
-	
+
 	# print(count)
 	judgment = fragments - count
 	if judgment == fragments:
@@ -146,6 +148,10 @@ for i in data:
 	totalpairs += len(data[i])*(len(data[i])-1)/2
 	totalfragments += fragments
 
+print(len(reusetest))
+reusetestpath = list(set(reusetest))
+print(len(reusetestpath))
+
 # csvFile.close()
 print("\n")
 print("----------------------------------------------------------------------------------------------------")
@@ -160,7 +166,7 @@ print("クローンペアの合計数："+ str(round(totalpairs)))
 print("コードフラグメントの合計数："+ str(totalfragments))
 print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
 print("プロジェクト内のすべてのテストの数："+ str(alltest))
-print("再利用候補のテストの数："+ str(reusetest) + " (" + str(round(reusetest/alltest*100, 1)) + "％)")
+print("再利用候補のテストの数："+ str(len(reusetestpath)) + " (" + str(round(len(reusetestpath)/alltest*100, 1)) + "％)")
 print("----------------------------------------------------------------------------------------------------")
 
 r.write("-----------------------------------------------------------------------------------")

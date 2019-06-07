@@ -7,65 +7,71 @@
   <body>
     <table border="1" class="dataframe mystyle">
   <thead>
-    <tr style="text-align: left;">
-      <th><pre>Lines 108 - 117 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
+    <tr style="text-align: center;">
+      <th>Lines 72 - 99 of systems/apache_ant/ant/src/main/org/apache/tools/ant/ArgumentProcessorRegistry.java
 
-    public Response deleteCommentByCid(@PathParam("cid") String idString){
+    private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration&lt;URL&gt; resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
 
-        int cid = toInteger(idString);
-
-        if(cid &lt;= 0){
-
-            return errorMessage(400, "Bad request");
-
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println("Unable to load ArgumentProcessor from service "
+                    + SERVICE_ID + " (" + e.getClass().getName() + ": "
+                    + e.getMessage() + ")");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
         }
+    }</th>
+      <th>private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration&lt;URL&gt; resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
 
-        CommentModel model = new CommentModel();
-
-        model.deleteCommentByCid(cid);
-
-        return Response.status(200)
-
-                .build();
-
-    }</pre></th>
-      <th>public Response deleteCommentByCid(@PathParam("cid") String idString){
-
-        int cid = toInteger(idString);
-
-        if(cid &lt;= 0){
-
-            return errorMessage(400, "Bad request");
-
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println("Unable to load ArgumentProcessor from service "
+                    + SERVICE_ID + " (" + e.getClass().getName() + ": "
+                    + e.getMessage() + ")");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
         }
-
-        CommentModel model = new CommentModel();
-
-        model.deleteCommentByCid(cid);
-
-        return Response.status(200)
-
-                .build();
-
     }</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>\nLines 73 - 82 of systems/main/java/jp/enpit/...</td>
-      <td>\n    public Response deleteUser(@PathParam("u...</td>
-    </tr>
-    <tr>
-      <td>\nLines 122 - 131 of systems/main/java/jp/enpi...</td>
-      <td>\n    public Response deleteCommentsByUid(@Pat...</td>
-    </tr>
-    <tr>
-      <td>\nLines 136 - 145 of systems/main/java/jp/enpi...</td>
-      <td>\n    public Response deleteCommentByRid(@Path...</td>
-    </tr>
-    <tr>
-      <td>\nLines 73 - 82 of systems/main/java/jp/enpit/...</td>
-      <td>\n    public Response deleteComment(@PathParam...</td>
+      <td>\nLines 77 - 114 of systems/apache_ant/ant/src...</td>
+      <td>\n    private void collectProjectHelpers() {\n...</td>
     </tr>
   </tbody>
 </table>

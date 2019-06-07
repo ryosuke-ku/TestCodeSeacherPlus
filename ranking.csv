@@ -1,130 +1,144 @@
 "
-Lines 108 - 117 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
+Lines 72 - 99 of systems/apache_ant/ant/src/main/org/apache/tools/ant/ArgumentProcessorRegistry.java
 
-    public Response deleteCommentByCid(@PathParam(""cid"") String idString){
-        int cid = toInteger(idString);
-        if(cid <= 0){
-            return errorMessage(400, ""Bad request"");
+    private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
+
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ArgumentProcessor from service ""
+                    + SERVICE_ID + "" ("" + e.getClass().getName() + "": ""
+                    + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
         }
-        CommentModel model = new CommentModel();
-        model.deleteCommentByCid(cid);
-        return Response.status(200)
-                .build();
     }
 
 ","
-    public Response deleteCommentByCid(@PathParam(""cid"") String idString){
-        int cid = toInteger(idString);
-        if(cid <= 0){
-            return errorMessage(400, ""Bad request"");
+    private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
+
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ArgumentProcessor from service ""
+                    + SERVICE_ID + "" ("" + e.getClass().getName() + "": ""
+                    + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
         }
-        CommentModel model = new CommentModel();
-        model.deleteCommentByCid(cid);
-        return Response.status(200)
-                .build();
     }
 "
 "
-Lines 73 - 82 of systems/main/java/jp/enpit/facibot/rest/UsersRest.java
+Lines 77 - 114 of systems/apache_ant/ant/src/main/org/apache/tools/ant/ProjectHelperRepository.java
 
-    public Response deleteUser(@PathParam(""uid"") String idString){
-        int uid = toInteger(idString);
-        if(uid <= 0){
-            return errorMessage(400, ""Bad request"");
-        }
-        UserModel model = new UserModel();
-        model.deleteUser(uid);
-        return Response.status(200)
-                .build();
-    }
+    private void collectProjectHelpers() {
+        // First, try the system property
+        Constructor<? extends ProjectHelper> projectHelper = getProjectHelperBySystemProperty();
+        registerProjectHelper(projectHelper);
 
-","
-    public Response deleteUser(@PathParam(""uid"") String idString){
-        int uid = toInteger(idString);
-        if(uid <= 0){
-            return errorMessage(400, ""Bad request"");
-        }
-        UserModel model = new UserModel();
-        model.deleteUser(uid);
-        return Response.status(200)
-                .build();
-    }
-"
-"
-Lines 122 - 131 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
+        // A JDK1.3 'service' ( like in JAXP ). That will plug a helper
+        // automatically if in CLASSPATH, with the right META-INF/services.
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources =
+                    classLoader.getResources(ProjectHelper.SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    projectHelper =
+                        getProjectHelperByService(conn.getInputStream());
+                    registerProjectHelper(projectHelper);
+                }
+            }
 
-    public Response deleteCommentsByUid(@PathParam(""uid"") String idString){
-        int uid = toInteger(idString);
-        if(uid <= 0){
-            return errorMessage(400, ""Bad request"");
+            InputStream systemResource =
+                ClassLoader.getSystemResourceAsStream(ProjectHelper.SERVICE_ID);
+            if (systemResource != null) {
+                projectHelper = getProjectHelperByService(systemResource);
+                registerProjectHelper(projectHelper);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ProjectHelper from service ""
+                               + ProjectHelper.SERVICE_ID + "" (""
+                               + e.getClass().getName()
+                               + "": "" + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
         }
-        CommentModel model = new CommentModel();
-        model.deleteCommentsByUid(uid);
-        return Response.status(200)
-                .build();
-    }
-
-","
-    public Response deleteCommentsByUid(@PathParam(""uid"") String idString){
-        int uid = toInteger(idString);
-        if(uid <= 0){
-            return errorMessage(400, ""Bad request"");
-        }
-        CommentModel model = new CommentModel();
-        model.deleteCommentsByUid(uid);
-        return Response.status(200)
-                .build();
-    }
-"
-"
-Lines 136 - 145 of systems/main/java/jp/enpit/facibot/rest/CommentsRest.java
-
-    public Response deleteCommentByRid(@PathParam(""rid"") String idString){
-        int rid = toInteger(idString);
-        if(rid <= 0){
-            return errorMessage(400, ""Bad request"");
-        }
-        CommentModel model = new CommentModel();
-        model.deleteCommentsByRid(rid);
-        return Response.status(200)
-                .build();
     }
 
 ","
-    public Response deleteCommentByRid(@PathParam(""rid"") String idString){
-        int rid = toInteger(idString);
-        if(rid <= 0){
-            return errorMessage(400, ""Bad request"");
-        }
-        CommentModel model = new CommentModel();
-        model.deleteCommentsByRid(rid);
-        return Response.status(200)
-                .build();
-    }
-"
-"
-Lines 73 - 82 of systems/main/java/jp/enpit/facibot/rest/TalkroomRest.java
+    private void collectProjectHelpers() {
+        // First, try the system property
+        Constructor<? extends ProjectHelper> projectHelper = getProjectHelperBySystemProperty();
+        registerProjectHelper(projectHelper);
 
-    public Response deleteComment(@PathParam(""rid"") String idString){
-        int rid = toInteger(idString);
-        if(rid <= 0){
-            return errorMessage(400, ""Bad request"");
-        }
-        TalkroomModel model = new TalkroomModel();
-        model.deleteTalkroom(rid);
-        return Response.status(200)
-                .build();
-    }
+        // A JDK1.3 'service' ( like in JAXP ). That will plug a helper
+        // automatically if in CLASSPATH, with the right META-INF/services.
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources =
+                    classLoader.getResources(ProjectHelper.SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    projectHelper =
+                        getProjectHelperByService(conn.getInputStream());
+                    registerProjectHelper(projectHelper);
+                }
+            }
 
-","
-    public Response deleteComment(@PathParam(""rid"") String idString){
-        int rid = toInteger(idString);
-        if(rid <= 0){
-            return errorMessage(400, ""Bad request"");
+            InputStream systemResource =
+                ClassLoader.getSystemResourceAsStream(ProjectHelper.SERVICE_ID);
+            if (systemResource != null) {
+                projectHelper = getProjectHelperByService(systemResource);
+                registerProjectHelper(projectHelper);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ProjectHelper from service ""
+                               + ProjectHelper.SERVICE_ID + "" (""
+                               + e.getClass().getName()
+                               + "": "" + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
         }
-        TalkroomModel model = new TalkroomModel();
-        model.deleteTalkroom(rid);
-        return Response.status(200)
-                .build();
     }
 "
