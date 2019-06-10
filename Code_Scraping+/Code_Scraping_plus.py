@@ -19,7 +19,14 @@ import csv
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jetty.project_functions-blind-clones/jetty.project_functions-blind-clones-0.30-classes-withsource.html"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jacoco_functions-blind-clones/jacoco_functions-blind-clones-0.30-classes-withsource.html"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/dubbo_functions-blind-clones/dubbo_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/kafka_functions-blind-clones/kafka_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_camel_functions-blind-clones/apache_camel_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/beam_functions-blind-clones/beam_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/cassandra_functions-blind-clones/cassandra_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/httpcomponents-client_functions-blind-clones/httpcomponents-client_functions-blind-clones-0.30-classes-withsource.html"
+
 res = req.urlopen(url)
 
 # HTMLを解析
@@ -82,7 +89,7 @@ TPath = [Tline.replace('\n', '') for Tline in TestPath]
 
 alltest=0
 for p in TPath:
-	if re.match('flink.*?/', p):
+	if re.match('httpcomponents.*?/', p):
 		alltest += 1
 
 print(alltest)
@@ -165,6 +172,8 @@ print("＜クローンペア＞")
 print("クローンペアの合計数："+ str(round(totalpairs)))
 print("コードフラグメントの合計数："+ str(totalfragments))
 print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
+print("----------------------------------------------------------------------------------------------------")
+print("＜テストコード＞")
 print("プロジェクト内のすべてのテストの数："+ str(alltest))
 print("再利用候補のテストの数："+ str(len(reusetestpath)) + " (" + str(round(len(reusetestpath)/alltest*100, 1)) + "％)")
 print("----------------------------------------------------------------------------------------------------")
