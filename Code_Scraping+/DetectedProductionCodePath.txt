@@ -1,596 +1,777 @@
-Clone class 1, 2 fragments, nominal size 10 lines, similarity 80%
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/ArtifactUtils.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
-Clone class 2, 2 fragments, nominal size 21 lines, similarity 76%
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java
-maven/maven-core/src/main/java/org/apache/maven/project/artifact/ActiveProjectArtifact.java
-Clone class 3, 2 fragments, nominal size 11 lines, similarity 72%
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
-Clone class 4, 4 fragments, nominal size 18 lines, similarity 73%
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-Clone class 5, 25 fragments, nominal size 10 lines, similarity 75%
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/CumulativeScopeArtifactFilter.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/ExclusionSetFilter.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/IncludesArtifactFilter.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/ScopeArtifactFilter.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultExtensionRealmCache.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultPluginArtifactsCache.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultPluginDescriptorCache.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultPluginRealmCache.java
-maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
-maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
-maven/maven-core/src/main/java/org/apache/maven/project/DefaultProjectRealmCache.java
-maven/maven-core/src/main/java/org/apache/maven/project/ReactorModelCache.java
-maven/maven-core/src/main/java/org/apache/maven/project/ReactorModelPool.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelCache.java
-maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/InversionArtifactFilter.java
-maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
-maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/TypeArtifactFilter.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-maven/maven-compat/src/main/java/org/apache/maven/artifact/ArtifactStatus.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
-maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
-Clone class 6, 2 fragments, nominal size 22 lines, similarity 100%
-maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/building/DefaultSettingsProblem.java
-Clone class 7, 3 fragments, nominal size 12 lines, similarity 100%
-maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/building/DefaultSettingsProblem.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelProblem.java
-Clone class 8, 2 fragments, nominal size 10 lines, similarity 70%
-maven/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java
-maven/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java
-Clone class 9, 2 fragments, nominal size 25 lines, similarity 84%
-maven/maven-compat/src/main/java/org/apache/maven/artifact/manager/DefaultWagonManager.java
-maven/maven-compat/src/main/java/org/apache/maven/artifact/manager/DefaultWagonManager.java
-Clone class 10, 2 fragments, nominal size 17 lines, similarity 77%
-maven/maven-compat/src/main/java/org/apache/maven/artifact/repository/DefaultArtifactRepository.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/repository/MavenArtifactRepository.java
-Clone class 11, 2 fragments, nominal size 14 lines, similarity 80%
-maven/maven-compat/src/main/java/org/apache/maven/artifact/repository/layout/FlatRepositoryLayout.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/repository/layout/DefaultRepositoryLayout.java
-Clone class 12, 2 fragments, nominal size 21 lines, similarity 70%
-maven/maven-compat/src/main/java/org/apache/maven/profiles/activation/OperatingSystemProfileActivator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/OperatingSystemProfileActivator.java
-Clone class 13, 4 fragments, nominal size 14 lines, similarity 100%
-maven/maven-compat/src/main/java/org/apache/maven/profiles/activation/OperatingSystemProfileActivator.java
-maven/maven-compat/src/main/java/org/apache/maven/profiles/activation/OperatingSystemProfileActivator.java
-maven/maven-compat/src/main/java/org/apache/maven/profiles/activation/OperatingSystemProfileActivator.java
-maven/maven-compat/src/main/java/org/apache/maven/profiles/activation/OperatingSystemProfileActivator.java
-Clone class 14, 3 fragments, nominal size 49 lines, similarity 77%
-maven/maven-compat/src/main/java/org/apache/maven/profiles/ProfilesConversionUtils.java
-maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
-maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
-Clone class 15, 3 fragments, nominal size 14 lines, similarity 85%
-maven/maven-compat/src/main/java/org/apache/maven/profiles/ProfilesConversionUtils.java
-maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
-maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
-Clone class 16, 24 fragments, nominal size 11 lines, similarity 72%
-maven/maven-compat/src/main/java/org/apache/maven/project/inheritance/DefaultModelInheritanceAssembler.java
-maven/maven-compat/src/main/java/org/apache/maven/project/inheritance/DefaultModelInheritanceAssembler.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-Clone class 17, 2 fragments, nominal size 22 lines, similarity 86%
-maven/maven-compat/src/main/java/org/apache/maven/project/inheritance/DefaultModelInheritanceAssembler.java
-maven/maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java
-Clone class 18, 2 fragments, nominal size 15 lines, similarity 75%
-maven/maven-compat/src/main/java/org/apache/maven/project/inheritance/DefaultModelInheritanceAssembler.java
-maven/maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java
-Clone class 19, 2 fragments, nominal size 17 lines, similarity 82%
-maven/maven-compat/src/main/java/org/apache/maven/project/interpolation/StringSearchModelInterpolator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/StringSearchModelInterpolator.java
-Clone class 20, 3 fragments, nominal size 30 lines, similarity 87%
-maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/path/DefaultModelPathTranslator.java
-maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
-Clone class 21, 2 fragments, nominal size 16 lines, similarity 93%
-maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 22, 4 fragments, nominal size 25 lines, similarity 84%
-maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
-Clone class 23, 2 fragments, nominal size 22 lines, similarity 82%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 24, 3 fragments, nominal size 14 lines, similarity 71%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-maven/maven-core/src/test/java/org/apache/maven/repository/TestRepositorySystem.java
-Clone class 25, 3 fragments, nominal size 15 lines, similarity 80%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/ArtifactDescriptorUtils.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 26, 2 fragments, nominal size 37 lines, similarity 100%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 27, 2 fragments, nominal size 11 lines, similarity 100%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 28, 2 fragments, nominal size 16 lines, similarity 100%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 29, 2 fragments, nominal size 11 lines, similarity 100%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 30, 2 fragments, nominal size 19 lines, similarity 100%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 31, 2 fragments, nominal size 26 lines, similarity 100%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 32, 2 fragments, nominal size 18 lines, similarity 83%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 33, 2 fragments, nominal size 14 lines, similarity 92%
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/resolver/transform/LatestArtifactTransformation.java
-maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/resolver/transform/ReleaseArtifactTransformation.java
-Clone class 34, 2 fragments, nominal size 15 lines, similarity 73%
-maven/maven-compat/src/main/java/org/apache/maven/repository/MetadataResolutionResult.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/ArtifactResolutionResult.java
-Clone class 35, 2 fragments, nominal size 22 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/artifact/metadata/TestMetadataSource.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/metadata/TestMetadataSource.java
-Clone class 36, 2 fragments, nominal size 21 lines, similarity 77%
-maven/maven-compat/src/test/java/org/apache/maven/profiles/manager/DefaultProfileManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/profiles/manager/DefaultProfileManagerTest.java
-Clone class 37, 3 fragments, nominal size 16 lines, similarity 82%
-maven/maven-compat/src/test/java/org/apache/maven/profiles/manager/DefaultProfileManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/profiles/manager/DefaultProfileManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/profiles/manager/DefaultProfileManagerTest.java
-Clone class 38, 2 fragments, nominal size 21 lines, similarity 81%
-maven/maven-compat/src/test/java/org/apache/maven/project/AbstractMavenProjectTestCase.java
-maven/maven-core/src/test/java/org/apache/maven/project/AbstractMavenProjectTestCase.java
-Clone class 39, 5 fragments, nominal size 15 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/project/EmptyLifecycleExecutor.java
-maven/maven-core/src/test/java/org/apache/maven/project/EmptyLifecycleExecutor.java
-maven/maven-compat/src/test/java/org/apache/maven/project/EmptyLifecyclePluginAnalyzer.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/EmptyLifecyclePluginAnalyzer.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/stub/LifeCyclePluginAnalyzerStub.java
-Clone class 40, 5 fragments, nominal size 12 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/project/EmptyLifecycleExecutor.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/EmptyLifecyclePluginAnalyzer.java
-maven/maven-compat/src/test/java/org/apache/maven/project/EmptyLifecyclePluginAnalyzer.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/stub/LifeCyclePluginAnalyzerStub.java
-maven/maven-core/src/test/java/org/apache/maven/project/EmptyLifecycleExecutor.java
-Clone class 41, 7 fragments, nominal size 18 lines, similarity 70%
-maven/maven-compat/src/test/java/org/apache/maven/project/inheritance/t04/ProjectInheritanceTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/inheritance/t08/ProjectInheritanceTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/inheritance/t05/ProjectInheritanceTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/inheritance/t07/ProjectInheritanceTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/inheritance/t06/ProjectInheritanceTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/inheritance/t09/ProjectInheritanceTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/inheritance/t09/ProjectInheritanceTest.java
-Clone class 42, 3 fragments, nominal size 11 lines, similarity 75%
-maven/maven-compat/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-maven/maven-core/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-maven/maven-core/src/test/java/org/apache/maven/repository/TestRepositoryConnector.java
-Clone class 43, 2 fragments, nominal size 14 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-maven/maven-core/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
+Clone class 1, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/AntClassLoader.java
+ant/src/main/org/apache/tools/ant/AntClassLoader.java
+Clone class 2, 2 fragments, nominal size 12 lines, similarity 91%
+ant/src/main/org/apache/tools/ant/ComponentHelper.java
+ant/src/main/org/apache/tools/ant/ComponentHelper.java
+Clone class 3, 2 fragments, nominal size 12 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/ComponentHelper.java
+ant/src/main/org/apache/tools/ant/ComponentHelper.java
+Clone class 4, 2 fragments, nominal size 22 lines, similarity 86%
+ant/src/main/org/apache/tools/ant/DemuxOutputStream.java
+ant/src/main/org/apache/tools/ant/util/LineOrientedOutputStream.java
+Clone class 5, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/DirectoryScanner.java
+ant/src/main/org/apache/tools/ant/DirectoryScanner.java
+Clone class 6, 2 fragments, nominal size 22 lines, similarity 82%
+ant/src/main/org/apache/tools/ant/filters/HeadFilter.java
+ant/src/main/org/apache/tools/ant/filters/TailFilter.java
+Clone class 7, 2 fragments, nominal size 13 lines, similarity 92%
+ant/src/main/org/apache/tools/ant/filters/HeadFilter.java
+ant/src/main/org/apache/tools/ant/filters/TailFilter.java
+Clone class 8, 3 fragments, nominal size 38 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/filters/LineContains.java
+ant/src/main/org/apache/tools/ant/filters/StripLineComments.java
+ant/src/main/org/apache/tools/ant/filters/LineContainsRegExp.java
+Clone class 9, 8 fragments, nominal size 12 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/filters/LineContains.java
+ant/src/main/org/apache/tools/ant/filters/LineContainsRegExp.java
+ant/src/main/org/apache/tools/ant/filters/SuffixLines.java
+ant/src/main/org/apache/tools/ant/filters/StripLineComments.java
+ant/src/main/org/apache/tools/ant/filters/PrefixLines.java
+ant/src/main/org/apache/tools/ant/filters/StripLineBreaks.java
+ant/src/main/org/apache/tools/ant/filters/TabsToSpaces.java
+ant/src/main/org/apache/tools/zip/ZipEntry.java
+Clone class 10, 2 fragments, nominal size 17 lines, similarity 88%
+ant/src/main/org/apache/tools/ant/filters/TokenFilter.java
+ant/src/main/org/apache/tools/ant/filters/TokenFilter.java
+Clone class 11, 2 fragments, nominal size 20 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/helper/DefaultExecutor.java
+ant/src/main/org/apache/tools/ant/helper/IgnoreDependenciesExecutor.java
+Clone class 12, 2 fragments, nominal size 20 lines, similarity 71%
+ant/src/main/org/apache/tools/ant/helper/ProjectHelper2.java
+ant/src/main/org/apache/tools/ant/helper/ProjectHelperImpl.java
+Clone class 13, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
+ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
+Clone class 14, 2 fragments, nominal size 18 lines, similarity 75%
+ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
+ant/src/main/org/apache/tools/ant/listener/CommonsLoggingListener.java
+Clone class 15, 2 fragments, nominal size 11 lines, similarity 81%
+ant/src/main/org/apache/tools/ant/Main.java
+ant/src/main/org/apache/tools/ant/Main.java
+Clone class 16, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/Project.java
+ant/src/main/org/apache/tools/ant/Project.java
+Clone class 17, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/ProjectHelperRepository.java
+ant/src/main/org/apache/tools/ant/ProjectHelperRepository.java
+Clone class 18, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/property/LocalPropertyStack.java
+ant/src/main/org/apache/tools/ant/property/LocalPropertyStack.java
+Clone class 19, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/PropertyHelper.java
+ant/src/main/org/apache/tools/ant/PropertyHelper.java
+Clone class 20, 2 fragments, nominal size 12 lines, similarity 83%
+ant/src/main/org/apache/tools/ant/Target.java
+ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
+Clone class 21, 2 fragments, nominal size 12 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/Target.java
+ant/src/main/org/apache/tools/ant/Target.java
+Clone class 22, 2 fragments, nominal size 14 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/AbstractCvsTask.java
+ant/src/main/org/apache/tools/ant/taskdefs/AbstractCvsTask.java
+Clone class 23, 3 fragments, nominal size 10 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/Concat.java
+ant/src/main/org/apache/tools/ant/taskdefs/SQLExec.java
+ant/src/main/org/apache/tools/ant/taskdefs/Delete.java
+Clone class 24, 2 fragments, nominal size 11 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/condition/AntVersion.java
+ant/src/main/org/apache/tools/ant/taskdefs/condition/JavaVersion.java
+Clone class 25, 2 fragments, nominal size 21 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/condition/AntVersion.java
+ant/src/main/org/apache/tools/ant/taskdefs/condition/JavaVersion.java
+Clone class 26, 2 fragments, nominal size 13 lines, similarity 92%
+ant/src/main/org/apache/tools/ant/taskdefs/condition/IsLastModified.java
+ant/src/main/org/apache/tools/ant/taskdefs/Touch.java
+Clone class 27, 2 fragments, nominal size 15 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/taskdefs/condition/ParserSupports.java
+ant/src/main/org/apache/tools/ant/taskdefs/condition/ParserSupports.java
+Clone class 28, 2 fragments, nominal size 18 lines, similarity 78%
+ant/src/main/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.java
+ant/src/main/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.java
+Clone class 29, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/Ear.java
+ant/src/main/org/apache/tools/ant/taskdefs/War.java
+Clone class 30, 2 fragments, nominal size 16 lines, similarity 87%
+ant/src/main/org/apache/tools/ant/taskdefs/GUnzip.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/xz/Unxz.java
+Clone class 31, 2 fragments, nominal size 28 lines, similarity 75%
+ant/src/main/org/apache/tools/ant/taskdefs/HostInfo.java
+ant/src/main/org/apache/tools/ant/taskdefs/HostInfo.java
+Clone class 32, 2 fragments, nominal size 23 lines, similarity 78%
+ant/src/main/org/apache/tools/ant/taskdefs/launcher/PerlScriptCommandLauncher.java
+ant/src/main/org/apache/tools/ant/taskdefs/launcher/ScriptCommandLauncher.java
+Clone class 33, 2 fragments, nominal size 17 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/taskdefs/MacroDef.java
+ant/src/main/org/apache/tools/ant/taskdefs/Manifest.java
+Clone class 34, 3 fragments, nominal size 10 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/MacroDef.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/EchoProperties.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/SchemaValidate.java
+Clone class 35, 2 fragments, nominal size 20 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/MakeUrl.java
+ant/src/main/org/apache/tools/ant/taskdefs/MakeUrl.java
+Clone class 36, 2 fragments, nominal size 11 lines, similarity 75%
+ant/src/main/org/apache/tools/ant/taskdefs/Manifest.java
+ant/src/main/org/apache/tools/ant/taskdefs/Manifest.java
+Clone class 37, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/Cab.java
+ant/src/main/org/apache/tools/ant/util/JavaEnvUtils.java
+Clone class 38, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheck.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ccm/CCMReconfigure.java
+Clone class 39, 13 fragments, nominal size 17 lines, similarity 73%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnlock.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCUpdate.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnCheckout.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkelem.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkdir.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCLock.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.java
+Clone class 40, 2 fragments, nominal size 23 lines, similarity 79%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.java
+Clone class 41, 5 fragments, nominal size 24 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.java
+Clone class 42, 2 fragments, nominal size 13 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/clearcase/ClearCase.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/pvcs/Pvcs.java
+Clone class 43, 6 fragments, nominal size 15 lines, similarity 86%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.java
 Clone class 44, 3 fragments, nominal size 10 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-maven/maven-core/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/repository/LegacyLocalRepositoryManager.java
-Clone class 45, 3 fragments, nominal size 10 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-maven/maven-core/src/main/java/org/apache/maven/artifact/repository/LegacyLocalRepositoryManager.java
-maven/maven-core/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-Clone class 46, 2 fragments, nominal size 17 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-maven/maven-core/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java
-Clone class 47, 3 fragments, nominal size 16 lines, similarity 77%
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-Clone class 48, 2 fragments, nominal size 24 lines, similarity 84%
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-Clone class 49, 3 fragments, nominal size 27 lines, similarity 92%
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
-Clone class 50, 4 fragments, nominal size 16 lines, similarity 76%
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultUpdateCheckManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultUpdateCheckManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultUpdateCheckManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultUpdateCheckManagerTest.java
-Clone class 51, 2 fragments, nominal size 15 lines, similarity 87%
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultUpdateCheckManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultUpdateCheckManagerTest.java
-Clone class 52, 2 fragments, nominal size 11 lines, similarity 90%
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultWagonManagerTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultWagonManagerTest.java
-Clone class 53, 2 fragments, nominal size 11 lines, similarity 81%
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-Clone class 54, 2 fragments, nominal size 12 lines, similarity 75%
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-Clone class 55, 4 fragments, nominal size 10 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/DefaultArtifactCollectorTest.java
-Clone class 56, 2 fragments, nominal size 14 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositoryLayout.java
-maven/maven-core/src/test/java/org/apache/maven/repository/LegacyRepositoryLayout.java
-Clone class 57, 2 fragments, nominal size 13 lines, similarity 100%
-maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
-maven/maven-core/src/test/java/org/apache/maven/AbstractCoreMavenComponentTestCase.java
-Clone class 58, 2 fragments, nominal size 16 lines, similarity 93%
-maven/maven-compat/src/test/java/org/apache/maven/repository/metadata/DefaultClasspathTransformationTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/metadata/DefaultGraphConflictResolverTest.java
-Clone class 59, 3 fragments, nominal size 15 lines, similarity 93%
-maven/maven-compat/src/test/java/org/apache/maven/repository/metadata/DefaultGraphConflictResolverTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/metadata/DefaultGraphConflictResolverTest.java
-maven/maven-compat/src/test/java/org/apache/maven/repository/metadata/DefaultGraphConflictResolverTest.java
-Clone class 60, 2 fragments, nominal size 21 lines, similarity 100%
-maven/maven-core/src/main/java/org/apache/maven/artifact/factory/DefaultArtifactFactory.java
-maven/maven-core/src/main/java/org/apache/maven/bridge/MavenRepositorySystem.java
-Clone class 61, 2 fragments, nominal size 13 lines, similarity 92%
-maven/maven-core/src/main/java/org/apache/maven/artifact/repository/MavenArtifactRepository.java
-maven/maven-core/src/main/java/org/apache/maven/repository/DelegatingLocalArtifactRepository.java
-Clone class 62, 2 fragments, nominal size 12 lines, similarity 83%
-maven/maven-core/src/main/java/org/apache/maven/configuration/BasedirBeanConfigurationPathTranslator.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/PluginParameterExpressionEvaluator.java
-Clone class 63, 3 fragments, nominal size 12 lines, similarity 75%
-maven/maven-core/src/main/java/org/apache/maven/eventspy/internal/EventSpyDispatcher.java
-maven/maven-core/src/main/java/org/apache/maven/eventspy/internal/EventSpyDispatcher.java
-maven/maven-core/src/main/java/org/apache/maven/eventspy/internal/EventSpyDispatcher.java
-Clone class 64, 4 fragments, nominal size 10 lines, similarity 90%
-maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequest.java
-maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequest.java
-maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequest.java
-maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequest.java
-Clone class 65, 2 fragments, nominal size 10 lines, similarity 100%
-maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulator.java
-maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulator.java
-Clone class 66, 2 fragments, nominal size 45 lines, similarity 97%
-maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulator.java
-maven/maven-embedder/src/main/java/org/apache/maven/cli/configuration/SettingsXmlConfigurationProcessor.java
-Clone class 67, 2 fragments, nominal size 10 lines, similarity 90%
-maven/maven-core/src/main/java/org/apache/maven/execution/scope/internal/MojoExecutionScope.java
-maven/maven-core/src/main/java/org/apache/maven/session/scope/internal/SessionScope.java
-Clone class 68, 2 fragments, nominal size 23 lines, similarity 100%
-maven/maven-core/src/main/java/org/apache/maven/execution/scope/internal/MojoExecutionScope.java
-maven/maven-core/src/main/java/org/apache/maven/session/scope/internal/SessionScope.java
-Clone class 69, 2 fragments, nominal size 16 lines, similarity 75%
-maven/maven-core/src/main/java/org/apache/maven/extension/internal/CoreExtensionEntry.java
-maven/maven-core/src/main/java/org/apache/maven/extension/internal/CoreExtensionEntry.java
-Clone class 70, 2 fragments, nominal size 22 lines, similarity 82%
-maven/maven-core/src/main/java/org/apache/maven/lifecycle/internal/DefaultLifecycleTaskSegmentCalculator.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/stub/LifecycleTaskSegmentCalculatorStub.java
-Clone class 71, 3 fragments, nominal size 11 lines, similarity 72%
-maven/maven-core/src/main/java/org/apache/maven/lifecycle/internal/DefaultLifecycleTaskSegmentCalculator.java
-maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/building/DefaultSettingsBuilder.java
-Clone class 72, 2 fragments, nominal size 14 lines, similarity 85%
-maven/maven-core/src/main/java/org/apache/maven/lifecycle/mapping/Lifecycle.java
-maven/maven-core/src/main/java/org/apache/maven/lifecycle/mapping/LifecyclePhase.java
-Clone class 73, 3 fragments, nominal size 10 lines, similarity 70%
-maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
-maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
-maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
-Clone class 74, 2 fragments, nominal size 17 lines, similarity 88%
-maven/maven-core/src/main/java/org/apache/maven/plugin/CacheUtils.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/CacheUtils.java
-Clone class 75, 3 fragments, nominal size 10 lines, similarity 100%
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultExtensionRealmCache.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultPluginRealmCache.java
-maven/maven-core/src/main/java/org/apache/maven/project/DefaultProjectRealmCache.java
-Clone class 76, 2 fragments, nominal size 23 lines, similarity 76%
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultPluginArtifactsCache.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/DefaultPluginRealmCache.java
-Clone class 77, 2 fragments, nominal size 17 lines, similarity 88%
-maven/maven-core/src/main/java/org/apache/maven/plugin/internal/DefaultPluginManager.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/internal/DefaultPluginManager.java
-Clone class 78, 2 fragments, nominal size 13 lines, similarity 76%
-maven/maven-core/src/main/java/org/apache/maven/plugin/internal/DefaultPluginManager.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/internal/DefaultPluginManager.java
-Clone class 79, 2 fragments, nominal size 11 lines, similarity 100%
-maven/maven-core/src/main/java/org/apache/maven/plugin/prefix/internal/DefaultPluginPrefixResolver.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/version/internal/DefaultPluginVersionResolver.java
-Clone class 80, 2 fragments, nominal size 11 lines, similarity 100%
-maven/maven-core/src/main/java/org/apache/maven/plugin/prefix/internal/DefaultPluginPrefixResolver.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/version/internal/DefaultPluginVersionResolver.java
-Clone class 81, 2 fragments, nominal size 16 lines, similarity 100%
-maven/maven-core/src/main/java/org/apache/maven/plugin/prefix/NoPluginFoundForPrefixException.java
-maven/maven-core/src/main/java/org/apache/maven/plugin/version/PluginVersionResolutionException.java
-Clone class 82, 2 fragments, nominal size 12 lines, similarity 91%
-maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
-maven/maven-core/src/main/java/org/apache/maven/RepositoryUtils.java
-Clone class 83, 2 fragments, nominal size 17 lines, similarity 94%
-maven/maven-core/src/main/java/org/apache/maven/project/DefaultProjectBuildingRequest.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuildingRequest.java
-Clone class 84, 4 fragments, nominal size 15 lines, similarity 70%
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-Clone class 85, 2 fragments, nominal size 23 lines, similarity 76%
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-Clone class 86, 2 fragments, nominal size 11 lines, similarity 90%
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-Clone class 87, 4 fragments, nominal size 19 lines, similarity 90%
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
-Clone class 88, 2 fragments, nominal size 12 lines, similarity 83%
-maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
-Clone class 89, 4 fragments, nominal size 18 lines, similarity 83%
-maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
-maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
-Clone class 90, 2 fragments, nominal size 11 lines, similarity 75%
-maven/maven-core/src/main/java/org/apache/maven/project/ReactorModelCache.java
-maven/maven-core/src/main/java/org/apache/maven/project/ReactorModelPool.java
-Clone class 91, 2 fragments, nominal size 18 lines, similarity 94%
-maven/maven-core/src/main/java/org/apache/maven/RepositoryUtils.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/ArtifactDescriptorReaderDelegate.java
-Clone class 92, 2 fragments, nominal size 24 lines, similarity 84%
-maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/building/DefaultSettingsBuilder.java
-Clone class 93, 2 fragments, nominal size 19 lines, similarity 71%
-maven/maven-core/src/main/java/org/apache/maven/toolchain/building/ToolchainsBuildingException.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/building/SettingsBuildingException.java
-Clone class 94, 2 fragments, nominal size 12 lines, similarity 83%
-maven/maven-core/src/main/java/org/apache/maven/toolchain/merge/MavenToolchainMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-Clone class 95, 2 fragments, nominal size 14 lines, similarity 85%
-maven/maven-core/src/test/java/org/apache/maven/exception/DefaultExceptionHandlerTest.java
-maven/maven-core/src/test/java/org/apache/maven/exception/DefaultExceptionHandlerTest.java
-Clone class 96, 2 fragments, nominal size 12 lines, similarity 100%
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/BuildListCalculatorTest.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/LifecycleTaskSegmentCalculatorImplTest.java
-Clone class 97, 2 fragments, nominal size 11 lines, similarity 75%
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/stub/LifecycleExecutionPlanCalculatorStub.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/stub/LifecycleExecutionPlanCalculatorStub.java
-Clone class 98, 2 fragments, nominal size 13 lines, similarity 71%
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/stub/PluginPrefixResolverStub.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/internal/stub/PluginVersionResolverStub.java
-Clone class 99, 3 fragments, nominal size 13 lines, similarity 84%
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/LifecycleExecutorTest.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/LifecycleExecutorTest.java
-maven/maven-core/src/test/java/org/apache/maven/lifecycle/LifecycleExecutorTest.java
-Clone class 100, 4 fragments, nominal size 14 lines, similarity 85%
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExceptionTest.java
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExceptionTest.java
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExceptionTest.java
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExceptionTest.java
-Clone class 101, 2 fragments, nominal size 14 lines, similarity 85%
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExpressionEvaluatorTest.java
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExpressionEvaluatorTest.java
-Clone class 102, 2 fragments, nominal size 10 lines, similarity 90%
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExpressionEvaluatorTest.java
-maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExpressionEvaluatorTest.java
-Clone class 103, 2 fragments, nominal size 10 lines, similarity 70%
-maven/maven-core/src/test/java/org/apache/maven/project/DefaultMavenProjectBuilderTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/DefaultMavenProjectBuilderTest.java
-Clone class 104, 4 fragments, nominal size 10 lines, similarity 80%
-maven/maven-core/src/test/java/org/apache/maven/project/DefaultMavenProjectBuilderTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/DefaultMavenProjectBuilderTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/DefaultMavenProjectBuilderTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/DefaultMavenProjectBuilderTest.java
-Clone class 105, 2 fragments, nominal size 15 lines, similarity 86%
-maven/maven-core/src/test/java/org/apache/maven/project/PomConstructionTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/PomConstructionTest.java
-Clone class 106, 2 fragments, nominal size 10 lines, similarity 90%
-maven/maven-core/src/test/java/org/apache/maven/project/PomConstructionTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/PomConstructionTest.java
-Clone class 107, 2 fragments, nominal size 20 lines, similarity 95%
-maven/maven-core/src/test/java/org/apache/maven/project/PomConstructionTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/PomConstructionTest.java
-Clone class 108, 2 fragments, nominal size 13 lines, similarity 76%
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectBuilderTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectBuilderTest.java
-Clone class 109, 12 fragments, nominal size 12 lines, similarity 75%
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
-Clone class 110, 3 fragments, nominal size 11 lines, similarity 72%
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectSorterTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectSorterTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectSorterTest.java
-Clone class 111, 2 fragments, nominal size 24 lines, similarity 73%
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectSorterTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectSorterTest.java
-Clone class 112, 2 fragments, nominal size 11 lines, similarity 90%
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectSorterTest.java
-maven/maven-core/src/test/java/org/apache/maven/project/ProjectSorterTest.java
-Clone class 113, 2 fragments, nominal size 17 lines, similarity 88%
-maven/maven-core/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java
-maven/maven-core/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java
-Clone class 114, 2 fragments, nominal size 11 lines, similarity 72%
-maven/maven-core/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java
-maven/maven-core/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java
-Clone class 115, 2 fragments, nominal size 12 lines, similarity 75%
-maven/maven-core/src/test/java/org/apache/maven/toolchain/DefaultToolchainManagerPrivateTest.java
-maven/maven-core/src/test/java/org/apache/maven/toolchain/DefaultToolchainManagerPrivateTest.java
-Clone class 116, 2 fragments, nominal size 11 lines, similarity 81%
-maven/maven-core/src/test/java/org/apache/maven/toolchain/DefaultToolchainManagerTest.java
-maven/maven-core/src/test/java/org/apache/maven/toolchain/DefaultToolchainManagerTest.java
-Clone class 117, 2 fragments, nominal size 11 lines, similarity 100%
-maven/maven-embedder/src/main/java/org/apache/maven/cli/configuration/SettingsXmlConfigurationProcessor.java
-maven/maven-embedder/src/main/java/org/apache/maven/cli/MavenCli.java
-Clone class 118, 2 fragments, nominal size 15 lines, similarity 93%
-maven/maven-embedder/src/main/java/org/apache/maven/cli/logging/impl/Log4j2Configuration.java
-maven/maven-embedder/src/main/java/org/apache/maven/cli/logging/impl/Slf4jSimpleConfiguration.java
-Clone class 119, 2 fragments, nominal size 10 lines, similarity 100%
-maven/maven-embedder/src/main/java/org/apache/maven/cli/transfer/AbstractMavenTransferListener.java
-maven/maven-embedder/src/main/java/org/apache/maven/cli/transfer/Slf4jMavenTransferListener.java
-Clone class 120, 2 fragments, nominal size 19 lines, similarity 100%
-maven/maven-embedder/src/main/java/org/apache/maven/cli/transfer/AbstractMavenTransferListener.java
-maven/maven-embedder/src/main/java/org/apache/maven/cli/transfer/Slf4jMavenTransferListener.java
-Clone class 121, 27 fragments, nominal size 18 lines, similarity 71%
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/DefaultProfileInjector.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/DefaultProfileInjector.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/management/DefaultPluginManagementInjector.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/DefaultProfileInjector.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/management/DefaultPluginManagementInjector.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
-Clone class 122, 4 fragments, nominal size 10 lines, similarity 81%
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
-Clone class 123, 7 fragments, nominal size 10 lines, similarity 100%
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-Clone class 124, 4 fragments, nominal size 12 lines, similarity 83%
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
-maven/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/FieldRefCPInfo.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/MethodRefCPInfo.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/depend/constantpool/InterfaceMethodRefCPInfo.java
+Clone class 45, 3 fragments, nominal size 24 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.java
+Clone class 46, 2 fragments, nominal size 18 lines, similarity 77%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/DescriptorHandler.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/DescriptorHandler.java
+Clone class 47, 2 fragments, nominal size 104 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicDeploymentTool.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.java
+Clone class 48, 2 fragments, nominal size 22 lines, similarity 86%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/Extension.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/Specification.java
+Clone class 49, 27 fragments, nominal size 14 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/ExtensionSet.java
+ant/src/main/org/apache/tools/ant/types/resources/MappedResourceCollection.java
+ant/src/main/org/apache/tools/ant/types/resources/comparators/DelegatedResourceComparator.java
+ant/src/main/org/apache/tools/ant/types/Path.java
+ant/src/main/org/apache/tools/ant/types/resources/selectors/ResourceSelectorContainer.java
+ant/src/main/org/apache/tools/ant/types/selectors/BaseSelectorContainer.java
+ant/src/main/org/apache/tools/ant/types/resources/ResourceList.java
+ant/src/main/org/apache/tools/ant/types/AntFilterReader.java
+ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
+ant/src/main/org/apache/tools/ant/types/FilterChain.java
+ant/src/main/org/apache/tools/ant/types/resources/BaseResourceCollectionContainer.java
+ant/src/main/org/apache/tools/ant/types/PropertySet.java
+ant/src/main/org/apache/tools/ant/types/selectors/AbstractSelectorContainer.java
+ant/src/main/org/apache/tools/ant/types/resources/AbstractClasspathResource.java
+ant/src/main/org/apache/tools/ant/types/resources/Resources.java
+ant/src/main/org/apache/tools/ant/types/resources/comparators/Reverse.java
+ant/src/main/org/apache/tools/ant/types/resources/AbstractResourceCollectionWrapper.java
+ant/src/main/org/apache/tools/ant/types/resources/selectors/Compare.java
+ant/src/main/org/apache/tools/ant/types/resources/ArchiveResource.java
+ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
+ant/src/main/org/apache/tools/ant/types/ArchiveFileSet.java
+ant/src/main/org/apache/tools/ant/types/resources/ResourceDecorator.java
+ant/src/main/org/apache/tools/ant/types/resources/Archives.java
+ant/src/main/org/apache/tools/ant/types/resources/Tokens.java
+ant/src/main/org/apache/tools/ant/types/optional/depend/ClassfileSet.java
+ant/src/main/org/apache/tools/ant/types/resources/Restrict.java
+ant/src/main/org/apache/tools/ant/types/resources/Sort.java
+Clone class 50, 2 fragments, nominal size 13 lines, similarity 78%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/JarLibAvailableTask.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/extension/JarLibDisplayTask.java
+Clone class 51, 2 fragments, nominal size 29 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/image/Image.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/image/ImageIOTask.java
+Clone class 52, 2 fragments, nominal size 20 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/image/Image.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/image/ImageIOTask.java
+Clone class 53, 2 fragments, nominal size 26 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/javacc/JJDoc.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/javacc/JJTree.java
+Clone class 54, 2 fragments, nominal size 12 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Gcjh.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Kaffeh.java
+Clone class 55, 2 fragments, nominal size 30 lines, similarity 93%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Gcjh.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/javah/Kaffeh.java
+Clone class 56, 3 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.java
+Clone class 57, 2 fragments, nominal size 18 lines, similarity 73%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.java
+Clone class 58, 2 fragments, nominal size 15 lines, similarity 93%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.java
+Clone class 59, 3 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.java
+Clone class 60, 5 fragments, nominal size 10 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTest.java
+ant/src/main/org/apache/tools/ant/types/CommandlineJava.java
+ant/src/main/org/apache/tools/ant/types/resources/BaseResourceCollectionContainer.java
+ant/src/main/org/apache/tools/ant/types/PatternSet.java
+ant/src/main/org/apache/tools/ant/types/resources/MappedResourceCollection.java
+Clone class 61, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/AbstractJUnitResultFormatter.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/AbstractJUnitResultFormatter.java
+Clone class 62, 2 fragments, nominal size 15 lines, similarity 86%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/confined/JUnitLauncherTask.java
+ant/src/main/org/apache/tools/ant/util/SplitClassLoader.java
+Clone class 63, 2 fragments, nominal size 32 lines, similarity 71%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/confined/SingleTestClass.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/confined/TestClasses.java
+Clone class 64, 2 fragments, nominal size 33 lines, similarity 73%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/confined/SingleTestClass.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/confined/TestClasses.java
+Clone class 65, 2 fragments, nominal size 16 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/LegacyXmlResultFormatter.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/LegacyXmlResultFormatter.java
+Clone class 66, 2 fragments, nominal size 10 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/LegacyXmlResultFormatter.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/junitlauncher/LegacyXmlResultFormatter.java
+Clone class 67, 2 fragments, nominal size 24 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 68, 2 fragments, nominal size 21 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 69, 2 fragments, nominal size 43 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 70, 2 fragments, nominal size 54 lines, similarity 87%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 71, 2 fragments, nominal size 13 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 72, 2 fragments, nominal size 34 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 73, 2 fragments, nominal size 28 lines, similarity 89%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 74, 2 fragments, nominal size 43 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 75, 2 fragments, nominal size 13 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 76, 2 fragments, nominal size 32 lines, similarity 87%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 77, 2 fragments, nominal size 12 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 78, 2 fragments, nominal size 12 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 79, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 80, 2 fragments, nominal size 38 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 81, 2 fragments, nominal size 15 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
+Clone class 82, 2 fragments, nominal size 30 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
+Clone class 83, 2 fragments, nominal size 16 lines, similarity 75%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 84, 2 fragments, nominal size 39 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 85, 2 fragments, nominal size 27 lines, similarity 88%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 86, 2 fragments, nominal size 28 lines, similarity 96%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 87, 2 fragments, nominal size 32 lines, similarity 78%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 88, 4 fragments, nominal size 17 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 89, 2 fragments, nominal size 40 lines, similarity 80%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 90, 2 fragments, nominal size 11 lines, similarity 81%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java
+Clone class 91, 2 fragments, nominal size 25 lines, similarity 92%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
+Clone class 92, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java
+Clone class 93, 2 fragments, nominal size 32 lines, similarity 96%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/RExecTask.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.java
+Clone class 94, 2 fragments, nominal size 12 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/RExecTask.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.java
+Clone class 95, 2 fragments, nominal size 43 lines, similarity 81%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/RExecTask.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.java
+Clone class 96, 2 fragments, nominal size 10 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/PropertyFile.java
+ant/src/main/org/apache/tools/ant/taskdefs/Tstamp.java
+Clone class 97, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/SchemaValidate.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/SchemaValidate.java
+Clone class 98, 2 fragments, nominal size 16 lines, similarity 75%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOS.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.java
+Clone class 99, 3 fragments, nominal size 19 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckin.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckout.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/sos/SOSGet.java
+Clone class 100, 2 fragments, nominal size 24 lines, similarity 83%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.java
+Clone class 101, 2 fragments, nominal size 10 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessageBySftp.java
+Clone class 102, 2 fragments, nominal size 14 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/SSHSession.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/ssh/SSHSession.java
+Clone class 103, 2 fragments, nominal size 18 lines, similarity 94%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/TraXLiaison.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/TraXLiaison.java
+Clone class 104, 2 fragments, nominal size 12 lines, similarity 83%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.java
+Clone class 105, 8 fragments, nominal size 17 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSADD.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKOUT.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSHISTORY.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKIN.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCREATE.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCP.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSGET.java
+ant/src/main/org/apache/tools/ant/taskdefs/optional/vss/MSVSSLABEL.java
+Clone class 106, 2 fragments, nominal size 11 lines, similarity 83%
+ant/src/main/org/apache/tools/ant/taskdefs/Replace.java
+ant/src/main/org/apache/tools/ant/taskdefs/Replace.java
+Clone class 107, 2 fragments, nominal size 12 lines, similarity 83%
+ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
+ant/src/main/org/apache/tools/ant/types/resources/Files.java
+Clone class 108, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
+ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
+Clone class 109, 2 fragments, nominal size 13 lines, similarity 78%
+ant/src/main/org/apache/tools/ant/types/AbstractFileSet.java
+ant/src/main/org/apache/tools/ant/types/selectors/AbstractSelectorContainer.java
+Clone class 110, 4 fragments, nominal size 11 lines, similarity 81%
+ant/src/main/org/apache/tools/ant/types/AntFilterReader.java
+ant/src/main/org/apache/tools/ant/types/Mapper.java
+ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
+ant/src/main/org/apache/tools/ant/types/selectors/ExtendSelector.java
+Clone class 111, 4 fragments, nominal size 10 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/AntFilterReader.java
+ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
+ant/src/main/org/apache/tools/ant/types/XMLCatalog.java
+ant/src/main/org/apache/tools/ant/types/Mapper.java
+Clone class 112, 2 fragments, nominal size 16 lines, similarity 93%
+ant/src/main/org/apache/tools/ant/types/Assertions.java
+ant/src/main/org/apache/tools/ant/types/Assertions.java
+Clone class 113, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/types/FilterSet.java
+ant/src/main/org/apache/tools/ant/types/resources/ZipResource.java
+Clone class 114, 4 fragments, nominal size 25 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/types/optional/image/Arc.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Ellipse.java
+ant/src/main/org/apache/tools/ant/types/optional/image/Ellipse.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Arc.java
+Clone class 115, 2 fragments, nominal size 34 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/optional/image/ColorMapper.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/ColorMapper.java
+Clone class 116, 2 fragments, nominal size 16 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/types/optional/image/Draw.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Draw.java
+Clone class 117, 2 fragments, nominal size 34 lines, similarity 88%
+ant/src/main/org/apache/tools/ant/types/optional/image/Rectangle.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Rectangle.java
+Clone class 118, 2 fragments, nominal size 10 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/optional/image/Scale.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Scale.java
+Clone class 119, 2 fragments, nominal size 27 lines, similarity 81%
+ant/src/main/org/apache/tools/ant/types/optional/image/Scale.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Scale.java
+Clone class 120, 3 fragments, nominal size 12 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/types/optional/image/Scale.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Scale.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Rotate.java
+Clone class 121, 2 fragments, nominal size 10 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/optional/image/Scale.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Scale.java
+Clone class 122, 2 fragments, nominal size 21 lines, similarity 95%
+ant/src/main/org/apache/tools/ant/types/optional/image/Text.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Text.java
+Clone class 123, 2 fragments, nominal size 10 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/optional/image/Text.java
+ant/src/main/org/apache/tools/ant/types/optional/imageio/Text.java
+Clone class 124, 2 fragments, nominal size 18 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/types/PatternSet.java
+ant/src/main/org/apache/tools/ant/types/PatternSet.java
 Clone class 125, 2 fragments, nominal size 11 lines, similarity 100%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuildingRequest.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/building/DefaultSettingsBuildingRequest.java
-Clone class 126, 2 fragments, nominal size 40 lines, similarity 83%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/DefaultProfileInjector.java
-Clone class 127, 2 fragments, nominal size 11 lines, similarity 90%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/io/DefaultModelWriter.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/io/DefaultSettingsWriter.java
-Clone class 128, 4 fragments, nominal size 12 lines, similarity 83%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-Clone class 129, 2 fragments, nominal size 26 lines, similarity 100%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-Clone class 130, 2 fragments, nominal size 15 lines, similarity 100%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
-Clone class 131, 4 fragments, nominal size 11 lines, similarity 100%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/FileProfileActivator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/PropertyProfileActivator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/OperatingSystemProfileActivator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java
-Clone class 132, 4 fragments, nominal size 10 lines, similarity 100%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/OperatingSystemProfileActivator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/OperatingSystemProfileActivator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/OperatingSystemProfileActivator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/OperatingSystemProfileActivator.java
-Clone class 133, 2 fragments, nominal size 11 lines, similarity 100%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-Clone class 134, 2 fragments, nominal size 10 lines, similarity 100%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-Clone class 135, 2 fragments, nominal size 10 lines, similarity 70%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/validation/DefaultSettingsValidator.java
-Clone class 136, 2 fragments, nominal size 12 lines, similarity 83%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-maven/maven-settings-builder/src/main/java/org/apache/maven/settings/validation/DefaultSettingsValidator.java
-Clone class 137, 2 fragments, nominal size 10 lines, similarity 70%
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-maven/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java
-Clone class 138, 6 fragments, nominal size 11 lines, similarity 75%
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-Clone class 139, 2 fragments, nominal size 13 lines, similarity 84%
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/AbstractModelInterpolatorTest.java
-Clone class 140, 8 fragments, nominal size 15 lines, similarity 70%
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
-Clone class 141, 2 fragments, nominal size 10 lines, similarity 70%
-maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
-Clone class 142, 2 fragments, nominal size 16 lines, similarity 93%
-maven/maven-model-builder/src/test/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivatorTest.java
-maven/maven-model-builder/src/test/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivatorTest.java
-Clone class 143, 2 fragments, nominal size 23 lines, similarity 70%
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultVersionRangeResolver.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultVersionResolver.java
-Clone class 144, 3 fragments, nominal size 14 lines, similarity 78%
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/LocalSnapshotMetadataGenerator.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/RemoteSnapshotMetadataGenerator.java
-maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/VersionsMetadataGenerator.java
-Clone class 145, 2 fragments, nominal size 10 lines, similarity 70%
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/RepositorySystemTest.java
-maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/RepositorySystemTest.java
-Clone class 146, 2 fragments, nominal size 13 lines, similarity 92%
-maven/maven-settings-builder/src/test/java/org/apache/maven/settings/validation/DefaultSettingsValidatorTest.java
-maven/maven-settings-builder/src/test/java/org/apache/maven/settings/validation/DefaultSettingsValidatorTest.java
+ant/src/main/org/apache/tools/ant/types/PatternSet.java
+ant/src/main/org/apache/tools/ant/types/PatternSet.java
+Clone class 126, 3 fragments, nominal size 14 lines, similarity 85%
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+Clone class 127, 7 fragments, nominal size 10 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/resources/selectors/ResourceSelectorContainer.java
+ant/src/main/org/apache/tools/ant/types/resources/comparators/DelegatedResourceComparator.java
+ant/src/main/org/apache/tools/ant/types/resources/Restrict.java
+ant/src/main/org/apache/tools/ant/types/resources/Tokens.java
+Clone class 128, 4 fragments, nominal size 10 lines, similarity 80%
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/RedirectorElement.java
+ant/src/main/org/apache/tools/ant/types/resources/Files.java
+Clone class 129, 2 fragments, nominal size 19 lines, similarity 78%
+ant/src/main/org/apache/tools/ant/types/resources/AbstractResourceCollectionWrapper.java
+ant/src/main/org/apache/tools/ant/types/resources/BaseResourceCollectionContainer.java
+Clone class 130, 3 fragments, nominal size 13 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/types/resources/ArchiveResource.java
+ant/src/main/org/apache/tools/ant/types/resources/FileResource.java
+ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
+Clone class 131, 2 fragments, nominal size 15 lines, similarity 75%
+ant/src/main/org/apache/tools/ant/types/resources/TarResource.java
+ant/src/main/org/apache/tools/ant/types/resources/ZipResource.java
+Clone class 132, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
+ant/src/main/org/apache/tools/ant/types/resources/URLResource.java
+Clone class 133, 4 fragments, nominal size 17 lines, similarity 70%
+ant/src/main/org/apache/tools/ant/types/selectors/ContainsRegexpSelector.java
+ant/src/main/org/apache/tools/ant/types/selectors/ContainsSelector.java
+ant/src/main/org/apache/tools/ant/types/selectors/FilenameSelector.java
+ant/src/main/org/apache/tools/ant/types/selectors/TypeSelector.java
+Clone class 134, 2 fragments, nominal size 15 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/types/selectors/MappingSelector.java
+ant/src/main/org/apache/tools/ant/types/selectors/PresentSelector.java
+Clone class 135, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/ant/types/selectors/PosixGroupSelector.java
+ant/src/main/org/apache/tools/ant/types/selectors/PosixPermissionsSelector.java
+Clone class 136, 2 fragments, nominal size 14 lines, similarity 92%
+ant/src/main/org/apache/tools/ant/types/TarFileSet.java
+ant/src/main/org/apache/tools/ant/types/ZipFileSet.java
+Clone class 137, 2 fragments, nominal size 15 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/util/CollectionUtils.java
+ant/src/main/org/apache/tools/ant/util/CollectionUtils.java
+Clone class 138, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/util/ConcatFileInputStream.java
+ant/src/main/org/apache/tools/ant/util/LeadPipeInputStream.java
+Clone class 139, 4 fragments, nominal size 13 lines, similarity 73%
+ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
+ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
+ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
+ant/src/main/org/apache/tools/ant/util/DeweyDecimal.java
+Clone class 140, 2 fragments, nominal size 15 lines, similarity 81%
+ant/src/main/org/apache/tools/ant/util/GlobPatternMapper.java
+ant/src/main/org/apache/tools/ant/util/GlobPatternMapper.java
+Clone class 141, 2 fragments, nominal size 17 lines, similarity 88%
+ant/src/main/org/apache/tools/ant/util/JavaEnvUtils.java
+ant/src/main/org/apache/tools/ant/util/JavaEnvUtils.java
+Clone class 142, 2 fragments, nominal size 17 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/util/optional/ScriptRunner.java
+ant/src/main/org/apache/tools/ant/util/optional/ScriptRunner.java
+Clone class 143, 3 fragments, nominal size 17 lines, similarity 76%
+ant/src/main/org/apache/tools/ant/util/regexp/JakartaOroMatcher.java
+ant/src/main/org/apache/tools/ant/util/regexp/JakartaRegexpMatcher.java
+ant/src/main/org/apache/tools/ant/util/regexp/Jdk14RegexpMatcher.java
+Clone class 144, 3 fragments, nominal size 13 lines, similarity 92%
+ant/src/main/org/apache/tools/ant/util/regexp/JakartaOroMatcher.java
+ant/src/main/org/apache/tools/ant/util/regexp/Jdk14RegexpMatcher.java
+ant/src/main/org/apache/tools/ant/util/regexp/JakartaRegexpMatcher.java
+Clone class 145, 2 fragments, nominal size 12 lines, similarity 100%
+ant/src/main/org/apache/tools/ant/util/regexp/RegexpFactory.java
+ant/src/main/org/apache/tools/ant/util/regexp/RegexpMatcherFactory.java
+Clone class 146, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/main/org/apache/tools/ant/util/XMLFragment.java
+ant/src/main/org/apache/tools/ant/util/XMLFragment.java
+Clone class 147, 2 fragments, nominal size 114 lines, similarity 94%
+ant/src/main/org/apache/tools/bzip2/CBZip2OutputStream.java
+ant/src/main/org/apache/tools/bzip2/CBZip2OutputStream.java
+Clone class 148, 2 fragments, nominal size 19 lines, similarity 78%
+ant/src/main/org/apache/tools/tar/TarBuffer.java
+ant/src/main/org/apache/tools/tar/TarBuffer.java
+Clone class 149, 2 fragments, nominal size 11 lines, similarity 81%
+ant/src/main/org/apache/tools/tar/TarEntry.java
+ant/src/main/org/apache/tools/tar/TarEntry.java
+Clone class 150, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/main/org/apache/tools/tar/TarUtils.java
+ant/src/main/org/apache/tools/tar/TarUtils.java
+Clone class 151, 2 fragments, nominal size 23 lines, similarity 100%
+ant/src/main/org/apache/tools/zip/ExtraFieldUtils.java
+ant/src/main/org/apache/tools/zip/ExtraFieldUtils.java
+Clone class 152, 2 fragments, nominal size 10 lines, similarity 80%
+ant/src/tests/junit/org/apache/tools/ant/AntClassLoaderTest.java
+ant/src/tests/junit/org/apache/tools/ant/AntClassLoaderTest.java
+Clone class 153, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/BuildFileRule.java
+ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
+Clone class 154, 2 fragments, nominal size 15 lines, similarity 93%
+ant/src/tests/junit/org/apache/tools/ant/BuildFileRule.java
+ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
+Clone class 155, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
+ant/src/tests/junit/org/apache/tools/ant/BuildFileTest.java
+Clone class 156, 4 fragments, nominal size 11 lines, similarity 72%
+ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
+ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
+ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
+ant/src/tests/junit/org/apache/tools/ant/IntrospectionHelperTest.java
+Clone class 157, 2 fragments, nominal size 12 lines, similarity 83%
+ant/src/tests/junit/org/apache/tools/ant/ProjectTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/FileUtilsTest.java
+Clone class 158, 3 fragments, nominal size 10 lines, similarity 80%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/SubAntTest.java
+Clone class 159, 3 fragments, nominal size 12 lines, similarity 73%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/SubAntTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/AntTest.java
+Clone class 160, 2 fragments, nominal size 51 lines, similarity 74%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapterTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapterTest.java
+Clone class 161, 2 fragments, nominal size 14 lines, similarity 92%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/cvslib/ChangeLogParserTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/cvslib/ChangeLogParserTest.java
+Clone class 162, 3 fragments, nominal size 10 lines, similarity 72%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ExecuteJavaTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ExecuteJavaTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ExecuteWatchdogTest.java
+Clone class 163, 2 fragments, nominal size 11 lines, similarity 81%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/FixCrLfTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ReplaceTest.java
+Clone class 164, 2 fragments, nominal size 17 lines, similarity 77%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/JavaTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/JavaTest.java
+Clone class 165, 2 fragments, nominal size 17 lines, similarity 70%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ManifestTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ManifestTest.java
+Clone class 166, 2 fragments, nominal size 13 lines, similarity 84%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/modules/JmodTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/modules/LinkTest.java
+Clone class 167, 4 fragments, nominal size 16 lines, similarity 81%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/modules/LinkTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/modules/LinkTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/modules/LinkTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/modules/LinkTest.java
+Clone class 168, 2 fragments, nominal size 11 lines, similarity 72%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/depend/DependTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/depend/DependTest.java
+Clone class 169, 2 fragments, nominal size 23 lines, similarity 82%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/i18n/TranslateTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/FilterSetTest.java
+Clone class 170, 5 fragments, nominal size 12 lines, similarity 75%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/image/ImageIOTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/image/ImageTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/image/ImageIOTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/image/ImageTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/image/ImageIOTest.java
+Clone class 171, 2 fragments, nominal size 10 lines, similarity 90%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/image/ImageIOTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/image/ImageTest.java
+Clone class 172, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
+Clone class 173, 2 fragments, nominal size 49 lines, similarity 88%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java
+Clone class 174, 2 fragments, nominal size 12 lines, similarity 83%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junitlauncher/JUnitLauncherTaskTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junitlauncher/JUnitLauncherTaskTest.java
+Clone class 175, 3 fragments, nominal size 11 lines, similarity 72%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junitlauncher/JUnitLauncherTaskTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junitlauncher/JUnitLauncherTaskTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junitlauncher/JUnitLauncherTaskTest.java
+Clone class 176, 10 fragments, nominal size 10 lines, similarity 70%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+Clone class 177, 2 fragments, nominal size 10 lines, similarity 80%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+Clone class 178, 3 fragments, nominal size 12 lines, similarity 83%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+Clone class 179, 2 fragments, nominal size 11 lines, similarity 90%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+Clone class 180, 8 fragments, nominal size 17 lines, similarity 73%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/sos/SOSTest.java
+Clone class 181, 2 fragments, nominal size 11 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/TraXLiaisonTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/JAXPUtilsTest.java
+Clone class 182, 4 fragments, nominal size 12 lines, similarity 76%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+Clone class 183, 2 fragments, nominal size 13 lines, similarity 76%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+Clone class 184, 2 fragments, nominal size 15 lines, similarity 73%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/SQLExecTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/SQLExecTest.java
+Clone class 185, 2 fragments, nominal size 10 lines, similarity 80%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/SyncTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/SyncTest.java
+Clone class 186, 2 fragments, nominal size 13 lines, similarity 84%
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/TStampTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/TStampTest.java
+Clone class 187, 2 fragments, nominal size 13 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/types/AbstractFileSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/AbstractFileSetTest.java
+Clone class 188, 2 fragments, nominal size 13 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/types/FileListTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/FileListTest.java
+Clone class 189, 3 fragments, nominal size 16 lines, similarity 73%
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+Clone class 190, 2 fragments, nominal size 15 lines, similarity 93%
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+Clone class 191, 2 fragments, nominal size 19 lines, similarity 94%
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+Clone class 192, 2 fragments, nominal size 16 lines, similarity 87%
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+Clone class 193, 2 fragments, nominal size 21 lines, similarity 95%
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+Clone class 194, 2 fragments, nominal size 10 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PathTest.java
+Clone class 195, 2 fragments, nominal size 13 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/types/PatternSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PatternSetTest.java
+Clone class 196, 2 fragments, nominal size 12 lines, similarity 100%
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/BaseSelectorRule.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/BaseSelectorTest.java
+Clone class 197, 2 fragments, nominal size 11 lines, similarity 90%
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/BaseSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
+Clone class 198, 10 fragments, nominal size 10 lines, similarity 80%
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/ContainsSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/SizeSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/SizeSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DepthSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DateSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/FilenameSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DepthSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DepthSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DateSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DateSelectorTest.java
+Clone class 199, 4 fragments, nominal size 11 lines, similarity 72%
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/PresentSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/DependSelectorTest.java
+Clone class 200, 2 fragments, nominal size 11 lines, similarity 90%
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
+Clone class 201, 2 fragments, nominal size 43 lines, similarity 72%
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/ModifiedSelectorTest.java
+Clone class 202, 2 fragments, nominal size 13 lines, similarity 92%
+ant/src/tests/junit/org/apache/tools/ant/types/TarFileSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/ZipFileSetTest.java
+Clone class 203, 2 fragments, nominal size 11 lines, similarity 90%
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+Clone class 204, 2 fragments, nominal size 27 lines, similarity 79%
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+Clone class 205, 2 fragments, nominal size 18 lines, similarity 94%
+ant/src/tests/junit/org/apache/tools/ant/util/DOMElementWriterTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/DOMElementWriterTest.java
+Clone class 206, 2 fragments, nominal size 11 lines, similarity 81%
+ant/src/tests/junit/org/apache/tools/ant/util/LayoutPreservingPropertiesTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/LayoutPreservingPropertiesTest.java
+Clone class 207, 2 fragments, nominal size 14 lines, similarity 85%
+ant/src/tests/junit/org/apache/tools/ant/util/PermissionUtilsTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/PermissionUtilsTest.java
+Clone class 208, 3 fragments, nominal size 15 lines, similarity 93%
+ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
+Clone class 209, 2 fragments, nominal size 11 lines, similarity 75%
+ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/VectorSetTest.java
+Clone class 210, 6 fragments, nominal size 21 lines, similarity 78%
+ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
+ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
+ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
+ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
+ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
+ant/src/tests/junit/org/apache/tools/mail/MailMessageTest.java
+Clone class 211, 2 fragments, nominal size 35 lines, similarity 70%
+ant/src/tests/junit/org/apache/tools/zip/ZipEntryTest.java
+ant/src/tests/junit/org/apache/tools/zip/ZipEntryTest.java
+Clone class 212, 3 fragments, nominal size 12 lines, similarity 75%
+ant/src/tests/junit/org/example/junitlauncher/Tracker.java
+ant/src/tests/junit/org/example/junitlauncher/Tracker.java
+ant/src/tests/junit/org/example/junitlauncher/Tracker.java
+Clone class 213, 2 fragments, nominal size 16 lines, similarity 76%
+ant/src/tutorial/tasks-filesets-properties/02-fileset/src/Find.java
+ant/src/tutorial/tasks-filesets-properties/03-paths/src/Find.java
+Clone class 214, 2 fragments, nominal size 28 lines, similarity 100%
+ant/src/tutorial/tasks-filesets-properties/04-lists/src/Find.java
+ant/src/tutorial/tasks-filesets-properties/final/src/Find.java

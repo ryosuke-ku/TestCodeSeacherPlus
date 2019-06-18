@@ -12,7 +12,7 @@ import collections
 #url = "file:///C:/Users/ryosuke-ku/Desktop/apache_2_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/android_platform_projects_functions-blind-clones/android_platform_projects_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_activemq_projects_functions-blind-clones/apache_activemq_projects_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_ant_maven_functions-blind-clones/apache_ant_maven_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/Server_Projects_functions-blind-clones/Server_Projects_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/RxJava_functions-blind-clones/RxJava_functions-blind-clones-0.30-classes-withsource.html"
@@ -24,12 +24,15 @@ url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-bli
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/kafka_functions-blind-clones/kafka_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_camel_functions-blind-clones/apache_camel_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/beam_functions-blind-clones/beam_functions-blind-clones-0.30-classes-withsource.html"
-#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/cassandra_functions-blind-clones/cassandra_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/httpcomponents-client_functions-blind-clones/httpcomponents-client_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-clones/ant_functions-clones-0.00-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.00-classes-withsource.html"
+#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.00-classes-withsource.html"
+
+
 res = req.urlopen(url)
 
 # HTMLを解析
@@ -72,8 +75,8 @@ for product in product_div.find_all(['h3', 'td']):
 		count +=1
 
 
-print(len(countarray))
-print(len(codearray))
+# print(len(countarray))
+# print(len(codearray))
 # print(data)
 
 codedic = dict(zip(countarray,codearray))
@@ -92,7 +95,7 @@ TPath = [Tline.replace('\n', '') for Tline in TestPath]
 
 alltest=0
 for p in TPath:
-	if re.match('maven.*?/', p):
+	if re.match('ant.*?/', p):
 		alltest += 1
 
 print(alltest)
@@ -163,23 +166,24 @@ for i in data:
 	totalpairs += len(data[i])*(len(data[i])-1)/2
 	totalfragments += fragments
 
-print(len(reusetest))
+# print(len(reusetest))
 reusetestpath = list(set(reusetest))
-print(len(reusetestpath))
+# print(len(reusetestpath))
 
 parcent = [k[-4:].replace(" ","") for k in data]
 # print(parcent)
 
-# editparcent = [j.replace(" ","") for j in parcent]
-print(parcent)
+# print(parcent)
 
 c = collections.Counter(parcent)
+print("----------------------------------------------------------------------------------------------------")
+
 print(c)
-print(len(c))
-print(len(parcent))
+print("類似度(%)の数:" + str(len(c)))
+print("Clone Classの数:" + str(len(parcent)))
 
 # csvFile.close()
-print("\n")
+# print("\n")
 print("----------------------------------------------------------------------------------------------------")
 print("＜クローンクラス＞")
 print("すべてのクローンClassの数：" + str(nt + pt + at))
