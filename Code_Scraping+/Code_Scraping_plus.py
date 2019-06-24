@@ -98,7 +98,7 @@ for p in TPath:
 	if re.match('ant.*?/', p):
 		alltest += 1
 
-print(alltest)
+# print(alltest)
 
 Test.close()
 #print(TestPath)
@@ -119,15 +119,21 @@ reusetest = []
 list_nt = []
 list_at = []
 list_pt = []
+Similarity = defaultdict(list)
+Similarity_total = defaultdict(list)
 
 for i in data:
+	rt_path = []
 	f.write(i)
 	f.write("\n") 
+	print("----------------------------------------------------------------------------------------------------")
 	print(i)
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
 	# writer.writerow(data[i])
+	Similarity_key = i[-4:].replace(" ","")
+	print(Similarity_key)
 
 	for j in data[i]:
 		# print(j)
@@ -142,25 +148,33 @@ for i in data:
 			f.write(path) 
 			f.write("\n")
 			reusetest.append(path)
+			rt_path.append(path)
 			count += 1
 			print(path)
+			# Similarity[Similarity_key].append(path)
+			# print(Similarity[Similarity_key])
+	
 
 	# print(count)
 	judgment = fragments - count
 	if judgment == fragments:
-		# print("テストコードが見つかりませんでした")
+		print("テストコードが見つかりませんでした")
 		nt += 1
 		list_nt.append(i[-4:].replace(" ",""))
 	elif judgment == 0:
-		#print("すべてのコードフラグメントがテストコードを持っています")
+		print("すべてのコードフラグメントがテストコードを持っています")
 		at += 1
 		list_at.append(i[-4:].replace(" ",""))
+
 	elif 0 < judgment < fragments :
-		#print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
+		print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
 		#print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
 		notest += judgment
 		pt +=1
 		list_pt.append(i[-4:].replace(" ",""))
+		Similarity_total[Similarity_key].append(rt_path)
+
+		
 
 #	print(len(data[i])*(len(data[i])-1)/2)
 	totalpairs += len(data[i])*(len(data[i])-1)/2
@@ -176,6 +190,11 @@ parcent = [k[-4:].replace(" ","") for k in data]
 # print(parcent)
 
 c = collections.Counter(parcent)
+
+print(Similarity_total)
+print("-")
+print(len(Similarity_total["100%"]))
+# print(Similarity_total["100%"])
 print("----------------------------------------------------------------------------------------------------")
 
 print(c)
