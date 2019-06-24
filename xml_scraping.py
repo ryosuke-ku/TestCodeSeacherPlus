@@ -40,13 +40,14 @@ data = defaultdict(list)
 filePaths = soup.find('clones')
 count = 0
 for filePath in filePaths.find_all(['clone','source']):
-    count+=1
+    count+=1  
     if filePath.name == 'clone':
         key = "clone pairs:" + str(count) + ":"+ filePath.get('similarity')
         print(key)
     if key and filePath.name == 'source':
         data[key].append(filePath.get('file'))
     
+
  
     # print("clone pairs:" + str(count))
     # print(filePath.get('file'))
