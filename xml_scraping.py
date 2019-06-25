@@ -1,13 +1,15 @@
 import urllib.request as req
 from bs4 import BeautifulSoup as bs4
 from collections import defaultdict
+import collections
 
-# url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml"
+
+url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30.xml"
 # url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/cassandra_functions-blind-clones/cassandra_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/httpcomponents-client_functions-blind-clones/httpcomponents-client_functions-blind-clones-0.30.xml"
-url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30.xml"
+# url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/kafka_functions-blind-clones/kafka_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/elasticsearch_functions-blind-clones/elasticsearch_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jacoco_functions-blind-clones/jacoco_functions-blind-clones-0.30.xml"
@@ -76,10 +78,10 @@ for i in data:
 	print("----------------------------------------------------------------------------------------------------")
 	print(i)
 	fragments = len(data[i])
-	print(len(data[i]))
+	# print(len(data[i]))
 	count = 0
 	# writer.writerow(data[i])
-	Similarity_key = i[-4:].replace(" ","")
+	Similarity_key = i[-4:].replace(":","")
 	print(Similarity_key)
 
 	for j in data[i]:
@@ -102,7 +104,7 @@ for i in data:
 	if judgment == 2:
 		print("テストコードが見つかりませんでした")
 		nt += 1
-		list_nt.append(i[-4:].replace(" ",""))
+		list_nt.append(i[-4:].replace(":",""))
 	elif judgment == 0:
 		print("すべてのコードフラグメントがテストコードを持っています")
 		at += 1
@@ -113,7 +115,7 @@ for i in data:
 		#print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
 		notest += judgment
 		pt +=1
-		list_pt.append(i[-4:].replace(" ",""))
+		list_pt.append(i[-4:].replace(":",""))
 		Similarity_total[Similarity_key].append(rt_path)
 
 		
@@ -129,23 +131,37 @@ reusetestpath = list(set(reusetest))
 parcent = [k[-4:].replace(":","") for k in data]
 # print(parcent)
 
+c = collections.Counter(parcent)
 
-
-print(Similarity_total)
-print("-")
-print(len(Similarity_total["100%"]))
+# print(Similarity_total)
+# print("-")
+# print(len(Similarity_total["100%"]))
 # print(Similarity_total["100%"])
 
 
 print("----------------------------------------------------------------------------------------------------")
-print("＜クローンクラス＞")
+print("＜クローンペア＞")
 print("すべてのクローンペアの数：" + str(nt + pt + at))
 print("テストコードが見つからなかったクローンペアの数：" + str(nt) + " (" + str(round(nt/(nt + pt + at)*100,1)) + "％)")
 print("どちらか片方のコードフラグメントはテストコードを持っているクローンペアの数：" + str(pt)+ " (" + str(round(pt/(nt + pt + at)*100,1)) + "％)")
 print("両方のコードフラグメントがテストコードを持っているクローンペアの数：" + str(at) + " (" + str(round(at/(nt + pt + at)*100,1)) + "％)")
-print("----------------------------------------------------------------------------------------------------")
-print("＜クローンペア＞")
-print("クローンペアの合計数："+ str(round(totalpairs)))
 print("コードフラグメントの合計数："+ str(totalfragments))
 print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
 print("----------------------------------------------------------------------------------------------------")
+
+
+c_nt = collections.Counter(list_nt)
+print(c_nt)
+print(len(list_nt))
+
+c_pt = collections.Counter(list_pt)
+print(c_pt)
+print(len(list_pt))
+
+c_at = collections.Counter(list_at)
+print(c_at)
+print(len(list_at))
+
+
+
+print(len(list_nt)+len(list_at)+len(list_pt))
