@@ -3,37 +3,10 @@ from bs4 import BeautifulSoup as bs4
 from collections import defaultdict
  
 res = req.urlopen("file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30.xml")
+res = req.urlopen("file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30.xml")
+res = req.urlopen("file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml")
 #詳しくは省略、上のXMLが返ってくるものと思ってください
 
-
-# res = """
-# <clones>
-# <systeminfo processor="nicad5" system="ant" granularity="functions" threshold="0%" minlines="10" maxlines="2500"/>
-# <cloneinfo npcs="14605" npairs="27"/>
-# <runinfo ncompares="175943" cputime="140"/>
-
-# <clone nlines="34" similarity="100">
-# <source file="systems/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java" startline="586" endline="624" pcid="5606"></source>
-# <source file="systems/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTaskMirrorImpl.java" startline="478" endline="514" pcid="5812"></source>
-# </clone>
-
-# <clone nlines="34" similarity="100">
-# <source file="systems/ant/src/main/org/apache/tools/ant/types/optional/imageio/ColorMapper.java" startline="69" endline="102" pcid="8323"></source>
-# <source file="systems/ant/src/main/org/apache/tools/ant/types/optional/image/ColorMapper.java" startline="69" endline="102" pcid="8266"></source>
-# </clone>
-
-# <clone nlines="30" similarity="100">
-# <source file="systems/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTPTask.java" startline="736" endline="774" pcid="5779"></source>
-# <source file="systems/ant/src/main/org/apache/tools/ant/taskdefs/optional/net/FTP.java" startline="1702" endline="1740" pcid="5680"></source>
-# </clone>
-
-# <clone nlines="28" similarity="100">
-# <source file="systems/ant/src/tutorial/tasks-filesets-properties/04-lists/src/Find.java" startline="62" endline="94" pcid="14571"></source>
-# <source file="systems/ant/src/tutorial/tasks-filesets-properties/final/src/Find.java" startline="64" endline="99" pcid="14584"></source>
-# </clone>
-
-# </clones>
-# """
 
 soup = bs4(res,'lxml-xml')
 data = defaultdict(list)
@@ -43,12 +16,125 @@ for filePath in filePaths.find_all(['clone','source']):
      
     if filePath.name == 'clone':
         count+=1
-        key = "clone pairs:" + str(count) + ":"+ filePath.get('similarity')
+        key = "clone pairs:" + str(count) + ":"+ filePath.get('similarity')+"%"
         # print(key)
     if key and filePath.name == 'source':
         path = filePath.get('file')
         path = path[8:]
         data[key].append(path)
     
-print(data)
-print(len(data))
+# print(data)
+# print(len(data))
+
+production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
+ProductionPath = production.readlines()
+PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
+
+production.close()
+#print(ProductionPath)
+
+Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
+TestPath = Test.readlines()
+TPath = [Tline.replace('\n', '') for Tline in TestPath]
+
+
+# print(alltest)
+
+Test.close()
+#print(TestPath)
+
+dic = dict(zip(PPath,TPath))
+
+
+nt = 0
+at = 0
+pt = 0
+totalpairs = 0
+totalfragments = 0
+notest = 0
+reusetest = []
+list_nt = []
+list_at = []
+list_pt = []
+Similarity = defaultdict(list)
+Similarity_total = defaultdict(list)
+
+for i in data:
+	rt_path = []
+	print("----------------------------------------------------------------------------------------------------")
+	print(i)
+	fragments = len(data[i])
+	# print(len(data[i]))
+	count = 0
+	# writer.writerow(data[i])
+	Similarity_key = i[-4:].replace(" ","")
+	print(Similarity_key)
+
+	for j in data[i]:
+		# print(j)
+		try:
+			path = dic.get(j)
+		except KeyError:
+			pass
+		# print(path)
+		if path is None:
+			pass
+		else:
+			reusetest.append(path)
+			rt_path.append(path)
+			count += 1
+			print(path)
+
+	# print(count)
+	judgment = fragments - count
+	if judgment == fragments:
+		print("テストコードが見つかりませんでした")
+		nt += 1
+		list_nt.append(i[-4:].replace(" ",""))
+	elif judgment == 0:
+		print("すべてのコードフラグメントがテストコードを持っています")
+		at += 1
+		list_at.append(i[-4:].replace(" ",""))
+
+	elif 0 < judgment < fragments :
+		print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
+		#print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
+		notest += judgment
+		pt +=1
+		list_pt.append(i[-4:].replace(" ",""))
+		Similarity_total[Similarity_key].append(rt_path)
+
+		
+
+#	print(len(data[i])*(len(data[i])-1)/2)
+	totalpairs += len(data[i])*(len(data[i])-1)/2
+	totalfragments += fragments
+
+# print(len(reusetest))
+reusetestpath = list(set(reusetest))
+# print(len(reusetestpath))
+
+parcent = [k[-4:].replace(" ","") for k in data]
+# print(parcent)
+
+
+
+print(Similarity_total)
+print("-")
+print(len(Similarity_total["100%"]))
+# print(Similarity_total["100%"])
+print("----------------------------------------------------------------------------------------------------")
+
+
+print("----------------------------------------------------------------------------------------------------")
+print("＜クローンクラス＞")
+print("すべてのクローンペアの数：" + str(nt + pt + at))
+print("テストコードが見つからなかったクローンペアの数：" + str(nt) + " (" + str(round(nt/(nt + pt + at)*100,1)) + "％)")
+print("どちらか片方のコードフラグメントはテストコードを持っているクローンペアの数：" + str(pt)+ " (" + str(round(pt/(nt + pt + at)*100,1)) + "％)")
+print("両方のコードフラグメントがテストコードを持っているクローンペアの数：" + str(at) + " (" + str(round(at/(nt + pt + at)*100,1)) + "％)")
+print("----------------------------------------------------------------------------------------------------")
+print("＜クローンペア＞")
+print("クローンペアの合計数："+ str(round(totalpairs)))
+print("コードフラグメントの合計数："+ str(totalfragments))
+print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
+print("----------------------------------------------------------------------------------------------------")
