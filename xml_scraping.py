@@ -1,10 +1,22 @@
 import urllib.request as req
 from bs4 import BeautifulSoup as bs4
 from collections import defaultdict
- 
-res = req.urlopen("file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30.xml")
-res = req.urlopen("file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30.xml")
-res = req.urlopen("file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml")
+
+# url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30.xml"
+# url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/cassandra_functions-blind-clones/cassandra_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/httpcomponents-client_functions-blind-clones/httpcomponents-client_functions-blind-clones-0.30.xml"
+url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/kafka_functions-blind-clones/kafka_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/elasticsearch_functions-blind-clones/elasticsearch_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jacoco_functions-blind-clones/jacoco_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/JCSprout_functions-blind-clones/JCSprout_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jetty.project_functions-blind-clones/jetty.project_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/retrofit_functions-blind-clones/retrofit_functions-blind-clones-0.30.xml"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/RxJava_functions-blind-clones/RxJava_functions-blind-clones-0.30.xml"
+
+res = req.urlopen(url)
 #詳しくは省略、上のXMLが返ってくるものと思ってください
 
 
@@ -64,7 +76,7 @@ for i in data:
 	print("----------------------------------------------------------------------------------------------------")
 	print(i)
 	fragments = len(data[i])
-	# print(len(data[i]))
+	print(len(data[i]))
 	count = 0
 	# writer.writerow(data[i])
 	Similarity_key = i[-4:].replace(" ","")
@@ -87,16 +99,16 @@ for i in data:
 
 	# print(count)
 	judgment = fragments - count
-	if judgment == fragments:
+	if judgment == 2:
 		print("テストコードが見つかりませんでした")
 		nt += 1
 		list_nt.append(i[-4:].replace(" ",""))
 	elif judgment == 0:
 		print("すべてのコードフラグメントがテストコードを持っています")
 		at += 1
-		list_at.append(i[-4:].replace(" ",""))
+		list_at.append(i[-4:].replace(":",""))
 
-	elif 0 < judgment < fragments :
+	elif judgment == 1 :
 		print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
 		#print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
 		notest += judgment
@@ -114,7 +126,7 @@ for i in data:
 reusetestpath = list(set(reusetest))
 # print(len(reusetestpath))
 
-parcent = [k[-4:].replace(" ","") for k in data]
+parcent = [k[-4:].replace(":","") for k in data]
 # print(parcent)
 
 
@@ -123,7 +135,6 @@ print(Similarity_total)
 print("-")
 print(len(Similarity_total["100%"]))
 # print(Similarity_total["100%"])
-print("----------------------------------------------------------------------------------------------------")
 
 
 print("----------------------------------------------------------------------------------------------------")
