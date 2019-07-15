@@ -77,6 +77,8 @@ Test.close()
 
 dic = dict(zip(PPath,TPath))
 
+dic2 = dict(zip(countarray,codearray))
+
 # csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf-8')
 # writer = csv.writer(csvFile)
 
@@ -114,7 +116,8 @@ for i in data:
 			f.write("\n")
 			count += 1
 			# print(path)
-	
+
+
 	# print(count)
 	judgment = fragments - count
 	if judgment == fragments:
