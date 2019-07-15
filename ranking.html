@@ -1,0 +1,79 @@
+
+<html>
+  <head><meta charset="UTF-8">
+  <title>J2 Ranking</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css"/>
+  <body>
+    <table border="1" class="dataframe mystyle">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Lines 72 - 99 of systems/apache_ant/ant/src/main/org/apache/tools/ant/ArgumentProcessorRegistry.java
+
+    private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration&lt;URL&gt; resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
+
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println("Unable to load ArgumentProcessor from service "
+                    + SERVICE_ID + " (" + e.getClass().getName() + ": "
+                    + e.getMessage() + ")");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }</th>
+      <th>private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration&lt;URL&gt; resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
+
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println("Unable to load ArgumentProcessor from service "
+                    + SERVICE_ID + " (" + e.getClass().getName() + ": "
+                    + e.getMessage() + ")");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\nLines 77 - 114 of systems/apache_ant/ant/src...</td>
+      <td>\n    private void collectProjectHelpers() {\n...</td>
+    </tr>
+  </tbody>
+</table>
+  </body>
+</html>

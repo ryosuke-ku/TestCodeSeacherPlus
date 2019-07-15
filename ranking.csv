@@ -1,0 +1,144 @@
+"
+Lines 72 - 99 of systems/apache_ant/ant/src/main/org/apache/tools/ant/ArgumentProcessorRegistry.java
+
+    private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
+
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ArgumentProcessor from service ""
+                    + SERVICE_ID + "" ("" + e.getClass().getName() + "": ""
+                    + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }
+
+","
+    private void collectArgumentProcessors() {
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources = classLoader.getResources(SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    ArgumentProcessor processor = getProcessorByService(conn.getInputStream());
+                    registerArgumentProcessor(processor);
+                }
+            }
+
+            InputStream systemResource = ClassLoader.getSystemResourceAsStream(SERVICE_ID);
+            if (systemResource != null) {
+                ArgumentProcessor processor = getProcessorByService(systemResource);
+                registerArgumentProcessor(processor);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ArgumentProcessor from service ""
+                    + SERVICE_ID + "" ("" + e.getClass().getName() + "": ""
+                    + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }
+"
+"
+Lines 77 - 114 of systems/apache_ant/ant/src/main/org/apache/tools/ant/ProjectHelperRepository.java
+
+    private void collectProjectHelpers() {
+        // First, try the system property
+        Constructor<? extends ProjectHelper> projectHelper = getProjectHelperBySystemProperty();
+        registerProjectHelper(projectHelper);
+
+        // A JDK1.3 'service' ( like in JAXP ). That will plug a helper
+        // automatically if in CLASSPATH, with the right META-INF/services.
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources =
+                    classLoader.getResources(ProjectHelper.SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    projectHelper =
+                        getProjectHelperByService(conn.getInputStream());
+                    registerProjectHelper(projectHelper);
+                }
+            }
+
+            InputStream systemResource =
+                ClassLoader.getSystemResourceAsStream(ProjectHelper.SERVICE_ID);
+            if (systemResource != null) {
+                projectHelper = getProjectHelperByService(systemResource);
+                registerProjectHelper(projectHelper);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ProjectHelper from service ""
+                               + ProjectHelper.SERVICE_ID + "" (""
+                               + e.getClass().getName()
+                               + "": "" + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }
+
+","
+    private void collectProjectHelpers() {
+        // First, try the system property
+        Constructor<? extends ProjectHelper> projectHelper = getProjectHelperBySystemProperty();
+        registerProjectHelper(projectHelper);
+
+        // A JDK1.3 'service' ( like in JAXP ). That will plug a helper
+        // automatically if in CLASSPATH, with the right META-INF/services.
+        try {
+            ClassLoader classLoader = LoaderUtils.getContextClassLoader();
+            if (classLoader != null) {
+                Enumeration<URL> resources =
+                    classLoader.getResources(ProjectHelper.SERVICE_ID);
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
+                    URLConnection conn = resource.openConnection();
+                    conn.setUseCaches(false);
+                    projectHelper =
+                        getProjectHelperByService(conn.getInputStream());
+                    registerProjectHelper(projectHelper);
+                }
+            }
+
+            InputStream systemResource =
+                ClassLoader.getSystemResourceAsStream(ProjectHelper.SERVICE_ID);
+            if (systemResource != null) {
+                projectHelper = getProjectHelperByService(systemResource);
+                registerProjectHelper(projectHelper);
+            }
+        } catch (Exception e) {
+            System.err.println(""Unable to load ProjectHelper from service ""
+                               + ProjectHelper.SERVICE_ID + "" (""
+                               + e.getClass().getName()
+                               + "": "" + e.getMessage() + "")"");
+            if (DEBUG) {
+                e.printStackTrace(System.err);
+            }
+        }
+    }
+"
