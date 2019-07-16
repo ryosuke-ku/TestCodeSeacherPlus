@@ -165,3 +165,7 @@ print(len(list_at))
 
 
 print(len(list_nt)+len(list_at)+len(list_pt))
+
+for reusetestpath in reusetest:
+	print(reusetestpath)
+print(len(reusetest))
