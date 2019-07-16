@@ -70,10 +70,10 @@ for filePath in filePaths.find_all(['clone','source']):
 # print(endlist) 
 # print('-------------------------------')
 # print(allpathlist) 
-print('startlist:' + str(len(startlist)))
-print('endlist:' + str(len(endlist)))
-print('allpathlist:' + str(len(allpathlist)))
-print('NotestPath:' + str(len(NotestPath)))
+# print('startlist:' + str(len(startlist)))
+# print('endlist:' + str(len(endlist)))
+# print('allpathlist:' + str(len(allpathlist)))
+# print('NotestPath:' + str(len(NotestPath)))
 # print(data)
 # print(len(data))
 
@@ -150,8 +150,8 @@ delKey =[]
 
 for i in data:
 	rt_path = []
-	print("----------------------------------------------------------------------------------------------------")
-	print(i)
+	# print("----------------------------------------------------------------------------------------------------")
+	# print(i)
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
@@ -161,10 +161,10 @@ for i in data:
 
 	for j in data[i]:
 		last9path = j[-9:]
-		print(last9path)
+		# print(last9path)
 		if last9path == 'Test.java':
-			print('ProductionPath : ' + j)
-			print('テストパスです')
+			# print('ProductionPath : ' + j)
+			# print('テストパスです')
 			delKey.append(i)
 		else:
 			try:
@@ -178,8 +178,8 @@ for i in data:
 				reusetest.append(path)
 				rt_path.append(path)
 				count += 1
-				print('ProductionPath : ' + j)
-				print(path)
+				# print('ProductionPath : ' + j)
+				# print(path)
 	
 
 	# print(count)
@@ -261,7 +261,7 @@ delKey_unique.sort()
 # for w in delKey:
 # 	print(w)
 
-print(len(data))
+# print(len(data))
 for delKeyname in delKey_unique:
 	del data[delKeyname]
 
@@ -272,10 +272,11 @@ for delKeyname in delKey_unique:
 # 	print(x)
 # 	data.pop(int(x))
 
-AvaiTestPath = []
+AvaiTestPaths = []
+AvaiProductionPaths = []
 for i in data:
-	print("----------------------------------------------------------------------------------------------------")
-	print(i)
+	# print("----------------------------------------------------------------------------------------------------")
+	# print(i)
 	fragments = len(data[i])
 	Similarity_key = i[-4:].replace(":","")
 	# print(Similarity_key)
@@ -289,9 +290,17 @@ for i in data:
 		if path is None:
 			pass
 		else:
-			print('ProductionPath : ' + j)
-			AvaiTestPath.append(path)
-			print('TestPath       : ' +path)
+			# print('ProductionPath : ' + j)
+			AvaiTestPaths.append(path)
+			AvaiProductionPaths.append(j)
+			# print('TestPath       : ' +path)
 
-print(AvaiTestPath)
-print(len(AvaiTestPath))
+# print(AvaiTestPaths)
+# print(len(AvaiTestPaths))
+# for AvaiTestPath in AvaiTestPaths:
+# 	print(AvaiTestPath)
+# print(len(AvaiTestPaths))
+
+for AvaiProductionPath in AvaiProductionPaths:
+	print(AvaiProductionPath)
+# print(len(AvaiProductionPaths))
