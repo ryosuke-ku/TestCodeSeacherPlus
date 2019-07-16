@@ -21,24 +21,53 @@ url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blin
 res = req.urlopen(url)
 #詳しくは省略、上のXMLが返ってくるものと思ってください
 
-
+startlist = []
+endlist = []
+allpathlist = []
 soup = bs4(res,'lxml-xml')
 data = defaultdict(list)
 filePaths = soup.find('clones')
 count = 0
+cnt = 1
 for filePath in filePaths.find_all(['clone','source']):
-     
-    if filePath.name == 'clone':
-        count+=1
-        key = "clone pairs:" + str(count) + ":"+ filePath.get('similarity')+"%"
-        # print(key)
-    if key and filePath.name == 'source':
-        path = filePath.get('file')
-        path = path[8:]
-        data[key].append(path)
-    
+	 
+	if filePath.name == 'clone':
+		count+=1
+		key = "clone pairs:" + str(count) + ":"+ filePath.get('similarity')+"%"
+		# print(key)
+	if key and filePath.name == 'source':
+		path = filePath.get('file')
+		path = path[8:]
+		startline = filePath.get('startline')
+		endline = filePath.get('endline')
+		startlist.append(startline)
+		endlist.append(endline)
+		registerdPath = str(cnt) + ':' + path
+		allpathlist.append(registerdPath)
+		data[key].append(path)
+		cnt+=1
+	
+
+		# print(startline + ',' + endline)
+print(startlist)
+print('-------------------------------')
+print(endlist) 
+print('-------------------------------')
+print(allpathlist) 
+print('startlist:' + str(len(startlist)))
+print('endlist:' + str(len(endlist)))
+print('allpathlist:' + str(len(allpathlist)))
 # print(data)
 # print(len(data))
+
+startlinedic = dict(zip(allpathlist,startlist))
+endlinedic = dict(zip(allpathlist,endlist))
+startline = startlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
+endline = endlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
+print(startlist[0])
+print(startline)
+print(endlist[0])
+print(endline)
 
 production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
@@ -75,14 +104,14 @@ Similarity_total = defaultdict(list)
 
 for i in data:
 	rt_path = []
-	print("----------------------------------------------------------------------------------------------------")
-	print(i)
+	# print("----------------------------------------------------------------------------------------------------")
+	# print(i)
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
 	# writer.writerow(data[i])
 	Similarity_key = i[-4:].replace(":","")
-	print(Similarity_key)
+	# print(Similarity_key)
 
 	for j in data[i]:
 		# print(j)
@@ -97,21 +126,22 @@ for i in data:
 			reusetest.append(path)
 			rt_path.append(path)
 			count += 1
-			print(path)
+			# print('ProductionPath : ' + j)
+			# print(path)
 
 	# print(count)
 	judgment = fragments - count
 	if judgment == 2:
-		print("テストコードが見つかりませんでした")
+		# print("テストコードが見つかりませんでした")
 		nt += 1
 		list_nt.append(i[-4:].replace(":",""))
 	elif judgment == 0:
-		print("すべてのコードフラグメントがテストコードを持っています")
+		# print("すべてのコードフラグメントがテストコードを持っています")
 		at += 1
 		list_at.append(i[-4:].replace(":",""))
 
 	elif judgment == 1 :
-		print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
+		# print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
 		#print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
 		notest += judgment
 		pt +=1
@@ -166,6 +196,6 @@ print(len(list_at))
 
 print(len(list_nt)+len(list_at)+len(list_pt))
 
-for reusetestpath in reusetest:
-	print(reusetestpath)
-print(len(reusetest))
+# for reusetestpath in reusetest:
+# 	print(reusetestpath)
+# print(len(reusetest))
