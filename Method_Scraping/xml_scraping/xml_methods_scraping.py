@@ -272,6 +272,7 @@ for delKeyname in delKey_unique:
 # 	print(x)
 # 	data.pop(int(x))
 
+AvaiTestPath = []
 for i in data:
 	print("----------------------------------------------------------------------------------------------------")
 	print(i)
@@ -289,5 +290,8 @@ for i in data:
 			pass
 		else:
 			print('ProductionPath : ' + j)
+			AvaiTestPath.append(path)
 			print('TestPath       : ' +path)
-			
+
+print(AvaiTestPath)
+print(len(AvaiTestPath))
