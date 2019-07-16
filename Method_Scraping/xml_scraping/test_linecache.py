@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # coding: UTF-8
-f = open('CalculatorTest.java')
+f = open('CalculatorTest.java','r')
 lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
 
 f.close()

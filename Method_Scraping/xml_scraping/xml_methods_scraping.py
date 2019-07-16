@@ -23,7 +23,10 @@ res = req.urlopen(url)
 
 startlist = []
 endlist = []
+numpathlist =[]
 allpathlist = []
+NotestPath =[]
+numNotestPath =[]
 soup = bs4(res,'lxml-xml')
 data = defaultdict(list)
 filePaths = soup.find('clones')
@@ -38,36 +41,76 @@ for filePath in filePaths.find_all(['clone','source']):
 	if key and filePath.name == 'source':
 		path = filePath.get('file')
 		path = path[8:]
-		startline = filePath.get('startline')
-		endline = filePath.get('endline')
-		startlist.append(startline)
-		endlist.append(endline)
+		# startline = filePath.get('startline')
+		# endline = filePath.get('endline')
+		# startlist.append(startline)
+		# endlist.append(endline)
 		registerdPath = str(cnt) + ':' + path
-		allpathlist.append(registerdPath)
+		allpathlist.append(path)
+		numpathlist.append(registerdPath)
 		data[key].append(path)
 		cnt+=1
+		cutpath = path[-9:]
+		if cutpath == 'Test.java':
+			pass
+		else:
+			NotestPath.append(path)
+			numNotestPath.append(registerdPath)
+			startline = filePath.get('startline')
+			endline = filePath.get('endline')
+			startlist.append(startline)
+			endlist.append(endline)
+			# print(cutpath)
 	
-
+# print(NotestPath)
+# print(numNotestPath)
 		# print(startline + ',' + endline)
-print(startlist)
-print('-------------------------------')
-print(endlist) 
-print('-------------------------------')
-print(allpathlist) 
+# print(startlist)
+# print('-------------------------------')
+# print(endlist) 
+# print('-------------------------------')
+# print(allpathlist) 
 print('startlist:' + str(len(startlist)))
 print('endlist:' + str(len(endlist)))
 print('allpathlist:' + str(len(allpathlist)))
+print('NotestPath:' + str(len(NotestPath)))
 # print(data)
 # print(len(data))
 
-startlinedic = dict(zip(allpathlist,startlist))
-endlinedic = dict(zip(allpathlist,endlist))
-startline = startlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
-endline = endlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
-print(startlist[0])
-print(startline)
-print(endlist[0])
-print(endline)
+startlinedic = dict(zip(numNotestPath,startlist))
+endlinedic = dict(zip(numNotestPath,endlist))
+# startline = startlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
+# endline = endlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
+# print(startlist[0])
+# print(startline)
+# print(endlist[0])
+# print(endline)
+
+
+# c = 0
+# for numpath in numpathlist:
+# 	startline = startlinedic.get(numpath)
+# 	endline = endlinedic.get(numpath)
+# 	print(startlist[c])
+# 	print(startline)
+# 	print(endlist[c])
+# 	print(endline)
+# 	c+=1
+
+num = 0
+for Nicadpath in NotestPath:
+	f = open("D:/ryosuke-ku/data_set/maven_190611/" + str(Nicadpath), "r", encoding="utf-8")
+	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
+	f.close()
+
+
+	# print('\n')
+	startline = int(startlist[num])-1
+	endline = int(endlist[num])
+	num +=1
+	# for x in range(startline,endline):
+	# 	print(lines2[x].replace('\n', ''))
+
 
 production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
@@ -101,11 +144,14 @@ list_at = []
 list_pt = []
 Similarity = defaultdict(list)
 Similarity_total = defaultdict(list)
+last9path =[]
+delKey =[]
+
 
 for i in data:
 	rt_path = []
-	# print("----------------------------------------------------------------------------------------------------")
-	# print(i)
+	print("----------------------------------------------------------------------------------------------------")
+	print(i)
 	fragments = len(data[i])
 	# print(len(data[i]))
 	count = 0
@@ -114,20 +160,27 @@ for i in data:
 	# print(Similarity_key)
 
 	for j in data[i]:
-		# print(j)
-		try:
-			path = dic.get(j)
-		except KeyError:
-			pass
-		# print(path)
-		if path is None:
-			pass
+		last9path = j[-9:]
+		print(last9path)
+		if last9path == 'Test.java':
+			print('ProductionPath : ' + j)
+			print('テストパスです')
+			delKey.append(i)
 		else:
-			reusetest.append(path)
-			rt_path.append(path)
-			count += 1
-			# print('ProductionPath : ' + j)
-			# print(path)
+			try:
+				path = dic.get(j)
+			except KeyError:
+				pass
+
+			if path is None:
+				pass
+			else:
+				reusetest.append(path)
+				rt_path.append(path)
+				count += 1
+				print('ProductionPath : ' + j)
+				print(path)
+	
 
 	# print(count)
 	judgment = fragments - count
@@ -169,33 +222,72 @@ c = collections.Counter(parcent)
 # print(Similarity_total["100%"])
 
 
-print("----------------------------------------------------------------------------------------------------")
-print("＜クローンペア＞")
-print("すべてのクローンペアの数：" + str(nt + pt + at))
-print("テストコードが見つからなかったクローンペアの数：" + str(nt) + " (" + str(round(nt/(nt + pt + at)*100,1)) + "％)")
-print("どちらか片方のコードフラグメントはテストコードを持っているクローンペアの数：" + str(pt)+ " (" + str(round(pt/(nt + pt + at)*100,1)) + "％)")
-print("両方のコードフラグメントがテストコードを持っているクローンペアの数：" + str(at) + " (" + str(round(at/(nt + pt + at)*100,1)) + "％)")
-print("コードフラグメントの合計数："+ str(totalfragments))
-print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
-print("----------------------------------------------------------------------------------------------------")
+# print("----------------------------------------------------------------------------------------------------")
+# print("＜クローンペア＞")
+# print("すべてのクローンペアの数：" + str(nt + pt + at))
+# print("テストコードが見つからなかったクローンペアの数：" + str(nt) + " (" + str(round(nt/(nt + pt + at)*100,1)) + "％)")
+# print("どちらか片方のコードフラグメントはテストコードを持っているクローンペアの数：" + str(pt)+ " (" + str(round(pt/(nt + pt + at)*100,1)) + "％)")
+# print("両方のコードフラグメントがテストコードを持っているクローンペアの数：" + str(at) + " (" + str(round(at/(nt + pt + at)*100,1)) + "％)")
+# print("コードフラグメントの合計数："+ str(totalfragments))
+# print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
+# print("----------------------------------------------------------------------------------------------------")
 
 
-c_nt = collections.Counter(list_nt)
-print(c_nt)
-print(len(list_nt))
+# c_nt = collections.Counter(list_nt)
+# print(c_nt)
+# print(len(list_nt))
 
-c_pt = collections.Counter(list_pt)
-print(c_pt)
-print(len(list_pt))
+# c_pt = collections.Counter(list_pt)
+# print(c_pt)
+# print(len(list_pt))
 
-c_at = collections.Counter(list_at)
-print(c_at)
-print(len(list_at))
+# c_at = collections.Counter(list_at)
+# print(c_at)
+# print(len(list_at))
 
 
 
-print(len(list_nt)+len(list_at)+len(list_pt))
+# print(len(list_nt)+len(list_at)+len(list_pt))
 
 # for reusetestpath in reusetest:
 # 	print(reusetestpath)
 # print(len(reusetest))
+
+delKey_unique = list(set(delKey))
+# print(delKey_unique)
+# print(len(delKey_unique))
+# print(len(delKey))
+delKey_unique.sort()
+# for w in delKey:
+# 	print(w)
+
+print(len(data))
+for delKeyname in delKey_unique:
+	del data[delKeyname]
+
+# print(len(data))
+# print(data)
+# print(data.keys())
+# for x in numPairslist_unique:
+# 	print(x)
+# 	data.pop(int(x))
+
+for i in data:
+	print("----------------------------------------------------------------------------------------------------")
+	print(i)
+	fragments = len(data[i])
+	Similarity_key = i[-4:].replace(":","")
+	# print(Similarity_key)
+
+	for j in data[i]:
+		try:
+			path = dic.get(j)
+		except KeyError:
+			pass
+
+		if path is None:
+			pass
+		else:
+			print('ProductionPath : ' + j)
+			print('TestPath       : ' +path)
+			
