@@ -83,7 +83,7 @@ data2 = defaultdict(list)
 
 for i in numdelTestdata:
 	for j in numdelTestdata[i]:
-		delnum = re.sub(r".*?systems:", "", j)
+		delnum = re.sub(r".*?:", "", j)
 		print(delnum)
 		try:
 			path = dic.get(delnum)
