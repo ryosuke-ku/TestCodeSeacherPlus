@@ -135,7 +135,7 @@ print(len(OneTestPath))
 
 
 
-print('NotestPathlen: ' + str(len(NotestPath)))
+# print('NotestPathlen: ' + str(len(NotestPath)))
 # delPairs = []
 # for t in delTestdata:
 # 	for h in delTestdata[t]:
