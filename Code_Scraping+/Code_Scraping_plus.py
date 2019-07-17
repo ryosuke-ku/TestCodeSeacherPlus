@@ -20,11 +20,11 @@ import collections
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jetty.project_functions-blind-clones/jetty.project_functions-blind-clones-0.30-classes-withsource.html"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jacoco_functions-blind-clones/jacoco_functions-blind-clones-0.30-classes-withsource.html"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/dubbo_functions-blind-clones/dubbo_functions-blind-clones-0.30-classes-withsource.html"
-url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30-classes-withsource.html"
+# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/kafka_functions-blind-clones/kafka_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/apache_camel_functions-blind-clones/apache_camel_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/beam_functions-blind-clones/beam_functions-blind-clones-0.30-classes-withsource.html"
-#url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30-classes-withsource.html"
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/cassandra_functions-blind-clones/cassandra_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/httpcomponents-client_functions-blind-clones/httpcomponents-client_functions-blind-clones-0.30-classes-withsource.html"
 #url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30-classes-withsource.html"
@@ -105,15 +105,6 @@ Test.close()
 
 dic = dict(zip(PPath,TPath))
 
-<<<<<<< HEAD
-dic2 = dict(zip(countarray,codearray))
-
-# csvFile = open("Codefragments.csv", 'wt', newline='', encoding='utf-8')
-# writer = csv.writer(csvFile)
-=======
->>>>>>> 6abe02aabe097c9196de97e636e002f59043b082
-
-
 f = open('DetectedTestCodePath.txt','w')
 r = open('RxJava_result.txt','w', encoding='utf-8')
 nt = 0
@@ -157,15 +148,12 @@ for i in data:
 			reusetest.append(path)
 			rt_path.append(path)
 			count += 1
-<<<<<<< HEAD
-			# print(path)
 
-=======
 			print(path)
 			# Similarity[Similarity_key].append(path)
 			# print(Similarity[Similarity_key])
 	
->>>>>>> 6abe02aabe097c9196de97e636e002f59043b082
+
 
 	# print(count)
 	judgment = fragments - count

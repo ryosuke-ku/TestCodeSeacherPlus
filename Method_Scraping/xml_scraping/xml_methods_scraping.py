@@ -21,115 +21,279 @@ url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blin
 res = req.urlopen(url)
 #詳しくは省略、上のXMLが返ってくるものと思ってください
 
-startlist = []
-endlist = []
-numpathlist =[]
+startlist = [] #コード片の開始行番号を格納
+endlist = [] #コード片の修了行番号を格納
+
 allpathlist = []
-NotestPath =[]
-numNotestPath =[]
+NotestPath =[] #ファイルパスを格納(同じファイルパスを区別しない)
+numNotestPath =[] #ファイルパスを格納(同じファイルパスを区別する)
 soup = bs4(res,'lxml-xml')
 data = defaultdict(list)
+delTestdata = defaultdict(list)
+numdelTestdata = defaultdict(list)
+
 filePaths = soup.find('clones')
 count = 0
 cnt = 1
+num = 1
 for filePath in filePaths.find_all(['clone','source']):
 	 
 	if filePath.name == 'clone':
 		count+=1
-		key = "clone pairs:" + str(count) + ":"+ filePath.get('similarity')+"%"
+		key = "clone pairs:" + str(count) + ":"+ filePath.get('similarity') + "%"
 		# print(key)
 	if key and filePath.name == 'source':
-		path = filePath.get('file')
-		path = path[8:]
-		# startline = filePath.get('startline')
-		# endline = filePath.get('endline')
-		# startlist.append(startline)
-		# endlist.append(endline)
-		registerdPath = str(cnt) + ':' + path
+		path = filePath.get('file') #例 systems/apache_ant/ant/src/main/org/apache/tools/ant/AntClassLoader.java
+		path = path[8:] #例 systems/apache_ant/ant/src/main/org/apache/tools/ant/AntClassLoader.java →　apache_ant/ant/src/main/org/apache/tools/ant/AntClassLoader.java	
 		allpathlist.append(path)
-		numpathlist.append(registerdPath)
 		data[key].append(path)
 		cnt+=1
-		cutpath = path[-9:]
+		cutpath = path[-9:] #pathの文字列の末尾から９文字を取得 Test.java かどうかを判定に使う
 		if cutpath == 'Test.java':
 			pass
 		else:
+			registerdPath = str(num) + ':' + path # 3:apache_ant/ant/src/main/org/apache/tools/ant/AntClassLoader.java 同じファイルパスを区別するため
 			NotestPath.append(path)
 			numNotestPath.append(registerdPath)
-			startline = filePath.get('startline')
-			endline = filePath.get('endline')
+			startline = filePath.get('startline') #コード片の開始行番号を取得
+			endline = filePath.get('endline') #コード片の修了行番号を取得
 			startlist.append(startline)
 			endlist.append(endline)
-			# print(cutpath)
-	
-# print(NotestPath)
-# print(numNotestPath)
-		# print(startline + ',' + endline)
-# print(startlist)
-# print('-------------------------------')
-# print(endlist) 
-# print('-------------------------------')
-# print(allpathlist) 
-# print('startlist:' + str(len(startlist)))
-# print('endlist:' + str(len(endlist)))
-# print('allpathlist:' + str(len(allpathlist)))
-# print('NotestPath:' + str(len(NotestPath)))
-# print(data)
-# print(len(data))
-
-startlinedic = dict(zip(numNotestPath,startlist))
-endlinedic = dict(zip(numNotestPath,endlist))
-# startline = startlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
-# endline = endlinedic.get('1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java')
-# print(startlist[0])
-# print(startline)
-# print(endlist[0])
-# print(endline)
+			delTestdata[key].append(path)
+			numdelTestdata[key].append(registerdPath)
+			num += 1
 
 
-# c = 0
-# for numpath in numpathlist:
-# 	startline = startlinedic.get(numpath)
-# 	endline = endlinedic.get(numpath)
-# 	print(startlist[c])
-# 	print(startline)
-# 	print(endlist[c])
-# 	print(endline)
-# 	c+=1
-
-num = 0
-for Nicadpath in NotestPath:
-	f = open("D:/ryosuke-ku/data_set/maven_190611/" + str(Nicadpath), "r", encoding="utf-8")
-	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
-	f.close()
-
-
-	# print('\n')
-	startline = int(startlist[num])-1
-	endline = int(endlist[num])
-	num +=1
-	# for x in range(startline,endline):
-	# 	print(lines2[x].replace('\n', ''))
-
+numMapStartline = dict(zip(numNotestPath,startlist)) #keyが識別子numあり
+numMapEndline = dict(zip(numNotestPath,endlist)) #keyが識別子numあり
 
 production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
 PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
-
 production.close()
-#print(ProductionPath)
 
 Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
 TestPath = Test.readlines()
 TPath = [Tline.replace('\n', '') for Tline in TestPath]
-
-
-# print(alltest)
-
 Test.close()
-#print(TestPath)
+
 
 dic = dict(zip(PPath,TPath))
+data2 = defaultdict(list)
+
+for i in numdelTestdata:
+	for j in numdelTestdata[i]:
+		delnum = j[2:]
+		print(j)
+		try:
+			path = dic.get(delnum)
+			data2[i].append(path)
+		except KeyError:
+			pass
+	
+
+
+# print(data2)
+
+TwoTestPath =[]
+OneTestPath =[]
+NoTestPath =[]
+
+two = 0
+one = 0
+zero = 0
+for z in data2:
+	c = 0
+	for y in data2[z]:
+		if y is None:
+			c+=1
+	
+	if c == 0:
+		# print('2tests')
+		two += 1
+		TwoTestPath.append(y)
+	if c == 1:
+		# print('1test')
+		one += 1
+		OneTestPath.append(y)
+	if c == 2:
+		# print('Notest')
+		zero += 1
+		NoTestPath.append(y)
+
+
+print('2tests: ' + str(two))
+print('1test: ' + str(one))
+print('Notest: ' + str(zero))
+
+# print(len(AvailableProPath))
+# print(TwoTestPath)
+print(len(TwoTestPath))
+# print(OneTestPath)
+print(len(OneTestPath))
+
+
+
+
+
+
+
+print('NotestPathlen: ' + str(len(NotestPath)))
+# delPairs = []
+# for t in delTestdata:
+# 	for h in delTestdata[t]:
+# 		if len(delTestdata[t]) != 2: # クローンペアが２つのコード片からならないものを取得する
+# 			delPairs.append(t)
+		
+
+# for pairs in delPairs:
+# 	delTestdata.pop(pairs)
+# for a in numNotestPath:
+# 	print(a)
+
+# print('data: ' + str(len(data)))
+# print('delTestdata: ' + str(len(delTestdata)))
+# print(delTestdata)
+# print(len(allpathlist))
+# print(len(numNotestPath))
+# print(len(startlist))
+# print(len(endlist))
+
+
+AvailableProPath = []
+for k in delTestdata:
+	for l in delTestdata[k]:
+		AvailableProPath.append(l)
+
+# f = 0
+# arrabgementdata = defaultdict(list)
+# for q in AvailableProPath:
+# 	key = "clone pairs:" + str(f)
+# 	arrabgementdata[key].append(q)
+# 	f += 1
+
+# print(arrabgementdata)
+# print(AvailableProPath)
+# print(len(AvailableProPath))
+
+
+# production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
+# ProductionPath = production.readlines()
+# PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
+
+# production.close()
+# #print(ProductionPath)
+
+# Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
+# TestPath = Test.readlines()
+# TPath = [Tline.replace('\n', '') for Tline in TestPath]
+
+
+# # print(alltest)
+
+# Test.close()
+# #print(TestPath)
+
+# dic = dict(zip(PPath,TPath))
+# data2 = defaultdict(list)
+
+# for i in delTestdata:
+# 	for j in delTestdata[i]:
+# 		last9path = j[-9:]
+# 		try:
+# 			path = dic.get(j)
+# 			data2[i].append(path)
+# 		except KeyError:
+# 			pass
+# 		# if path is None:
+# 		# 	pass
+# 		# else:
+# 		# 	data2[i].append(path)
+
+
+# # print(data2)
+
+# TwoTestPath =[]
+# OneTestPath =[]
+# NoTestPath =[]
+
+# two = 0
+# one = 0
+# zero = 0
+# for z in data2:
+# 	c = 0
+# 	for y in data2[z]:
+# 		if y is None:
+# 			c+=1
+	
+# 	if c == 0:
+# 		print('2tests')
+# 		two += 1
+# 		TwoTestPath.append(y)
+# 	if c == 1:
+# 		print('1test')
+# 		one += 1
+# 		OneTestPath.append(y)
+# 	if c == 2:
+# 		print('Notest')
+# 		zero += 1
+# 		NoTestPath.append(y)
+
+
+# print('2tests: ' + str(two))
+# print('1test: ' + str(one))
+# print('Notest: ' + str(zero))
+
+# print(len(AvailableProPath))
+# # print(TwoTestPath)
+# print(len(TwoTestPath))
+# # print(OneTestPath)
+# print(len(OneTestPath))
+
+
+
+# num = 0
+# filenum = 1
+# for Nicadpath in AvailableProPath:
+# 	file = open('Nicad_' + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+# 	f = open("D:/ryosuke-ku/data_set/maven_190611/" + str(Nicadpath), "r", encoding="utf-8")
+# 	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
+# 	f.close()
+
+# 	startline = int(startlist[num])-1
+# 	endline = int(endlist[num])
+# 	num +=1
+	
+# 	file.write('public class Nicad_' + str(filenum) + '\n')
+# 	file.write('{' + '\n')
+# 	for x in range(startline,endline):
+# 		print(lines2[x].replace('\n', ''))
+# 		file.write(lines2[x].replace('\n', '') + '\n')
+	
+# 	file.write('}')
+# 	filenum += 1
+
+
+
+
+# production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
+# ProductionPath = production.readlines()
+# PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
+
+# production.close()
+# #print(ProductionPath)
+
+# Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
+# TestPath = Test.readlines()
+# TPath = [Tline.replace('\n', '') for Tline in TestPath]
+
+
+# # print(alltest)
+
+# Test.close()
+# #print(TestPath)
+
+# dic = dict(zip(PPath,TPath))
 
 
 nt = 0
@@ -148,73 +312,41 @@ last9path =[]
 delKey =[]
 
 
-for i in data:
-	rt_path = []
-	# print("----------------------------------------------------------------------------------------------------")
-	# print(i)
-	fragments = len(data[i])
-	# print(len(data[i]))
-	count = 0
-	# writer.writerow(data[i])
-	Similarity_key = i[-4:].replace(":","")
-	# print(Similarity_key)
+# for i in data:
+# 	rt_path = []
+# 	# print("----------------------------------------------------------------------------------------------------")
+# 	# print(i)
+# 	fragments = len(data[i])
+# 	# print(len(data[i]))
+# 	count = 0
+# 	# writer.writerow(data[i])
+# 	Similarity_key = i[-4:].replace(":","")
+# 	# print(Similarity_key)
 
-	for j in data[i]:
-		last9path = j[-9:]
-		# print(last9path)
-		if last9path == 'Test.java':
-			# print('ProductionPath : ' + j)
-			# print('テストパスです')
-			delKey.append(i)
-		else:
-			try:
-				path = dic.get(j)
-			except KeyError:
-				pass
+# 	for j in data[i]:
+# 		last9path = j[-9:]
+# 		# print(last9path)
+# 		if last9path == 'Test.java':
+# 			# print('ProductionPath : ' + j)
+# 			# print('テストパスです')
+# 			delKey.append(i)
+# 		else:
+# 			try:
+# 				path = dic.get(j)
+# 			except KeyError:
+# 				pass
 
-			if path is None:
-				pass
-			else:
-				reusetest.append(path)
-				rt_path.append(path)
-				count += 1
-				# print('ProductionPath : ' + j)
-				# print(path)
+# 			if path is None:
+# 				pass
+# 			else:
+# 				reusetest.append(path)
+# 				rt_path.append(path)
+# 				count += 1
+# 				# print('ProductionPath : ' + j)
+# 				# print(path)
 	
 
-	# print(count)
-	judgment = fragments - count
-	if judgment == 2:
-		# print("テストコードが見つかりませんでした")
-		nt += 1
-		list_nt.append(i[-4:].replace(":",""))
-	elif judgment == 0:
-		# print("すべてのコードフラグメントがテストコードを持っています")
-		at += 1
-		list_at.append(i[-4:].replace(":",""))
 
-	elif judgment == 1 :
-		# print("クローンペアのうち少なくとも一つのコードフラグメントはテストコードを持っています")
-		#print("他のテストを再利用できそうなフラグメントの数："+ str(judgment))
-		notest += judgment
-		pt +=1
-		list_pt.append(i[-4:].replace(":",""))
-		Similarity_total[Similarity_key].append(rt_path)
-
-		
-
-#	print(len(data[i])*(len(data[i])-1)/2)
-	totalpairs += len(data[i])*(len(data[i])-1)/2
-	totalfragments += fragments
-
-# print(len(reusetest))
-reusetestpath = list(set(reusetest))
-# print(len(reusetestpath))
-
-parcent = [k[-4:].replace(":","") for k in data]
-# print(parcent)
-
-c = collections.Counter(parcent)
 
 # print(Similarity_total)
 # print("-")
@@ -301,6 +433,6 @@ for i in data:
 # 	print(AvaiTestPath)
 # print(len(AvaiTestPaths))
 
-for AvaiProductionPath in AvaiProductionPaths:
-	print(AvaiProductionPath)
+# for AvaiProductionPath in AvaiProductionPaths:
+# 	print(AvaiProductionPath)
 # print(len(AvaiProductionPaths))
