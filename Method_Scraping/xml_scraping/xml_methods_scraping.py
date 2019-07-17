@@ -2,7 +2,7 @@ import urllib.request as req
 from bs4 import BeautifulSoup as bs4
 from collections import defaultdict
 import collections
-
+import re
 
 url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30.xml"
@@ -83,8 +83,8 @@ data2 = defaultdict(list)
 
 for i in numdelTestdata:
 	for j in numdelTestdata[i]:
-		delnum = j[2:]
-		print(j)
+		delnum = re.sub(r".*?systems:", "", j)
+		print(delnum)
 		try:
 			path = dic.get(delnum)
 			data2[i].append(path)
