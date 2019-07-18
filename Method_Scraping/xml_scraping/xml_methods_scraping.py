@@ -81,6 +81,19 @@ Test.close()
 dic = dict(zip(PPath,TPath))
 data2 = defaultdict(list)
 
+
+
+delPairs = []
+for t in numdelTestdata:
+	for h in numdelTestdata[t]:
+		if len(numdelTestdata[t]) != 2: # クローンペアが２つのコード片からならないものを取得する
+			delPairs.append(t)
+		
+
+for pairs in delPairs:
+	numdelTestdata.pop(pairs)
+
+
 for i in numdelTestdata:
 	for j in numdelTestdata[i]:
 		delnum = re.sub(r".*?:", "", j)
@@ -93,7 +106,10 @@ for i in numdelTestdata:
 	
 
 
+
+
 # print(data2)
+print(len(data2))
 
 TwoTestPath =[]
 OneTestPath =[]
@@ -125,6 +141,7 @@ for z in data2:
 print('2tests: ' + str(two))
 print('1test: ' + str(one))
 print('Notest: ' + str(zero))
+print('toatl: ' + str(two + one + zero))
 
 # print(len(AvailableProPath))
 # print(TwoTestPath)
