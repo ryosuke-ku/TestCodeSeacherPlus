@@ -129,12 +129,13 @@ for i in numdelTestdata:
 			pass
 
 
+# print(onlyhasTestPdata)
 
 
-for a in onlyhasTestPdata:
-	print(a)
-	for b in onlyhasTestPdata[a]:
-		print(b)
+# for a in onlyhasTestPdata:
+# 	print(a)
+# 	for b in onlyhasTestPdata[a]:
+# 		print(b)
 
 # print(onlyhasTestdata)
 # print(len(onlyhasTestdata))
@@ -144,29 +145,47 @@ t1 = 0
 t2 = 0
 t1Tlist = defaultdict(list)
 t2Tlist = defaultdict(list)
-for h in onlyhasTestdata:
-	for q in onlyhasTestdata[h]:
-		if len(onlyhasTestdata[h]) == 2:
-			t2Tlist[h].append(q)
-			t2 += 1
-		
-		if len(onlyhasTestdata[h]) == 1:
-			t1Tlist[h].append(q)
-			t1 += 1
 
-t1p = 0
-t2p = 0
-t1Plist = defaultdict(list)
-t2Plist = defaultdict(list)
-for g in onlyhasTestPdata:
-	for v in onlyhasTestPdata[g]:
-		if len(onlyhasTestPdata[g]) == 2:
-			t2Plist[g].append(v)
-			t2p += 1
+t1keylist = []
+t2keylist = []
+for h in onlyhasTestdata:
+	if len(onlyhasTestdata[h]) == 2:
+		t2keylist.append(h)
+		t2 += 1
+	
+	if len(onlyhasTestdata[h]) == 1:
+		t1keylist.append(h)
+		t1 += 1
+	
+# print(t2keylist)
+# print(len(t2keylist))
+# print(len(t1keylist))
+
+print(len(startdicPath))
+
+for m in t1keylist:
+	startkey = numdelTestdata[m]
+	startdicPath.pop(startkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの開始行を削除
+	endkey = numdelTestdata[m]
+	enddicPath.pop(endkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの修了行を削除
+	# print(numdelTestdata[pairs])
+	numdelTestdata.pop(m)
+
+print(len(startdicPath))
+
+# t1p = 0
+# t2p = 0
+# t1Plist = defaultdict(list)
+# t2Plist = defaultdict(list)
+# for g in onlyhasTestPdata:
+# 	for v in onlyhasTestPdata[g]:
+# 		if len(onlyhasTestPdata[g]) == 2:
+# 			t2Plist[g].append(v)
+# 			t2p += 1
 		
-		if len(onlyhasTestPdata[g]) == 1:
-			t1Plist[g].append(v)
-			t1p += 1
+# 		if len(onlyhasTestPdata[g]) == 1:
+# 			t1Plist[g].append(v)
+# 			t1p += 1
 
 # for a in t1Plist:
 # 	print(a)
@@ -175,12 +194,12 @@ for g in onlyhasTestPdata:
 
 # print(len(t1Plist))
 
-for a in t1Plist:
-	print(a)
-	for b in t1Plist[a]:
-		print(b)
+# for a in t1Plist:
+# 	print(a)
+# 	for b in t1Plist[a]:
+# 		print(b)
 
-print(len(t1Plist))
+# print(len(t1Plist))
 
 # print(onlyhasTestPdata)
 # num = 0
