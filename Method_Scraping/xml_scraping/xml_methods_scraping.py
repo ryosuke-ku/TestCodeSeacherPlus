@@ -118,16 +118,13 @@ onlyhasTestPdata = defaultdict(list)
 for i in numdelTestdata:
 	for j in numdelTestdata[i]:
 		delnum = re.sub(r".*?:", "", j)
-		# print(delnum)
-		try:
-			path = dic.get(delnum)
-			data2[i].append(path)
-			if path is not None:
-				onlyhasTestdata[i].append(path)
-				onlyhasTestPdata[i].append(j)
-		except KeyError:
-			pass
-
+		path = dic.get(delnum)
+		data2[i].append(path)
+		if path is not None:
+			onlyhasTestdata[i].append(path)
+			onlyhasTestPdata[i].append(j)
+		
+print(data2)
 
 # print(onlyhasTestPdata)
 
@@ -148,30 +145,62 @@ t2Tlist = defaultdict(list)
 
 t1keylist = []
 t2keylist = []
-for h in onlyhasTestdata:
-	if len(onlyhasTestdata[h]) == 2:
+for h in onlyhasTestPdata:
+	if len(onlyhasTestPdata[h]) == 2:
 		t2keylist.append(h)
 		t2 += 1
 	
-	if len(onlyhasTestdata[h]) == 1:
+	if len(onlyhasTestPdata[h]) == 1:
 		t1keylist.append(h)
 		t1 += 1
 	
 # print(t2keylist)
 # print(len(t2keylist))
 # print(len(t1keylist))
+# print(t1keylist)
+
+print(len(numdelTestdata))
+print(len(startdicPath))
+# for m in t1keylist:
+# 	startkey = numdelTestdata[m]
+# 	startdicPath.pop(startkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの開始行を削除
+# 	endkey = numdelTestdata[m]
+# 	enddicPath.pop(endkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの修了行を削除
+# 	# print(numdelTestdata[pairs])
+# 	numdelTestdata.pop(m)
 
 print(len(startdicPath))
+print(len(enddicPath))
+print(len(numdelTestdata))
 
-for m in t1keylist:
-	startkey = numdelTestdata[m]
-	startdicPath.pop(startkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの開始行を削除
-	endkey = numdelTestdata[m]
-	enddicPath.pop(endkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの修了行を削除
-	# print(numdelTestdata[pairs])
-	numdelTestdata.pop(m)
+t1mapdic = defaultdict(list)
+for u in t1keylist:
+	path = onlyhasTestPdata[u]
+	t1mapdic[u].append(path)
 
-print(len(startdicPath))
+
+
+# for i in t1mapdic:
+# 	if len(t1mapdic[i][0]) == 1:
+# 		print('〇')
+# 	else:
+# 		print('✖')
+
+# print(t1mapdic)
+print(len(t1mapdic))
+
+Slinelist =[]
+Elinelist =[]
+for k in t1mapdic:
+	for g in t1mapdic[k]:
+		# print(g[0])
+		Sline = startdicPath[g[0]]
+		Slinelist.append(Sline)
+		Eline = enddicPath[g[0]]
+		Elinelist.append(Eline)
+
+# print(Slinelist)
+# print(len(Slinelist))
 
 # t1p = 0
 # t2p = 0
