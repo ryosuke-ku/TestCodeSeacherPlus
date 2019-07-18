@@ -1,37 +1,38 @@
+// clone pairs:83:72%
+// 156:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_65
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        List<PluginExecution> src = source.getExecutions();
+        List<ReportSet> src = source.getReportSets();
         if ( !src.isEmpty() )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-            for ( PluginExecution element : src )
+            for ( ReportSet rset : src )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
                 {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
             }
 
-            for ( PluginExecution element : tgt )
+            for ( ReportSet element : tgt )
             {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
                 if ( existing != null )
                 {
-                    mergePluginExecution( element, existing, sourceDominant, context );
+                    mergeReportSet( element, existing, sourceDominant, context );
                 }
                 merged.put( key, element );
             }
 
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
     }
 }

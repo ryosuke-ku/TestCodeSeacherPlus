@@ -1,52 +1,51 @@
+// clone pairs:26:88%
+// 43:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+
 public class Nicad_15
 {
-    public void unalignFromBaseDirectory( Model model, File basedir )
+    static boolean matchesLayout( String repoLayout, String mirrorLayout )
     {
-        if ( basedir == null )
+        boolean result = false;
+
+        // simple checks first to short circuit processing below.
+        if ( StringUtils.isEmpty( mirrorLayout ) || WILDCARD.equals( mirrorLayout ) )
         {
-            return;
+            result = true;
         }
-
-        Build build = model.getBuild();
-
-        if ( build != null )
+        else if ( mirrorLayout.equals( repoLayout ) )
         {
-            build.setDirectory( unalignFromBaseDirectory( build.getDirectory(), basedir ) );
-
-            build.setSourceDirectory( unalignFromBaseDirectory( build.getSourceDirectory(), basedir ) );
-
-            build.setTestSourceDirectory( unalignFromBaseDirectory( build.getTestSourceDirectory(), basedir ) );
-
-            for ( Resource resource : build.getResources() )
+            result = true;
+        }
+        else
+        {
+            // process the list
+            String[] layouts = mirrorLayout.split( "," );
+            for ( String layout : layouts )
             {
-                resource.setDirectory( unalignFromBaseDirectory( resource.getDirectory(), basedir ) );
-            }
-
-            for ( Resource resource : build.getTestResources() )
-            {
-                resource.setDirectory( unalignFromBaseDirectory( resource.getDirectory(), basedir ) );
-            }
-
-            if ( build.getFilters() != null )
-            {
-                List<String> filters = new ArrayList<>();
-                for ( String filter : build.getFilters() )
+                // see if this is a negative match
+                if ( layout.length() > 1 && layout.startsWith( "!" ) )
                 {
-                    filters.add( unalignFromBaseDirectory( filter, basedir ) );
+                    if ( layout.substring( 1 ).equals( repoLayout ) )
+                    {
+                        // explicitly exclude. Set result and stop processing.
+                        result = false;
+                        break;
+                    }
                 }
-                build.setFilters( filters );
+                // check for exact match
+                else if ( layout.equals( repoLayout ) )
+                {
+                    result = true;
+                    break;
+                }
+                else if ( WILDCARD.equals( layout ) )
+                {
+                    result = true;
+                    // don't stop processing in case a future segment explicitly excludes this repo
+                }
             }
-
-            build.setOutputDirectory( unalignFromBaseDirectory( build.getOutputDirectory(), basedir ) );
-
-            build.setTestOutputDirectory( unalignFromBaseDirectory( build.getTestOutputDirectory(), basedir ) );
         }
 
-        Reporting reporting = model.getReporting();
-
-        if ( reporting != null )
-        {
-            reporting.setOutputDirectory( unalignFromBaseDirectory( reporting.getOutputDirectory(), basedir ) );
-        }
+        return result;
     }
 }

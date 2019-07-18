@@ -1,30 +1,26 @@
+// clone pairs:470:73%
+// 820:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_88
 {
-    protected void mergeCiManagement_Notifiers( CiManagement target, CiManagement source, boolean sourceDominant,
-                                                Map<Object, Object> context )
+    protected void mergeDistributionManagement_Site( DistributionManagement target, DistributionManagement source,
+                                                     boolean sourceDominant, Map<Object, Object> context )
     {
-        List<Notifier> src = source.getNotifiers();
-        if ( !src.isEmpty() )
+        Site src = source.getSite();
+        if ( src != null )
         {
-            List<Notifier> tgt = target.getNotifiers();
-            Map<Object, Notifier> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Notifier element : tgt )
+            Site tgt = target.getSite();
+            if ( sourceDominant || tgt == null || isSiteEmpty( tgt ) )
             {
-                Object key = getNotifierKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Notifier element : src )
-            {
-                Object key = getNotifierKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
+                if ( tgt == null )
                 {
-                    merged.put( key, element );
+                    tgt = new Site();
                 }
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setSite( tgt );
+                mergeSite( tgt, src, sourceDominant, context );
             }
-
-            target.setNotifiers( new ArrayList<>( merged.values() ) );
+            mergeSite_ChildSiteUrlInheritAppendPath( tgt, src, sourceDominant, context );
         }
     }
 }

@@ -1,50 +1,38 @@
+// clone pairs:66:86%
+// 122:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_48
 {
-    private Settings readSettings( Source settingsSource, SettingsBuildingRequest request,
-                                   DefaultSettingsProblemCollector problems )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        if ( settingsSource == null )
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            return new Settings();
-        }
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-        problems.setSource( settingsSource.getLocation() );
-
-        Settings settings;
-
-        try
-        {
-            Map<String, ?> options = Collections.singletonMap( SettingsReader.IS_STRICT, Boolean.TRUE );
-
-            try
+            for ( ReportSet rset : src )
             {
-                settings = settingsReader.read( settingsSource.getInputStream(), options );
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
+                {
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
+                }
             }
-            catch ( SettingsParseException e )
+
+            for ( ReportSet element : tgt )
             {
-                options = Collections.singletonMap( SettingsReader.IS_STRICT, Boolean.FALSE );
-
-                settings = settingsReader.read( settingsSource.getInputStream(), options );
-
-                problems.add( SettingsProblem.Severity.WARNING, e.getMessage(), e.getLineNumber(), e.getColumnNumber(),
-                              e );
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
             }
-        }
-        catch ( SettingsParseException e )
-        {
-            problems.add( SettingsProblem.Severity.FATAL, "Non-parseable settings " + settingsSource.getLocation()
-                + ": " + e.getMessage(), e.getLineNumber(), e.getColumnNumber(), e );
-            return new Settings();
-        }
-        catch ( IOException e )
-        {
-            problems.add( SettingsProblem.Severity.FATAL, "Non-readable settings " + settingsSource.getLocation()
-                + ": " + e.getMessage(), -1, -1, e );
-            return new Settings();
-        }
 
-        settingsValidator.validate( settings, problems );
-
-        return settings;
+            target.setReportSets( new ArrayList<>( merged.values() ) );
+        }
     }
 }

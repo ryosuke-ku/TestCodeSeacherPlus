@@ -1,40 +1,38 @@
+// clone pairs:71:72%
+// 132:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_53
 {
-    public boolean isActive( Profile profile, ProfileActivationContext context, ModelProblemCollector problems )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        Activation activation = profile.getActivation();
-
-        if ( activation == null )
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            return false;
-        }
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-        ActivationOS os = activation.getOs();
+            for ( ReportSet rset : src )
+            {
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
+                {
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
+                }
+            }
 
-        if ( os == null )
-        {
-            return false;
-        }
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
 
-        boolean active = ensureAtLeastOneNonNull( os );
-
-        if ( active && os.getFamily() != null )
-        {
-            active = determineFamilyMatch( os.getFamily() );
+            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
-        if ( active && os.getName() != null )
-        {
-            active = determineNameMatch( os.getName() );
-        }
-        if ( active && os.getArch() != null )
-        {
-            active = determineArchMatch( os.getArch() );
-        }
-        if ( active && os.getVersion() != null )
-        {
-            active = determineVersionMatch( os.getVersion() );
-        }
-
-        return active;
     }
 }

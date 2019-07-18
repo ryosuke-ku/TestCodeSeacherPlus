@@ -1,30 +1,33 @@
+// clone pairs:381:77%
+// 723:maven/maven-core/src/main/java/org/apache/maven/artifact/repository/MavenArtifactRepository.java
+
 public class Nicad_72
 {
-    protected void mergeBuildBase_TestResources( BuildBase target, BuildBase source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
+    public String toString()
     {
-        List<Resource> src = source.getTestResources();
-        if ( !src.isEmpty() )
+        StringBuilder sb = new StringBuilder( 256 );
+
+        sb.append( "      id: " ).append( getId() ).append( '\n' );
+        sb.append( "      url: " ).append( getUrl() ).append( '\n' );
+        sb.append( "   layout: " ).append( layout != null ? layout : "none" ).append( '\n' );
+
+        if ( proxy != null )
         {
-            List<Resource> tgt = target.getTestResources();
-            Map<Object, Resource> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Resource element : tgt )
-            {
-                Object key = getResourceKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Resource element : src )
-            {
-                Object key = getResourceKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setTestResources( new ArrayList<>( merged.values() ) );
+            sb.append( "    proxy: " ).append( proxy.getHost() ).append( ':' ).append( proxy.getPort() ).append( '\n' );
         }
+
+        if ( snapshots != null )
+        {
+            sb.append( "snapshots: [enabled => " ).append( snapshots.isEnabled() );
+            sb.append( ", update => " ).append( snapshots.getUpdatePolicy() ).append( "]\n" );
+        }
+
+        if ( releases != null )
+        {
+            sb.append( " releases: [enabled => " ).append( releases.isEnabled() );
+            sb.append( ", update => " ).append( releases.getUpdatePolicy() ).append( "]\n" );
+        }
+
+        return sb.toString();
     }
 }

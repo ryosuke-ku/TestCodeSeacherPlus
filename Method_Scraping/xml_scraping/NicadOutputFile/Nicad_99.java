@@ -1,37 +1,31 @@
+// clone pairs:506:78%
+// 869:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_99
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    public Artifact createPluginArtifact( Plugin plugin )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        String version = plugin.getVersion();
+        if ( StringUtils.isEmpty( version ) )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
-            {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
-            }
-
-            for ( PluginExecution element : tgt )
-            {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            version = "RELEASE";
         }
+
+        VersionRange versionRange;
+        try
+        {
+            versionRange = VersionRange.createFromVersionSpec( version );
+        }
+        catch ( InvalidVersionSpecificationException e )
+        {
+            // MNG-5368: Log a message instead of returning 'null' silently.
+            this.logger.error( String.format(
+                "Invalid version specification '%s' creating plugin artifact '%s'.",
+                version, plugin ), e );
+
+            return null;
+        }
+
+        return artifactFactory.createPluginArtifact( plugin.getGroupId(), plugin.getArtifactId(), versionRange );
     }
 }

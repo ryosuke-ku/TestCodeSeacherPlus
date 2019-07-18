@@ -1,30 +1,24 @@
+// clone pairs:1163:90%
+// 2027:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+
 public class Nicad_336
 {
-    protected void mergeModel_Profiles( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
-    {
-        List<Profile> src = source.getProfiles();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Profile> tgt = target.getProfiles();
-            Map<Object, Profile> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Profile element : tgt )
+            if ( o == this )
             {
-                Object key = getProfileKey( element );
-                merged.put( key, element );
+                return true;
             }
 
-            for ( Profile element : src )
+            if ( !( o instanceof CacheKey ) )
             {
-                Object key = getProfileKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                return false;
             }
 
-            target.setProfiles( new ArrayList<>( merged.values() ) );
+            CacheKey other = (CacheKey) o;
+
+            return pomHash == other.pomHash && artifactEquals( artifact, other.artifact )
+                && resolveManagedVersions == other.resolveManagedVersions
+                && repositoriesEquals( repositories, other.repositories );
         }
-    }
 }

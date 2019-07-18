@@ -1,30 +1,20 @@
+// clone pairs:1075:90%
+// 1868:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+
 public class Nicad_316
 {
-    protected void mergeCiManagement_Notifiers( CiManagement target, CiManagement source, boolean sourceDominant,
-                                                Map<Object, Object> context )
+    public boolean equals( Object obj ) 
     {
-        List<Notifier> src = source.getNotifiers();
-        if ( !src.isEmpty() )
+        if ( this == obj ) 
         {
-            List<Notifier> tgt = target.getNotifiers();
-            Map<Object, Notifier> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Notifier element : tgt )
-            {
-                Object key = getNotifierKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Notifier element : src )
-            {
-                Object key = getNotifierKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setNotifiers( new ArrayList<>( merged.values() ) );
+            return true;
         }
+        
+        if ( !( obj instanceof FileModelSource ) ) 
+        {
+            return false;
+        }
+        FileModelSource other = ( FileModelSource ) obj;
+        return getFile().equals( other.getFile() );
     }
 }

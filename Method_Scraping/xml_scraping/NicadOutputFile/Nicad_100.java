@@ -1,30 +1,31 @@
+// clone pairs:507:71%
+// 871:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_100
 {
-    protected void mergeModelBase_PluginRepositories( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                      Map<Object, Object> context )
+    public Artifact createPluginArtifact( Plugin plugin )
     {
-        List<Repository> src = source.getPluginRepositories();
-        if ( !src.isEmpty() )
+        String version = plugin.getVersion();
+        if ( StringUtils.isEmpty( version ) )
         {
-            List<Repository> tgt = target.getPluginRepositories();
-            Map<Object, Repository> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Repository element : tgt )
-            {
-                Object key = getRepositoryKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Repository element : src )
-            {
-                Object key = getRepositoryKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setPluginRepositories( new ArrayList<>( merged.values() ) );
+            version = "RELEASE";
         }
+
+        VersionRange versionRange;
+        try
+        {
+            versionRange = VersionRange.createFromVersionSpec( version );
+        }
+        catch ( InvalidVersionSpecificationException e )
+        {
+            // MNG-5368: Log a message instead of returning 'null' silently.
+            this.logger.error( String.format(
+                "Invalid version specification '%s' creating plugin artifact '%s'.",
+                version, plugin ), e );
+
+            return null;
+        }
+
+        return artifactFactory.createPluginArtifact( plugin.getGroupId(), plugin.getArtifactId(), versionRange );
     }
 }

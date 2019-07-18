@@ -1,41 +1,40 @@
+// clone pairs:45:72%
+// 80:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_28
 {
-    public AuthenticationInfo getAuthenticationInfo( String id )
+    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
+                                           Map<Object, Object> context )
     {
-        MavenSession session = legacySupport.getSession();
-
-        if ( session != null && id != null )
+        List<PluginExecution> src = source.getExecutions();
+        if ( !src.isEmpty() )
         {
-            MavenExecutionRequest request = session.getRequest();
+            List<PluginExecution> tgt = target.getExecutions();
+            Map<Object, PluginExecution> merged =
+                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-            if ( request != null )
+            for ( PluginExecution element : src )
             {
-                List<Server> servers = request.getServers();
-
-                if ( servers != null )
+                if ( sourceDominant
+                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
                 {
-                    for ( Server server : servers )
-                    {
-                        if ( id.equalsIgnoreCase( server.getId() ) )
-                        {
-                            SettingsDecryptionResult result =
-                                settingsDecrypter.decrypt( new DefaultSettingsDecryptionRequest( server ) );
-                            server = result.getServer();
-
-                            AuthenticationInfo authInfo = new AuthenticationInfo();
-                            authInfo.setUserName( server.getUsername() );
-                            authInfo.setPassword( server.getPassword() );
-                            authInfo.setPrivateKey( server.getPrivateKey() );
-                            authInfo.setPassphrase( server.getPassphrase() );
-
-                            return authInfo;
-                        }
-                    }
+                    Object key = getPluginExecutionKey( element );
+                    merged.put( key, element );
                 }
             }
-        }
 
-        // empty one to prevent NPE
-       return new AuthenticationInfo();
+            for ( PluginExecution element : tgt )
+            {
+                Object key = getPluginExecutionKey( element );
+                PluginExecution existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergePluginExecution( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setExecutions( new ArrayList<>( merged.values() ) );
+        }
     }
 }

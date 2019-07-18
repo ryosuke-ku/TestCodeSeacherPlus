@@ -1,37 +1,31 @@
+// clone pairs:195:100%
+// 357:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_71
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    private Authentication getAuthentication( RepositorySystemSession session, ArtifactRepository repository )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        if ( session != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
+            AuthenticationSelector selector = session.getAuthenticationSelector();
+            if ( selector != null )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
+                RemoteRepository repo = RepositoryUtils.toRepo( repository );
+                org.eclipse.aether.repository.Authentication auth = selector.getAuthentication( repo );
+                if ( auth != null )
                 {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
+                    repo = new RemoteRepository.Builder( repo ).setAuthentication( auth ).build();
+                    AuthenticationContext authCtx = AuthenticationContext.forRepository( session, repo );
+                    Authentication result =
+                        new Authentication( authCtx.get( AuthenticationContext.USERNAME ),
+                                            authCtx.get( AuthenticationContext.PASSWORD ) );
+                    result.setPrivateKey( authCtx.get( AuthenticationContext.PRIVATE_KEY_PATH ) );
+                    result.setPassphrase( authCtx.get( AuthenticationContext.PRIVATE_KEY_PASSPHRASE ) );
+                    authCtx.close();
+                    return result;
                 }
             }
-
-            for ( PluginExecution element : tgt )
-            {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
         }
+        return null;
     }
 }

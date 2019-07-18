@@ -1,34 +1,22 @@
+// clone pairs:1212:90%
+// 2124:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+
 public class Nicad_348
 {
-    public List<Dependency> getCompileDependencies()
+    public boolean equals( Object obj )
     {
-        Set<Artifact> artifacts = getArtifacts();
-
-        if ( ( artifacts == null ) || artifacts.isEmpty() )
+        if ( this == obj )
         {
-            return Collections.emptyList();
+            return true;
         }
 
-        List<Dependency> list = new ArrayList<>( artifacts.size() );
-
-        for ( Artifact a : getArtifacts() )
+        if ( !( obj instanceof AndArtifactFilter ) )
         {
-            // TODO let the scope handler deal with this
-            if ( Artifact.SCOPE_COMPILE.equals( a.getScope() ) || Artifact.SCOPE_PROVIDED.equals( a.getScope() )
-                     || Artifact.SCOPE_SYSTEM.equals( a.getScope() ) )
-            {
-                Dependency dependency = new Dependency();
-
-                dependency.setArtifactId( a.getArtifactId() );
-                dependency.setGroupId( a.getGroupId() );
-                dependency.setVersion( a.getVersion() );
-                dependency.setScope( a.getScope() );
-                dependency.setType( a.getType() );
-                dependency.setClassifier( a.getClassifier() );
-
-                list.add( dependency );
-            }
+            return false;
         }
-        return Collections.unmodifiableList( list );
+
+        AndArtifactFilter other = (AndArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

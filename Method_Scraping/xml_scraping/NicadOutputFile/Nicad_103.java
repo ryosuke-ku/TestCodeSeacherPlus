@@ -1,37 +1,24 @@
+// clone pairs:547:83%
+// 889:maven/maven-core/src/main/java/org/apache/maven/toolchain/merge/MavenToolchainMerger.java
+
 public class Nicad_103
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    protected void mergeToolchainModelConfiguration( ToolchainModel target,
+                                                    ToolchainModel source )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        Xpp3Dom src = (Xpp3Dom) source.getConfiguration();
+        if ( src != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
+            Xpp3Dom tgt = (Xpp3Dom) target.getConfiguration();
+            if ( tgt == null )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
+                tgt = Xpp3Dom.mergeXpp3Dom( new Xpp3Dom( src ), tgt );
             }
-
-            for ( PluginExecution element : tgt )
+            else
             {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
+                tgt = Xpp3Dom.mergeXpp3Dom( tgt, src );
             }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            target.setConfiguration( tgt );
         }
     }
 }

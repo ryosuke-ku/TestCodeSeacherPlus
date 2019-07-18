@@ -1,30 +1,26 @@
+// clone pairs:459:73%
+// 798:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_82
 {
-    protected void mergeModel_Developers( Model target, Model source, boolean sourceDominant,
-                                          Map<Object, Object> context )
+    protected void mergeDistributionManagement_Site( DistributionManagement target, DistributionManagement source,
+                                                     boolean sourceDominant, Map<Object, Object> context )
     {
-        List<Developer> src = source.getDevelopers();
-        if ( !src.isEmpty() )
+        Site src = source.getSite();
+        if ( src != null )
         {
-            List<Developer> tgt = target.getDevelopers();
-            Map<Object, Developer> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Developer element : tgt )
+            Site tgt = target.getSite();
+            if ( sourceDominant || tgt == null || isSiteEmpty( tgt ) )
             {
-                Object key = getDeveloperKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Developer element : src )
-            {
-                Object key = getDeveloperKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
+                if ( tgt == null )
                 {
-                    merged.put( key, element );
+                    tgt = new Site();
                 }
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setSite( tgt );
+                mergeSite( tgt, src, sourceDominant, context );
             }
-
-            target.setDevelopers( new ArrayList<>( merged.values() ) );
+            mergeSite_ChildSiteUrlInheritAppendPath( tgt, src, sourceDominant, context );
         }
     }
 }

@@ -1,31 +1,20 @@
+// clone pairs:1022:70%
+// 1767:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+
 public class Nicad_297
 {
-    private static String toMessage( List<Problem> problems )
+    public boolean equals( Object obj ) 
     {
-        StringWriter buffer = new StringWriter( 1024 );
-
-        PrintWriter writer = new PrintWriter( buffer );
-
-        writer.print( problems.size() );
-        writer.print( ( problems.size() == 1 ) ? " problem was " : " problems were " );
-        writer.print( "encountered while building the effective toolchains" );
-        writer.println();
-
-        for ( Problem problem : problems )
+        if ( this == obj ) 
         {
-            writer.print( "[" );
-            writer.print( problem.getSeverity() );
-            writer.print( "] " );
-            writer.print( problem.getMessage() );
-            String location = problem.getLocation();
-            if ( !location.isEmpty() )
-            {
-                writer.print( " @ " );
-                writer.print( location );
-            }
-            writer.println();
+            return true;
         }
-
-        return buffer.toString();
+        
+        if ( !( obj instanceof FileModelSource ) ) 
+        {
+            return false;
+        }
+        FileModelSource other = ( FileModelSource ) obj;
+        return getFile().equals( other.getFile() );
     }
 }

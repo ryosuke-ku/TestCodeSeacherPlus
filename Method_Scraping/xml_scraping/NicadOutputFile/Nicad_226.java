@@ -1,30 +1,22 @@
+// clone pairs:898:90%
+// 1521:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_226
 {
-    protected void mergeModel_Developers( Model target, Model source, boolean sourceDominant,
-                                          Map<Object, Object> context )
-    {
-        List<Developer> src = source.getDevelopers();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Developer> tgt = target.getDevelopers();
-            Map<Object, Developer> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Developer element : tgt )
+            if ( this == o )
             {
-                Object key = getDeveloperKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Developer element : src )
-            {
-                Object key = getDeveloperKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            LongItem longItem = (LongItem) o;
 
-            target.setDevelopers( new ArrayList<>( merged.values() ) );
+            return value == longItem.value;
+
         }
-    }
 }

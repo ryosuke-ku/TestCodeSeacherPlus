@@ -1,37 +1,30 @@
+// clone pairs:440:93%
+// 767:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_79
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    public ArtifactRepositoryPolicy buildArtifactRepositoryPolicy( RepositoryPolicy policy )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        boolean enabled = true;
+
+        String updatePolicy = null;
+
+        String checksumPolicy = null;
+
+        if ( policy != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+            enabled = policy.isEnabled();
 
-            for ( PluginExecution element : src )
+            if ( policy.getUpdatePolicy() != null )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
+                updatePolicy = policy.getUpdatePolicy();
             }
-
-            for ( PluginExecution element : tgt )
+            if ( policy.getChecksumPolicy() != null )
             {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
+                checksumPolicy = policy.getChecksumPolicy();
             }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
         }
+
+        return new ArtifactRepositoryPolicy( enabled, updatePolicy, checksumPolicy );
     }
 }

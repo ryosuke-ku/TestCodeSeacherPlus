@@ -1,30 +1,26 @@
+// clone pairs:474:73%
+// 828:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_92
 {
-    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
+    protected void mergeDistributionManagement_Site( DistributionManagement target, DistributionManagement source,
+                                                     boolean sourceDominant, Map<Object, Object> context )
     {
-        List<ReportSet> src = source.getReportSets();
-        if ( !src.isEmpty() )
+        Site src = source.getSite();
+        if ( src != null )
         {
-            List<ReportSet> tgt = target.getReportSets();
-            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( ReportSet element : tgt )
+            Site tgt = target.getSite();
+            if ( sourceDominant || tgt == null || isSiteEmpty( tgt ) )
             {
-                Object key = getReportSetKey( element );
-                merged.put( key, element );
-            }
-
-            for ( ReportSet element : src )
-            {
-                Object key = getReportSetKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
+                if ( tgt == null )
                 {
-                    merged.put( key, element );
+                    tgt = new Site();
                 }
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setSite( tgt );
+                mergeSite( tgt, src, sourceDominant, context );
             }
-
-            target.setReportSets( new ArrayList<>( merged.values() ) );
+            mergeSite_ChildSiteUrlInheritAppendPath( tgt, src, sourceDominant, context );
         }
     }
 }

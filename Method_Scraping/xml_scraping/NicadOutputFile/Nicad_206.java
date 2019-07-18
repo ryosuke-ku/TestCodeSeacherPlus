@@ -1,30 +1,26 @@
+// clone pairs:811:100%
+// 1359:maven/maven-embedder/src/main/java/org/apache/maven/cli/MavenCli.java
+
 public class Nicad_206
 {
-    protected void mergeModel_Profiles( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
+    static File resolveFile( File file, String workingDirectory )
     {
-        List<Profile> src = source.getProfiles();
-        if ( !src.isEmpty() )
+        if ( file == null )
         {
-            List<Profile> tgt = target.getProfiles();
-            Map<Object, Profile> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Profile element : tgt )
-            {
-                Object key = getProfileKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Profile element : src )
-            {
-                Object key = getProfileKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setProfiles( new ArrayList<>( merged.values() ) );
+            return null;
+        }
+        else if ( file.isAbsolute() )
+        {
+            return file;
+        }
+        else if ( file.getPath().startsWith( File.separator ) )
+        {
+            // drive-relative Windows path
+            return file.getAbsoluteFile();
+        }
+        else
+        {
+            return new File( workingDirectory, file.getPath() ).getAbsoluteFile();
         }
     }
 }

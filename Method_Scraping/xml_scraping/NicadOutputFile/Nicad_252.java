@@ -1,30 +1,22 @@
+// clone pairs:937:80%
+// 1598:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_252
 {
-    protected void mergeModel_Profiles( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
-    {
-        List<Profile> src = source.getProfiles();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Profile> tgt = target.getProfiles();
-            Map<Object, Profile> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Profile element : tgt )
+            if ( this == o )
             {
-                Object key = getProfileKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Profile element : src )
-            {
-                Object key = getProfileKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            StringItem that = (StringItem) o;
 
-            target.setProfiles( new ArrayList<>( merged.values() ) );
+            return value.equals( that.value );
+
         }
-    }
 }

@@ -1,31 +1,25 @@
+// clone pairs:504:85%
+// 865:maven/maven-core/src/main/java/org/apache/maven/lifecycle/mapping/LifecyclePhase.java
+
 public class Nicad_98
 {
-    protected void mergeDependency_Exclusions( Dependency target, Dependency source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    public static Map<String, String> toLegacyMap( Map<String, LifecyclePhase> lifecyclePhases )
     {
-        List<Exclusion> src = source.getExclusions();
-        if ( !src.isEmpty() )
+        if ( lifecyclePhases == null )
         {
-            List<Exclusion> tgt = target.getExclusions();
-
-            Map<Object, Exclusion> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Exclusion element : tgt )
-            {
-                Object key = getExclusionKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Exclusion element : src )
-            {
-                Object key = getExclusionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setExclusions( new ArrayList<>( merged.values() ) );
+            return null;
         }
+        
+        if ( lifecyclePhases.isEmpty() )
+        {
+            return Collections.emptyMap();
+        }
+        
+        Map<String, String> phases = new LinkedHashMap<>();
+        for ( Map.Entry<String, LifecyclePhase> e: lifecyclePhases.entrySet() )
+        {
+            phases.put( e.getKey(), e.getValue().toString() );
+        }
+        return phases;
     }
 }

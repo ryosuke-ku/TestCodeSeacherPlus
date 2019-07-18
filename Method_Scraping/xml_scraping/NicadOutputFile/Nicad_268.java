@@ -1,30 +1,22 @@
+// clone pairs:959:80%
+// 1643:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_268
 {
-    protected void mergeModel_MailingLists( Model target, Model source, boolean sourceDominant,
-                                            Map<Object, Object> context )
-    {
-        List<MailingList> src = source.getMailingLists();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<MailingList> tgt = target.getMailingLists();
-            Map<Object, MailingList> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( MailingList element : tgt )
+            if ( this == o )
             {
-                Object key = getMailingListKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( MailingList element : src )
-            {
-                Object key = getMailingListKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            IntItem intItem = (IntItem) o;
 
-            target.setMailingLists( new ArrayList<>( merged.values() ) );
+            return value == intItem.value;
+
         }
-    }
 }

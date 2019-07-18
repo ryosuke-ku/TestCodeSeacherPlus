@@ -1,31 +1,24 @@
+// clone pairs:1143:90%
+// 1987:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+
 public class Nicad_326
 {
-    protected void mergeDependency_Exclusions( Dependency target, Dependency source, boolean sourceDominant,
-                                               Map<Object, Object> context )
-    {
-        List<Exclusion> src = source.getExclusions();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Exclusion> tgt = target.getExclusions();
-
-            Map<Object, Exclusion> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Exclusion element : tgt )
+            if ( o == this )
             {
-                Object key = getExclusionKey( element );
-                merged.put( key, element );
+                return true;
             }
 
-            for ( Exclusion element : src )
+            if ( !( o instanceof CacheKey ) )
             {
-                Object key = getExclusionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                return false;
             }
 
-            target.setExclusions( new ArrayList<>( merged.values() ) );
+            CacheKey other = (CacheKey) o;
+
+            return pomHash == other.pomHash && artifactEquals( artifact, other.artifact )
+                && resolveManagedVersions == other.resolveManagedVersions
+                && repositoriesEquals( repositories, other.repositories );
         }
-    }
 }

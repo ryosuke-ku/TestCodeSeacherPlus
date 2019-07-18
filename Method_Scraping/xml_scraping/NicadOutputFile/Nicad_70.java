@@ -1,34 +1,34 @@
+// clone pairs:155:71%
+// 298:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/ToolchainsBuildingException.java
+
 public class Nicad_70
 {
-        protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    private static String toMessage( List<Problem> problems )
+    {
+        StringWriter buffer = new StringWriter( 1024 );
+
+        PrintWriter writer = new PrintWriter( buffer );
+
+        writer.print( problems.size() );
+        writer.print( ( problems.size() == 1 ) ? " problem was " : " problems were " );
+        writer.print( "encountered while building the effective toolchains" );
+        writer.println();
+
+        for ( Problem problem : problems )
         {
-            List<PluginExecution> src = source.getExecutions();
-            if ( !src.isEmpty() )
+            writer.print( "[" );
+            writer.print( problem.getSeverity() );
+            writer.print( "] " );
+            writer.print( problem.getMessage() );
+            String location = problem.getLocation();
+            if ( !location.isEmpty() )
             {
-                List<PluginExecution> tgt = target.getExecutions();
-
-                Map<Object, PluginExecution> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( PluginExecution element : src )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element.clone() );
-                }
-
-                for ( PluginExecution element : tgt )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    PluginExecution existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergePluginExecution( element, existing, sourceDominant, context );
-                    }
-                    merged.put( key, element );
-                }
-
-                target.setExecutions( new ArrayList<>( merged.values() ) );
+                writer.print( " @ " );
+                writer.print( location );
             }
+            writer.println();
         }
+
+        return buffer.toString();
+    }
 }

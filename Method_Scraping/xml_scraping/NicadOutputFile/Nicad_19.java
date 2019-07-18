@@ -1,34 +1,43 @@
+// clone pairs:35:86%
+// 60:maven/maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java
+
 public class Nicad_19
 {
-    private Proxy getProxy( RepositorySystemSession session, ArtifactRepository repository )
+    private static void mergePluginExecutionDefinitions( PluginExecution child, PluginExecution parent )
     {
-        if ( session != null )
+        if ( child.getPhase() == null )
         {
-            ProxySelector selector = session.getProxySelector();
-            if ( selector != null )
+            child.setPhase( parent.getPhase() );
+        }
+
+        List<String> parentGoals = parent.getGoals();
+        List<String> childGoals = child.getGoals();
+
+        List<String> goals = new ArrayList<>();
+
+        if ( ( childGoals != null ) && !childGoals.isEmpty() )
+        {
+            goals.addAll( childGoals );
+        }
+
+        if ( parentGoals != null )
+        {
+            for (  String goal : parentGoals )
             {
-                RemoteRepository repo = RepositoryUtils.toRepo( repository );
-                org.eclipse.aether.repository.Proxy proxy = selector.getProxy( repo );
-                if ( proxy != null )
+                if ( !goals.contains( goal ) )
                 {
-                    Proxy p = new Proxy();
-                    p.setHost( proxy.getHost() );
-                    p.setProtocol( proxy.getType() );
-                    p.setPort( proxy.getPort() );
-                    if ( proxy.getAuthentication() != null )
-                    {
-                        repo = new RemoteRepository.Builder( repo ).setProxy( proxy ).build();
-                        AuthenticationContext authCtx = AuthenticationContext.forProxy( session, repo );
-                        p.setUserName( authCtx.get( AuthenticationContext.USERNAME ) );
-                        p.setPassword( authCtx.get( AuthenticationContext.PASSWORD ) );
-                        p.setNtlmDomain( authCtx.get( AuthenticationContext.NTLM_DOMAIN ) );
-                        p.setNtlmHost( authCtx.get( AuthenticationContext.NTLM_WORKSTATION ) );
-                        authCtx.close();
-                    }
-                    return p;
+                    goals.add( goal );
                 }
             }
         }
-        return null;
+
+        child.setGoals( goals );
+
+        Xpp3Dom childConfiguration = (Xpp3Dom) child.getConfiguration();
+        Xpp3Dom parentConfiguration = (Xpp3Dom) parent.getConfiguration();
+
+        childConfiguration = Xpp3Dom.mergeXpp3Dom( childConfiguration, parentConfiguration );
+
+        child.setConfiguration( childConfiguration );
     }
 }

@@ -1,36 +1,46 @@
+// clone pairs:111:100%
+// 209:maven/maven-core/src/main/java/org/apache/maven/artifact/factory/DefaultArtifactFactory.java
+
 public class Nicad_68
 {
-        protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    private Artifact createArtifact( String groupId, String artifactId, VersionRange versionRange, String type,
+                                     String classifier, String scope, String inheritedScope, boolean optional )
+    {
+        String desiredScope = Artifact.SCOPE_RUNTIME;
+
+        if ( inheritedScope == null )
         {
-            List<ReportPlugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
-            {
-                List<ReportPlugin> tgt = target.getPlugins();
-                Map<Object, ReportPlugin> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( ReportPlugin element : tgt )
-                {
-                    Object key = getReportPluginKey( element );
-                    merged.put( key, element );
-                }
-
-                for ( ReportPlugin element : src )
-                {
-                    Object key = getReportPluginKey( element );
-                    ReportPlugin existing = merged.get( key );
-                    if ( existing == null )
-                    {
-                        merged.put( key, element );
-                    }
-                    else
-                    {
-                        mergeReportPlugin( existing, element, sourceDominant, context );
-                    }
-                }
-
-                target.setPlugins( new ArrayList<>( merged.values() ) );
-            }
+            desiredScope = scope;
         }
+        else if ( Artifact.SCOPE_TEST.equals( scope ) || Artifact.SCOPE_PROVIDED.equals( scope ) )
+        {
+            return null;
+        }
+        else if ( Artifact.SCOPE_COMPILE.equals( scope ) && Artifact.SCOPE_COMPILE.equals( inheritedScope ) )
+        {
+            // added to retain compile artifactScope. Remove if you want compile inherited as runtime
+            desiredScope = Artifact.SCOPE_COMPILE;
+        }
+
+        if ( Artifact.SCOPE_TEST.equals( inheritedScope ) )
+        {
+            desiredScope = Artifact.SCOPE_TEST;
+        }
+
+        if ( Artifact.SCOPE_PROVIDED.equals( inheritedScope ) )
+        {
+            desiredScope = Artifact.SCOPE_PROVIDED;
+        }
+
+        if ( Artifact.SCOPE_SYSTEM.equals( scope ) )
+        {
+            // system scopes come through unchanged...
+            desiredScope = Artifact.SCOPE_SYSTEM;
+        }
+
+        ArtifactHandler handler = artifactHandlerManager.getArtifactHandler( type );
+
+        return new DefaultArtifact( groupId, artifactId, versionRange, desiredScope, type, classifier, handler,
+                                    optional );
+    }
 }

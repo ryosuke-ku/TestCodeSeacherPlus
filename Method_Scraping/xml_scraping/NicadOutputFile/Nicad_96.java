@@ -1,31 +1,26 @@
+// clone pairs:484:100%
+// 835:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+
 public class Nicad_96
 {
-    protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    private static Repository convertToSettingsRepository( org.apache.maven.model.Repository modelRepo )
     {
-        List<ReportPlugin> src = source.getPlugins();
-        if ( !src.isEmpty() )
+        Repository repo = new Repository();
+
+        repo.setId( modelRepo.getId() );
+        repo.setLayout( modelRepo.getLayout() );
+        repo.setName( modelRepo.getName() );
+        repo.setUrl( modelRepo.getUrl() );
+
+        if ( modelRepo.getSnapshots() != null )
         {
-            List<ReportPlugin> tgt = target.getPlugins();
-            Map<Object, ReportPlugin> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( ReportPlugin element : tgt )
-            {
-                Object key = getReportPluginKey( element );
-                merged.put( key, element );
-            }
-
-            for ( ReportPlugin element : src )
-            {
-                Object key = getReportPluginKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setPlugins( new ArrayList<>( merged.values() ) );
+            repo.setSnapshots( convertRepositoryPolicy( modelRepo.getSnapshots() ) );
         }
+        if ( modelRepo.getReleases() != null )
+        {
+            repo.setReleases( convertRepositoryPolicy( modelRepo.getReleases() ) );
+        }
+
+        return repo;
     }
 }

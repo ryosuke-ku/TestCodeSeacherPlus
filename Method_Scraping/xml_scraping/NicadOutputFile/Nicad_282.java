@@ -1,31 +1,22 @@
+// clone pairs:990:90%
+// 1703:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+
 public class Nicad_282
 {
-    protected void mergeDependency_Exclusions( Dependency target, Dependency source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<Exclusion> src = source.getExclusions();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<Exclusion> tgt = target.getExclusions();
-
-            Map<Object, Exclusion> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Exclusion element : tgt )
-            {
-                Object key = getExclusionKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Exclusion element : src )
-            {
-                Object key = getExclusionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setExclusions( new ArrayList<>( merged.values() ) );
+            return true;
         }
+
+        if ( !( obj instanceof OrArtifactFilter ) )
+        {
+            return false;
+        }
+
+        OrArtifactFilter other = (OrArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

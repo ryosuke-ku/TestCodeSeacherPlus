@@ -1,42 +1,24 @@
+// clone pairs:1011:90%
+// 1744:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+
 public class Nicad_295
 {
-    public boolean equals( Object o )
-    {
-        if ( o == this )
+        public boolean equals( Object o )
         {
-            return true;
-        }
+            if ( o == this )
+            {
+                return true;
+            }
 
-        if ( !( o instanceof Artifact ) )
-        {
-            return false;
-        }
+            if ( !( o instanceof CacheKey ) )
+            {
+                return false;
+            }
 
-        Artifact a = (Artifact) o;
+            CacheKey other = (CacheKey) o;
 
-        if ( !a.getGroupId().equals( groupId ) )
-        {
-            return false;
+            return pomHash == other.pomHash && artifactEquals( artifact, other.artifact )
+                && resolveManagedVersions == other.resolveManagedVersions
+                && repositoriesEquals( repositories, other.repositories );
         }
-        else if ( !a.getArtifactId().equals( artifactId ) )
-        {
-            return false;
-        }
-        else if ( !a.getVersion().equals( version ) )
-        {
-            return false;
-        }
-        else if ( !a.getType().equals( type ) )
-        {
-            return false;
-        }
-        else if ( a.getClassifier() == null ? classifier != null : !a.getClassifier().equals( classifier ) )
-        {
-            return false;
-        }
-
-        // We don't consider the version range in the comparison, just the resolved version
-
-        return true;
-    }
 }

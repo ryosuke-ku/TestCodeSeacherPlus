@@ -1,30 +1,21 @@
+// clone pairs:1038:100%
+// 1799:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
+
 public class Nicad_302
 {
-    protected void mergePluginContainer_Plugins( PluginContainer target, PluginContainer source,
-                                                 boolean sourceDominant, Map<Object, Object> context )
+    private boolean hasErrors( List<Problem> problems )
     {
-        List<Plugin> src = source.getPlugins();
-        if ( !src.isEmpty() )
+        if ( problems != null )
         {
-            List<Plugin> tgt = target.getPlugins();
-            Map<Object, Plugin> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Plugin element : tgt )
+            for ( Problem problem : problems )
             {
-                Object key = getPluginKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Plugin element : src )
-            {
-                Object key = getPluginKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
+                if ( Problem.Severity.ERROR.compareTo( problem.getSeverity() ) >= 0 )
                 {
-                    merged.put( key, element );
+                    return true;
                 }
             }
-
-            target.setPlugins( new ArrayList<>( merged.values() ) );
         }
+
+        return false;
     }
 }

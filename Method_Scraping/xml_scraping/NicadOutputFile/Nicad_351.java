@@ -1,30 +1,22 @@
+// clone pairs:1218:100%
+// 2137:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+
 public class Nicad_351
 {
-        public int compareTo( Item item )
+    public boolean equals( Object obj )
+    {
+        if ( this == obj )
         {
-            if ( item == null )
-            {
-                return ( value == 0 ) ? 0 : 1; // 1.0 == 1, 1.1 > 1
-            }
-
-            switch ( item.getType() )
-            {
-                case INT_ITEM:
-                    return 1;
-                case LONG_ITEM:
-                    long itemValue = ( (LongItem) item ).value;
-                    return ( value < itemValue ) ? -1 : ( ( value == itemValue ) ? 0 : 1 );
-                case BIGINTEGER_ITEM:
-                    return -1;
-
-                case STRING_ITEM:
-                    return 1; // 1.1 > 1-sp
-
-                case LIST_ITEM:
-                    return 1; // 1.1 > 1-1
-
-                default:
-                    throw new IllegalStateException( "invalid item: " + item.getClass() );
-            }
+            return true;
         }
+
+        if ( !( obj instanceof AndArtifactFilter ) )
+        {
+            return false;
+        }
+
+        AndArtifactFilter other = (AndArtifactFilter) obj;
+
+        return filters.equals( other.filters );
+    }
 }

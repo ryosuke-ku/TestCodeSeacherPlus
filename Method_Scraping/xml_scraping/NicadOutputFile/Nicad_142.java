@@ -1,30 +1,22 @@
+// clone pairs:652:83%
+// 1085:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_142
 {
-    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
+    protected void mergeModel_IssueManagement( Model target, Model source, boolean sourceDominant,
+                                               Map<Object, Object> context )
     {
-        List<ReportSet> src = source.getReportSets();
-        if ( !src.isEmpty() )
+        IssueManagement src = source.getIssueManagement();
+        if ( src != null )
         {
-            List<ReportSet> tgt = target.getReportSets();
-            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( ReportSet element : tgt )
+            IssueManagement tgt = target.getIssueManagement();
+            if ( tgt == null )
             {
-                Object key = getReportSetKey( element );
-                merged.put( key, element );
+                tgt = new IssueManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setIssueManagement( tgt );
+                mergeIssueManagement( tgt, src, sourceDominant, context );
             }
-
-            for ( ReportSet element : src )
-            {
-                Object key = getReportSetKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
     }
 }

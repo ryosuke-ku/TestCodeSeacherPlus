@@ -1,31 +1,22 @@
+// clone pairs:658:83%
+// 1097:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_148
 {
-    protected void mergeDependency_Exclusions( Dependency target, Dependency source, boolean sourceDominant,
+    protected void mergeModel_IssueManagement( Model target, Model source, boolean sourceDominant,
                                                Map<Object, Object> context )
     {
-        List<Exclusion> src = source.getExclusions();
-        if ( !src.isEmpty() )
+        IssueManagement src = source.getIssueManagement();
+        if ( src != null )
         {
-            List<Exclusion> tgt = target.getExclusions();
-
-            Map<Object, Exclusion> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Exclusion element : tgt )
+            IssueManagement tgt = target.getIssueManagement();
+            if ( tgt == null )
             {
-                Object key = getExclusionKey( element );
-                merged.put( key, element );
+                tgt = new IssueManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setIssueManagement( tgt );
+                mergeIssueManagement( tgt, src, sourceDominant, context );
             }
-
-            for ( Exclusion element : src )
-            {
-                Object key = getExclusionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setExclusions( new ArrayList<>( merged.values() ) );
         }
     }
 }

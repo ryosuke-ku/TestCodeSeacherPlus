@@ -1,30 +1,24 @@
+// clone pairs:702:75%
+// 1175:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_184
 {
-    protected void mergeBuild_Extensions( Build target, Build source, boolean sourceDominant,
-                                          Map<Object, Object> context )
+    protected void mergeDistributionManagement_SnapshotRepository( DistributionManagement target,
+                                                                   DistributionManagement source,
+                                                                   boolean sourceDominant,
+                                                                   Map<Object, Object> context )
     {
-        List<Extension> src = source.getExtensions();
-        if ( !src.isEmpty() )
+        DeploymentRepository src = source.getSnapshotRepository();
+        if ( src != null )
         {
-            List<Extension> tgt = target.getExtensions();
-            Map<Object, Extension> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Extension element : tgt )
+            DeploymentRepository tgt = target.getSnapshotRepository();
+            if ( sourceDominant || tgt == null )
             {
-                Object key = getExtensionKey( element );
-                merged.put( key, element );
+                tgt = new DeploymentRepository();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setSnapshotRepository( tgt );
+                mergeDeploymentRepository( tgt, src, sourceDominant, context );
             }
-
-            for ( Extension element : src )
-            {
-                Object key = getExtensionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setExtensions( new ArrayList<>( merged.values() ) );
         }
     }
 }

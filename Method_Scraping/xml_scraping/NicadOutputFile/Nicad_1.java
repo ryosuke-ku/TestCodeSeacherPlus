@@ -1,58 +1,60 @@
+// clone pairs:1:77%
+// 1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+
 public class Nicad_1
 {
-    public static Profile convertFromProfileXmlProfile( org.apache.maven.profiles.Profile profileXmlProfile )
+    public static org.apache.maven.model.Profile convertFromSettingsProfile( Profile settingsProfile )
     {
-        Profile profile = new Profile();
+        org.apache.maven.model.Profile profile = new org.apache.maven.model.Profile();
 
-        profile.setId( profileXmlProfile.getId() );
+        profile.setId( settingsProfile.getId() );
 
-        profile.setSource( "profiles.xml" );
+        profile.setSource( "settings.xml" );
 
-        org.apache.maven.profiles.Activation profileActivation = profileXmlProfile.getActivation();
+        Activation settingsActivation = settingsProfile.getActivation();
 
-        if ( profileActivation != null )
+        if ( settingsActivation != null )
         {
-            Activation activation = new Activation();
+            org.apache.maven.model.Activation activation = new org.apache.maven.model.Activation();
 
-            activation.setActiveByDefault( profileActivation.isActiveByDefault() );
+            activation.setActiveByDefault( settingsActivation.isActiveByDefault() );
 
-            activation.setJdk( profileActivation.getJdk() );
+            activation.setJdk( settingsActivation.getJdk() );
 
-            org.apache.maven.profiles.ActivationProperty profileProp = profileActivation.getProperty();
+            ActivationProperty settingsProp = settingsActivation.getProperty();
 
-            if ( profileProp != null )
+            if ( settingsProp != null )
             {
-                ActivationProperty prop = new ActivationProperty();
+                org.apache.maven.model.ActivationProperty prop = new org.apache.maven.model.ActivationProperty();
 
-                prop.setName( profileProp.getName() );
-                prop.setValue( profileProp.getValue() );
+                prop.setName( settingsProp.getName() );
+                prop.setValue( settingsProp.getValue() );
 
                 activation.setProperty( prop );
             }
 
+            ActivationOS settingsOs = settingsActivation.getOs();
 
-            ActivationOS profileOs = profileActivation.getOs();
-
-            if ( profileOs != null )
+            if ( settingsOs != null )
             {
                 org.apache.maven.model.ActivationOS os = new org.apache.maven.model.ActivationOS();
 
-                os.setArch( profileOs.getArch() );
-                os.setFamily( profileOs.getFamily() );
-                os.setName( profileOs.getName() );
-                os.setVersion( profileOs.getVersion() );
+                os.setArch( settingsOs.getArch() );
+                os.setFamily( settingsOs.getFamily() );
+                os.setName( settingsOs.getName() );
+                os.setVersion( settingsOs.getVersion() );
 
                 activation.setOs( os );
             }
 
-            org.apache.maven.profiles.ActivationFile profileFile = profileActivation.getFile();
+            org.apache.maven.settings.ActivationFile settingsFile = settingsActivation.getFile();
 
-            if ( profileFile != null )
+            if ( settingsFile != null )
             {
                 ActivationFile file = new ActivationFile();
 
-                file.setExists( profileFile.getExists() );
-                file.setMissing( profileFile.getMissing() );
+                file.setExists( settingsFile.getExists() );
+                file.setMissing( settingsFile.getMissing() );
 
                 activation.setFile( file );
             }
@@ -60,24 +62,23 @@ public class Nicad_1
             profile.setActivation( activation );
         }
 
-        profile.setProperties( profileXmlProfile.getProperties() );
+        profile.setProperties( settingsProfile.getProperties() );
 
-        List repos = profileXmlProfile.getRepositories();
+        List<Repository> repos = settingsProfile.getRepositories();
         if ( repos != null )
         {
-            for ( Object repo : repos )
+            for ( Repository repo : repos )
             {
-                profile.addRepository( convertFromProfileXmlRepository( (org.apache.maven.profiles.Repository) repo ) );
+                profile.addRepository( convertFromSettingsRepository( repo ) );
             }
         }
 
-        List pluginRepos = profileXmlProfile.getPluginRepositories();
+        List<Repository> pluginRepos = settingsProfile.getPluginRepositories();
         if ( pluginRepos != null )
         {
-            for ( Object pluginRepo : pluginRepos )
+            for ( Repository pluginRepo : pluginRepos )
             {
-                profile.addPluginRepository(
-                    convertFromProfileXmlRepository( (org.apache.maven.profiles.Repository) pluginRepo ) );
+                profile.addPluginRepository( convertFromSettingsRepository( pluginRepo ) );
             }
         }
 

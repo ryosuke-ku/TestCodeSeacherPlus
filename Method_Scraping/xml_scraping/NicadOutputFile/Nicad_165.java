@@ -1,36 +1,23 @@
+// clone pairs:683:75%
+// 1137:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_165
 {
-        protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    protected void mergeDistributionManagement_Repository( DistributionManagement target,
+                                                           DistributionManagement source, boolean sourceDominant,
+                                                           Map<Object, Object> context )
+    {
+        DeploymentRepository src = source.getRepository();
+        if ( src != null )
         {
-            List<ReportPlugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
+            DeploymentRepository tgt = target.getRepository();
+            if ( sourceDominant || tgt == null )
             {
-                List<ReportPlugin> tgt = target.getPlugins();
-                Map<Object, ReportPlugin> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( ReportPlugin element : tgt )
-                {
-                    Object key = getReportPluginKey( element );
-                    merged.put( key, element );
-                }
-
-                for ( ReportPlugin element : src )
-                {
-                    Object key = getReportPluginKey( element );
-                    ReportPlugin existing = merged.get( key );
-                    if ( existing == null )
-                    {
-                        merged.put( key, element );
-                    }
-                    else
-                    {
-                        mergeReportPlugin( existing, element, sourceDominant, context );
-                    }
-                }
-
-                target.setPlugins( new ArrayList<>( merged.values() ) );
+                tgt = new DeploymentRepository();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setRepository( tgt );
+                mergeDeploymentRepository( tgt, src, sourceDominant, context );
             }
         }
+    }
 }

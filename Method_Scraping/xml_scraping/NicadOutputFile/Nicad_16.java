@@ -1,53 +1,49 @@
+// clone pairs:30:84%
+// 50:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
+
 public class Nicad_16
 {
-    private Versioning readVersions( RepositorySystemSession session, RequestTrace trace, Metadata metadata,
-                                     ArtifactRepository repository, VersionResult result )
+    private PersistedToolchains readToolchains( Source toolchainsSource, ToolchainsBuildingRequest request,
+                                                ProblemCollector problems )
     {
-        Versioning versioning = null;
+        if ( toolchainsSource == null )
+        {
+            return new PersistedToolchains();
+        }
+
+        PersistedToolchains toolchains;
+
         try
         {
-            if ( metadata != null )
+            Map<String, ?> options = Collections.singletonMap( ToolchainsReader.IS_STRICT, Boolean.TRUE );
+
+            try
             {
-                try ( SyncContext syncContext = syncContextFactory.newInstance( session, true ) )
-                {
-                    syncContext.acquire( null, Collections.singleton( metadata ) );
+                toolchains = toolchainsReader.read( toolchainsSource.getInputStream(), options );
+            }
+            catch ( ToolchainsParseException e )
+            {
+                options = Collections.singletonMap( ToolchainsReader.IS_STRICT, Boolean.FALSE );
 
-                    if ( metadata.getFile() != null && metadata.getFile().exists() )
-                    {
-                        try ( final InputStream in = new FileInputStream( metadata.getFile() ) )
-                        {
-                            versioning = new MetadataXpp3Reader().read( in, false ).getVersioning();
+                toolchains = toolchainsReader.read( toolchainsSource.getInputStream(), options );
 
-                            /*
-                            NOTE: Users occasionally misuse the id "local" for remote repos which screws up the metadata
-                            of the local repository. This is especially troublesome during snapshot resolution so we try
-                            to handle that gracefully.
-                             */
-                            if ( versioning != null && repository instanceof LocalRepository
-                                     && versioning.getSnapshot() != null
-                                     && versioning.getSnapshot().getBuildNumber() > 0 )
-                            {
-                                final Versioning repaired = new Versioning();
-                                repaired.setLastUpdated( versioning.getLastUpdated() );
-                                repaired.setSnapshot( new Snapshot() );
-                                repaired.getSnapshot().setLocalCopy( true );
-                                versioning = repaired;
-                                throw new IOException( "Snapshot information corrupted with remote repository data"
-                                                           + ", please verify that no remote repository uses the id '"
-                                                           + repository.getId() + "'" );
-
-                            }
-                        }
-                    }
-                }
+                problems.add( Problem.Severity.WARNING, e.getMessage(), e.getLineNumber(), e.getColumnNumber(),
+                              e );
             }
         }
-        catch ( Exception e )
+        catch ( ToolchainsParseException e )
         {
-            invalidMetadata( session, trace, metadata, repository, e );
-            result.addException( e );
+            problems.add( Problem.Severity.FATAL, "Non-parseable toolchains " + toolchainsSource.getLocation()
+                + ": " + e.getMessage(), e.getLineNumber(), e.getColumnNumber(), e );
+            return new PersistedToolchains();
+        }
+        catch ( IOException e )
+        {
+            problems.add( Problem.Severity.FATAL, "Non-readable toolchains " + toolchainsSource.getLocation()
+                + ": " + e.getMessage(), -1, -1, e );
+            return new PersistedToolchains();
         }
 
-        return ( versioning != null ) ? versioning : new Versioning();
+        return toolchains;
     }
 }

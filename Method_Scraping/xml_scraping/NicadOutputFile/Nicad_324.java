@@ -1,31 +1,22 @@
+// clone pairs:1139:90%
+// 1978:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+
 public class Nicad_324
 {
-    protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<ReportPlugin> src = source.getPlugins();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<ReportPlugin> tgt = target.getPlugins();
-            Map<Object, ReportPlugin> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( ReportPlugin element : tgt )
-            {
-                Object key = getReportPluginKey( element );
-                merged.put( key, element );
-            }
-
-            for ( ReportPlugin element : src )
-            {
-                Object key = getReportPluginKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setPlugins( new ArrayList<>( merged.values() ) );
+            return true;
         }
+
+        if ( !( obj instanceof AndArtifactFilter ) )
+        {
+            return false;
+        }
+
+        AndArtifactFilter other = (AndArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

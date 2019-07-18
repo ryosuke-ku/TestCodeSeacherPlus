@@ -1,30 +1,22 @@
+// clone pairs:917:80%
+// 1559:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_238
 {
-    protected void mergeModel_Licenses( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
-    {
-        List<License> src = source.getLicenses();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<License> tgt = target.getLicenses();
-            Map<Object, License> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( License element : tgt )
+            if ( this == o )
             {
-                Object key = getLicenseKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( License element : src )
-            {
-                Object key = getLicenseKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            BigIntegerItem that = (BigIntegerItem) o;
 
-            target.setLicenses( new ArrayList<>( merged.values() ) );
+            return value.equals( that.value );
+
         }
-    }
 }

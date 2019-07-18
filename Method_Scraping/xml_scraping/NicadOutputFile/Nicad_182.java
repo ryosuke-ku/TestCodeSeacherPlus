@@ -1,30 +1,24 @@
+// clone pairs:700:75%
+// 1171:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_182
 {
-    protected void mergeModel_MailingLists( Model target, Model source, boolean sourceDominant,
-                                            Map<Object, Object> context )
+    protected void mergeDistributionManagement_SnapshotRepository( DistributionManagement target,
+                                                                   DistributionManagement source,
+                                                                   boolean sourceDominant,
+                                                                   Map<Object, Object> context )
     {
-        List<MailingList> src = source.getMailingLists();
-        if ( !src.isEmpty() )
+        DeploymentRepository src = source.getSnapshotRepository();
+        if ( src != null )
         {
-            List<MailingList> tgt = target.getMailingLists();
-            Map<Object, MailingList> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( MailingList element : tgt )
+            DeploymentRepository tgt = target.getSnapshotRepository();
+            if ( sourceDominant || tgt == null )
             {
-                Object key = getMailingListKey( element );
-                merged.put( key, element );
+                tgt = new DeploymentRepository();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setSnapshotRepository( tgt );
+                mergeDeploymentRepository( tgt, src, sourceDominant, context );
             }
-
-            for ( MailingList element : src )
-            {
-                Object key = getMailingListKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setMailingLists( new ArrayList<>( merged.values() ) );
         }
     }
 }

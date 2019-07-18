@@ -1,30 +1,28 @@
+// clone pairs:422:75%
+// 746:maven/maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java
+
 public class Nicad_76
 {
-    protected void mergeBuildBase_Resources( BuildBase target, BuildBase source, boolean sourceDominant,
-                                             Map<Object, Object> context )
+    private static List<Dependency> mergeDependencyList( List<Dependency> child, List<Dependency> parent )
     {
-        List<Resource> src = source.getResources();
-        if ( !src.isEmpty() )
+        Map<String, Dependency> depsMap = new LinkedHashMap<>();
+
+        if ( parent != null )
         {
-            List<Resource> tgt = target.getResources();
-            Map<Object, Resource> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Resource element : tgt )
+            for ( Dependency dependency : parent )
             {
-                Object key = getResourceKey( element );
-                merged.put( key, element );
+                depsMap.put( dependency.getManagementKey(), dependency );
             }
-
-            for ( Resource element : src )
-            {
-                Object key = getResourceKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setResources( new ArrayList<>( merged.values() ) );
         }
+
+        if ( child != null )
+        {
+            for ( Dependency dependency : child )
+            {
+                depsMap.put( dependency.getManagementKey(), dependency );
+            }
+        }
+
+        return new ArrayList<>( depsMap.values() );
     }
 }

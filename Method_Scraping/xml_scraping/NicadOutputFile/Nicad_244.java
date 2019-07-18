@@ -1,30 +1,22 @@
+// clone pairs:925:90%
+// 1575:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_244
 {
-    protected void mergeModelBase_PluginRepositories( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                      Map<Object, Object> context )
-    {
-        List<Repository> src = source.getPluginRepositories();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Repository> tgt = target.getPluginRepositories();
-            Map<Object, Repository> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Repository element : tgt )
+            if ( this == o )
             {
-                Object key = getRepositoryKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Repository element : src )
-            {
-                Object key = getRepositoryKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            StringItem that = (StringItem) o;
 
-            target.setPluginRepositories( new ArrayList<>( merged.values() ) );
+            return value.equals( that.value );
+
         }
-    }
 }

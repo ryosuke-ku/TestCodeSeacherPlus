@@ -1,51 +1,44 @@
+// clone pairs:36:82%
+// 61:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_20
 {
-    static boolean matchPattern( ArtifactRepository originalRepository, String pattern )
+    public Artifact createDependencyArtifact( Dependency d )
     {
-        boolean result = false;
-        String originalId = originalRepository.getId();
+        VersionRange versionRange;
+        try
+        {
+            versionRange = VersionRange.createFromVersionSpec( d.getVersion() );
+        }
+        catch ( InvalidVersionSpecificationException e )
+        {
+            // MNG-5368: Log a message instead of returning 'null' silently.
+            this.logger.error( String.format( "Invalid version specification '%s' creating dependency artifact '%s'.",
+                                              d.getVersion(), d ), e );
+            return null;
+        }
 
-        // simple checks first to short circuit processing below.
-        if ( WILDCARD.equals( pattern ) || pattern.equals( originalId ) )
+        Artifact artifact =
+            artifactFactory.createDependencyArtifact( d.getGroupId(), d.getArtifactId(), versionRange, d.getType(),
+                                                      d.getClassifier(), d.getScope(), d.isOptional() );
+
+        if ( Artifact.SCOPE_SYSTEM.equals( d.getScope() ) && d.getSystemPath() != null )
         {
-            result = true;
+            artifact.setFile( new File( d.getSystemPath() ) );
         }
-        else
+
+        if ( !d.getExclusions().isEmpty() )
         {
-            // process the list
-            String[] repos = pattern.split( "," );
-            for ( String repo : repos )
+            List<String> exclusions = new ArrayList<>();
+
+            for ( Exclusion exclusion : d.getExclusions() )
             {
-                repo = repo.trim();
-                // see if this is a negative match
-                if ( repo.length() > 1 && repo.startsWith( "!" ) )
-                {
-                    if ( repo.substring( 1 ).equals( originalId ) )
-                    {
-                        // explicitly exclude. Set result and stop processing.
-                        result = false;
-                        break;
-                    }
-                }
-                // check for exact match
-                else if ( repo.equals( originalId ) )
-                {
-                    result = true;
-                    break;
-                }
-                // check for external:*
-                else if ( EXTERNAL_WILDCARD.equals( repo ) && isExternalRepo( originalRepository ) )
-                {
-                    result = true;
-                    // don't stop processing in case a future segment explicitly excludes this repo
-                }
-                else if ( WILDCARD.equals( repo ) )
-                {
-                    result = true;
-                    // don't stop processing in case a future segment explicitly excludes this repo
-                }
+                exclusions.add( exclusion.getGroupId() + ':' + exclusion.getArtifactId() );
             }
+
+            artifact.setDependencyFilter( new ExcludesArtifactFilter( exclusions ) );
         }
-        return result;
+
+        return artifact;
     }
 }

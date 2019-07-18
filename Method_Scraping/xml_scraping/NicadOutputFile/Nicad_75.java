@@ -1,37 +1,31 @@
+// clone pairs:421:93%
+// 743:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+
 public class Nicad_75
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    public Mirror getMirror( ArtifactRepository repository, List<Mirror> mirrors )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        String repoId = repository.getId();
+
+        if ( repoId != null && mirrors != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
+            for ( Mirror mirror : mirrors )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
+                if ( repoId.equals( mirror.getMirrorOf() ) && matchesLayout( repository, mirror ) )
                 {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
+                    return mirror;
                 }
             }
 
-            for ( PluginExecution element : tgt )
+            for ( Mirror mirror : mirrors )
             {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
+                if ( matchPattern( repository, mirror.getMirrorOf() ) && matchesLayout( repository, mirror ) )
                 {
-                    mergePluginExecution( element, existing, sourceDominant, context );
+                    return mirror;
                 }
-                merged.put( key, element );
             }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
         }
+
+        return null;
     }
 }

@@ -1,34 +1,24 @@
+// clone pairs:1164:90%
+// 2028:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+
 public class Nicad_337
 {
-        protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+        public boolean equals( Object o )
         {
-            List<PluginExecution> src = source.getExecutions();
-            if ( !src.isEmpty() )
+            if ( o == this )
             {
-                List<PluginExecution> tgt = target.getExecutions();
-
-                Map<Object, PluginExecution> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( PluginExecution element : src )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element.clone() );
-                }
-
-                for ( PluginExecution element : tgt )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    PluginExecution existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergePluginExecution( element, existing, sourceDominant, context );
-                    }
-                    merged.put( key, element );
-                }
-
-                target.setExecutions( new ArrayList<>( merged.values() ) );
+                return true;
             }
+
+            if ( !( o instanceof CacheKey ) )
+            {
+                return false;
+            }
+
+            CacheKey other = (CacheKey) o;
+
+            return pomHash == other.pomHash && artifactEquals( artifact, other.artifact )
+                && resolveManagedVersions == other.resolveManagedVersions
+                && repositoriesEquals( repositories, other.repositories );
         }
 }

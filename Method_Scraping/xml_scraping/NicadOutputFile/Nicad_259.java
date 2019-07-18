@@ -1,36 +1,22 @@
+// clone pairs:946:80%
+// 1617:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_259
 {
-        protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+        public boolean equals( Object o )
         {
-            List<ReportPlugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
+            if ( this == o )
             {
-                List<ReportPlugin> tgt = target.getPlugins();
-                Map<Object, ReportPlugin> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( ReportPlugin element : tgt )
-                {
-                    Object key = getReportPluginKey( element );
-                    merged.put( key, element );
-                }
-
-                for ( ReportPlugin element : src )
-                {
-                    Object key = getReportPluginKey( element );
-                    ReportPlugin existing = merged.get( key );
-                    if ( existing == null )
-                    {
-                        merged.put( key, element );
-                    }
-                    else
-                    {
-                        mergeReportPlugin( existing, element, sourceDominant, context );
-                    }
-                }
-
-                target.setPlugins( new ArrayList<>( merged.values() ) );
+                return true;
             }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
+            }
+
+            IntItem intItem = (IntItem) o;
+
+            return value == intItem.value;
+
         }
 }

@@ -1,30 +1,26 @@
+// clone pairs:552:100%
+// 898:maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
+
 public class Nicad_104
 {
-    protected void mergeModelBase_Repositories( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                Map<Object, Object> context )
+    public String getMessage()
     {
-        List<Repository> src = source.getRepositories();
-        if ( !src.isEmpty() )
+        String msg;
+
+        if ( message != null && message.length() > 0 )
         {
-            List<Repository> tgt = target.getRepositories();
-            Map<Object, Repository> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Repository element : tgt )
-            {
-                Object key = getRepositoryKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Repository element : src )
-            {
-                Object key = getRepositoryKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setRepositories( new ArrayList<>( merged.values() ) );
+            msg = message;
         }
+        else
+        {
+            msg = exception.getMessage();
+
+            if ( msg == null )
+            {
+                msg = "";
+            }
+        }
+
+        return msg;
     }
 }

@@ -1,30 +1,22 @@
+// clone pairs:911:80%
+// 1546:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_234
 {
-    protected void mergeDependencyManagement_Dependencies( DependencyManagement target, DependencyManagement source,
-                                                           boolean sourceDominant, Map<Object, Object> context )
-    {
-        List<Dependency> src = source.getDependencies();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Dependency> tgt = target.getDependencies();
-            Map<Object, Dependency> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Dependency element : tgt )
+            if ( this == o )
             {
-                Object key = getDependencyKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Dependency element : src )
-            {
-                Object key = getDependencyKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            BigIntegerItem that = (BigIntegerItem) o;
 
-            target.setDependencies( new ArrayList<>( merged.values() ) );
+            return value.equals( that.value );
+
         }
-    }
 }

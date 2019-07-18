@@ -1,3 +1,6 @@
+// clone pairs:2:77%
+// 3:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+
 public class Nicad_2
 {
     public static Profile convertToSettingsProfile( org.apache.maven.model.Profile modelProfile )

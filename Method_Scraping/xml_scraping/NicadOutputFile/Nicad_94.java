@@ -1,30 +1,26 @@
+// clone pairs:476:73%
+// 832:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_94
 {
-    protected void mergeModel_Licenses( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
+    protected void mergeDistributionManagement_Site( DistributionManagement target, DistributionManagement source,
+                                                     boolean sourceDominant, Map<Object, Object> context )
     {
-        List<License> src = source.getLicenses();
-        if ( !src.isEmpty() )
+        Site src = source.getSite();
+        if ( src != null )
         {
-            List<License> tgt = target.getLicenses();
-            Map<Object, License> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( License element : tgt )
+            Site tgt = target.getSite();
+            if ( sourceDominant || tgt == null || isSiteEmpty( tgt ) )
             {
-                Object key = getLicenseKey( element );
-                merged.put( key, element );
-            }
-
-            for ( License element : src )
-            {
-                Object key = getLicenseKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
+                if ( tgt == null )
                 {
-                    merged.put( key, element );
+                    tgt = new Site();
                 }
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setSite( tgt );
+                mergeSite( tgt, src, sourceDominant, context );
             }
-
-            target.setLicenses( new ArrayList<>( merged.values() ) );
+            mergeSite_ChildSiteUrlInheritAppendPath( tgt, src, sourceDominant, context );
         }
     }
 }

@@ -1,35 +1,22 @@
+// clone pairs:638:83%
+// 1057:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_131
 {
-    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
+    protected void mergeModel_Organization( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        List<ReportSet> src = source.getReportSets();
-        if ( !src.isEmpty() )
+        Organization src = source.getOrganization();
+        if ( src != null )
         {
-            List<ReportSet> tgt = target.getReportSets();
-            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( ReportSet rset : src )
+            Organization tgt = target.getOrganization();
+            if ( tgt == null )
             {
-                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getReportSetKey( rset );
-                    merged.put( key, rset );
-                }
+                tgt = new Organization();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setOrganization( tgt );
+                mergeOrganization( tgt, src, sourceDominant, context );
             }
-
-            for ( ReportSet element : tgt )
-            {
-                Object key = getReportSetKey( element );
-                ReportSet existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergeReportSet( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
     }
 }

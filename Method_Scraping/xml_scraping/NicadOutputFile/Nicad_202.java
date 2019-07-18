@@ -1,30 +1,29 @@
+// clone pairs:741:83%
+// 1245:maven/maven-core/src/main/java/org/apache/maven/plugin/PluginParameterExpressionEvaluator.java
+
 public class Nicad_202
 {
-    protected void mergeModelBase_Repositories( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                Map<Object, Object> context )
+    public File alignToBaseDirectory( File file )
     {
-        List<Repository> src = source.getRepositories();
-        if ( !src.isEmpty() )
+        // TODO Copied from the DefaultInterpolator. We likely want to resurrect the PathTranslator or at least a
+        // similar component for re-usage
+        if ( file != null )
         {
-            List<Repository> tgt = target.getRepositories();
-            Map<Object, Repository> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Repository element : tgt )
+            if ( file.isAbsolute() )
             {
-                Object key = getRepositoryKey( element );
-                merged.put( key, element );
+                // path was already absolute, just normalize file separator and we're done
             }
-
-            for ( Repository element : src )
+            else if ( file.getPath().startsWith( File.separator ) )
             {
-                Object key = getRepositoryKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                // drive-relative Windows path, don't align with project directory but with drive root
+                file = file.getAbsoluteFile();
             }
-
-            target.setRepositories( new ArrayList<>( merged.values() ) );
+            else
+            {
+                // an ordinary relative path, align with project directory
+                file = new File( new File( basedir, file.getPath() ).toURI().normalize() ).getAbsoluteFile();
+            }
         }
+        return file;
     }
 }

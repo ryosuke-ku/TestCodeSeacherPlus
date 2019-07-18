@@ -1,37 +1,36 @@
+// clone pairs:382:83%
+// 725:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_73
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    public ArtifactRepository buildArtifactRepository( Repository repo )
+        throws InvalidRepositoryException
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        if ( repo != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+            String id = repo.getId();
 
-            for ( PluginExecution element : src )
+            if ( StringUtils.isEmpty( id ) )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
+                throw new InvalidRepositoryException( "Repository identifier missing", "" );
             }
 
-            for ( PluginExecution element : tgt )
+            String url = repo.getUrl();
+
+            if ( StringUtils.isEmpty( url ) )
             {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
+                throw new InvalidRepositoryException( "URL missing for repository " + id, id );
             }
 
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            ArtifactRepositoryPolicy snapshots = buildArtifactRepositoryPolicy( repo.getSnapshots() );
+
+            ArtifactRepositoryPolicy releases = buildArtifactRepositoryPolicy( repo.getReleases() );
+
+            return createArtifactRepository( id, url, getLayout( repo.getLayout() ), snapshots, releases );
+        }
+        else
+        {
+            return null;
         }
     }
 }

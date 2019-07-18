@@ -1,43 +1,23 @@
+// clone pairs:866:100%
+// 1464:maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java
+
 public class Nicad_209
 {
-    private Artifact createArtifactX( String groupId, String artifactId, VersionRange versionRange, String type,
-                                     String classifier, String scope, String inheritedScope, boolean optional )
+    public boolean presentInConfig( Profile profile, ProfileActivationContext context, ModelProblemCollector problems )
     {
-        String desiredScope = Artifact.SCOPE_RUNTIME;
+        Activation activation = profile.getActivation();
 
-        if ( inheritedScope == null )
+        if ( activation == null )
         {
-            desiredScope = scope;
-        }
-        else if ( Artifact.SCOPE_TEST.equals( scope ) || Artifact.SCOPE_PROVIDED.equals( scope ) )
-        {
-            return null;
-        }
-        else if ( Artifact.SCOPE_COMPILE.equals( scope ) && Artifact.SCOPE_COMPILE.equals( inheritedScope ) )
-        {
-            // added to retain compile artifactScope. Remove if you want compile inherited as runtime
-            desiredScope = Artifact.SCOPE_COMPILE;
+            return false;
         }
 
-        if ( Artifact.SCOPE_TEST.equals( inheritedScope ) )
+        String jdk = activation.getJdk();
+
+        if ( jdk == null )
         {
-            desiredScope = Artifact.SCOPE_TEST;
+            return false;
         }
-
-        if ( Artifact.SCOPE_PROVIDED.equals( inheritedScope ) )
-        {
-            desiredScope = Artifact.SCOPE_PROVIDED;
-        }
-
-        if ( Artifact.SCOPE_SYSTEM.equals( scope ) )
-        {
-            // system scopes come through unchanged...
-            desiredScope = Artifact.SCOPE_SYSTEM;
-        }
-
-        ArtifactHandler handler = artifactHandlerManager.getArtifactHandler( type );
-
-        return new DefaultArtifact( groupId, artifactId, versionRange, desiredScope, type, classifier, handler,
-                                    optional );
+        return true;
     }
 }

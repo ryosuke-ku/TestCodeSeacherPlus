@@ -1,30 +1,30 @@
+// clone pairs:1129:90%
+// 1959:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+
 public class Nicad_322
 {
-    protected void mergeModel_Licenses( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
-    {
-        List<License> src = source.getLicenses();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<License> tgt = target.getLicenses();
-            Map<Object, License> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( License element : tgt )
+            if ( o == this )
             {
-                Object key = getLicenseKey( element );
-                merged.put( key, element );
+                return true;
             }
 
-            for ( License element : src )
+            if ( !( o instanceof CacheKey ) )
             {
-                Object key = getLicenseKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                return false;
             }
 
-            target.setLicenses( new ArrayList<>( merged.values() ) );
+            CacheKey that = (CacheKey) o;
+
+            return Objects.equals( groupId, that.groupId ) && Objects.equals( artifactId, that.artifactId )
+                && Objects.equals( version, that.version )
+                && Objects.equals( dependencyArtifacts, that.dependencyArtifacts )
+                && Objects.equals( workspace, that.workspace ) 
+                && Objects.equals( localRepo, that.localRepo )
+                && RepositoryUtils.repositoriesEquals( repositories, that.repositories )
+                && Objects.equals( collect, that.collect ) 
+                && Objects.equals( resolve, that.resolve )
+                && aggregating == that.aggregating;
         }
-    }
 }

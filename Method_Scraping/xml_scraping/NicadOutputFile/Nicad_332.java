@@ -1,30 +1,30 @@
+// clone pairs:1158:90%
+// 2017:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+
 public class Nicad_332
 {
-    protected void mergeModelBase_Repositories( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                Map<Object, Object> context )
-    {
-        List<Repository> src = source.getRepositories();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Repository> tgt = target.getRepositories();
-            Map<Object, Repository> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Repository element : tgt )
+            if ( o == this )
             {
-                Object key = getRepositoryKey( element );
-                merged.put( key, element );
+                return true;
             }
 
-            for ( Repository element : src )
+            if ( !( o instanceof CacheKey ) )
             {
-                Object key = getRepositoryKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                return false;
             }
 
-            target.setRepositories( new ArrayList<>( merged.values() ) );
+            CacheKey that = (CacheKey) o;
+
+            return Objects.equals( groupId, that.groupId ) && Objects.equals( artifactId, that.artifactId )
+                && Objects.equals( version, that.version )
+                && Objects.equals( dependencyArtifacts, that.dependencyArtifacts )
+                && Objects.equals( workspace, that.workspace ) 
+                && Objects.equals( localRepo, that.localRepo )
+                && RepositoryUtils.repositoriesEquals( repositories, that.repositories )
+                && Objects.equals( collect, that.collect ) 
+                && Objects.equals( resolve, that.resolve )
+                && aggregating == that.aggregating;
         }
-    }
 }

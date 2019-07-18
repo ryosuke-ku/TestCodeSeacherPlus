@@ -1,49 +1,38 @@
+// clone pairs:75:72%
+// 140:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_57
 {
-    public List<TaskSegment> calculateTaskSegments( MavenSession session, List<String> tasks )
-        throws PluginNotFoundException, PluginResolutionException, PluginDescriptorParsingException,
-        MojoNotFoundException, NoPluginFoundForPrefixException, InvalidPluginDescriptorException,
-        PluginVersionResolutionException
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        List<TaskSegment> taskSegments = new ArrayList<>( tasks.size() );
-
-        TaskSegment currentSegment = null;
-
-        for ( String task : tasks )
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            if ( isGoalSpecification( task ) )
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+
+            for ( ReportSet rset : src )
             {
-                // "pluginPrefix:goal" or "groupId:artifactId[:version]:goal"
-
-                lifecyclePluginResolver.resolveMissingPluginVersions( session.getTopLevelProject(), session );
-
-                MojoDescriptor mojoDescriptor =
-                    mojoDescriptorCreator.getMojoDescriptor( task, session, session.getTopLevelProject() );
-
-                boolean aggregating = mojoDescriptor.isAggregator() || !mojoDescriptor.isProjectRequired();
-
-                if ( currentSegment == null || currentSegment.isAggregating() != aggregating )
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
                 {
-                    currentSegment = new TaskSegment( aggregating );
-                    taskSegments.add( currentSegment );
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
-
-                currentSegment.getTasks().add( new GoalTask( task ) );
             }
-            else
+
+            for ( ReportSet element : tgt )
             {
-                // lifecycle phase
-
-                if ( currentSegment == null || currentSegment.isAggregating() )
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
                 {
-                    currentSegment = new TaskSegment( false );
-                    taskSegments.add( currentSegment );
+                    mergeReportSet( element, existing, sourceDominant, context );
                 }
-
-                currentSegment.getTasks().add( new LifecycleTask( task ) );
+                merged.put( key, element );
             }
+
+            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
-
-        return taskSegments;
     }
 }

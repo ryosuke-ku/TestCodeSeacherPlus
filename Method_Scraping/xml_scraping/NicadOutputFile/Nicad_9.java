@@ -1,71 +1,37 @@
+// clone pairs:13:100%
+// 19:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_9
 {
-    public List<ArtifactRepository> getEffectiveRepositories( List<ArtifactRepository> repositories )
+    private Proxy getProxy( RepositorySystemSession session, ArtifactRepository repository )
     {
-        if ( repositories == null )
+        if ( session != null )
         {
-            return null;
-        }
-
-        Map<String, List<ArtifactRepository>> reposByKey = new LinkedHashMap<>();
-
-        for ( ArtifactRepository repository : repositories )
-        {
-            String key = repository.getId();
-
-            List<ArtifactRepository> aliasedRepos = reposByKey.get( key );
-
-            if ( aliasedRepos == null )
+            ProxySelector selector = session.getProxySelector();
+            if ( selector != null )
             {
-                aliasedRepos = new ArrayList<>();
-                reposByKey.put( key, aliasedRepos );
+                RemoteRepository repo = RepositoryUtils.toRepo( repository );
+                org.eclipse.aether.repository.Proxy proxy = selector.getProxy( repo );
+                if ( proxy != null )
+                {
+                    Proxy p = new Proxy();
+                    p.setHost( proxy.getHost() );
+                    p.setProtocol( proxy.getType() );
+                    p.setPort( proxy.getPort() );
+                    if ( proxy.getAuthentication() != null )
+                    {
+                        repo = new RemoteRepository.Builder( repo ).setProxy( proxy ).build();
+                        AuthenticationContext authCtx = AuthenticationContext.forProxy( session, repo );
+                        p.setUserName( authCtx.get( AuthenticationContext.USERNAME ) );
+                        p.setPassword( authCtx.get( AuthenticationContext.PASSWORD ) );
+                        p.setNtlmDomain( authCtx.get( AuthenticationContext.NTLM_DOMAIN ) );
+                        p.setNtlmHost( authCtx.get( AuthenticationContext.NTLM_WORKSTATION ) );
+                        authCtx.close();
+                    }
+                    return p;
+                }
             }
-
-            aliasedRepos.add( repository );
         }
-
-        List<ArtifactRepository> effectiveRepositories = new ArrayList<>();
-
-        for ( List<ArtifactRepository> aliasedRepos : reposByKey.values() )
-        {
-            List<ArtifactRepository> mirroredRepos = new ArrayList<>();
-
-            List<ArtifactRepositoryPolicy> releasePolicies =
-                    new ArrayList<>( aliasedRepos.size() );
-
-            for ( ArtifactRepository aliasedRepo : aliasedRepos )
-            {
-                releasePolicies.add( aliasedRepo.getReleases() );
-                mirroredRepos.addAll( aliasedRepo.getMirroredRepositories() );
-            }
-
-            ArtifactRepositoryPolicy releasePolicy = getEffectivePolicy( releasePolicies );
-
-            List<ArtifactRepositoryPolicy> snapshotPolicies =
-                    new ArrayList<>( aliasedRepos.size() );
-
-            for ( ArtifactRepository aliasedRepo : aliasedRepos )
-            {
-                snapshotPolicies.add( aliasedRepo.getSnapshots() );
-            }
-
-            ArtifactRepositoryPolicy snapshotPolicy = getEffectivePolicy( snapshotPolicies );
-
-            ArtifactRepository aliasedRepo = aliasedRepos.get( 0 );
-
-            ArtifactRepository effectiveRepository =
-                    createArtifactRepository( aliasedRepo.getId(), aliasedRepo.getUrl(), aliasedRepo.getLayout(),
-                            snapshotPolicy, releasePolicy );
-
-            effectiveRepository.setAuthentication( aliasedRepo.getAuthentication() );
-
-            effectiveRepository.setProxy( aliasedRepo.getProxy() );
-
-            effectiveRepository.setMirroredRepositories( mirroredRepos );
-
-            effectiveRepositories.add( effectiveRepository );
-        }
-
-        return effectiveRepositories;
+        return null;
     }
 }

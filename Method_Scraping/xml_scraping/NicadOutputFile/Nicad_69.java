@@ -1,37 +1,45 @@
+// clone pairs:154:76%
+// 296:maven/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java
+
 public class Nicad_69
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    public boolean equals( Object o )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        if ( o == this )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
-            {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
-            }
-
-            for ( PluginExecution element : tgt )
-            {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            return true;
         }
+
+        if ( !( o instanceof Artifact ) )
+        {
+            return false;
+        }
+
+        Artifact a = (Artifact) o;
+
+        if ( !a.getGroupId().equals( groupId ) )
+        {
+            return false;
+        }
+        else if ( !a.getArtifactId().equals( artifactId ) )
+        {
+            return false;
+        }
+        else if ( !a.getVersion().equals( version ) )
+        {
+            return false;
+        }
+        else if ( !a.getType().equals( type ) )
+        {
+            return false;
+        }
+        else if ( a.getClassifier() == null ? classifier != null : !a.getClassifier().equals( classifier ) )
+        {
+            return false;
+        }
+
+        // We don't consider the version range in the comparison, just the resolved version
+
+        return true;
     }
 }

@@ -1,35 +1,38 @@
+// clone pairs:76:72%
+// 142:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_58
 {
-    private static void mergeReportSetDefinitions( ReportSet child, ReportSet parent )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        List<String> parentReports = parent.getReports();
-        List<String> childReports = child.getReports();
-
-        List<String> reports = new ArrayList<>();
-
-        if ( ( childReports != null ) && !childReports.isEmpty() )
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            reports.addAll( childReports );
-        }
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-        if ( parentReports != null )
-        {
-            for ( String report : parentReports )
+            for ( ReportSet rset : src )
             {
-                if ( !reports.contains( report ) )
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
                 {
-                    reports.add( report );
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
             }
+
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
-
-        child.setReports( reports );
-
-        Xpp3Dom childConfiguration = (Xpp3Dom) child.getConfiguration();
-        Xpp3Dom parentConfiguration = (Xpp3Dom) parent.getConfiguration();
-
-        childConfiguration = Xpp3Dom.mergeXpp3Dom( childConfiguration, parentConfiguration );
-
-        child.setConfiguration( childConfiguration );
     }
 }

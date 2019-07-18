@@ -1,37 +1,26 @@
+// clone pairs:475:73%
+// 830:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_93
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    protected void mergeDistributionManagement_Site( DistributionManagement target, DistributionManagement source,
+                                                     boolean sourceDominant, Map<Object, Object> context )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        Site src = source.getSite();
+        if ( src != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
+            Site tgt = target.getSite();
+            if ( sourceDominant || tgt == null || isSiteEmpty( tgt ) )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
+                if ( tgt == null )
                 {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
+                    tgt = new Site();
                 }
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setSite( tgt );
+                mergeSite( tgt, src, sourceDominant, context );
             }
-
-            for ( PluginExecution element : tgt )
-            {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            mergeSite_ChildSiteUrlInheritAppendPath( tgt, src, sourceDominant, context );
         }
     }
 }

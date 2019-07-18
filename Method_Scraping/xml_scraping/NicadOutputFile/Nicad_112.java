@@ -1,36 +1,22 @@
+// clone pairs:579:83%
+// 953:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_112
 {
-    public String getLocation()
+    protected void mergeModel_Organization( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        StringBuilder buffer = new StringBuilder( 256 );
-
-        if ( getSource().length() > 0 )
+        Organization src = source.getOrganization();
+        if ( src != null )
         {
-            if ( buffer.length() > 0 )
+            Organization tgt = target.getOrganization();
+            if ( tgt == null )
             {
-                buffer.append( ", " );
+                tgt = new Organization();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setOrganization( tgt );
+                mergeOrganization( tgt, src, sourceDominant, context );
             }
-            buffer.append( getSource() );
         }
-
-        if ( getLineNumber() > 0 )
-        {
-            if ( buffer.length() > 0 )
-            {
-                buffer.append( ", " );
-            }
-            buffer.append( "line " ).append( getLineNumber() );
-        }
-
-        if ( getColumnNumber() > 0 )
-        {
-            if ( buffer.length() > 0 )
-            {
-                buffer.append( ", " );
-            }
-            buffer.append( "column " ).append( getColumnNumber() );
-        }
-
-        return buffer.toString();
     }
 }

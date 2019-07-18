@@ -1,41 +1,38 @@
+// clone pairs:78:72%
+// 146:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_60
 {
-    public Artifact createDependencyArtifact( Dependency d )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        VersionRange versionRange;
-        try
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            versionRange = VersionRange.createFromVersionSpec( d.getVersion() );
-        }
-        catch ( InvalidVersionSpecificationException e )
-        {
-            // MNG-5368: Log a message instead of returning 'null' silently.
-            this.logger.error( String.format( "Invalid version specification '%s' creating dependency artifact '%s'.",
-                                              d.getVersion(), d ), e );
-            return null;
-        }
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-        Artifact artifact =
-            artifactFactory.createDependencyArtifact( d.getGroupId(), d.getArtifactId(), versionRange, d.getType(),
-                                                      d.getClassifier(), d.getScope(), d.isOptional() );
-
-        if ( Artifact.SCOPE_SYSTEM.equals( d.getScope() ) && d.getSystemPath() != null )
-        {
-            artifact.setFile( new File( d.getSystemPath() ) );
-        }
-
-        if ( !d.getExclusions().isEmpty() )
-        {
-            List<String> exclusions = new ArrayList<>();
-
-            for ( Exclusion exclusion : d.getExclusions() )
+            for ( ReportSet rset : src )
             {
-                exclusions.add( exclusion.getGroupId() + ':' + exclusion.getArtifactId() );
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
+                {
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
+                }
             }
 
-            artifact.setDependencyFilter( new ExcludesArtifactFilter( exclusions ) );
-        }
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
 
-        return artifact;
+            target.setReportSets( new ArrayList<>( merged.values() ) );
+        }
     }
 }

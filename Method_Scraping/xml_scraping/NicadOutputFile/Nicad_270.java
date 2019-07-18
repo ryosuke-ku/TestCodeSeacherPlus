@@ -1,30 +1,22 @@
+// clone pairs:961:80%
+// 1646:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_270
 {
-    protected void mergeBuild_Extensions( Build target, Build source, boolean sourceDominant,
-                                          Map<Object, Object> context )
-    {
-        List<Extension> src = source.getExtensions();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Extension> tgt = target.getExtensions();
-            Map<Object, Extension> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Extension element : tgt )
+            if ( this == o )
             {
-                Object key = getExtensionKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Extension element : src )
-            {
-                Object key = getExtensionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            IntItem intItem = (IntItem) o;
 
-            target.setExtensions( new ArrayList<>( merged.values() ) );
+            return value == intItem.value;
+
         }
-    }
 }

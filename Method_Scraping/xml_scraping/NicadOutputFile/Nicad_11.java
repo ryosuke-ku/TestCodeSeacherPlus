@@ -1,54 +1,54 @@
+// clone pairs:15:84%
+// 23:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+
 public class Nicad_11
 {
-    public void alignToBaseDirectory( Model model, File basedir, ModelBuildingRequest request )
+    static boolean matchPattern( ArtifactRepository originalRepository, String pattern )
     {
-        if ( model == null || basedir == null )
+        boolean result = false;
+        String originalId = originalRepository.getId();
+
+        // simple checks first to short circuit processing below.
+        if ( WILDCARD.equals( pattern ) || pattern.equals( originalId ) )
         {
-            return;
+            result = true;
         }
-
-        Build build = model.getBuild();
-
-        if ( build != null )
+        else
         {
-            build.setDirectory( alignToBaseDirectory( build.getDirectory(), basedir ) );
-
-            build.setSourceDirectory( alignToBaseDirectory( build.getSourceDirectory(), basedir ) );
-
-            build.setTestSourceDirectory( alignToBaseDirectory( build.getTestSourceDirectory(), basedir ) );
-
-            build.setScriptSourceDirectory( alignToBaseDirectory( build.getScriptSourceDirectory(), basedir ) );
-
-            for ( Resource resource : build.getResources() )
+            // process the list
+            String[] repos = pattern.split( "," );
+            for ( String repo : repos )
             {
-                resource.setDirectory( alignToBaseDirectory( resource.getDirectory(), basedir ) );
-            }
-
-            for ( Resource resource : build.getTestResources() )
-            {
-                resource.setDirectory( alignToBaseDirectory( resource.getDirectory(), basedir ) );
-            }
-
-            if ( build.getFilters() != null )
-            {
-                List<String> filters = new ArrayList<>( build.getFilters().size() );
-                for ( String filter : build.getFilters() )
+                repo = repo.trim();
+                // see if this is a negative match
+                if ( repo.length() > 1 && repo.startsWith( "!" ) )
                 {
-                    filters.add( alignToBaseDirectory( filter, basedir ) );
+                    if ( repo.substring( 1 ).equals( originalId ) )
+                    {
+                        // explicitly exclude. Set result and stop processing.
+                        result = false;
+                        break;
+                    }
                 }
-                build.setFilters( filters );
+                // check for exact match
+                else if ( repo.equals( originalId ) )
+                {
+                    result = true;
+                    break;
+                }
+                // check for external:*
+                else if ( EXTERNAL_WILDCARD.equals( repo ) && isExternalRepo( originalRepository ) )
+                {
+                    result = true;
+                    // don't stop processing in case a future segment explicitly excludes this repo
+                }
+                else if ( WILDCARD.equals( repo ) )
+                {
+                    result = true;
+                    // don't stop processing in case a future segment explicitly excludes this repo
+                }
             }
-
-            build.setOutputDirectory( alignToBaseDirectory( build.getOutputDirectory(), basedir ) );
-
-            build.setTestOutputDirectory( alignToBaseDirectory( build.getTestOutputDirectory(), basedir ) );
         }
-
-        Reporting reporting = model.getReporting();
-
-        if ( reporting != null )
-        {
-            reporting.setOutputDirectory( alignToBaseDirectory( reporting.getOutputDirectory(), basedir ) );
-        }
+        return result;
     }
 }

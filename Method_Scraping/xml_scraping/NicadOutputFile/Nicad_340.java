@@ -1,34 +1,24 @@
+// clone pairs:1167:90%
+// 2034:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+
 public class Nicad_340
 {
-    public List<Dependency> getCompileDependencies()
-    {
-        Set<Artifact> artifacts = getArtifacts();
-
-        if ( ( artifacts == null ) || artifacts.isEmpty() )
+        public boolean equals( Object o )
         {
-            return Collections.emptyList();
-        }
-
-        List<Dependency> list = new ArrayList<>( artifacts.size() );
-
-        for ( Artifact a : getArtifacts() )
-        {
-            // TODO let the scope handler deal with this
-            if ( Artifact.SCOPE_COMPILE.equals( a.getScope() ) || Artifact.SCOPE_PROVIDED.equals( a.getScope() )
-                     || Artifact.SCOPE_SYSTEM.equals( a.getScope() ) )
+            if ( o == this )
             {
-                Dependency dependency = new Dependency();
-
-                dependency.setArtifactId( a.getArtifactId() );
-                dependency.setGroupId( a.getGroupId() );
-                dependency.setVersion( a.getVersion() );
-                dependency.setScope( a.getScope() );
-                dependency.setType( a.getType() );
-                dependency.setClassifier( a.getClassifier() );
-
-                list.add( dependency );
+                return true;
             }
+
+            if ( !( o instanceof CacheKey ) )
+            {
+                return false;
+            }
+
+            CacheKey other = (CacheKey) o;
+
+            return pomHash == other.pomHash && artifactEquals( artifact, other.artifact )
+                && resolveManagedVersions == other.resolveManagedVersions
+                && repositoriesEquals( repositories, other.repositories );
         }
-        return Collections.unmodifiableList( list );
-    }
 }

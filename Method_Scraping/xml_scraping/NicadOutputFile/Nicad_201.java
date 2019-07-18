@@ -1,36 +1,26 @@
+// clone pairs:734:83%
+// 1230:maven/maven-settings-builder/src/main/java/org/apache/maven/settings/validation/DefaultSettingsValidator.java
+
 public class Nicad_201
 {
-        protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    private static boolean validateBannedCharacters( SettingsProblemCollector problems, String fieldName,
+                                                     Severity severity, String string, String sourceHint,
+                                                     String banned )
+    {
+        if ( string != null )
         {
-            List<PluginExecution> src = source.getExecutions();
-            if ( !src.isEmpty() )
+            for ( int i = string.length() - 1; i >= 0; i-- )
             {
-                List<PluginExecution> tgt = target.getExecutions();
-                Map<Object, PluginExecution> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( PluginExecution element : tgt )
+                if ( banned.indexOf( string.charAt( i ) ) >= 0 )
                 {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
+                    addViolation( problems, severity, fieldName, sourceHint,
+                                  "must not contain any of these characters " + banned + " but found "
+                                      + string.charAt( i ) );
+                    return false;
                 }
-
-                for ( PluginExecution element : src )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    PluginExecution existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergePluginExecution( existing, element, sourceDominant, context );
-                    }
-                    else
-                    {
-                        merged.put( key, element );
-                    }
-                }
-
-                target.setExecutions( new ArrayList<>( merged.values() ) );
             }
         }
+
+        return true;
+    }
 }

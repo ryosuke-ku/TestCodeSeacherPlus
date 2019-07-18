@@ -1,40 +1,30 @@
+// clone pairs:1010:90%
+// 1743:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+
 public class Nicad_294
 {
-    public boolean equals( Object o )
-    {
-        if ( o == this )
+        public boolean equals( Object o )
         {
-            return true;
-        }
+            if ( o == this )
+            {
+                return true;
+            }
 
-        if ( !( o instanceof Artifact ) )
-        {
-            return false;
-        }
+            if ( !( o instanceof CacheKey ) )
+            {
+                return false;
+            }
 
-        Artifact a = (Artifact) o;
+            CacheKey that = (CacheKey) o;
 
-        if ( !a.getGroupId().equals( getGroupId() ) )
-        {
-            return false;
+            return Objects.equals( groupId, that.groupId ) && Objects.equals( artifactId, that.artifactId )
+                && Objects.equals( version, that.version )
+                && Objects.equals( dependencyArtifacts, that.dependencyArtifacts )
+                && Objects.equals( workspace, that.workspace ) 
+                && Objects.equals( localRepo, that.localRepo )
+                && RepositoryUtils.repositoriesEquals( repositories, that.repositories )
+                && Objects.equals( collect, that.collect ) 
+                && Objects.equals( resolve, that.resolve )
+                && aggregating == that.aggregating;
         }
-        else if ( !a.getArtifactId().equals( getArtifactId() ) )
-        {
-            return false;
-        }
-        else if ( !a.getVersion().equals( getVersion() ) )
-        {
-            return false;
-        }
-        else if ( !a.getType().equals( getType() ) )
-        {
-            return false;
-        }
-        else if ( a.getClassifier() == null ? getClassifier() != null : !a.getClassifier().equals( getClassifier() ) )
-        {
-            return false;
-        }
-
-        return true;
-    }
 }

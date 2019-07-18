@@ -1,30 +1,22 @@
+// clone pairs:1036:70%
+// 1795:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+
 public class Nicad_300
 {
-    protected void mergeBuildBase_TestResources( BuildBase target, BuildBase source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<Resource> src = source.getTestResources();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<Resource> tgt = target.getTestResources();
-            Map<Object, Resource> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Resource element : tgt )
-            {
-                Object key = getResourceKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Resource element : src )
-            {
-                Object key = getResourceKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setTestResources( new ArrayList<>( merged.values() ) );
+            return true;
         }
+
+        if ( !( obj instanceof AndArtifactFilter ) )
+        {
+            return false;
+        }
+
+        AndArtifactFilter other = (AndArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

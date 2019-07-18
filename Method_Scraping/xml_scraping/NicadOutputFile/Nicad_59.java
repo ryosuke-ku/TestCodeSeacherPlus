@@ -1,40 +1,38 @@
+// clone pairs:77:72%
+// 144:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_59
 {
-    private static void mergePluginExecutionDefinitions( PluginExecution child, PluginExecution parent )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        if ( child.getPhase() == null )
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            child.setPhase( parent.getPhase() );
-        }
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-        List<String> parentGoals = parent.getGoals();
-        List<String> childGoals = child.getGoals();
-
-        List<String> goals = new ArrayList<>();
-
-        if ( ( childGoals != null ) && !childGoals.isEmpty() )
-        {
-            goals.addAll( childGoals );
-        }
-
-        if ( parentGoals != null )
-        {
-            for (  String goal : parentGoals )
+            for ( ReportSet rset : src )
             {
-                if ( !goals.contains( goal ) )
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
                 {
-                    goals.add( goal );
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
             }
+
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
-
-        child.setGoals( goals );
-
-        Xpp3Dom childConfiguration = (Xpp3Dom) child.getConfiguration();
-        Xpp3Dom parentConfiguration = (Xpp3Dom) parent.getConfiguration();
-
-        childConfiguration = Xpp3Dom.mergeXpp3Dom( childConfiguration, parentConfiguration );
-
-        child.setConfiguration( childConfiguration );
     }
 }

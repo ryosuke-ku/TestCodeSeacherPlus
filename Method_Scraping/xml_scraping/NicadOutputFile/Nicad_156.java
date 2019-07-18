@@ -1,30 +1,22 @@
+// clone pairs:671:83%
+// 1117:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_156
 {
-    protected void mergeModelBase_Dependencies( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                Map<Object, Object> context )
+    protected void mergeModel_CiManagement( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        List<Dependency> src = source.getDependencies();
-        if ( !src.isEmpty() )
+        CiManagement src = source.getCiManagement();
+        if ( src != null )
         {
-            List<Dependency> tgt = target.getDependencies();
-            Map<Object, Dependency> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Dependency element : tgt )
+            CiManagement tgt = target.getCiManagement();
+            if ( tgt == null )
             {
-                Object key = getDependencyKey( element );
-                merged.put( key, element );
+                tgt = new CiManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setCiManagement( tgt );
+                mergeCiManagement( tgt, src, sourceDominant, context );
             }
-
-            for ( Dependency element : src )
-            {
-                Object key = getDependencyKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setDependencies( new ArrayList<>( merged.values() ) );
         }
     }
 }

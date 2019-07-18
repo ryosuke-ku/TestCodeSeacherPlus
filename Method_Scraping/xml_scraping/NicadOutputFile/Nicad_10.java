@@ -1,52 +1,54 @@
+// clone pairs:14:96%
+// 21:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+
 public class Nicad_10
 {
-    public void unalignFromBaseDirectory( Model model, File basedir )
+    static boolean matchPattern( ArtifactRepository originalRepository, String pattern )
     {
-        if ( basedir == null )
+        boolean result = false;
+        String originalId = originalRepository.getId();
+
+        // simple checks first to short circuit processing below.
+        if ( WILDCARD.equals( pattern ) || pattern.equals( originalId ) )
         {
-            return;
+            result = true;
         }
-
-        Build build = model.getBuild();
-
-        if ( build != null )
+        else
         {
-            build.setDirectory( unalignFromBaseDirectory( build.getDirectory(), basedir ) );
-
-            build.setSourceDirectory( unalignFromBaseDirectory( build.getSourceDirectory(), basedir ) );
-
-            build.setTestSourceDirectory( unalignFromBaseDirectory( build.getTestSourceDirectory(), basedir ) );
-
-            for ( Resource resource : build.getResources() )
+            // process the list
+            String[] repos = pattern.split( "," );
+            for ( String repo : repos )
             {
-                resource.setDirectory( unalignFromBaseDirectory( resource.getDirectory(), basedir ) );
-            }
-
-            for ( Resource resource : build.getTestResources() )
-            {
-                resource.setDirectory( unalignFromBaseDirectory( resource.getDirectory(), basedir ) );
-            }
-
-            if ( build.getFilters() != null )
-            {
-                List<String> filters = new ArrayList<>();
-                for ( String filter : build.getFilters() )
+                repo = repo.trim();
+                // see if this is a negative match
+                if ( repo.length() > 1 && repo.startsWith( "!" ) )
                 {
-                    filters.add( unalignFromBaseDirectory( filter, basedir ) );
+                    if ( repo.substring( 1 ).equals( originalId ) )
+                    {
+                        // explicitly exclude. Set result and stop processing.
+                        result = false;
+                        break;
+                    }
                 }
-                build.setFilters( filters );
+                // check for exact match
+                else if ( repo.equals( originalId ) )
+                {
+                    result = true;
+                    break;
+                }
+                // check for external:*
+                else if ( EXTERNAL_WILDCARD.equals( repo ) && isExternalRepo( originalRepository ) )
+                {
+                    result = true;
+                    // don't stop processing in case a future segment explicitly excludes this repo
+                }
+                else if ( WILDCARD.equals( repo ) )
+                {
+                    result = true;
+                    // don't stop processing in case a future segment explicitly excludes this repo
+                }
             }
-
-            build.setOutputDirectory( unalignFromBaseDirectory( build.getOutputDirectory(), basedir ) );
-
-            build.setTestOutputDirectory( unalignFromBaseDirectory( build.getTestOutputDirectory(), basedir ) );
         }
-
-        Reporting reporting = model.getReporting();
-
-        if ( reporting != null )
-        {
-            reporting.setOutputDirectory( unalignFromBaseDirectory( reporting.getOutputDirectory(), basedir ) );
-        }
+        return result;
     }
 }

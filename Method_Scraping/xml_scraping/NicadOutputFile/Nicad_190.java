@@ -1,30 +1,26 @@
+// clone pairs:713:75%
+// 1195:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+
 public class Nicad_190
 {
-    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<ReportSet> src = source.getReportSets();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<ReportSet> tgt = target.getReportSets();
-            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( ReportSet element : tgt )
-            {
-                Object key = getReportSetKey( element );
-                merged.put( key, element );
-            }
-
-            for ( ReportSet element : src )
-            {
-                Object key = getReportSetKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setReportSets( new ArrayList<>( merged.values() ) );
+            return true;
         }
+        if ( !( obj instanceof VersionRange ) )
+        {
+            return false;
+        }
+        VersionRange other = (VersionRange) obj;
+
+        boolean equals =
+            recommendedVersion == other.recommendedVersion
+                || ( ( recommendedVersion != null ) && recommendedVersion.equals( other.recommendedVersion ) );
+        equals &=
+            restrictions == other.restrictions
+                || ( ( restrictions != null ) && restrictions.equals( other.restrictions ) );
+        return equals;
     }
 }

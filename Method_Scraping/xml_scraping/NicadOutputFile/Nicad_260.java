@@ -1,30 +1,22 @@
+// clone pairs:948:80%
+// 1620:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_260
 {
-    protected void mergeBuildBase_Resources( BuildBase target, BuildBase source, boolean sourceDominant,
-                                             Map<Object, Object> context )
-    {
-        List<Resource> src = source.getResources();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Resource> tgt = target.getResources();
-            Map<Object, Resource> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Resource element : tgt )
+            if ( this == o )
             {
-                Object key = getResourceKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Resource element : src )
-            {
-                Object key = getResourceKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            IntItem intItem = (IntItem) o;
 
-            target.setResources( new ArrayList<>( merged.values() ) );
+            return value == intItem.value;
+
         }
-    }
 }

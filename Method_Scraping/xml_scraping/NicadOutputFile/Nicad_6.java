@@ -1,55 +1,55 @@
+// clone pairs:6:87%
+// 11:maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
+
 public class Nicad_6
 {
-        protected void mergePluginContainer_Plugins( PluginContainer target, PluginContainer source,
-                                                     boolean sourceDominant, Map<Object, Object> context )
+    public void unalignFromBaseDirectory( Model model, File basedir )
+    {
+        if ( basedir == null )
         {
-            List<Plugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
-            {
-                List<Plugin> tgt = target.getPlugins();
-                Map<Object, Plugin> master = new LinkedHashMap<>( tgt.size() * 2 );
-
-                for ( Plugin element : tgt )
-                {
-                    Object key = getPluginKey( element );
-                    master.put( key, element );
-                }
-
-                Map<Object, List<Plugin>> predecessors = new LinkedHashMap<>();
-                List<Plugin> pending = new ArrayList<>();
-                for ( Plugin element : src )
-                {
-                    Object key = getPluginKey( element );
-                    Plugin existing = master.get( key );
-                    if ( existing != null )
-                    {
-                        mergePlugin( existing, element, sourceDominant, context );
-
-                        if ( !pending.isEmpty() )
-                        {
-                            predecessors.put( key, pending );
-                            pending = new ArrayList<>();
-                        }
-                    }
-                    else
-                    {
-                        pending.add( element );
-                    }
-                }
-
-                List<Plugin> result = new ArrayList<>( src.size() + tgt.size() );
-                for ( Map.Entry<Object, Plugin> entry : master.entrySet() )
-                {
-                    List<Plugin> pre = predecessors.get( entry.getKey() );
-                    if ( pre != null )
-                    {
-                        result.addAll( pre );
-                    }
-                    result.add( entry.getValue() );
-                }
-                result.addAll( pending );
-
-                target.setPlugins( result );
-            }
+            return;
         }
+
+        Build build = model.getBuild();
+
+        if ( build != null )
+        {
+            build.setDirectory( unalignFromBaseDirectory( build.getDirectory(), basedir ) );
+
+            build.setSourceDirectory( unalignFromBaseDirectory( build.getSourceDirectory(), basedir ) );
+
+            build.setTestSourceDirectory( unalignFromBaseDirectory( build.getTestSourceDirectory(), basedir ) );
+
+            for ( Resource resource : build.getResources() )
+            {
+                resource.setDirectory( unalignFromBaseDirectory( resource.getDirectory(), basedir ) );
+            }
+
+            for ( Resource resource : build.getTestResources() )
+            {
+                resource.setDirectory( unalignFromBaseDirectory( resource.getDirectory(), basedir ) );
+            }
+
+            if ( build.getFilters() != null )
+            {
+                List<String> filters = new ArrayList<>();
+                for ( String filter : build.getFilters() )
+                {
+                    filters.add( unalignFromBaseDirectory( filter, basedir ) );
+                }
+                build.setFilters( filters );
+            }
+
+            build.setOutputDirectory( unalignFromBaseDirectory( build.getOutputDirectory(), basedir ) );
+
+            build.setTestOutputDirectory( unalignFromBaseDirectory( build.getTestOutputDirectory(), basedir ) );
+        }
+
+        Reporting reporting = model.getReporting();
+
+        if ( reporting != null )
+        {
+            reporting.setOutputDirectory( unalignFromBaseDirectory( reporting.getOutputDirectory(), basedir ) );
+        }
+    }
 }

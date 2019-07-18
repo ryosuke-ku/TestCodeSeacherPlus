@@ -1,30 +1,25 @@
+// clone pairs:554:83%
+// 903:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+
 public class Nicad_106
 {
-    protected void mergeModelBase_Dependencies( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                Map<Object, Object> context )
-    {
-        List<Dependency> src = source.getDependencies();
-        if ( !src.isEmpty() )
+        protected void mergeModelBase_Properties( ModelBase target, ModelBase source, boolean sourceDominant,
+                                                  Map<Object, Object> context )
         {
-            List<Dependency> tgt = target.getDependencies();
-            Map<Object, Dependency> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Dependency element : tgt )
+            Properties merged = new Properties();
+            if ( sourceDominant )
             {
-                Object key = getDependencyKey( element );
-                merged.put( key, element );
+                merged.putAll( target.getProperties() );
+                putAll( merged, source.getProperties(), CHILD_DIRECTORY_PROPERTY );
             }
-
-            for ( Dependency element : src )
+            else
             {
-                Object key = getDependencyKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                putAll( merged, source.getProperties(), CHILD_DIRECTORY_PROPERTY );
+                merged.putAll( target.getProperties() );
             }
-
-            target.setDependencies( new ArrayList<>( merged.values() ) );
+            target.setProperties( merged );
+            target.setLocation( "properties",
+                                InputLocation.merge( target.getLocation( "properties" ),
+                                                     source.getLocation( "properties" ), sourceDominant ) );
         }
-    }
 }

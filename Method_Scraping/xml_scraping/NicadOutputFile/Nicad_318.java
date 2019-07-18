@@ -1,30 +1,20 @@
+// clone pairs:1114:90%
+// 1928:maven/maven-core/src/main/java/org/apache/maven/execution/scope/internal/MojoExecutionScope.java
+
 public class Nicad_318
 {
-    protected void mergeDependencyManagement_Dependencies( DependencyManagement target, DependencyManagement source,
-                                                           boolean sourceDominant, Map<Object, Object> context )
+    public void exit()
+        throws MojoExecutionException
     {
-        List<Dependency> src = source.getDependencies();
-        if ( !src.isEmpty() )
+        final LinkedList<ScopeState> stack = values.get();
+        if ( stack == null || stack.isEmpty() )
         {
-            List<Dependency> tgt = target.getDependencies();
-            Map<Object, Dependency> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Dependency element : tgt )
-            {
-                Object key = getDependencyKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Dependency element : src )
-            {
-                Object key = getDependencyKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setDependencies( new ArrayList<>( merged.values() ) );
+            throw new IllegalStateException();
+        }
+        stack.removeFirst();
+        if ( stack.isEmpty() )
+        {
+            values.remove();
         }
     }
 }

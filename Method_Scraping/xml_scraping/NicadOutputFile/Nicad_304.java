@@ -1,30 +1,30 @@
+// clone pairs:1044:80%
+// 1809:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+
 public class Nicad_304
 {
-    protected void mergeBuildBase_Resources( BuildBase target, BuildBase source, boolean sourceDominant,
-                                             Map<Object, Object> context )
-    {
-        List<Resource> src = source.getResources();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Resource> tgt = target.getResources();
-            Map<Object, Resource> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Resource element : tgt )
+            if ( o == this )
             {
-                Object key = getResourceKey( element );
-                merged.put( key, element );
+                return true;
             }
 
-            for ( Resource element : src )
+            if ( !( o instanceof CacheKey ) )
             {
-                Object key = getResourceKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                return false;
             }
 
-            target.setResources( new ArrayList<>( merged.values() ) );
+            CacheKey that = (CacheKey) o;
+
+            return Objects.equals( groupId, that.groupId ) && Objects.equals( artifactId, that.artifactId )
+                && Objects.equals( version, that.version )
+                && Objects.equals( dependencyArtifacts, that.dependencyArtifacts )
+                && Objects.equals( workspace, that.workspace ) 
+                && Objects.equals( localRepo, that.localRepo )
+                && RepositoryUtils.repositoriesEquals( repositories, that.repositories )
+                && Objects.equals( collect, that.collect ) 
+                && Objects.equals( resolve, that.resolve )
+                && aggregating == that.aggregating;
         }
-    }
 }

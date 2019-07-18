@@ -1,31 +1,22 @@
+// clone pairs:921:90%
+// 1566:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_242
 {
-    protected void mergeDependency_Exclusions( Dependency target, Dependency source, boolean sourceDominant,
-                                               Map<Object, Object> context )
-    {
-        List<Exclusion> src = source.getExclusions();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Exclusion> tgt = target.getExclusions();
-
-            Map<Object, Exclusion> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Exclusion element : tgt )
+            if ( this == o )
             {
-                Object key = getExclusionKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Exclusion element : src )
-            {
-                Object key = getExclusionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            BigIntegerItem that = (BigIntegerItem) o;
 
-            target.setExclusions( new ArrayList<>( merged.values() ) );
+            return value.equals( that.value );
+
         }
-    }
 }

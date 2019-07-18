@@ -1,48 +1,38 @@
+// clone pairs:68:72%
+// 126:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_50
 {
-    static boolean matchesLayout( String repoLayout, String mirrorLayout )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        boolean result = false;
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
+        {
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-        // simple checks first to short circuit processing below.
-        if ( StringUtils.isEmpty( mirrorLayout ) || WILDCARD.equals( mirrorLayout ) )
-        {
-            result = true;
-        }
-        else if ( mirrorLayout.equals( repoLayout ) )
-        {
-            result = true;
-        }
-        else
-        {
-            // process the list
-            String[] layouts = mirrorLayout.split( "," );
-            for ( String layout : layouts )
+            for ( ReportSet rset : src )
             {
-                // see if this is a negative match
-                if ( layout.length() > 1 && layout.startsWith( "!" ) )
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
                 {
-                    if ( layout.substring( 1 ).equals( repoLayout ) )
-                    {
-                        // explicitly exclude. Set result and stop processing.
-                        result = false;
-                        break;
-                    }
-                }
-                // check for exact match
-                else if ( layout.equals( repoLayout ) )
-                {
-                    result = true;
-                    break;
-                }
-                else if ( WILDCARD.equals( layout ) )
-                {
-                    result = true;
-                    // don't stop processing in case a future segment explicitly excludes this repo
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
             }
-        }
 
-        return result;
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setReportSets( new ArrayList<>( merged.values() ) );
+        }
     }
 }

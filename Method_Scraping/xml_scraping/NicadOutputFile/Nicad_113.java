@@ -1,36 +1,22 @@
+// clone pairs:580:83%
+// 955:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_113
 {
-    public String getLocation()
+    protected void mergeModel_IssueManagement( Model target, Model source, boolean sourceDominant,
+                                               Map<Object, Object> context )
     {
-        StringBuilder buffer = new StringBuilder( 256 );
-
-        if ( getSource().length() > 0 )
+        IssueManagement src = source.getIssueManagement();
+        if ( src != null )
         {
-            if ( buffer.length() > 0 )
+            IssueManagement tgt = target.getIssueManagement();
+            if ( tgt == null )
             {
-                buffer.append( ", " );
+                tgt = new IssueManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setIssueManagement( tgt );
+                mergeIssueManagement( tgt, src, sourceDominant, context );
             }
-            buffer.append( getSource() );
         }
-
-        if ( getLineNumber() > 0 )
-        {
-            if ( buffer.length() > 0 )
-            {
-                buffer.append( ", " );
-            }
-            buffer.append( "line " ).append( getLineNumber() );
-        }
-
-        if ( getColumnNumber() > 0 )
-        {
-            if ( buffer.length() > 0 )
-            {
-                buffer.append( ", " );
-            }
-            buffer.append( "column " ).append( getColumnNumber() );
-        }
-
-        return buffer.toString();
     }
 }

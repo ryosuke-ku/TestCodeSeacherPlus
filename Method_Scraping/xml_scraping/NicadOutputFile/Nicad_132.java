@@ -1,30 +1,22 @@
+// clone pairs:639:83%
+// 1059:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_132
 {
-    protected void mergeModel_Developers( Model target, Model source, boolean sourceDominant,
-                                          Map<Object, Object> context )
+    protected void mergeModel_Organization( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        List<Developer> src = source.getDevelopers();
-        if ( !src.isEmpty() )
+        Organization src = source.getOrganization();
+        if ( src != null )
         {
-            List<Developer> tgt = target.getDevelopers();
-            Map<Object, Developer> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Developer element : tgt )
+            Organization tgt = target.getOrganization();
+            if ( tgt == null )
             {
-                Object key = getDeveloperKey( element );
-                merged.put( key, element );
+                tgt = new Organization();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setOrganization( tgt );
+                mergeOrganization( tgt, src, sourceDominant, context );
             }
-
-            for ( Developer element : src )
-            {
-                Object key = getDeveloperKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setDevelopers( new ArrayList<>( merged.values() ) );
         }
     }
 }

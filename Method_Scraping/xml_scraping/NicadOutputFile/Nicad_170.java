@@ -1,30 +1,23 @@
+// clone pairs:688:75%
+// 1147:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_170
 {
-    protected void mergeBuildBase_TestResources( BuildBase target, BuildBase source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
+    protected void mergeDistributionManagement_Repository( DistributionManagement target,
+                                                           DistributionManagement source, boolean sourceDominant,
+                                                           Map<Object, Object> context )
     {
-        List<Resource> src = source.getTestResources();
-        if ( !src.isEmpty() )
+        DeploymentRepository src = source.getRepository();
+        if ( src != null )
         {
-            List<Resource> tgt = target.getTestResources();
-            Map<Object, Resource> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Resource element : tgt )
+            DeploymentRepository tgt = target.getRepository();
+            if ( sourceDominant || tgt == null )
             {
-                Object key = getResourceKey( element );
-                merged.put( key, element );
+                tgt = new DeploymentRepository();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setRepository( tgt );
+                mergeDeploymentRepository( tgt, src, sourceDominant, context );
             }
-
-            for ( Resource element : src )
-            {
-                Object key = getResourceKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setTestResources( new ArrayList<>( merged.values() ) );
         }
     }
 }

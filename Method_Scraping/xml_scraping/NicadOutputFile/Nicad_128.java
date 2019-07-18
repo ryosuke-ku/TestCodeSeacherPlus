@@ -1,30 +1,22 @@
+// clone pairs:635:83%
+// 1051:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_128
 {
-    protected void mergePlugin_Dependencies( Plugin target, Plugin source, boolean sourceDominant,
-                                             Map<Object, Object> context )
+    protected void mergeModel_Organization( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        List<Dependency> src = source.getDependencies();
-        if ( !src.isEmpty() )
+        Organization src = source.getOrganization();
+        if ( src != null )
         {
-            List<Dependency> tgt = target.getDependencies();
-            Map<Object, Dependency> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Dependency element : tgt )
+            Organization tgt = target.getOrganization();
+            if ( tgt == null )
             {
-                Object key = getDependencyKey( element );
-                merged.put( key, element );
+                tgt = new Organization();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setOrganization( tgt );
+                mergeOrganization( tgt, src, sourceDominant, context );
             }
-
-            for ( Dependency element : src )
-            {
-                Object key = getDependencyKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setDependencies( new ArrayList<>( merged.values() ) );
         }
     }
 }

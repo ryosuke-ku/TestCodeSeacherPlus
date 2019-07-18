@@ -1,30 +1,22 @@
+// clone pairs:654:83%
+// 1089:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_144
 {
-    protected void mergeModel_Licenses( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
+    protected void mergeModel_IssueManagement( Model target, Model source, boolean sourceDominant,
+                                               Map<Object, Object> context )
     {
-        List<License> src = source.getLicenses();
-        if ( !src.isEmpty() )
+        IssueManagement src = source.getIssueManagement();
+        if ( src != null )
         {
-            List<License> tgt = target.getLicenses();
-            Map<Object, License> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( License element : tgt )
+            IssueManagement tgt = target.getIssueManagement();
+            if ( tgt == null )
             {
-                Object key = getLicenseKey( element );
-                merged.put( key, element );
+                tgt = new IssueManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setIssueManagement( tgt );
+                mergeIssueManagement( tgt, src, sourceDominant, context );
             }
-
-            for ( License element : src )
-            {
-                Object key = getLicenseKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setLicenses( new ArrayList<>( merged.values() ) );
         }
     }
 }

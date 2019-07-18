@@ -1,30 +1,22 @@
+// clone pairs:928:80%
+// 1581:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_246
 {
-    protected void mergeModel_Contributors( Model target, Model source, boolean sourceDominant,
-                                            Map<Object, Object> context )
-    {
-        List<Contributor> src = source.getContributors();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Contributor> tgt = target.getContributors();
-            Map<Object, Contributor> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Contributor element : tgt )
+            if ( this == o )
             {
-                Object key = getContributorKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Contributor element : src )
-            {
-                Object key = getContributorKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            StringItem that = (StringItem) o;
 
-            target.setContributors( new ArrayList<>( merged.values() ) );
+            return value.equals( that.value );
+
         }
-    }
 }

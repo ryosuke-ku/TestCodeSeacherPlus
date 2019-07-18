@@ -1,103 +1,74 @@
+// clone pairs:5:100%
+// 9:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_5
 {
-    public MavenExecutionRequest populateFromSettings( MavenExecutionRequest request, Settings settings )
-        throws MavenExecutionRequestPopulationException
+    public List<ArtifactRepository> getEffectiveRepositories( List<ArtifactRepository> repositories )
     {
-        if ( settings == null )
+        if ( repositories == null )
         {
-            return request;
+            return null;
         }
 
-        request.setOffline( settings.isOffline() );
+        Map<String, List<ArtifactRepository>> reposByKey = new LinkedHashMap<>();
 
-        request.setInteractiveMode( settings.isInteractiveMode() );
-
-        request.setPluginGroups( settings.getPluginGroups() );
-
-        request.setLocalRepositoryPath( settings.getLocalRepository() );
-
-        for ( Server server : settings.getServers() )
+        for ( ArtifactRepository repository : repositories )
         {
-            server = server.clone();
+            String key = repository.getId();
 
-            request.addServer( server );
-        }
+            List<ArtifactRepository> aliasedRepos = reposByKey.get( key );
 
-        //  <proxies>
-        //    <proxy>
-        //      <active>true</active>
-        //      <protocol>http</protocol>
-        //      <host>proxy.somewhere.com</host>
-        //      <port>8080</port>
-        //      <username>proxyuser</username>
-        //      <password>somepassword</password>
-        //      <nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
-        //    </proxy>
-        //  </proxies>
-
-        for ( Proxy proxy : settings.getProxies() )
-        {
-            if ( !proxy.isActive() )
+            if ( aliasedRepos == null )
             {
-                continue;
+                aliasedRepos = new ArrayList<>();
+                reposByKey.put( key, aliasedRepos );
             }
 
-            proxy = proxy.clone();
-
-            request.addProxy( proxy );
+            aliasedRepos.add( repository );
         }
 
-        // <mirrors>
-        //   <mirror>
-        //     <id>nexus</id>
-        //     <mirrorOf>*</mirrorOf>
-        //     <url>http://repository.sonatype.org/content/groups/public</url>
-        //   </mirror>
-        // </mirrors>
+        List<ArtifactRepository> effectiveRepositories = new ArrayList<>();
 
-        for ( Mirror mirror : settings.getMirrors() )
+        for ( List<ArtifactRepository> aliasedRepos : reposByKey.values() )
         {
-            mirror = mirror.clone();
+            List<ArtifactRepository> mirroredRepos = new ArrayList<>();
 
-            request.addMirror( mirror );
-        }
+            List<ArtifactRepositoryPolicy> releasePolicies =
+                new ArrayList<>( aliasedRepos.size() );
 
-        request.setActiveProfiles( settings.getActiveProfiles() );
-
-        for ( org.apache.maven.settings.Profile rawProfile : settings.getProfiles() )
-        {
-            request.addProfile( SettingsUtils.convertFromSettingsProfile( rawProfile ) );
-
-            if ( settings.getActiveProfiles().contains( rawProfile.getId() ) )
+            for ( ArtifactRepository aliasedRepo : aliasedRepos )
             {
-                List<Repository> remoteRepositories = rawProfile.getRepositories();
-                for ( Repository remoteRepository : remoteRepositories )
-                {
-                    try
-                    {
-                        request.addRemoteRepository( repositorySystem.buildArtifactRepository( remoteRepository ) );
-                    }
-                    catch ( InvalidRepositoryException e )
-                    {
-                        // do nothing for now
-                    }
-                }
-
-                List<Repository> pluginRepositories = rawProfile.getPluginRepositories();
-                for ( Repository pluginRepo : pluginRepositories )
-                {
-                    try
-                    {
-                        request.addPluginArtifactRepository( repositorySystem.buildArtifactRepository( pluginRepo ) );
-                    }
-                    catch ( InvalidRepositoryException e )
-                    {
-                        // do nothing for now
-                    }
-                }
+                releasePolicies.add( aliasedRepo.getReleases() );
+                mirroredRepos.addAll( aliasedRepo.getMirroredRepositories() );
             }
+
+            ArtifactRepositoryPolicy releasePolicy = getEffectivePolicy( releasePolicies );
+
+            List<ArtifactRepositoryPolicy> snapshotPolicies =
+                new ArrayList<>( aliasedRepos.size() );
+
+            for ( ArtifactRepository aliasedRepo : aliasedRepos )
+            {
+                snapshotPolicies.add( aliasedRepo.getSnapshots() );
+            }
+
+            ArtifactRepositoryPolicy snapshotPolicy = getEffectivePolicy( snapshotPolicies );
+
+            ArtifactRepository aliasedRepo = aliasedRepos.get( 0 );
+
+            ArtifactRepository effectiveRepository =
+                createArtifactRepository( aliasedRepo.getId(), aliasedRepo.getUrl(), aliasedRepo.getLayout(),
+                                          snapshotPolicy, releasePolicy );
+
+            effectiveRepository.setAuthentication( aliasedRepo.getAuthentication() );
+
+            effectiveRepository.setProxy( aliasedRepo.getProxy() );
+
+            effectiveRepository.setMirroredRepositories( mirroredRepos );
+
+            effectiveRepositories.add( effectiveRepository );
         }
 
-        return request;
-    }    
+        return effectiveRepositories;
+    }
 }

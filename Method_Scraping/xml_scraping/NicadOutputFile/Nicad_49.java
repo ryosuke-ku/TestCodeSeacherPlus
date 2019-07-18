@@ -1,46 +1,38 @@
+// clone pairs:67:72%
+// 124:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_49
 {
-    private PersistedToolchains readToolchains( Source toolchainsSource, ToolchainsBuildingRequest request,
-                                                ProblemCollector problems )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        if ( toolchainsSource == null )
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            return new PersistedToolchains();
-        }
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-        PersistedToolchains toolchains;
-
-        try
-        {
-            Map<String, ?> options = Collections.singletonMap( ToolchainsReader.IS_STRICT, Boolean.TRUE );
-
-            try
+            for ( ReportSet rset : src )
             {
-                toolchains = toolchainsReader.read( toolchainsSource.getInputStream(), options );
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
+                {
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
+                }
             }
-            catch ( ToolchainsParseException e )
+
+            for ( ReportSet element : tgt )
             {
-                options = Collections.singletonMap( ToolchainsReader.IS_STRICT, Boolean.FALSE );
-
-                toolchains = toolchainsReader.read( toolchainsSource.getInputStream(), options );
-
-                problems.add( Problem.Severity.WARNING, e.getMessage(), e.getLineNumber(), e.getColumnNumber(),
-                              e );
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
             }
-        }
-        catch ( ToolchainsParseException e )
-        {
-            problems.add( Problem.Severity.FATAL, "Non-parseable toolchains " + toolchainsSource.getLocation()
-                + ": " + e.getMessage(), e.getLineNumber(), e.getColumnNumber(), e );
-            return new PersistedToolchains();
-        }
-        catch ( IOException e )
-        {
-            problems.add( Problem.Severity.FATAL, "Non-readable toolchains " + toolchainsSource.getLocation()
-                + ": " + e.getMessage(), -1, -1, e );
-            return new PersistedToolchains();
-        }
 
-        return toolchains;
+            target.setReportSets( new ArrayList<>( merged.values() ) );
+        }
     }
 }

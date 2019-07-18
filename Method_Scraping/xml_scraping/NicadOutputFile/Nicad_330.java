@@ -1,30 +1,30 @@
+// clone pairs:1156:90%
+// 2013:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+
 public class Nicad_330
 {
-    protected void mergeModel_Contributors( Model target, Model source, boolean sourceDominant,
-                                            Map<Object, Object> context )
-    {
-        List<Contributor> src = source.getContributors();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Contributor> tgt = target.getContributors();
-            Map<Object, Contributor> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Contributor element : tgt )
+            if ( o == this )
             {
-                Object key = getContributorKey( element );
-                merged.put( key, element );
+                return true;
             }
 
-            for ( Contributor element : src )
+            if ( !( o instanceof CacheKey ) )
             {
-                Object key = getContributorKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                return false;
             }
 
-            target.setContributors( new ArrayList<>( merged.values() ) );
+            CacheKey that = (CacheKey) o;
+
+            return Objects.equals( groupId, that.groupId ) && Objects.equals( artifactId, that.artifactId )
+                && Objects.equals( version, that.version )
+                && Objects.equals( dependencyArtifacts, that.dependencyArtifacts )
+                && Objects.equals( workspace, that.workspace ) 
+                && Objects.equals( localRepo, that.localRepo )
+                && RepositoryUtils.repositoriesEquals( repositories, that.repositories )
+                && Objects.equals( collect, that.collect ) 
+                && Objects.equals( resolve, that.resolve )
+                && aggregating == that.aggregating;
         }
-    }
 }

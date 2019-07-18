@@ -1,104 +1,70 @@
+// clone pairs:4:83%
+// 8:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+
 public class Nicad_4
 {
-    private MavenExecutionRequest populateFromSettings( MavenExecutionRequest request, Settings settings )
-        throws MavenExecutionRequestPopulationException
-    {
-        if ( settings == null )
+        protected void mergePluginContainer_Plugins( PluginContainer target, PluginContainer source,
+                                                     boolean sourceDominant, Map<Object, Object> context )
         {
-            return request;
-        }
-
-        request.setOffline( settings.isOffline() );
-
-        request.setInteractiveMode( settings.isInteractiveMode() );
-
-        request.setPluginGroups( settings.getPluginGroups() );
-
-        request.setLocalRepositoryPath( settings.getLocalRepository() );
-
-        for ( Server server : settings.getServers() )
-        {
-            server = server.clone();
-
-            request.addServer( server );
-        }
-
-        //  <proxies>
-        //    <proxy>
-        //      <active>true</active>
-        //      <protocol>http</protocol>
-        //      <host>proxy.somewhere.com</host>
-        //      <port>8080</port>
-        //      <username>proxyuser</username>
-        //      <password>somepassword</password>
-        //      <nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
-        //    </proxy>
-        //  </proxies>
-
-        for ( Proxy proxy : settings.getProxies() )
-        {
-            if ( !proxy.isActive() )
+            List<Plugin> src = source.getPlugins();
+            if ( !src.isEmpty() )
             {
-                continue;
-            }
+                List<Plugin> tgt = target.getPlugins();
+                Map<Object, Plugin> master = new LinkedHashMap<>( src.size() * 2 );
 
-            proxy = proxy.clone();
-
-            request.addProxy( proxy );
-        }
-
-        // <mirrors>
-        //   <mirror>
-        //     <id>nexus</id>
-        //     <mirrorOf>*</mirrorOf>
-        //     <url>http://repository.sonatype.org/content/groups/public</url>
-        //   </mirror>
-        // </mirrors>
-
-        for ( Mirror mirror : settings.getMirrors() )
-        {
-            mirror = mirror.clone();
-
-            request.addMirror( mirror );
-        }
-
-        request.setActiveProfiles( settings.getActiveProfiles() );
-
-        for ( org.apache.maven.settings.Profile rawProfile : settings.getProfiles() )
-        {
-            request.addProfile( SettingsUtils.convertFromSettingsProfile( rawProfile ) );
-
-            if ( settings.getActiveProfiles().contains( rawProfile.getId() ) )
-            {
-                List<Repository> remoteRepositories = rawProfile.getRepositories();
-                for ( Repository remoteRepository : remoteRepositories )
+                for ( Plugin element : src )
                 {
-                    try
+                    if ( element.isInherited() || !element.getExecutions().isEmpty() )
                     {
-                        request.addRemoteRepository( 
-                            MavenRepositorySystem.buildArtifactRepository( remoteRepository ) );
-                    }
-                    catch ( InvalidRepositoryException e )
-                    {
-                        // do nothing for now
+                        // NOTE: Enforce recursive merge to trigger merging/inheritance logic for executions
+                        Plugin plugin = new Plugin();
+                        plugin.setLocation( "", element.getLocation( "" ) );
+                        plugin.setGroupId( null );
+                        mergePlugin( plugin, element, sourceDominant, context );
+
+                        Object key = getPluginKey( element );
+
+                        master.put( key, plugin );
                     }
                 }
-                
-                List<Repository> pluginRepositories = rawProfile.getPluginRepositories();
-                for ( Repository pluginRepository : pluginRepositories )
+
+                Map<Object, List<Plugin>> predecessors = new LinkedHashMap<>();
+                List<Plugin> pending = new ArrayList<>();
+                for ( Plugin element : tgt )
                 {
-                    try
+                    Object key = getPluginKey( element );
+                    Plugin existing = master.get( key );
+                    if ( existing != null )
                     {
-                        request.addPluginArtifactRepository( 
-                            MavenRepositorySystem.buildArtifactRepository( pluginRepository ) );
+                        mergePlugin( element, existing, sourceDominant, context );
+
+                        master.put( key, element );
+
+                        if ( !pending.isEmpty() )
+                        {
+                            predecessors.put( key, pending );
+                            pending = new ArrayList<>();
+                        }
                     }
-                    catch ( InvalidRepositoryException e )
+                    else
                     {
-                        // do nothing for now
+                        pending.add( element );
                     }
-                }                
+                }
+
+                List<Plugin> result = new ArrayList<>( src.size() + tgt.size() );
+                for ( Map.Entry<Object, Plugin> entry : master.entrySet() )
+                {
+                    List<Plugin> pre = predecessors.get( entry.getKey() );
+                    if ( pre != null )
+                    {
+                        result.addAll( pre );
+                    }
+                    result.add( entry.getValue() );
+                }
+                result.addAll( pending );
+
+                target.setPlugins( result );
             }
         }
-        return request;
-    }
 }

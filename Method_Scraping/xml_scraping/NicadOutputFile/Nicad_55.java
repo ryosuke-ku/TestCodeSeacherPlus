@@ -1,36 +1,38 @@
+// clone pairs:73:72%
+// 136:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_55
 {
-    public <T> Provider<T> scope( final Key<T> key, final Provider<T> unscoped )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        return new Provider<T>()
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            @SuppressWarnings( "unchecked" )
-            public T get()
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+
+            for ( ReportSet rset : src )
             {
-                LinkedList<ScopeState> stack = values.get();
-                if ( stack == null || stack.isEmpty() )
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
                 {
-                    throw new OutOfScopeException( "Cannot access " + key + " outside of a scoping block" );
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
-
-                ScopeState state = stack.getFirst();
-
-                Provider<?> seeded = state.seeded.get( key );
-
-                if ( seeded != null )
-                {
-                    return (T) seeded.get();
-                }
-
-                T provided = (T) state.provided.get( key );
-                if ( provided == null && unscoped != null )
-                {
-                    provided = unscoped.get();
-                    state.provided.put( key, provided );
-                }
-
-                return provided;
             }
-        };
+
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setReportSets( new ArrayList<>( merged.values() ) );
+        }
     }
 }

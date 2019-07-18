@@ -1,30 +1,24 @@
+// clone pairs:1118:90%
+// 1937:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+
 public class Nicad_320
 {
-    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
-                                                 Map<Object, Object> context )
-    {
-        List<ReportSet> src = source.getReportSets();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<ReportSet> tgt = target.getReportSets();
-            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( ReportSet element : tgt )
+            if ( o == this )
             {
-                Object key = getReportSetKey( element );
-                merged.put( key, element );
+                return true;
             }
 
-            for ( ReportSet element : src )
+            if ( !( o instanceof CacheKey ) )
             {
-                Object key = getReportSetKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                return false;
             }
 
-            target.setReportSets( new ArrayList<>( merged.values() ) );
+            CacheKey other = (CacheKey) o;
+
+            return pomHash == other.pomHash && artifactEquals( artifact, other.artifact )
+                && resolveManagedVersions == other.resolveManagedVersions
+                && repositoriesEquals( repositories, other.repositories );
         }
-    }
 }

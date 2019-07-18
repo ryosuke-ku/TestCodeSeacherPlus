@@ -1,26 +1,22 @@
+// clone pairs:1020:100%
+// 1762:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+
 public class Nicad_296
 {
-    private static String toMessage( List<SettingsProblem> problems )
+    public boolean equals( Object obj )
     {
-        StringWriter buffer = new StringWriter( 1024 );
-
-        PrintWriter writer = new PrintWriter( buffer );
-
-        writer.print( problems.size() );
-        writer.print( ( problems.size() == 1 ) ? " problem was " : " problems were " );
-        writer.print( "encountered while building the effective settings" );
-        writer.println();
-
-        for ( SettingsProblem problem : problems )
+        if ( this == obj )
         {
-            writer.print( "[" );
-            writer.print( problem.getSeverity() );
-            writer.print( "] " );
-            writer.print( problem.getMessage() );
-            writer.print( " @ " );
-            writer.println( problem.getLocation() );
+            return true;
         }
 
-        return buffer.toString();
+        if ( !( obj instanceof AndArtifactFilter ) )
+        {
+            return false;
+        }
+
+        AndArtifactFilter other = (AndArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

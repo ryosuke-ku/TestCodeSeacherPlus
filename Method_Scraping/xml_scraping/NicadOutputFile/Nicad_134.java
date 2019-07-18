@@ -1,30 +1,22 @@
+// clone pairs:641:83%
+// 1063:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_134
 {
-    protected void mergeModel_MailingLists( Model target, Model source, boolean sourceDominant,
+    protected void mergeModel_Organization( Model target, Model source, boolean sourceDominant,
                                             Map<Object, Object> context )
     {
-        List<MailingList> src = source.getMailingLists();
-        if ( !src.isEmpty() )
+        Organization src = source.getOrganization();
+        if ( src != null )
         {
-            List<MailingList> tgt = target.getMailingLists();
-            Map<Object, MailingList> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( MailingList element : tgt )
+            Organization tgt = target.getOrganization();
+            if ( tgt == null )
             {
-                Object key = getMailingListKey( element );
-                merged.put( key, element );
+                tgt = new Organization();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setOrganization( tgt );
+                mergeOrganization( tgt, src, sourceDominant, context );
             }
-
-            for ( MailingList element : src )
-            {
-                Object key = getMailingListKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setMailingLists( new ArrayList<>( merged.values() ) );
         }
     }
 }

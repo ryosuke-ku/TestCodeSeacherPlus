@@ -1,30 +1,22 @@
+// clone pairs:631:83%
+// 1043:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_124
 {
-    protected void mergePluginContainer_Plugins( PluginContainer target, PluginContainer source,
-                                                 boolean sourceDominant, Map<Object, Object> context )
+    protected void mergeModel_Organization( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        List<Plugin> src = source.getPlugins();
-        if ( !src.isEmpty() )
+        Organization src = source.getOrganization();
+        if ( src != null )
         {
-            List<Plugin> tgt = target.getPlugins();
-            Map<Object, Plugin> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Plugin element : tgt )
+            Organization tgt = target.getOrganization();
+            if ( tgt == null )
             {
-                Object key = getPluginKey( element );
-                merged.put( key, element );
+                tgt = new Organization();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setOrganization( tgt );
+                mergeOrganization( tgt, src, sourceDominant, context );
             }
-
-            for ( Plugin element : src )
-            {
-                Object key = getPluginKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setPlugins( new ArrayList<>( merged.values() ) );
         }
     }
 }

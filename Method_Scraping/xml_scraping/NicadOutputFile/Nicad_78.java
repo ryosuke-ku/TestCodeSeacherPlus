@@ -1,30 +1,30 @@
+// clone pairs:432:80%
+// 753:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_78
 {
-    protected void mergePlugin_Dependencies( Plugin target, Plugin source, boolean sourceDominant,
-                                             Map<Object, Object> context )
+    public ArtifactRepositoryPolicy buildArtifactRepositoryPolicy( RepositoryPolicy policy )
     {
-        List<Dependency> src = source.getDependencies();
-        if ( !src.isEmpty() )
+        boolean enabled = true;
+
+        String updatePolicy = null;
+
+        String checksumPolicy = null;
+
+        if ( policy != null )
         {
-            List<Dependency> tgt = target.getDependencies();
-            Map<Object, Dependency> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+            enabled = policy.isEnabled();
 
-            for ( Dependency element : tgt )
+            if ( policy.getUpdatePolicy() != null )
             {
-                Object key = getDependencyKey( element );
-                merged.put( key, element );
+                updatePolicy = policy.getUpdatePolicy();
             }
-
-            for ( Dependency element : src )
+            if ( policy.getChecksumPolicy() != null )
             {
-                Object key = getDependencyKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
+                checksumPolicy = policy.getChecksumPolicy();
             }
-
-            target.setDependencies( new ArrayList<>( merged.values() ) );
         }
+
+        return new ArtifactRepositoryPolicy( enabled, updatePolicy, checksumPolicy );
     }
 }

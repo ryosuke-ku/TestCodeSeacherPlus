@@ -1,30 +1,33 @@
+// clone pairs:383:82%
+// 728:maven/maven-compat/src/main/java/org/apache/maven/project/interpolation/StringSearchModelInterpolator.java
+
 public class Nicad_74
 {
-    protected void mergePluginContainer_Plugins( PluginContainer target, PluginContainer source,
-                                                 boolean sourceDominant, Map<Object, Object> context )
-    {
-        List<Plugin> src = source.getPlugins();
-        if ( !src.isEmpty() )
+        private void evaluateArray( Object target )
+            throws ModelInterpolationException
         {
-            List<Plugin> tgt = target.getPlugins();
-            Map<Object, Plugin> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Plugin element : tgt )
+            int len = Array.getLength( target );
+            for ( int i = 0; i < len; i++ )
             {
-                Object key = getPluginKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Plugin element : src )
-            {
-                Object key = getPluginKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
+                Object value = Array.get( target, i );
+                if ( value != null )
                 {
-                    merged.put( key, element );
+                    if ( String.class == value.getClass() )
+                    {
+                        String interpolated =
+                            modelInterpolator.interpolateInternal( (String) value, valueSources, postProcessors,
+                                                                   debugEnabled );
+
+                        if ( !interpolated.equals( value ) )
+                        {
+                            Array.set( target, i, interpolated );
+                        }
+                    }
+                    else
+                    {
+                        interpolationTargets.add( value );
+                    }
                 }
             }
-
-            target.setPlugins( new ArrayList<>( merged.values() ) );
         }
-    }
 }

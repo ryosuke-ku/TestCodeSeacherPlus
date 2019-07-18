@@ -1,30 +1,22 @@
+// clone pairs:673:83%
+// 1121:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_158
 {
-    protected void mergeModel_Profiles( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
+    protected void mergeModel_CiManagement( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        List<Profile> src = source.getProfiles();
-        if ( !src.isEmpty() )
+        CiManagement src = source.getCiManagement();
+        if ( src != null )
         {
-            List<Profile> tgt = target.getProfiles();
-            Map<Object, Profile> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Profile element : tgt )
+            CiManagement tgt = target.getCiManagement();
+            if ( tgt == null )
             {
-                Object key = getProfileKey( element );
-                merged.put( key, element );
+                tgt = new CiManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setCiManagement( tgt );
+                mergeCiManagement( tgt, src, sourceDominant, context );
             }
-
-            for ( Profile element : src )
-            {
-                Object key = getProfileKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setProfiles( new ArrayList<>( merged.values() ) );
         }
     }
 }

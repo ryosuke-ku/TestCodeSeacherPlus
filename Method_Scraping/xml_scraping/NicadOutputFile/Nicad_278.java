@@ -1,30 +1,22 @@
+// clone pairs:985:100%
+// 1693:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+
 public class Nicad_278
 {
-    protected void mergeModel_Licenses( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<License> src = source.getLicenses();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<License> tgt = target.getLicenses();
-            Map<Object, License> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( License element : tgt )
-            {
-                Object key = getLicenseKey( element );
-                merged.put( key, element );
-            }
-
-            for ( License element : src )
-            {
-                Object key = getLicenseKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setLicenses( new ArrayList<>( merged.values() ) );
+            return true;
         }
+
+        if ( !( obj instanceof AndArtifactFilter ) )
+        {
+            return false;
+        }
+
+        AndArtifactFilter other = (AndArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

@@ -1,3 +1,6 @@
+// clone pairs:48:72%
+// 86:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_31
 {
     protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,

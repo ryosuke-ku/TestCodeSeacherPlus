@@ -1,30 +1,22 @@
+// clone pairs:963:80%
+// 1650:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_272
 {
-    protected void mergeCiManagement_Notifiers( CiManagement target, CiManagement source, boolean sourceDominant,
-                                                Map<Object, Object> context )
-    {
-        List<Notifier> src = source.getNotifiers();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Notifier> tgt = target.getNotifiers();
-            Map<Object, Notifier> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Notifier element : tgt )
+            if ( this == o )
             {
-                Object key = getNotifierKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Notifier element : src )
-            {
-                Object key = getNotifierKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            IntItem intItem = (IntItem) o;
 
-            target.setNotifiers( new ArrayList<>( merged.values() ) );
+            return value == intItem.value;
+
         }
-    }
 }

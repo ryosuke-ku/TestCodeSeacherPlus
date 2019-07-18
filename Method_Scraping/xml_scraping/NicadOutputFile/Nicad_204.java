@@ -1,30 +1,21 @@
+// clone pairs:799:72%
+// 1335:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+
 public class Nicad_204
 {
-    protected void mergeModelBase_Dependencies( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                Map<Object, Object> context )
+    DefaultModelResolver( RepositorySystemSession session, RequestTrace trace, String context,
+                          ArtifactResolver resolver, VersionRangeResolver versionRangeResolver,
+                          RemoteRepositoryManager remoteRepositoryManager, List<RemoteRepository> repositories )
     {
-        List<Dependency> src = source.getDependencies();
-        if ( !src.isEmpty() )
-        {
-            List<Dependency> tgt = target.getDependencies();
-            Map<Object, Dependency> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+        this.session = session;
+        this.trace = trace;
+        this.context = context;
+        this.resolver = resolver;
+        this.versionRangeResolver = versionRangeResolver;
+        this.remoteRepositoryManager = remoteRepositoryManager;
+        this.repositories = repositories;
+        this.externalRepositories = Collections.unmodifiableList( new ArrayList<>( repositories ) );
 
-            for ( Dependency element : tgt )
-            {
-                Object key = getDependencyKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Dependency element : src )
-            {
-                Object key = getDependencyKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setDependencies( new ArrayList<>( merged.values() ) );
-        }
+        this.repositoryIds = new HashSet<>();
     }
 }

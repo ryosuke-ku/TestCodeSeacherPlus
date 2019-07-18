@@ -1,37 +1,38 @@
+// clone pairs:64:86%
+// 118:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_46
 {
-        public CacheKey( Plugin plugin, ClassLoader parentRealm, Map<String, ClassLoader> foreignImports,
-                         DependencyFilter dependencyFilter, List<RemoteRepository> repositories,
-                         RepositorySystemSession session )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
+    {
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            this.plugin = plugin.clone();
-            this.workspace = RepositoryUtils.getWorkspace( session );
-            this.localRepo = session.getLocalRepository();
-            this.repositories = new ArrayList<>( repositories.size() );
-            for ( RemoteRepository repository : repositories )
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+
+            for ( ReportSet rset : src )
             {
-                if ( repository.isRepositoryManager() )
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
                 {
-                    this.repositories.addAll( repository.getMirroredRepositories() );
-                }
-                else
-                {
-                    this.repositories.add( repository );
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
             }
-            this.parentRealm = parentRealm;
-            this.foreignImports =
-                ( foreignImports != null ) ? foreignImports : Collections.<String, ClassLoader>emptyMap();
-            this.filter = dependencyFilter;
 
-            int hash = 17;
-            hash = hash * 31 + CacheUtils.pluginHashCode( plugin );
-            hash = hash * 31 + Objects.hashCode( workspace );
-            hash = hash * 31 + Objects.hashCode( localRepo );
-            hash = hash * 31 + RepositoryUtils.repositoriesHashCode( repositories );
-            hash = hash * 31 + Objects.hashCode( parentRealm );
-            hash = hash * 31 + this.foreignImports.hashCode();
-            hash = hash * 31 + Objects.hashCode( dependencyFilter );
-            this.hashCode = hash;
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setReportSets( new ArrayList<>( merged.values() ) );
         }
+    }
 }

@@ -1,30 +1,22 @@
+// clone pairs:667:83%
+// 1109:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_152
 {
-    protected void mergeModel_Contributors( Model target, Model source, boolean sourceDominant,
+    protected void mergeModel_CiManagement( Model target, Model source, boolean sourceDominant,
                                             Map<Object, Object> context )
     {
-        List<Contributor> src = source.getContributors();
-        if ( !src.isEmpty() )
+        CiManagement src = source.getCiManagement();
+        if ( src != null )
         {
-            List<Contributor> tgt = target.getContributors();
-            Map<Object, Contributor> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Contributor element : tgt )
+            CiManagement tgt = target.getCiManagement();
+            if ( tgt == null )
             {
-                Object key = getContributorKey( element );
-                merged.put( key, element );
+                tgt = new CiManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setCiManagement( tgt );
+                mergeCiManagement( tgt, src, sourceDominant, context );
             }
-
-            for ( Contributor element : src )
-            {
-                Object key = getContributorKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setContributors( new ArrayList<>( merged.values() ) );
         }
     }
 }

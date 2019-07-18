@@ -1,34 +1,21 @@
+// clone pairs:877:72%
+// 1478:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
+
 public class Nicad_213
 {
-        protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    private boolean hasErrors( List<Problem> problems )
+    {
+        if ( problems != null )
         {
-            List<PluginExecution> src = source.getExecutions();
-            if ( !src.isEmpty() )
+            for ( Problem problem : problems )
             {
-                List<PluginExecution> tgt = target.getExecutions();
-
-                Map<Object, PluginExecution> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( PluginExecution element : src )
+                if ( Problem.Severity.ERROR.compareTo( problem.getSeverity() ) >= 0 )
                 {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element.clone() );
+                    return true;
                 }
-
-                for ( PluginExecution element : tgt )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    PluginExecution existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergePluginExecution( element, existing, sourceDominant, context );
-                    }
-                    merged.put( key, element );
-                }
-
-                target.setExecutions( new ArrayList<>( merged.values() ) );
             }
         }
+
+        return false;
+    }
 }

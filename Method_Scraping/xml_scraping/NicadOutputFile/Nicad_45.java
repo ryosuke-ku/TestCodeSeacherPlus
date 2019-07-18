@@ -1,47 +1,38 @@
+// clone pairs:63:86%
+// 116:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_45
 {
-    public Xpp3Dom getReportConfiguration( String pluginGroupId, String pluginArtifactId, String reportSetId )
+    protected void mergeReportPlugin_ReportSets( ReportPlugin target, ReportPlugin source, boolean sourceDominant,
+                                                 Map<Object, Object> context )
     {
-        Xpp3Dom dom = null;
-
-        // ----------------------------------------------------------------------
-        // I would like to be able to lookup the Mojo object using a key but
-        // we have a limitation in modello that will be remedied shortly. So
-        // for now I have to iterate through and see what we have.
-        // ----------------------------------------------------------------------
-
-        if ( getReportPlugins() != null )
+        List<ReportSet> src = source.getReportSets();
+        if ( !src.isEmpty() )
         {
-            for ( ReportPlugin plugin : getReportPlugins() )
-            {
-                if ( pluginGroupId.equals( plugin.getGroupId() ) && pluginArtifactId.equals( plugin.getArtifactId() ) )
-                {
-                    dom = (Xpp3Dom) plugin.getConfiguration();
+            List<ReportSet> tgt = target.getReportSets();
+            Map<Object, ReportSet> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-                    if ( reportSetId != null )
-                    {
-                        ReportSet reportSet = plugin.getReportSetsAsMap().get( reportSetId );
-                        if ( reportSet != null )
-                        {
-                            Xpp3Dom executionConfiguration = (Xpp3Dom) reportSet.getConfiguration();
-                            if ( executionConfiguration != null )
-                            {
-                                Xpp3Dom newDom = new Xpp3Dom( executionConfiguration );
-                                dom = Xpp3Dom.mergeXpp3Dom( newDom, dom );
-                            }
-                        }
-                    }
-                    break;
+            for ( ReportSet rset : src )
+            {
+                if ( sourceDominant || ( rset.getInherited() != null ? rset.isInherited() : source.isInherited() ) )
+                {
+                    Object key = getReportSetKey( rset );
+                    merged.put( key, rset );
                 }
             }
-        }
 
-        if ( dom != null )
-        {
-            // make a copy so the original in the POM doesn't get messed with
-            dom = new Xpp3Dom( dom );
-        }
+            for ( ReportSet element : tgt )
+            {
+                Object key = getReportSetKey( element );
+                ReportSet existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergeReportSet( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
 
-        return dom;
+            target.setReportSets( new ArrayList<>( merged.values() ) );
+        }
     }
 }

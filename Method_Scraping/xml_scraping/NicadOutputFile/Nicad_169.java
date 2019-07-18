@@ -1,31 +1,23 @@
+// clone pairs:687:75%
+// 1145:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_169
 {
-        private void mergePluginContainerPlugins( PluginContainer target, PluginContainer source )
+    protected void mergeDistributionManagement_Repository( DistributionManagement target,
+                                                           DistributionManagement source, boolean sourceDominant,
+                                                           Map<Object, Object> context )
+    {
+        DeploymentRepository src = source.getRepository();
+        if ( src != null )
         {
-            List<Plugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
+            DeploymentRepository tgt = target.getRepository();
+            if ( sourceDominant || tgt == null )
             {
-                List<Plugin> tgt = target.getPlugins();
-
-                Map<Object, Plugin> managedPlugins = new LinkedHashMap<>( src.size() * 2 );
-
-                Map<Object, Object> context = Collections.emptyMap();
-
-                for ( Plugin element : src )
-                {
-                    Object key = getPluginKey( element );
-                    managedPlugins.put( key, element );
-                }
-
-                for ( Plugin element : tgt )
-                {
-                    Object key = getPluginKey( element );
-                    Plugin managedPlugin = managedPlugins.get( key );
-                    if ( managedPlugin != null )
-                    {
-                        mergePlugin( element, managedPlugin, false, context );
-                    }
-                }
+                tgt = new DeploymentRepository();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setRepository( tgt );
+                mergeDeploymentRepository( tgt, src, sourceDominant, context );
             }
         }
+    }
 }

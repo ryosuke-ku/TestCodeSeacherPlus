@@ -1,30 +1,22 @@
+// clone pairs:888:80%
+// 1501:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+
 public class Nicad_218
 {
-    protected void mergePluginContainer_Plugins( PluginContainer target, PluginContainer source,
-                                                 boolean sourceDominant, Map<Object, Object> context )
-    {
-        List<Plugin> src = source.getPlugins();
-        if ( !src.isEmpty() )
+        public boolean equals( Object o )
         {
-            List<Plugin> tgt = target.getPlugins();
-            Map<Object, Plugin> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Plugin element : tgt )
+            if ( this == o )
             {
-                Object key = getPluginKey( element );
-                merged.put( key, element );
+                return true;
+            }
+            if ( o == null || getClass() != o.getClass() )
+            {
+                return false;
             }
 
-            for ( Plugin element : src )
-            {
-                Object key = getPluginKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
+            LongItem longItem = (LongItem) o;
 
-            target.setPlugins( new ArrayList<>( merged.values() ) );
+            return value == longItem.value;
+
         }
-    }
 }

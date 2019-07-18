@@ -1,29 +1,24 @@
+// clone pairs:1169:90%
+// 2038:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+
 public class Nicad_342
 {
-    public List<Dependency> getTestDependencies()
-    {
-        Set<Artifact> artifacts = getArtifacts();
-
-        if ( ( artifacts == null ) || artifacts.isEmpty() )
+        public boolean equals( Object o )
         {
-            return Collections.emptyList();
+            if ( o == this )
+            {
+                return true;
+            }
+
+            if ( !( o instanceof CacheKey ) )
+            {
+                return false;
+            }
+
+            CacheKey other = (CacheKey) o;
+
+            return pomHash == other.pomHash && artifactEquals( artifact, other.artifact )
+                && resolveManagedVersions == other.resolveManagedVersions
+                && repositoriesEquals( repositories, other.repositories );
         }
-
-        List<Dependency> list = new ArrayList<>( artifacts.size() );
-
-        for ( Artifact a : getArtifacts() )
-        {
-            Dependency dependency = new Dependency();
-
-            dependency.setArtifactId( a.getArtifactId() );
-            dependency.setGroupId( a.getGroupId() );
-            dependency.setVersion( a.getVersion() );
-            dependency.setScope( a.getScope() );
-            dependency.setType( a.getType() );
-            dependency.setClassifier( a.getClassifier() );
-
-            list.add( dependency );
-        }
-        return Collections.unmodifiableList( list );
-    }
 }

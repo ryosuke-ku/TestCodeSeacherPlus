@@ -1,30 +1,26 @@
+// clone pairs:716:75%
+// 1201:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+
 public class Nicad_192
 {
-    protected void mergeModel_Licenses( Model target, Model source, boolean sourceDominant,
-                                        Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<License> src = source.getLicenses();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<License> tgt = target.getLicenses();
-            Map<Object, License> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( License element : tgt )
-            {
-                Object key = getLicenseKey( element );
-                merged.put( key, element );
-            }
-
-            for ( License element : src )
-            {
-                Object key = getLicenseKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setLicenses( new ArrayList<>( merged.values() ) );
+            return true;
         }
+        if ( !( obj instanceof VersionRange ) )
+        {
+            return false;
+        }
+        VersionRange other = (VersionRange) obj;
+
+        boolean equals =
+            recommendedVersion == other.recommendedVersion
+                || ( ( recommendedVersion != null ) && recommendedVersion.equals( other.recommendedVersion ) );
+        equals &=
+            restrictions == other.restrictions
+                || ( ( restrictions != null ) && restrictions.equals( other.restrictions ) );
+        return equals;
     }
 }

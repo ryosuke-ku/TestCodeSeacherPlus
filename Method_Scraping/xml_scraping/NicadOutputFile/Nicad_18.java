@@ -1,34 +1,39 @@
+// clone pairs:33:100%
+// 55:maven/maven-core/src/main/java/org/apache/maven/execution/scope/internal/MojoExecutionScope.java
+
 public class Nicad_18
 {
-    private Proxy getProxy( RepositorySystemSession session, ArtifactRepository repository )
+    public <T> Provider<T> scope( final Key<T> key, final Provider<T> unscoped )
     {
-        if ( session != null )
+        return new Provider<T>()
         {
-            ProxySelector selector = session.getProxySelector();
-            if ( selector != null )
+            @SuppressWarnings( "unchecked" )
+            public T get()
             {
-                RemoteRepository repo = RepositoryUtils.toRepo( repository );
-                org.eclipse.aether.repository.Proxy proxy = selector.getProxy( repo );
-                if ( proxy != null )
+                LinkedList<ScopeState> stack = values.get();
+                if ( stack == null || stack.isEmpty() )
                 {
-                    Proxy p = new Proxy();
-                    p.setHost( proxy.getHost() );
-                    p.setProtocol( proxy.getType() );
-                    p.setPort( proxy.getPort() );
-                    if ( proxy.getAuthentication() != null )
-                    {
-                        repo = new RemoteRepository.Builder( repo ).setProxy( proxy ).build();
-                        AuthenticationContext authCtx = AuthenticationContext.forProxy( session, repo );
-                        p.setUserName( authCtx.get( AuthenticationContext.USERNAME ) );
-                        p.setPassword( authCtx.get( AuthenticationContext.PASSWORD ) );
-                        p.setNtlmDomain( authCtx.get( AuthenticationContext.NTLM_DOMAIN ) );
-                        p.setNtlmHost( authCtx.get( AuthenticationContext.NTLM_WORKSTATION ) );
-                        authCtx.close();
-                    }
-                    return p;
+                    throw new OutOfScopeException( "Cannot access " + key + " outside of a scoping block" );
                 }
+
+                ScopeState state = stack.getFirst();
+
+                Provider<?> seeded = state.seeded.get( key );
+
+                if ( seeded != null )
+                {
+                    return (T) seeded.get();
+                }
+
+                T provided = (T) state.provided.get( key );
+                if ( provided == null && unscoped != null )
+                {
+                    provided = unscoped.get();
+                    state.provided.put( key, provided );
+                }
+
+                return provided;
             }
-        }
-        return null;
+        };
     }
 }

@@ -1,31 +1,26 @@
+// clone pairs:722:75%
+// 1213:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+
 public class Nicad_196
 {
-    protected void mergeDependency_Exclusions( Dependency target, Dependency source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<Exclusion> src = source.getExclusions();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<Exclusion> tgt = target.getExclusions();
-
-            Map<Object, Exclusion> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Exclusion element : tgt )
-            {
-                Object key = getExclusionKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Exclusion element : src )
-            {
-                Object key = getExclusionKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setExclusions( new ArrayList<>( merged.values() ) );
+            return true;
         }
+        if ( !( obj instanceof VersionRange ) )
+        {
+            return false;
+        }
+        VersionRange other = (VersionRange) obj;
+
+        boolean equals =
+            recommendedVersion == other.recommendedVersion
+                || ( ( recommendedVersion != null ) && recommendedVersion.equals( other.recommendedVersion ) );
+        equals &=
+            restrictions == other.restrictions
+                || ( ( restrictions != null ) && restrictions.equals( other.restrictions ) );
+        return equals;
     }
 }

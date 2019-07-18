@@ -1,34 +1,22 @@
+// clone pairs:676:83%
+// 1127:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_161
 {
-    protected MavenProject getProjectWithDependencies( File pom )
-        throws Exception
+    protected void mergeModel_CiManagement( Model target, Model source, boolean sourceDominant,
+                                            Map<Object, Object> context )
     {
-        ProjectBuildingRequest configuration = new DefaultProjectBuildingRequest();
-        configuration.setLocalRepository( getLocalRepository() );
-        configuration.setRemoteRepositories( Arrays.asList( new ArtifactRepository[] {} ) );
-        configuration.setProcessPlugins( false );
-        configuration.setResolveDependencies( true );
-        initRepoSession( configuration );
-
-        try
+        CiManagement src = source.getCiManagement();
+        if ( src != null )
         {
-            return projectBuilder.build( pom, configuration ).getProject();
-        }
-        catch ( Exception e )
-        {
-            Throwable cause = e.getCause();
-            if ( cause instanceof ModelBuildingException )
+            CiManagement tgt = target.getCiManagement();
+            if ( tgt == null )
             {
-                String message = "In: " + pom + "\n\n";
-                for ( ModelProblem problem : ( (ModelBuildingException) cause ).getProblems() )
-                {
-                    message += problem + "\n";
-                }
-                System.out.println( message );
-                fail( message );
+                tgt = new CiManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setCiManagement( tgt );
+                mergeCiManagement( tgt, src, sourceDominant, context );
             }
-
-            throw e;
         }
     }
 }

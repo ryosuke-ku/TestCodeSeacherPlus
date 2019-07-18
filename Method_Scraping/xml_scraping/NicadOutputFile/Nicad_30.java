@@ -1,42 +1,40 @@
+// clone pairs:47:72%
+// 84:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_30
 {
-        protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
+                                           Map<Object, Object> context )
+    {
+        List<PluginExecution> src = source.getExecutions();
+        if ( !src.isEmpty() )
         {
-            List<ReportPlugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
+            List<PluginExecution> tgt = target.getExecutions();
+            Map<Object, PluginExecution> merged =
+                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+
+            for ( PluginExecution element : src )
             {
-                List<ReportPlugin> tgt = target.getPlugins();
-                Map<Object, ReportPlugin> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( ReportPlugin element :  src )
+                if ( sourceDominant
+                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
                 {
-                    Object key = getReportPluginKey( element );
-                    if ( element.isInherited() )
-                    {
-                        // NOTE: Enforce recursive merge to trigger merging/inheritance logic for executions as well
-                        ReportPlugin plugin = new ReportPlugin();
-                        plugin.setLocation( "", element.getLocation( "" ) );
-                        plugin.setGroupId( null );
-                        mergeReportPlugin( plugin, element, sourceDominant, context );
-
-                        merged.put( key, plugin );
-                    }
-                }
-
-                for ( ReportPlugin element : tgt )
-                {
-                    Object key = getReportPluginKey( element );
-                    ReportPlugin existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergeReportPlugin( element, existing, sourceDominant, context );
-                    }
+                    Object key = getPluginExecutionKey( element );
                     merged.put( key, element );
                 }
-
-                target.setPlugins( new ArrayList<>( merged.values() ) );
             }
+
+            for ( PluginExecution element : tgt )
+            {
+                Object key = getPluginExecutionKey( element );
+                PluginExecution existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergePluginExecution( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setExecutions( new ArrayList<>( merged.values() ) );
         }
+    }
 }

@@ -1,54 +1,45 @@
+// clone pairs:23:73%
+// 38:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+
 public class Nicad_13
 {
-    public void alignToBaseDirectory( Model model, File basedir, ModelBuildingRequest request )
-    {
-        if ( model == null || basedir == null )
+        protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
+                                               Map<Object, Object> context )
         {
-            return;
-        }
-
-        Build build = model.getBuild();
-
-        if ( build != null )
-        {
-            build.setDirectory( alignToBaseDirectory( build.getDirectory(), basedir ) );
-
-            build.setSourceDirectory( alignToBaseDirectory( build.getSourceDirectory(), basedir ) );
-
-            build.setTestSourceDirectory( alignToBaseDirectory( build.getTestSourceDirectory(), basedir ) );
-
-            build.setScriptSourceDirectory( alignToBaseDirectory( build.getScriptSourceDirectory(), basedir ) );
-
-            for ( Resource resource : build.getResources() )
+            List<ReportPlugin> src = source.getPlugins();
+            if ( !src.isEmpty() )
             {
-                resource.setDirectory( alignToBaseDirectory( resource.getDirectory(), basedir ) );
-            }
+                List<ReportPlugin> tgt = target.getPlugins();
+                Map<Object, ReportPlugin> merged =
+                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-            for ( Resource resource : build.getTestResources() )
-            {
-                resource.setDirectory( alignToBaseDirectory( resource.getDirectory(), basedir ) );
-            }
-
-            if ( build.getFilters() != null )
-            {
-                List<String> filters = new ArrayList<>( build.getFilters().size() );
-                for ( String filter : build.getFilters() )
+                for ( ReportPlugin element :  src )
                 {
-                    filters.add( alignToBaseDirectory( filter, basedir ) );
+                    Object key = getReportPluginKey( element );
+                    if ( element.isInherited() )
+                    {
+                        // NOTE: Enforce recursive merge to trigger merging/inheritance logic for executions as well
+                        ReportPlugin plugin = new ReportPlugin();
+                        plugin.setLocation( "", element.getLocation( "" ) );
+                        plugin.setGroupId( null );
+                        mergeReportPlugin( plugin, element, sourceDominant, context );
+
+                        merged.put( key, plugin );
+                    }
                 }
-                build.setFilters( filters );
+
+                for ( ReportPlugin element : tgt )
+                {
+                    Object key = getReportPluginKey( element );
+                    ReportPlugin existing = merged.get( key );
+                    if ( existing != null )
+                    {
+                        mergeReportPlugin( element, existing, sourceDominant, context );
+                    }
+                    merged.put( key, element );
+                }
+
+                target.setPlugins( new ArrayList<>( merged.values() ) );
             }
-
-            build.setOutputDirectory( alignToBaseDirectory( build.getOutputDirectory(), basedir ) );
-
-            build.setTestOutputDirectory( alignToBaseDirectory( build.getTestOutputDirectory(), basedir ) );
         }
-
-        Reporting reporting = model.getReporting();
-
-        if ( reporting != null )
-        {
-            reporting.setOutputDirectory( alignToBaseDirectory( reporting.getOutputDirectory(), basedir ) );
-        }
-    }
 }

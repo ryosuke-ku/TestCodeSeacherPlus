@@ -1,34 +1,22 @@
+// clone pairs:1127:90%
+// 1955:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+
 public class Nicad_321
 {
-        protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    public boolean equals( Object obj )
+    {
+        if ( this == obj )
         {
-            List<PluginExecution> src = source.getExecutions();
-            if ( !src.isEmpty() )
-            {
-                List<PluginExecution> tgt = target.getExecutions();
-
-                Map<Object, PluginExecution> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( PluginExecution element : src )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element.clone() );
-                }
-
-                for ( PluginExecution element : tgt )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    PluginExecution existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergePluginExecution( element, existing, sourceDominant, context );
-                    }
-                    merged.put( key, element );
-                }
-
-                target.setExecutions( new ArrayList<>( merged.values() ) );
-            }
+            return true;
         }
+
+        if ( !( obj instanceof AndArtifactFilter ) )
+        {
+            return false;
+        }
+
+        AndArtifactFilter other = (AndArtifactFilter) obj;
+
+        return filters.equals( other.filters );
+    }
 }

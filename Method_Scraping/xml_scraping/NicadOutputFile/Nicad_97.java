@@ -1,37 +1,26 @@
+// clone pairs:485:85%
+// 837:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+
 public class Nicad_97
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    private static org.apache.maven.model.Repository convertFromSettingsRepository( Repository settingsRepo )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        org.apache.maven.model.Repository repo = new org.apache.maven.model.Repository();
+
+        repo.setId( settingsRepo.getId() );
+        repo.setLayout( settingsRepo.getLayout() );
+        repo.setName( settingsRepo.getName() );
+        repo.setUrl( settingsRepo.getUrl() );
+
+        if ( settingsRepo.getSnapshots() != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
-            {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
-            }
-
-            for ( PluginExecution element : tgt )
-            {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            repo.setSnapshots( convertRepositoryPolicy( settingsRepo.getSnapshots() ) );
         }
+        if ( settingsRepo.getReleases() != null )
+        {
+            repo.setReleases( convertRepositoryPolicy( settingsRepo.getReleases() ) );
+        }
+
+        return repo;
     }
 }

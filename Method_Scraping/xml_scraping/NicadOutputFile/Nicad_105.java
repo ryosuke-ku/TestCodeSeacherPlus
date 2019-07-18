@@ -1,37 +1,26 @@
+// clone pairs:553:100%
+// 900:maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
+
 public class Nicad_105
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    public String getMessage()
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        String msg;
+
+        if ( message != null && message.length() > 0 )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
-            {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
-            }
-
-            for ( PluginExecution element : tgt )
-            {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
+            msg = message;
         }
+        else
+        {
+            msg = exception.getMessage();
+
+            if ( msg == null )
+            {
+                msg = "";
+            }
+        }
+
+        return msg;
     }
 }

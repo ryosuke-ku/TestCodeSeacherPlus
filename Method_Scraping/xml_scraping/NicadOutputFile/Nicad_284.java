@@ -1,30 +1,22 @@
+// clone pairs:992:100%
+// 1706:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+
 public class Nicad_284
 {
-    protected void mergeModelBase_PluginRepositories( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                      Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<Repository> src = source.getPluginRepositories();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<Repository> tgt = target.getPluginRepositories();
-            Map<Object, Repository> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Repository element : tgt )
-            {
-                Object key = getRepositoryKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Repository element : src )
-            {
-                Object key = getRepositoryKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setPluginRepositories( new ArrayList<>( merged.values() ) );
+            return true;
         }
+
+        if ( !( obj instanceof OrArtifactFilter ) )
+        {
+            return false;
+        }
+
+        OrArtifactFilter other = (OrArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

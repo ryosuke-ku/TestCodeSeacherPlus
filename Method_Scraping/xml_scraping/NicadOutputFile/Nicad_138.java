@@ -1,30 +1,22 @@
+// clone pairs:648:83%
+// 1077:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_138
 {
-    protected void mergeCiManagement_Notifiers( CiManagement target, CiManagement source, boolean sourceDominant,
-                                                Map<Object, Object> context )
+    protected void mergeModel_IssueManagement( Model target, Model source, boolean sourceDominant,
+                                               Map<Object, Object> context )
     {
-        List<Notifier> src = source.getNotifiers();
-        if ( !src.isEmpty() )
+        IssueManagement src = source.getIssueManagement();
+        if ( src != null )
         {
-            List<Notifier> tgt = target.getNotifiers();
-            Map<Object, Notifier> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Notifier element : tgt )
+            IssueManagement tgt = target.getIssueManagement();
+            if ( tgt == null )
             {
-                Object key = getNotifierKey( element );
-                merged.put( key, element );
+                tgt = new IssueManagement();
+                tgt.setLocation( "", src.getLocation( "" ) );
+                target.setIssueManagement( tgt );
+                mergeIssueManagement( tgt, src, sourceDominant, context );
             }
-
-            for ( Notifier element : src )
-            {
-                Object key = getNotifierKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setNotifiers( new ArrayList<>( merged.values() ) );
         }
     }
 }

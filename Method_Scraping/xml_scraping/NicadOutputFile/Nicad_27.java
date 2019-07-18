@@ -1,42 +1,40 @@
+// clone pairs:44:72%
+// 78:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+
 public class Nicad_27
 {
-    protected void mergeModelBase_PluginRepositories( ModelBase target, ModelBase source, boolean sourceDominant,
-                                                      Map<Object, Object> context )
+    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
+                                           Map<Object, Object> context )
     {
-        List<Repository> src = source.getPluginRepositories();
+        List<PluginExecution> src = source.getExecutions();
         if ( !src.isEmpty() )
         {
-            List<Repository> tgt = target.getPluginRepositories();
-            Map<Object, Repository> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
+            List<PluginExecution> tgt = target.getExecutions();
+            Map<Object, PluginExecution> merged =
+                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
 
-            List<Repository> dominant, recessive;
-            if ( sourceDominant )
+            for ( PluginExecution element : src )
             {
-                dominant = src;
-                recessive = tgt;
-            }
-            else
-            {
-                dominant = tgt;
-                recessive = src;
-            }
-
-            for ( Repository element : dominant )
-            {
-                Object key = getRepositoryKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Repository element : recessive )
-            {
-                Object key = getRepositoryKey( element );
-                if ( !merged.containsKey( key ) )
+                if ( sourceDominant
+                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
                 {
+                    Object key = getPluginExecutionKey( element );
                     merged.put( key, element );
                 }
             }
 
-            target.setPluginRepositories( new ArrayList<>( merged.values() ) );
+            for ( PluginExecution element : tgt )
+            {
+                Object key = getPluginExecutionKey( element );
+                PluginExecution existing = merged.get( key );
+                if ( existing != null )
+                {
+                    mergePluginExecution( element, existing, sourceDominant, context );
+                }
+                merged.put( key, element );
+            }
+
+            target.setExecutions( new ArrayList<>( merged.values() ) );
         }
     }
 }

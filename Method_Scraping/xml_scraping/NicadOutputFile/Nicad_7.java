@@ -1,67 +1,55 @@
+// clone pairs:7:87%
+// 13:maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
+
 public class Nicad_7
 {
-        protected void mergePluginContainer_Plugins( PluginContainer target, PluginContainer source,
-                                                     boolean sourceDominant, Map<Object, Object> context )
+    public void alignToBaseDirectory( Model model, File basedir )
+    {
+        if ( basedir == null )
         {
-            List<Plugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
-            {
-                List<Plugin> tgt = target.getPlugins();
-                Map<Object, Plugin> master = new LinkedHashMap<>( src.size() * 2 );
-
-                for ( Plugin element : src )
-                {
-                    if ( element.isInherited() || !element.getExecutions().isEmpty() )
-                    {
-                        // NOTE: Enforce recursive merge to trigger merging/inheritance logic for executions
-                        Plugin plugin = new Plugin();
-                        plugin.setLocation( "", element.getLocation( "" ) );
-                        plugin.setGroupId( null );
-                        mergePlugin( plugin, element, sourceDominant, context );
-
-                        Object key = getPluginKey( element );
-
-                        master.put( key, plugin );
-                    }
-                }
-
-                Map<Object, List<Plugin>> predecessors = new LinkedHashMap<>();
-                List<Plugin> pending = new ArrayList<>();
-                for ( Plugin element : tgt )
-                {
-                    Object key = getPluginKey( element );
-                    Plugin existing = master.get( key );
-                    if ( existing != null )
-                    {
-                        mergePlugin( element, existing, sourceDominant, context );
-
-                        master.put( key, element );
-
-                        if ( !pending.isEmpty() )
-                        {
-                            predecessors.put( key, pending );
-                            pending = new ArrayList<>();
-                        }
-                    }
-                    else
-                    {
-                        pending.add( element );
-                    }
-                }
-
-                List<Plugin> result = new ArrayList<>( src.size() + tgt.size() );
-                for ( Map.Entry<Object, Plugin> entry : master.entrySet() )
-                {
-                    List<Plugin> pre = predecessors.get( entry.getKey() );
-                    if ( pre != null )
-                    {
-                        result.addAll( pre );
-                    }
-                    result.add( entry.getValue() );
-                }
-                result.addAll( pending );
-
-                target.setPlugins( result );
-            }
+            return;
         }
+
+        Build build = model.getBuild();
+
+        if ( build != null )
+        {
+            build.setDirectory( alignToBaseDirectory( build.getDirectory(), basedir ) );
+
+            build.setSourceDirectory( alignToBaseDirectory( build.getSourceDirectory(), basedir ) );
+
+            build.setTestSourceDirectory( alignToBaseDirectory( build.getTestSourceDirectory(), basedir ) );
+
+            for ( Resource resource : build.getResources() )
+            {
+                resource.setDirectory( alignToBaseDirectory( resource.getDirectory(), basedir ) );
+            }
+
+            for ( Resource resource : build.getTestResources() )
+            {
+                resource.setDirectory( alignToBaseDirectory( resource.getDirectory(), basedir ) );
+            }
+
+            if ( build.getFilters() != null )
+            {
+                List<String> filters = new ArrayList<>();
+                for ( String filter : build.getFilters() )
+                {
+                    filters.add( alignToBaseDirectory( filter, basedir ) );
+                }
+                build.setFilters( filters );
+            }
+
+            build.setOutputDirectory( alignToBaseDirectory( build.getOutputDirectory(), basedir ) );
+
+            build.setTestOutputDirectory( alignToBaseDirectory( build.getTestOutputDirectory(), basedir ) );
+        }
+
+        Reporting reporting = model.getReporting();
+
+        if ( reporting != null )
+        {
+            reporting.setOutputDirectory( alignToBaseDirectory( reporting.getOutputDirectory(), basedir ) );
+        }
+    }
 }

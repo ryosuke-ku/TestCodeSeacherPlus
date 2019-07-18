@@ -1,37 +1,26 @@
+// clone pairs:423:100%
+// 747:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_77
 {
-    protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                           Map<Object, Object> context )
+    private Mirror getMirror( RepositorySystemSession session, ArtifactRepository repository )
     {
-        List<PluginExecution> src = source.getExecutions();
-        if ( !src.isEmpty() )
+        if ( session != null )
         {
-            List<PluginExecution> tgt = target.getExecutions();
-            Map<Object, PluginExecution> merged =
-                new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( PluginExecution element : src )
+            org.eclipse.aether.repository.MirrorSelector selector = session.getMirrorSelector();
+            if ( selector != null )
             {
-                if ( sourceDominant
-                                || ( element.getInherited() != null ? element.isInherited() : source.isInherited() ) )
+                RemoteRepository repo = selector.getMirror( RepositoryUtils.toRepo( repository ) );
+                if ( repo != null )
                 {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
+                    Mirror mirror = new Mirror();
+                    mirror.setId( repo.getId() );
+                    mirror.setUrl( repo.getUrl() );
+                    mirror.setLayout( repo.getContentType() );
+                    return mirror;
                 }
             }
-
-            for ( PluginExecution element : tgt )
-            {
-                Object key = getPluginExecutionKey( element );
-                PluginExecution existing = merged.get( key );
-                if ( existing != null )
-                {
-                    mergePluginExecution( element, existing, sourceDominant, context );
-                }
-                merged.put( key, element );
-            }
-
-            target.setExecutions( new ArrayList<>( merged.values() ) );
         }
+        return null;
     }
 }

@@ -1,36 +1,23 @@
+// clone pairs:868:100%
+// 1468:maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java
+
 public class Nicad_210
 {
-        protected void mergeReporting_Plugins( Reporting target, Reporting source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    public boolean presentInConfig( Profile profile, ProfileActivationContext context, ModelProblemCollector problems )
+    {
+        Activation activation = profile.getActivation();
+
+        if ( activation == null )
         {
-            List<ReportPlugin> src = source.getPlugins();
-            if ( !src.isEmpty() )
-            {
-                List<ReportPlugin> tgt = target.getPlugins();
-                Map<Object, ReportPlugin> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( ReportPlugin element : tgt )
-                {
-                    Object key = getReportPluginKey( element );
-                    merged.put( key, element );
-                }
-
-                for ( ReportPlugin element : src )
-                {
-                    Object key = getReportPluginKey( element );
-                    ReportPlugin existing = merged.get( key );
-                    if ( existing == null )
-                    {
-                        merged.put( key, element );
-                    }
-                    else
-                    {
-                        mergeReportPlugin( existing, element, sourceDominant, context );
-                    }
-                }
-
-                target.setPlugins( new ArrayList<>( merged.values() ) );
-            }
+            return false;
         }
+
+        String jdk = activation.getJdk();
+
+        if ( jdk == null )
+        {
+            return false;
+        }
+        return true;
+    }
 }

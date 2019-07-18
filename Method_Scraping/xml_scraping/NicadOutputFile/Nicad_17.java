@@ -1,33 +1,51 @@
+// clone pairs:31:100%
+// 51:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+
 public class Nicad_17
 {
-    private Versioning readVersions( RepositorySystemSession session, RequestTrace trace, Metadata metadata,
-                                     ArtifactRepository repository, VersionRangeResult result )
+    static boolean matchesLayout( String repoLayout, String mirrorLayout )
     {
-        Versioning versioning = null;
-        try
-        {
-            if ( metadata != null )
-            {
-                try ( SyncContext syncContext = syncContextFactory.newInstance( session, true ) )
-                {
-                    syncContext.acquire( null, Collections.singleton( metadata ) );
+        boolean result = false;
 
-                    if ( metadata.getFile() != null && metadata.getFile().exists() )
+        // simple checks first to short circuit processing below.
+        if ( StringUtils.isEmpty( mirrorLayout ) || WILDCARD.equals( mirrorLayout ) )
+        {
+            result = true;
+        }
+        else if ( mirrorLayout.equals( repoLayout ) )
+        {
+            result = true;
+        }
+        else
+        {
+            // process the list
+            String[] layouts = mirrorLayout.split( "," );
+            for ( String layout : layouts )
+            {
+                // see if this is a negative match
+                if ( layout.length() > 1 && layout.startsWith( "!" ) )
+                {
+                    if ( layout.substring( 1 ).equals( repoLayout ) )
                     {
-                        try ( final InputStream in = new FileInputStream( metadata.getFile() ) )
-                        {
-                            versioning = new MetadataXpp3Reader().read( in, false ).getVersioning();
-                        }
+                        // explicitly exclude. Set result and stop processing.
+                        result = false;
+                        break;
                     }
+                }
+                // check for exact match
+                else if ( layout.equals( repoLayout ) )
+                {
+                    result = true;
+                    break;
+                }
+                else if ( WILDCARD.equals( layout ) )
+                {
+                    result = true;
+                    // don't stop processing in case a future segment explicitly excludes this repo
                 }
             }
         }
-        catch ( Exception e )
-        {
-            invalidMetadata( session, trace, metadata, repository, e );
-            result.addException( e );
-        }
 
-        return ( versioning != null ) ? versioning : new Versioning();
+        return result;
     }
 }

@@ -1,30 +1,20 @@
+// clone pairs:1069:90%
+// 1857:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+
 public class Nicad_310
 {
-    protected void mergeModel_Developers( Model target, Model source, boolean sourceDominant,
-                                          Map<Object, Object> context )
+    public boolean equals( Object obj ) 
     {
-        List<Developer> src = source.getDevelopers();
-        if ( !src.isEmpty() )
+        if ( this == obj ) 
         {
-            List<Developer> tgt = target.getDevelopers();
-            Map<Object, Developer> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Developer element : tgt )
-            {
-                Object key = getDeveloperKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Developer element : src )
-            {
-                Object key = getDeveloperKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setDevelopers( new ArrayList<>( merged.values() ) );
+            return true;
         }
+        
+        if ( !( obj instanceof FileModelSource ) ) 
+        {
+            return false;
+        }
+        FileModelSource other = ( FileModelSource ) obj;
+        return getFile().equals( other.getFile() );
     }
 }

@@ -1,36 +1,25 @@
+// clone pairs:812:100%
+// 1360:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+
 public class Nicad_207
 {
-        protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    private void injectMirror( ArtifactRepository repository, Mirror mirror )
+    {
+        if ( mirror != null )
         {
-            List<PluginExecution> src = source.getExecutions();
-            if ( !src.isEmpty() )
+            ArtifactRepository original =
+                createArtifactRepository( repository.getId(), repository.getUrl(), repository.getLayout(),
+                                          repository.getSnapshots(), repository.getReleases() );
+
+            repository.setMirroredRepositories( Collections.singletonList( original ) );
+
+            repository.setId( mirror.getId() );
+            repository.setUrl( mirror.getUrl() );
+
+            if ( StringUtils.isNotEmpty( mirror.getLayout() ) )
             {
-                List<PluginExecution> tgt = target.getExecutions();
-                Map<Object, PluginExecution> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( PluginExecution element : tgt )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element );
-                }
-
-                for ( PluginExecution element : src )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    PluginExecution existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergePluginExecution( existing, element, sourceDominant, context );
-                    }
-                    else
-                    {
-                        merged.put( key, element );
-                    }
-                }
-
-                target.setExecutions( new ArrayList<>( merged.values() ) );
+                repository.setLayout( getLayout( mirror.getLayout() ) );
             }
         }
+    }
 }

@@ -1,38 +1,39 @@
+// clone pairs:62:100%
+// 113:maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
+
 public class Nicad_44
 {
-    public Xpp3Dom getGoalConfiguration( String pluginGroupId, String pluginArtifactId, String executionId,
-                                         String goalId )
+    public String getLocation()
     {
-        Xpp3Dom dom = null;
+        StringBuilder buffer = new StringBuilder( 256 );
 
-        if ( getBuildPlugins() != null )
+        if ( getSource().length() > 0 )
         {
-            for ( Plugin plugin : getBuildPlugins() )
+            if ( buffer.length() > 0 )
             {
-                if ( pluginGroupId.equals( plugin.getGroupId() ) && pluginArtifactId.equals( plugin.getArtifactId() ) )
-                {
-                    dom = (Xpp3Dom) plugin.getConfiguration();
-
-                    if ( executionId != null )
-                    {
-                        PluginExecution execution = plugin.getExecutionsAsMap().get( executionId );
-                        if ( execution != null )
-                        {
-                            // NOTE: The PluginConfigurationExpander already merged the plugin-level config in
-                            dom = (Xpp3Dom) execution.getConfiguration();
-                        }
-                    }
-                    break;
-                }
+                buffer.append( ", " );
             }
+            buffer.append( getSource() );
         }
 
-        if ( dom != null )
+        if ( getLineNumber() > 0 )
         {
-            // make a copy so the original in the POM doesn't get messed with
-            dom = new Xpp3Dom( dom );
+            if ( buffer.length() > 0 )
+            {
+                buffer.append( ", " );
+            }
+            buffer.append( "line " ).append( getLineNumber() );
         }
 
-        return dom;
+        if ( getColumnNumber() > 0 )
+        {
+            if ( buffer.length() > 0 )
+            {
+                buffer.append( ", " );
+            }
+            buffer.append( "column " ).append( getColumnNumber() );
+        }
+
+        return buffer.toString();
     }
 }

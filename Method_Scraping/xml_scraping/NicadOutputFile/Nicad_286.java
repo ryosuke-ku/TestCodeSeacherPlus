@@ -1,30 +1,22 @@
+// clone pairs:996:90%
+// 1714:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+
 public class Nicad_286
 {
-    protected void mergeModel_Contributors( Model target, Model source, boolean sourceDominant,
-                                            Map<Object, Object> context )
+    public boolean equals( Object obj )
     {
-        List<Contributor> src = source.getContributors();
-        if ( !src.isEmpty() )
+        if ( this == obj )
         {
-            List<Contributor> tgt = target.getContributors();
-            Map<Object, Contributor> merged = new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-            for ( Contributor element : tgt )
-            {
-                Object key = getContributorKey( element );
-                merged.put( key, element );
-            }
-
-            for ( Contributor element : src )
-            {
-                Object key = getContributorKey( element );
-                if ( sourceDominant || !merged.containsKey( key ) )
-                {
-                    merged.put( key, element );
-                }
-            }
-
-            target.setContributors( new ArrayList<>( merged.values() ) );
+            return true;
         }
+
+        if ( !( obj instanceof OrArtifactFilter ) )
+        {
+            return false;
+        }
+
+        OrArtifactFilter other = (OrArtifactFilter) obj;
+
+        return filters.equals( other.filters );
     }
 }

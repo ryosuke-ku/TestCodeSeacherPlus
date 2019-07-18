@@ -1,34 +1,23 @@
+// clone pairs:1037:70%
+// 1796:maven/maven-settings-builder/src/main/java/org/apache/maven/settings/validation/DefaultSettingsValidator.java
+
 public class Nicad_301
 {
-        protected void mergePlugin_Executions( Plugin target, Plugin source, boolean sourceDominant,
-                                               Map<Object, Object> context )
+    private static boolean validateStringNotEmpty( SettingsProblemCollector problems, String fieldName, String string,
+                                            String sourceHint )
+    {
+        if ( !validateNotNull( problems, fieldName, string, sourceHint ) )
         {
-            List<PluginExecution> src = source.getExecutions();
-            if ( !src.isEmpty() )
-            {
-                List<PluginExecution> tgt = target.getExecutions();
-
-                Map<Object, PluginExecution> merged =
-                    new LinkedHashMap<>( ( src.size() + tgt.size() ) * 2 );
-
-                for ( PluginExecution element : src )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    merged.put( key, element.clone() );
-                }
-
-                for ( PluginExecution element : tgt )
-                {
-                    Object key = getPluginExecutionKey( element );
-                    PluginExecution existing = merged.get( key );
-                    if ( existing != null )
-                    {
-                        mergePluginExecution( element, existing, sourceDominant, context );
-                    }
-                    merged.put( key, element );
-                }
-
-                target.setExecutions( new ArrayList<>( merged.values() ) );
-            }
+            return false;
         }
+
+        if ( string.length() > 0 )
+        {
+            return true;
+        }
+
+        addViolation( problems, Severity.ERROR, fieldName, sourceHint, "is missing" );
+
+        return false;
+    }
 }

@@ -1,86 +1,106 @@
+// clone pairs:3:97%
+// 6:maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulator.java
+
 public class Nicad_3
 {
-    public static Profile convertFromProfileXmlProfile( org.apache.maven.profiles.Profile profileXmlProfile )
+    public MavenExecutionRequest populateFromSettings( MavenExecutionRequest request, Settings settings )
+        throws MavenExecutionRequestPopulationException
     {
-        Profile profile = new Profile();
-
-        profile.setId( profileXmlProfile.getId() );
-
-        profile.setSource( "profiles.xml" );
-
-        org.apache.maven.profiles.Activation profileActivation = profileXmlProfile.getActivation();
-
-        if ( profileActivation != null )
+        if ( settings == null )
         {
-            Activation activation = new Activation();
-
-            activation.setActiveByDefault( profileActivation.isActiveByDefault() );
-
-            activation.setJdk( profileActivation.getJdk() );
-
-            org.apache.maven.profiles.ActivationProperty profileProp = profileActivation.getProperty();
-
-            if ( profileProp != null )
-            {
-                ActivationProperty prop = new ActivationProperty();
-
-                prop.setName( profileProp.getName() );
-                prop.setValue( profileProp.getValue() );
-
-                activation.setProperty( prop );
-            }
-
-
-            ActivationOS profileOs = profileActivation.getOs();
-
-            if ( profileOs != null )
-            {
-                org.apache.maven.model.ActivationOS os = new org.apache.maven.model.ActivationOS();
-
-                os.setArch( profileOs.getArch() );
-                os.setFamily( profileOs.getFamily() );
-                os.setName( profileOs.getName() );
-                os.setVersion( profileOs.getVersion() );
-
-                activation.setOs( os );
-            }
-
-            org.apache.maven.profiles.ActivationFile profileFile = profileActivation.getFile();
-
-            if ( profileFile != null )
-            {
-                ActivationFile file = new ActivationFile();
-
-                file.setExists( profileFile.getExists() );
-                file.setMissing( profileFile.getMissing() );
-
-                activation.setFile( file );
-            }
-
-            profile.setActivation( activation );
+            return request;
         }
 
-        profile.setProperties( profileXmlProfile.getProperties() );
+        request.setOffline( settings.isOffline() );
 
-        List repos = profileXmlProfile.getRepositories();
-        if ( repos != null )
+        request.setInteractiveMode( settings.isInteractiveMode() );
+
+        request.setPluginGroups( settings.getPluginGroups() );
+
+        request.setLocalRepositoryPath( settings.getLocalRepository() );
+
+        for ( Server server : settings.getServers() )
         {
-            for ( Object repo : repos )
+            server = server.clone();
+
+            request.addServer( server );
+        }
+
+        //  <proxies>
+        //    <proxy>
+        //      <active>true</active>
+        //      <protocol>http</protocol>
+        //      <host>proxy.somewhere.com</host>
+        //      <port>8080</port>
+        //      <username>proxyuser</username>
+        //      <password>somepassword</password>
+        //      <nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
+        //    </proxy>
+        //  </proxies>
+
+        for ( Proxy proxy : settings.getProxies() )
+        {
+            if ( !proxy.isActive() )
             {
-                profile.addRepository( convertFromProfileXmlRepository( (org.apache.maven.profiles.Repository) repo ) );
+                continue;
+            }
+
+            proxy = proxy.clone();
+
+            request.addProxy( proxy );
+        }
+
+        // <mirrors>
+        //   <mirror>
+        //     <id>nexus</id>
+        //     <mirrorOf>*</mirrorOf>
+        //     <url>http://repository.sonatype.org/content/groups/public</url>
+        //   </mirror>
+        // </mirrors>
+
+        for ( Mirror mirror : settings.getMirrors() )
+        {
+            mirror = mirror.clone();
+
+            request.addMirror( mirror );
+        }
+
+        request.setActiveProfiles( settings.getActiveProfiles() );
+
+        for ( org.apache.maven.settings.Profile rawProfile : settings.getProfiles() )
+        {
+            request.addProfile( SettingsUtils.convertFromSettingsProfile( rawProfile ) );
+
+            if ( settings.getActiveProfiles().contains( rawProfile.getId() ) )
+            {
+                List<Repository> remoteRepositories = rawProfile.getRepositories();
+                for ( Repository remoteRepository : remoteRepositories )
+                {
+                    try
+                    {
+                        request.addRemoteRepository( repositorySystem.buildArtifactRepository( remoteRepository ) );
+                    }
+                    catch ( InvalidRepositoryException e )
+                    {
+                        // do nothing for now
+                    }
+                }
+
+                List<Repository> pluginRepositories = rawProfile.getPluginRepositories();
+                for ( Repository pluginRepo : pluginRepositories )
+                {
+                    try
+                    {
+                        request.addPluginArtifactRepository( repositorySystem.buildArtifactRepository( pluginRepo ) );
+                    }
+                    catch ( InvalidRepositoryException e )
+                    {
+                        // do nothing for now
+                    }
+                }
             }
         }
 
-        List pluginRepos = profileXmlProfile.getPluginRepositories();
-        if ( pluginRepos != null )
-        {
-            for ( Object pluginRepo : pluginRepos )
-            {
-                profile.addPluginRepository(
-                    convertFromProfileXmlRepository( (org.apache.maven.profiles.Repository) pluginRepo ) );
-            }
-        }
-
-        return profile;
-    }
+        return request;
+    }    
 }
