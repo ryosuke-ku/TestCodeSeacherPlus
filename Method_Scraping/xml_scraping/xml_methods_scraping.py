@@ -187,7 +187,7 @@ for u in t1keylist:
 # 		print('✖')
 
 # print(t1mapdic)
-print(len(t1mapdic))
+# print(len(t1mapdic))
 
 Slinelist =[]
 Elinelist =[]
@@ -201,6 +201,39 @@ for k in t1mapdic:
 
 # print(Slinelist)
 # print(len(Slinelist))
+# print(Elinelist)
+# print(len(Elinelist))
+
+num = 0
+filenum = 1
+for k in t1mapdic:
+	print(k)
+	path = t1mapdic[k][0][0]
+	print(path)
+	editpath = re.sub(r".*?:", "", path)
+	# print(editpath)
+	
+	file = open('Nicad_' + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+	f = open("D:/ryosuke-ku/data_set/maven_190611/" + editpath, "r", encoding="utf-8")
+	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
+	f.close()
+
+	startline = int(Slinelist[num][0])-1
+	endline = int(Elinelist[num][0])
+	num +=1
+
+	file.write('// ' + k + '\n')
+	file.write('// ' + path + '\n')
+	file.write('\n')
+	file.write('public class Nicad_' + str(filenum) + '\n')
+	file.write('{' + '\n')
+	for x in range(startline,endline):
+		print(lines2[x].replace('\n', ''))
+		file.write(lines2[x].replace('\n', '') + '\n')
+	
+	file.write('}')
+	filenum += 1
+
 
 # t1p = 0
 # t2p = 0
