@@ -1,0 +1,1008 @@
+clone pairs:1:77%
+1:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+clone pairs:2:77%
+3:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+clone pairs:3:97%
+6:maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulator.java
+clone pairs:4:83%
+8:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:5:100%
+9:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:6:87%
+11:maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
+clone pairs:7:87%
+13:maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
+clone pairs:8:100%
+15:maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
+16:maven/maven-compat/src/main/java/org/apache/maven/project/path/DefaultPathTranslator.java
+clone pairs:9:70%
+17:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultVersionResolver.java
+clone pairs:13:100%
+19:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:14:96%
+21:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+clone pairs:15:84%
+23:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+clone pairs:16:84%
+25:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+26:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+clone pairs:18:100%
+27:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+28:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:19:84%
+29:maven/maven-compat/src/main/java/org/apache/maven/artifact/manager/DefaultWagonManager.java
+30:maven/maven-compat/src/main/java/org/apache/maven/artifact/manager/DefaultWagonManager.java
+clone pairs:20:80%
+31:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+32:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:21:80%
+33:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+34:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:22:73%
+36:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:23:73%
+38:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:24:73%
+40:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:26:88%
+43:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+clone pairs:27:76%
+45:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+46:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:30:84%
+50:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
+clone pairs:31:100%
+51:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+clone pairs:33:100%
+55:maven/maven-core/src/main/java/org/apache/maven/execution/scope/internal/MojoExecutionScope.java
+clone pairs:35:86%
+60:maven/maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java
+clone pairs:36:82%
+61:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:37:100%
+63:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+64:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:38:86%
+66:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:39:86%
+68:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:40:81%
+70:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:41:86%
+72:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:42:72%
+74:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:43:72%
+76:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:44:72%
+78:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:45:72%
+80:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:46:72%
+82:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:47:72%
+84:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:48:72%
+86:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:49:72%
+88:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:50:72%
+90:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:51:72%
+92:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:52:72%
+94:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:53:72%
+96:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:54:72%
+98:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:55:72%
+100:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:56:72%
+102:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:57:72%
+104:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:58:72%
+106:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:59:72%
+108:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:60:72%
+110:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:62:100%
+113:maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
+clone pairs:63:86%
+116:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:64:86%
+118:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:65:81%
+120:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:66:86%
+122:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:67:72%
+124:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:68:72%
+126:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:69:72%
+128:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:70:72%
+130:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:71:72%
+132:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:72:72%
+134:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:73:72%
+136:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:74:72%
+138:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:75:72%
+140:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:76:72%
+142:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:77:72%
+144:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:78:72%
+146:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:79:72%
+148:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:80:72%
+150:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:81:72%
+152:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:82:72%
+154:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:83:72%
+156:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:84:72%
+158:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:85:72%
+160:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:111:100%
+209:maven/maven-core/src/main/java/org/apache/maven/artifact/factory/DefaultArtifactFactory.java
+clone pairs:154:76%
+296:maven/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java
+clone pairs:155:71%
+298:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/ToolchainsBuildingException.java
+clone pairs:176:95%
+339:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+340:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:177:95%
+341:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+342:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:178:90%
+343:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+344:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:179:95%
+345:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+346:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:180:90%
+347:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+348:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:181:90%
+349:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+350:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:182:85%
+351:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+352:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:183:75%
+353:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+354:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:184:70%
+355:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+356:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:195:100%
+357:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:197:78%
+361:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+362:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:198:73%
+363:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+364:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:304:72%
+575:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+576:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:374:83%
+709:maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
+710:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+clone pairs:375:100%
+711:maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
+712:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+clone pairs:376:83%
+713:maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
+714:maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
+clone pairs:377:83%
+715:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+716:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+clone pairs:378:100%
+717:maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
+718:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+clone pairs:379:83%
+719:maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
+720:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+clone pairs:381:77%
+723:maven/maven-core/src/main/java/org/apache/maven/artifact/repository/MavenArtifactRepository.java
+clone pairs:382:83%
+725:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:383:82%
+728:maven/maven-compat/src/main/java/org/apache/maven/project/interpolation/StringSearchModelInterpolator.java
+clone pairs:392:70%
+731:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+732:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:393:70%
+733:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+734:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:421:93%
+743:maven/maven-compat/src/main/java/org/apache/maven/repository/DefaultMirrorSelector.java
+clone pairs:422:75%
+746:maven/maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java
+clone pairs:423:100%
+747:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:432:80%
+753:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:440:93%
+767:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:451:86%
+783:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+784:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:452:80%
+785:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+786:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:453:73%
+787:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+788:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:456:100%
+791:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+792:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:457:73%
+794:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:458:73%
+796:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:459:73%
+798:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:460:80%
+799:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+800:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:461:80%
+801:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+802:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:462:80%
+803:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+804:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:463:73%
+805:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+806:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:464:73%
+807:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+808:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:465:73%
+810:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:466:73%
+812:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:467:73%
+814:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:468:73%
+816:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:469:73%
+818:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:470:73%
+820:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:471:73%
+822:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:472:73%
+824:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:473:73%
+826:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:474:73%
+828:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:475:73%
+830:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:476:73%
+832:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:477:73%
+834:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:484:100%
+835:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+clone pairs:485:85%
+837:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+clone pairs:493:85%
+849:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+850:maven/maven-core/src/main/java/org/apache/maven/settings/SettingsUtils.java
+clone pairs:504:85%
+865:maven/maven-core/src/main/java/org/apache/maven/lifecycle/mapping/LifecyclePhase.java
+clone pairs:506:78%
+869:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:507:71%
+871:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:527:92%
+875:maven/maven-core/src/main/java/org/apache/maven/artifact/repository/MavenArtifactRepository.java
+clone pairs:542:83%
+885:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:547:83%
+889:maven/maven-core/src/main/java/org/apache/maven/toolchain/merge/MavenToolchainMerger.java
+clone pairs:552:100%
+898:maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
+clone pairs:553:100%
+900:maven/maven-builder-support/src/main/java/org/apache/maven/building/DefaultProblem.java
+clone pairs:554:83%
+903:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:558:83%
+911:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:559:83%
+913:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:560:83%
+915:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:561:75%
+917:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:562:75%
+919:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:577:83%
+948:maven/maven-core/src/main/java/org/apache/maven/project/ProjectModelResolver.java
+949:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+clone pairs:579:83%
+953:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:580:83%
+955:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:581:83%
+957:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:582:75%
+959:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:583:75%
+961:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:601:83%
+989:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:602:83%
+991:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:603:83%
+993:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:604:75%
+995:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:605:75%
+997:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:619:75%
+1025:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:620:91%
+1026:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:624:100%
+1028:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1029:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:625:100%
+1030:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1031:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:626:83%
+1032:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1033:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:627:100%
+1034:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1035:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:628:100%
+1036:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1037:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:629:91%
+1038:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1039:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:630:91%
+1040:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1041:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:631:83%
+1043:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:632:83%
+1045:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:633:83%
+1047:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:634:83%
+1049:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:635:83%
+1051:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:636:83%
+1053:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:637:83%
+1055:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:638:83%
+1057:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:639:83%
+1059:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:640:83%
+1061:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:641:83%
+1063:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:642:83%
+1065:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:643:83%
+1067:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:644:100%
+1068:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1069:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:645:91%
+1070:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1071:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:646:91%
+1072:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1073:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:647:83%
+1075:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:648:83%
+1077:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:649:83%
+1079:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:650:83%
+1081:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:651:83%
+1083:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:652:83%
+1085:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:653:83%
+1087:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:654:83%
+1089:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:655:83%
+1091:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:656:83%
+1093:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:657:83%
+1095:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:658:83%
+1097:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:659:83%
+1099:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:663:91%
+1100:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1101:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:664:91%
+1102:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1103:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:665:83%
+1105:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:666:83%
+1107:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:667:83%
+1109:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:668:83%
+1111:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:669:83%
+1113:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:670:83%
+1115:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:671:83%
+1117:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:672:83%
+1119:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:673:83%
+1121:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:674:83%
+1123:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:675:83%
+1125:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:676:83%
+1127:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:677:83%
+1129:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:680:100%
+1130:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1131:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:681:75%
+1133:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:682:75%
+1135:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:683:75%
+1137:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:684:75%
+1139:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:685:75%
+1141:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:686:75%
+1143:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:687:75%
+1145:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:688:75%
+1147:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:689:75%
+1149:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:690:75%
+1151:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:691:75%
+1153:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:692:75%
+1155:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:693:75%
+1157:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:694:75%
+1159:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:695:75%
+1161:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:696:75%
+1163:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:697:75%
+1165:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:698:75%
+1167:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:699:75%
+1169:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:700:75%
+1171:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:701:75%
+1173:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:702:75%
+1175:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:703:75%
+1177:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:704:75%
+1179:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:705:75%
+1181:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:706:75%
+1183:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:707:100%
+1184:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1185:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:708:83%
+1186:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1187:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:710:83%
+1188:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+1189:maven/maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java
+clone pairs:711:75%
+1191:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:712:75%
+1192:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1193:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:713:75%
+1195:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:714:75%
+1196:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+1197:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:715:75%
+1199:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:716:75%
+1201:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:717:75%
+1203:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:718:75%
+1204:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+1205:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:719:75%
+1206:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+1207:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:720:75%
+1209:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:721:75%
+1210:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:722:75%
+1213:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:723:75%
+1215:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:724:75%
+1217:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:725:75%
+1219:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:726:75%
+1221:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:727:75%
+1222:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+1223:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:734:83%
+1230:maven/maven-settings-builder/src/main/java/org/apache/maven/settings/validation/DefaultSettingsValidator.java
+clone pairs:741:83%
+1245:maven/maven-core/src/main/java/org/apache/maven/plugin/PluginParameterExpressionEvaluator.java
+clone pairs:768:81%
+1279:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:799:72%
+1335:maven/maven-resolver-provider/src/main/java/org/apache/maven/repository/internal/DefaultModelResolver.java
+clone pairs:800:100%
+1336:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:811:100%
+1359:maven/maven-embedder/src/main/java/org/apache/maven/cli/MavenCli.java
+clone pairs:812:100%
+1360:maven/maven-compat/src/main/java/org/apache/maven/repository/legacy/LegacyRepositorySystem.java
+clone pairs:864:100%
+1461:maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java
+clone pairs:866:100%
+1464:maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java
+clone pairs:868:100%
+1468:maven/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java
+clone pairs:872:81%
+1471:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:873:81%
+1473:maven/maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java
+clone pairs:875:90%
+1474:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+1475:maven/maven-core/src/main/java/org/apache/maven/project/MavenProject.java
+clone pairs:877:72%
+1478:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
+clone pairs:879:90%
+1482:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1483:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:880:90%
+1484:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1485:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:881:100%
+1486:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1487:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:882:80%
+1489:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:883:80%
+1490:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1491:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:884:80%
+1492:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:885:90%
+1495:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:886:80%
+1496:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:887:80%
+1498:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1499:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:888:80%
+1501:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:889:80%
+1502:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:890:80%
+1505:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:891:80%
+1506:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1507:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:892:80%
+1508:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1509:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:893:80%
+1511:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:894:80%
+1512:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:895:80%
+1515:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:896:80%
+1516:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:897:80%
+1518:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:898:90%
+1521:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:899:80%
+1522:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:900:80%
+1525:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:901:80%
+1526:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+1527:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:902:100%
+1528:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1529:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:903:90%
+1530:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1531:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:904:90%
+1533:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:905:90%
+1534:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1535:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:906:90%
+1536:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:907:80%
+1539:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:908:80%
+1540:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:909:80%
+1542:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1543:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:910:80%
+1545:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:911:80%
+1546:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:912:90%
+1549:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:913:80%
+1550:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1551:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:914:80%
+1552:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1553:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:915:80%
+1555:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:916:80%
+1556:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:917:80%
+1559:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:918:80%
+1560:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:919:80%
+1562:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:920:100%
+1565:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:921:90%
+1566:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:922:90%
+1569:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:923:90%
+1570:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+1571:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:924:90%
+1572:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1573:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:925:90%
+1575:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:926:90%
+1576:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1577:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:927:90%
+1578:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:928:80%
+1581:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:929:80%
+1582:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:930:80%
+1584:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1585:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:931:80%
+1587:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:932:80%
+1588:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:933:90%
+1591:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:934:80%
+1592:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1593:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:935:80%
+1594:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1595:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:936:80%
+1597:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:937:80%
+1598:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:938:80%
+1601:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:939:80%
+1602:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:940:80%
+1604:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:941:100%
+1607:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:942:90%
+1608:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:943:90%
+1611:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:944:90%
+1612:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+1613:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:945:80%
+1614:maven/maven-artifact/src/main/java/org/apache/maven/artifact/ArtifactUtils.java
+1615:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/VersionRange.java
+clone pairs:946:80%
+1617:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:947:80%
+1618:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1619:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:948:80%
+1620:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:949:90%
+1623:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:950:80%
+1624:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:951:80%
+1626:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1627:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:952:80%
+1629:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:953:80%
+1630:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:954:80%
+1633:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:955:80%
+1634:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1635:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:956:80%
+1636:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+1637:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:957:80%
+1639:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:958:80%
+1640:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:959:80%
+1643:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:960:80%
+1644:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:961:80%
+1646:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:962:90%
+1649:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:963:80%
+1650:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:964:80%
+1653:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:965:80%
+1654:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+1655:maven/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
+clone pairs:967:100%
+1656:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:971:90%
+1665:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:975:90%
+1673:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:976:90%
+1675:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:985:100%
+1693:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:986:100%
+1694:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:987:70%
+1696:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:988:80%
+1698:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:989:90%
+1700:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1701:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:990:90%
+1703:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:991:90%
+1704:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:992:100%
+1706:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:993:90%
+1708:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1709:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:994:90%
+1710:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1711:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:995:90%
+1712:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:996:90%
+1714:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:997:90%
+1716:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:998:90%
+1718:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:999:90%
+1720:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:1000:90%
+1723:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:1001:100%
+1724:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:1002:100%
+1727:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+clone pairs:1003:100%
+1728:maven/maven-compat/src/main/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilter.java
+1729:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1006:90%
+1734:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1010:90%
+1743:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1011:90%
+1744:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1020:100%
+1762:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1022:70%
+1767:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1026:70%
+1775:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1027:70%
+1777:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1036:70%
+1795:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1037:70%
+1796:maven/maven-settings-builder/src/main/java/org/apache/maven/settings/validation/DefaultSettingsValidator.java
+clone pairs:1038:100%
+1799:maven/maven-core/src/main/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java
+clone pairs:1040:80%
+1801:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1044:80%
+1809:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1045:80%
+1811:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1054:80%
+1828:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1064:90%
+1847:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1065:90%
+1848:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1066:90%
+1851:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1067:90%
+1852:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+1853:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1068:90%
+1854:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+1855:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1069:90%
+1857:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1070:90%
+1858:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1071:90%
+1861:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1072:90%
+1862:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1073:90%
+1864:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1074:80%
+1867:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1075:90%
+1868:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1076:90%
+1871:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1077:90%
+1872:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+1873:maven/maven-model-builder/src/main/java/org/apache/maven/model/building/FileModelSource.java
+clone pairs:1114:90%
+1928:maven/maven-core/src/main/java/org/apache/maven/execution/scope/internal/MojoExecutionScope.java
+clone pairs:1117:90%
+1935:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1118:90%
+1937:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1127:90%
+1955:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1129:90%
+1959:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1130:90%
+1960:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1139:90%
+1978:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1142:90%
+1985:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1143:90%
+1987:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1152:100%
+2005:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1153:90%
+2006:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+2007:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1154:90%
+2009:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1155:90%
+2011:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1156:90%
+2013:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1157:90%
+2015:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1158:90%
+2017:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1159:80%
+2019:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1160:90%
+2021:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1161:90%
+2023:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1162:90%
+2024:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+2025:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCache.java
+clone pairs:1163:90%
+2027:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1164:90%
+2028:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1165:90%
+2031:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1166:90%
+2032:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1167:90%
+2034:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1168:80%
+2037:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1169:90%
+2038:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1170:90%
+2041:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1171:90%
+2042:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+2043:maven/maven-core/src/main/java/org/apache/maven/project/artifact/DefaultMavenMetadataCache.java
+clone pairs:1180:90%
+2061:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1187:90%
+2074:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1193:90%
+2087:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1198:90%
+2096:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1199:100%
+2098:maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
+2099:maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
+clone pairs:1200:70%
+2100:maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
+2101:maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
+clone pairs:1201:70%
+2102:maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
+2103:maven/maven-core/src/main/java/org/apache/maven/lifecycle/MavenExecutionPlan.java
+clone pairs:1202:100%
+2104:maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulator.java
+2105:maven/maven-core/src/main/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulator.java
+clone pairs:1212:90%
+2124:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1215:90%
+2131:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1217:100%
+2134:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java
+clone pairs:1218:100%
+2137:maven/maven-core/src/main/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilter.java

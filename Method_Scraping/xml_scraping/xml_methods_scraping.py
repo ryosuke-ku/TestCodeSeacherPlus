@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup as bs4
 from collections import defaultdict
 import collections
 import re
+import csv
 
 url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30.xml"
@@ -23,6 +24,10 @@ res = req.urlopen(url)
 
 startlist = [] #コード片の開始行番号を格納
 endlist = [] #コード片の修了行番号を格納
+startdic = defaultdict(list) #コード片の開始行番号を格納
+enddic = defaultdict(list) #コード片の修了行番号を格納
+startdicPath = defaultdict(list) #コード片の開始行番号を格納
+enddicPath = defaultdict(list) #コード片の修了行番号を格納
 
 allpathlist = []
 NotestPath =[] #ファイルパスを格納(同じファイルパスを区別しない)
@@ -59,20 +64,20 @@ for filePath in filePaths.find_all(['clone','source']):
 			endline = filePath.get('endline') #コード片の修了行番号を取得
 			startlist.append(startline)
 			endlist.append(endline)
+			startdicPath[registerdPath].append(startline)
+			enddicPath[registerdPath].append(endline)
+			startdic[key].append(startline)
+			enddic[key].append(endline)
 			delTestdata[key].append(path)
 			numdelTestdata[key].append(registerdPath)
 			num += 1
 
-for a in numdelTestdata:
-	print(a)
-	for b in numdelTestdata[a]:
-		print(b)
+# for a in startdicPath:
+# 	print(a)
+# 	for b in startdicPath[a]:
+# 		print(b)
 
-
-
-numMapStartline = dict(zip(numNotestPath,startlist)) #keyが識別子numあり 3:apache_ant/~.../AntClassLoader.java ⇔ 254
-numMapEndline = dict(zip(numNotestPath,endlist)) #keyが識別子numあり
-
+# print(len(startdicPath))
 production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
 PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
@@ -98,18 +103,17 @@ for t in numdelTestdata:
 
 for pairs in delPairs:
 	startkey = numdelTestdata[pairs]
-	numMapStartline.pop(startkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの開始行を削除
+	startdicPath.pop(startkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの開始行を削除
 	endkey = numdelTestdata[pairs]
-	numMapEndline.pop(endkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの修了行を削除
+	enddicPath.pop(endkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの修了行を削除
 	# print(numdelTestdata[pairs])
 	numdelTestdata.pop(pairs)
 
-print(numMapStartline['2141:maven/maven-compat/src/test/java/org/apache/maven/project/LegacyLocalRepositoryManager.java'])
-# for r in numMapStartline:
-# 	for j in numMapStartline[r]:
-# 		print(j)
+# print(len(startdicPath))
+
 
 onlyhasTestdata = defaultdict(list)
+onlyhasTestPdata = defaultdict(list)
 
 for i in numdelTestdata:
 	for j in numdelTestdata[i]:
@@ -120,94 +124,147 @@ for i in numdelTestdata:
 			data2[i].append(path)
 			if path is not None:
 				onlyhasTestdata[i].append(path)
+				onlyhasTestPdata[i].append(j)
 		except KeyError:
 			pass
-	
+
+for a in onlyhasTestPdata:
+	print(a)
+	for b in onlyhasTestPdata[a]:
+		print(b)
+
 # print(onlyhasTestdata)
 # print(len(onlyhasTestdata))
 
 
 t1 = 0
 t2 = 0
-t1list = defaultdict(list)
-t2list = []
+t1Tlist = defaultdict(list)
+t2Tlist = defaultdict(list)
 for h in onlyhasTestdata:
 	for q in onlyhasTestdata[h]:
 		if len(onlyhasTestdata[h]) == 2:
-			t2list.append(q)
+			t2Tlist[h].append(q)
 			t2 += 1
 		
 		if len(onlyhasTestdata[h]) == 1:
-			t1list[h].append(q)
+			t1Tlist[h].append(q)
 			t1 += 1
 
+t1p = 0
+t2p = 0
+t1Plist = defaultdict(list)
+t2Plist = defaultdict(list)
+for g in onlyhasTestPdata:
+	for v in onlyhasTestPdata[g]:
+		if len(onlyhasTestPdata[g]) == 2:
+			t2Plist[g].append(v)
+			t2p += 1
+		
+		if len(onlyhasTestPdata[g]) == 1:
+			t1Plist[g].append(v)
+			t1p += 1
 
-# print(t2list)
-# print('t2list:' + str(len(t2list)))
-# print(t1list)
-# print('t1list:'  + str(len(t1list)))
-# print(data2)
-# print(len(data2))
+# for a in t1Plist:
+# 	print(a)
+# 	for b in t1Plist[a]:
+# 		print(b)
 
-TwoTestPath =[]
-OneTestPath =[]
-NoTestPath =[]
+# print(len(t1Plist))
 
-two = 0
-one = 0
-zero = 0
-for z in data2:
-	c = 0
-	for y in data2[z]:
-		if y is None:
-			c+=1
+for a in t1Plist:
+	print(a)
+	for b in t1Plist[a]:
+		print(b)
+
+print(len(t1Plist))
+
+# print(onlyhasTestPdata)
+# num = 0
+# filenum = 1
+# for k in t1list:
+# 	print(k)
 	
-	if c == 0:
-		# print('2tests')
-		two += 1
-		TwoTestPath.append(y)
-	if c == 1:
-		# print('1test')
-		one += 1
-		OneTestPath.append(y)
-	if c == 2:
-		# print('Notest')
-		zero += 1
-		NoTestPath.append(y)
+# 	file = open('Nicad_' + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+# 	f = open("D:/ryosuke-ku/data_set/maven_190611/" + str(t1list[k]), "r", encoding="utf-8")
+# 	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
+# 	f.close()
 
-
-print('2tests: ' + str(two))
-print('1test: ' + str(one))
-print('Notest: ' + str(zero))
-print('toatl: ' + str(two + one + zero))
-
+# 	startline = int(startlist[num])-1
+# 	endline = int(endlist[num])
+# 	num +=1
+	
+# 	file.write('public class Nicad_' + str(filenum) + '\n')
+# 	file.write('{' + '\n')
+# 	for x in range(startline,endline):
+# 		print(lines2[x].replace('\n', ''))
+# 		file.write(lines2[x].replace('\n', '') + '\n')
+	
+# 	file.write('}')
+# 	filenum += 1
 
 
 
 
-TwoTestPath2 =[]
-OneTestPath2 =[]
-NoTestPath2 =[]
-l = 0
-for t in data2['clone pairs:1198:90%']:
-	print(t)
-	if t is None:
-		l+=1
+# TwoTestPath =[]
+# OneTestPath =[]
+# NoTestPath =[]
 
-if l == 0:
-	# print('2tests')
-	two += 1
-	TwoTestPath2.append(t)
-if l == 1:
-	# print('1test')
-	one += 1
-	OneTestPath2.append(t)
-if l == 2:
-	# print('Notest')
-	zero += 1
-	NoTestPath2.append(t)
+# two = 0
+# one = 0
+# zero = 0
+# for z in data2:
+# 	c = 0
+# 	for y in data2[z]:
+# 		if y is None:
+# 			c+=1
+	
+# 	if c == 0:
+# 		# print('2tests')
+# 		two += 1
+# 		TwoTestPath.append(y)
+# 	if c == 1:
+# 		# print('1test')
+# 		one += 1
+# 		OneTestPath.append(y)
+# 	if c == 2:
+# 		# print('Notest')
+# 		zero += 1
+# 		NoTestPath.append(y)
 
-print(OneTestPath2)
+
+# print('2tests: ' + str(two))
+# print('1test: ' + str(one))
+# print('Notest: ' + str(zero))
+# print('toatl: ' + str(two + one + zero))
+
+
+
+
+
+# TwoTestPath2 =[]
+# OneTestPath2 =[]
+# NoTestPath2 =[]
+# l = 0
+# for t in data2['clone pairs:1198:90%']:
+# 	# print(t)
+# 	if t is None:
+# 		l+=1
+
+# if l == 0:
+# 	# print('2tests')
+# 	two += 1
+# 	TwoTestPath2.append(t)
+# if l == 1:
+# 	# print('1test')
+# 	one += 1
+# 	OneTestPath2.append(t)
+# if l == 2:
+# 	# print('Notest')
+# 	zero += 1
+# 	NoTestPath2.append(t)
+
+# print(OneTestPath2)
 
 
 # print(data2['clone pairs:1198:90%'][0])
@@ -219,8 +276,8 @@ print(OneTestPath2)
 # print(len(OneTestPath))
 
 
-print('numMapStartline:' + str(len(numMapStartline)))
-print('numMapEndline:' + str(len(numMapEndline)))
+# print('numMapStartline:' + str(len(numMapStartline)))
+# print('numMapEndline:' + str(len(numMapEndline)))
 
 
 # print(len(["Red", "Green", "Blue",None]))

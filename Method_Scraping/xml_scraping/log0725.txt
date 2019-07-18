@@ -1,0 +1,1008 @@
+clone pairs:1:77%
+maven/maven-core/src/test/java/org/apache/maven/settings/SettingsUtilsTest.java
+clone pairs:2:77%
+maven/maven-core/src/test/java/org/apache/maven/settings/SettingsUtilsTest.java
+clone pairs:3:97%
+maven/maven-core/src/test/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulatorTest.java
+clone pairs:4:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:5:100%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:6:87%
+maven/maven-compat/src/test/java/org/apache/maven/project/path/DefaultPathTranslatorTest.java
+clone pairs:7:87%
+maven/maven-compat/src/test/java/org/apache/maven/project/path/DefaultPathTranslatorTest.java
+clone pairs:8:100%
+maven/maven-compat/src/test/java/org/apache/maven/project/path/DefaultPathTranslatorTest.java
+maven/maven-compat/src/test/java/org/apache/maven/project/path/DefaultPathTranslatorTest.java
+clone pairs:9:70%
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultVersionResolverTest.java
+clone pairs:13:100%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:14:96%
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+clone pairs:15:84%
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+clone pairs:16:84%
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+clone pairs:18:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:19:84%
+maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultWagonManagerTest.java
+maven/maven-compat/src/test/java/org/apache/maven/repository/legacy/DefaultWagonManagerTest.java
+clone pairs:20:80%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:21:80%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:22:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:23:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:24:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:26:88%
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+clone pairs:27:76%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:30:84%
+maven/maven-core/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java
+clone pairs:31:100%
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+clone pairs:33:100%
+maven/maven-core/src/test/java/org/apache/maven/execution/scope/internal/MojoExecutionScopeTest.java
+clone pairs:35:86%
+maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
+clone pairs:36:82%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:37:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:38:86%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:39:86%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:40:81%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:41:86%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:42:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:43:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:44:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:45:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:46:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:47:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:48:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:49:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:50:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:51:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:52:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:53:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:54:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:55:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:56:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:57:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:58:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:59:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:60:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:62:100%
+maven/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java
+clone pairs:63:86%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:64:86%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:65:81%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:66:86%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:67:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:68:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:69:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:70:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:71:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:72:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:73:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:74:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:75:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:76:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:77:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:78:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:79:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:80:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:81:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:82:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:83:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:84:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:85:72%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:111:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/factory/DefaultArtifactFactoryTest.java
+clone pairs:154:76%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/DefaultArtifactTest.java
+clone pairs:155:71%
+maven/maven-core/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java
+clone pairs:176:95%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:177:95%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:178:90%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:179:95%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:180:90%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:181:90%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:182:85%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:183:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:184:70%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:195:100%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:197:78%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:198:73%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:304:72%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:374:83%
+maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+clone pairs:375:100%
+maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+clone pairs:376:83%
+maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
+clone pairs:377:83%
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+clone pairs:378:100%
+maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+clone pairs:379:83%
+maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+clone pairs:381:77%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/repository/MavenArtifactRepositoryTest.java
+clone pairs:382:83%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:383:82%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/interpolation/StringSearchModelInterpolatorTest.java
+clone pairs:392:70%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:393:70%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:421:93%
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+clone pairs:422:75%
+maven/maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java
+clone pairs:423:100%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:432:80%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:440:93%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:451:86%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:452:80%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:453:73%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:456:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:457:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:458:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:459:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:460:80%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:461:80%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:462:80%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:463:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:464:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:465:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:466:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:467:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:468:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:469:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:470:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:471:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:472:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:473:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:474:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:475:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:476:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:477:73%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:484:100%
+maven/maven-core/src/test/java/org/apache/maven/settings/SettingsUtilsTest.java
+clone pairs:485:85%
+maven/maven-core/src/test/java/org/apache/maven/settings/SettingsUtilsTest.java
+clone pairs:493:85%
+maven/maven-core/src/test/java/org/apache/maven/settings/SettingsUtilsTest.java
+maven/maven-core/src/test/java/org/apache/maven/settings/SettingsUtilsTest.java
+clone pairs:504:85%
+maven/maven-core/src/test/java/org/apache/maven/lifecycle/mapping/LifecyclePhaseTest.java
+clone pairs:506:78%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:507:71%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:527:92%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/repository/MavenArtifactRepositoryTest.java
+clone pairs:542:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:547:83%
+maven/maven-core/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java
+clone pairs:552:100%
+maven/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java
+clone pairs:553:100%
+maven/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java
+clone pairs:554:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:558:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:559:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:560:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:561:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:562:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:577:83%
+maven/maven-core/src/test/java/org/apache/maven/project/ProjectModelResolverTest.java
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+clone pairs:579:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:580:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:581:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:582:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:583:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:601:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:602:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:603:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:604:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:605:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:619:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:620:91%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:624:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:625:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:626:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:627:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:628:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:629:91%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:630:91%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:631:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:632:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:633:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:634:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:635:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:636:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:637:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:638:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:639:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:640:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:641:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:642:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:643:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:644:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:645:91%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:646:91%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:647:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:648:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:649:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:650:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:651:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:652:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:653:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:654:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:655:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:656:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:657:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:658:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:659:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:663:91%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:664:91%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:665:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:666:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:667:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:668:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:669:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:670:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:671:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:672:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:673:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:674:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:675:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:676:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:677:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:680:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:681:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:682:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:683:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:684:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:685:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:686:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:687:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:688:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:689:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:690:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:691:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:692:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:693:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:694:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:695:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:696:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:697:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:698:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:699:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:700:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:701:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:702:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:703:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:704:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:705:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:706:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:707:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:708:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:710:83%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+clone pairs:711:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:712:75%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:713:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:714:75%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:715:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:716:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:717:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:718:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:719:75%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:720:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:721:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:722:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:723:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:724:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:725:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:726:75%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:727:75%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:734:83%
+maven/maven-settings-builder/src/test/java/org/apache/maven/settings/validation/DefaultSettingsValidatorTest.java
+clone pairs:741:83%
+maven/maven-core/src/test/java/org/apache/maven/plugin/PluginParameterExpressionEvaluatorTest.java
+clone pairs:768:81%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:799:72%
+maven/maven-resolver-provider/src/test/java/org/apache/maven/repository/internal/DefaultModelResolverTest.java
+clone pairs:800:100%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:811:100%
+maven/maven-embedder/src/test/java/org/apache/maven/cli/MavenCliTest.java
+clone pairs:812:100%
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
+clone pairs:864:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivatorTest.java
+clone pairs:866:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivatorTest.java
+clone pairs:868:100%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivatorTest.java
+clone pairs:872:81%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:873:81%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java
+clone pairs:875:90%
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+clone pairs:877:72%
+maven/maven-core/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java
+clone pairs:879:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:880:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:881:100%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:882:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:883:80%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:884:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:885:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:886:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:887:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:888:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:889:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:890:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:891:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:892:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:893:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:894:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:895:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:896:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:897:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:898:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:899:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:900:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:901:80%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:902:100%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:903:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:904:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:905:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:906:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:907:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:908:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:909:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:910:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:911:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:912:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:913:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:914:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:915:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:916:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:917:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:918:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:919:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:920:100%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:921:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:922:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:923:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:924:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:925:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:926:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:927:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:928:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:929:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:930:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:931:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:932:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:933:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:934:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:935:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:936:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:937:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:938:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:939:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:940:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:941:100%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:942:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:943:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:944:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:945:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/ArtifactUtilsTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+clone pairs:946:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:947:80%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:948:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:949:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:950:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:951:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:952:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:953:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:954:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:955:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:956:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:957:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:958:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:959:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:960:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:961:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:962:90%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:963:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:964:80%
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:965:80%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+clone pairs:967:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:971:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:975:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:976:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:985:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:986:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:987:70%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:988:80%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:989:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:990:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:991:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:992:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:993:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:994:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:995:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:996:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:997:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:998:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:999:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:1000:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:1001:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:1002:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+clone pairs:1003:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1006:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1010:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1011:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1020:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1022:70%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1026:70%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1027:70%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1036:70%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1037:70%
+maven/maven-settings-builder/src/test/java/org/apache/maven/settings/validation/DefaultSettingsValidatorTest.java
+clone pairs:1038:100%
+maven/maven-core/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java
+clone pairs:1040:80%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1044:80%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1045:80%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1054:80%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1064:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1065:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1066:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1067:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1068:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1069:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1070:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1071:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1072:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1073:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1074:80%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1075:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1076:90%
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1077:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+clone pairs:1114:90%
+maven/maven-core/src/test/java/org/apache/maven/execution/scope/internal/MojoExecutionScopeTest.java
+clone pairs:1117:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1118:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1127:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1129:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1130:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1139:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1142:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1143:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1152:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1153:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1154:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1155:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1156:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1157:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1158:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1159:80%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1160:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1161:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1162:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultProjectArtifactsCacheTest.java
+clone pairs:1163:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1164:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1165:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1166:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1167:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1168:80%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1169:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1170:90%
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1171:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+clone pairs:1180:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1187:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1193:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1198:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1199:100%
+maven/maven-core/src/test/java/org/apache/maven/lifecycle/MavenExecutionPlanTest.java
+maven/maven-core/src/test/java/org/apache/maven/lifecycle/MavenExecutionPlanTest.java
+clone pairs:1200:70%
+maven/maven-core/src/test/java/org/apache/maven/lifecycle/MavenExecutionPlanTest.java
+maven/maven-core/src/test/java/org/apache/maven/lifecycle/MavenExecutionPlanTest.java
+clone pairs:1201:70%
+maven/maven-core/src/test/java/org/apache/maven/lifecycle/MavenExecutionPlanTest.java
+maven/maven-core/src/test/java/org/apache/maven/lifecycle/MavenExecutionPlanTest.java
+clone pairs:1202:100%
+maven/maven-core/src/test/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulatorTest.java
+maven/maven-core/src/test/java/org/apache/maven/execution/DefaultMavenExecutionRequestPopulatorTest.java
+clone pairs:1212:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1215:90%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1217:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java
+clone pairs:1218:100%
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java

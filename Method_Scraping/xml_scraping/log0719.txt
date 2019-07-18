@@ -1,0 +1,3212 @@
+clone pairs:1:77%
+136
+40
+clone pairs:2:77%
+54
+40
+clone pairs:3:97%
+162
+218
+clone pairs:4:83%
+94
+238
+clone pairs:5:100%
+386
+619
+clone pairs:6:87%
+176
+54
+clone pairs:7:87%
+42
+54
+clone pairs:8:100%
+42
+176
+clone pairs:9:70%
+300
+233
+clone pairs:13:100%
+703
+277
+clone pairs:14:96%
+79
+755
+clone pairs:15:84%
+79
+837
+clone pairs:16:84%
+79
+162
+clone pairs:18:100%
+274
+315
+clone pairs:19:84%
+70
+109
+clone pairs:20:80%
+319
+555
+clone pairs:21:80%
+319
+613
+clone pairs:22:73%
+148
+319
+clone pairs:23:73%
+218
+319
+clone pairs:24:73%
+108
+319
+clone pairs:25:88%
+755
+837
+clone pairs:26:88%
+162
+755
+clone pairs:27:76%
+936
+1870
+clone pairs:28:76%
+73
+66
+clone pairs:30:84%
+154
+79
+clone pairs:31:100%
+162
+837
+clone pairs:32:70%
+41
+42
+clone pairs:33:100%
+112
+135
+clone pairs:34:82%
+47
+86
+clone pairs:35:86%
+426
+276
+clone pairs:36:82%
+138
+91
+clone pairs:37:100%
+555
+613
+clone pairs:38:86%
+148
+555
+clone pairs:39:86%
+218
+555
+clone pairs:40:81%
+183
+555
+clone pairs:41:86%
+108
+555
+clone pairs:42:72%
+2516
+555
+clone pairs:43:72%
+2573
+555
+clone pairs:44:72%
+2488
+555
+clone pairs:45:72%
+2674
+555
+clone pairs:46:72%
+2702
+555
+clone pairs:47:72%
+379
+555
+clone pairs:48:72%
+351
+555
+clone pairs:49:72%
+2342
+555
+clone pairs:50:72%
+2122
+555
+clone pairs:51:72%
+1505
+555
+clone pairs:52:72%
+1417
+555
+clone pairs:53:72%
+323
+555
+clone pairs:54:72%
+1336
+555
+clone pairs:55:72%
+1236
+555
+clone pairs:56:72%
+626
+555
+clone pairs:57:72%
+407
+555
+clone pairs:58:72%
+598
+555
+clone pairs:59:72%
+570
+555
+clone pairs:60:72%
+515
+555
+clone pairs:61:100%
+41
+44
+clone pairs:62:100%
+84
+86
+clone pairs:63:86%
+148
+613
+clone pairs:64:86%
+218
+613
+clone pairs:65:81%
+183
+613
+clone pairs:66:86%
+108
+613
+clone pairs:67:72%
+2516
+613
+clone pairs:68:72%
+2573
+613
+clone pairs:69:72%
+2488
+613
+clone pairs:70:72%
+2674
+613
+clone pairs:71:72%
+2702
+613
+clone pairs:72:72%
+379
+613
+clone pairs:73:72%
+351
+613
+clone pairs:74:72%
+2342
+613
+clone pairs:75:72%
+2122
+613
+clone pairs:76:72%
+1505
+613
+clone pairs:77:72%
+1417
+613
+clone pairs:78:72%
+323
+613
+clone pairs:79:72%
+1336
+613
+clone pairs:80:72%
+1236
+613
+clone pairs:81:72%
+626
+613
+clone pairs:82:72%
+407
+613
+clone pairs:83:72%
+598
+613
+clone pairs:84:72%
+570
+613
+clone pairs:85:72%
+515
+613
+clone pairs:87:81%
+135
+135
+clone pairs:88:100%
+148
+218
+clone pairs:89:85%
+148
+183
+clone pairs:90:85%
+148
+108
+clone pairs:91:71%
+148
+78
+clone pairs:92:80%
+2516
+148
+clone pairs:93:80%
+2573
+148
+clone pairs:94:80%
+2488
+148
+clone pairs:95:80%
+2674
+148
+clone pairs:96:80%
+2702
+148
+clone pairs:97:80%
+379
+148
+clone pairs:98:80%
+351
+148
+clone pairs:99:80%
+2342
+148
+clone pairs:100:80%
+2122
+148
+clone pairs:101:80%
+1505
+148
+clone pairs:102:80%
+1417
+148
+clone pairs:103:80%
+323
+148
+clone pairs:104:80%
+1336
+148
+clone pairs:105:80%
+1236
+148
+clone pairs:106:80%
+626
+148
+clone pairs:107:80%
+407
+148
+clone pairs:108:80%
+598
+148
+clone pairs:109:80%
+570
+148
+clone pairs:110:80%
+515
+148
+clone pairs:111:100%
+125
+530
+clone pairs:112:85%
+183
+218
+clone pairs:113:85%
+218
+108
+clone pairs:114:71%
+218
+78
+clone pairs:115:80%
+2516
+218
+clone pairs:116:80%
+2573
+218
+clone pairs:117:80%
+2488
+218
+clone pairs:118:80%
+2674
+218
+clone pairs:119:80%
+2702
+218
+clone pairs:120:80%
+379
+218
+clone pairs:121:80%
+351
+218
+clone pairs:122:80%
+2342
+218
+clone pairs:123:80%
+2122
+218
+clone pairs:124:80%
+1505
+218
+clone pairs:125:80%
+1417
+218
+clone pairs:126:80%
+323
+218
+clone pairs:127:80%
+1336
+218
+clone pairs:128:80%
+1236
+218
+clone pairs:129:80%
+626
+218
+clone pairs:130:80%
+407
+218
+clone pairs:131:80%
+598
+218
+clone pairs:132:80%
+570
+218
+clone pairs:133:80%
+515
+218
+clone pairs:134:80%
+183
+108
+clone pairs:135:80%
+2516
+183
+clone pairs:136:80%
+2573
+183
+clone pairs:137:80%
+2488
+183
+clone pairs:138:80%
+2674
+183
+clone pairs:139:80%
+2702
+183
+clone pairs:140:80%
+379
+183
+clone pairs:141:80%
+351
+183
+clone pairs:142:80%
+2342
+183
+clone pairs:143:80%
+2122
+183
+clone pairs:144:80%
+1505
+183
+clone pairs:145:80%
+1417
+183
+clone pairs:146:80%
+323
+183
+clone pairs:147:80%
+1336
+183
+clone pairs:148:80%
+1236
+183
+clone pairs:149:80%
+626
+183
+clone pairs:150:80%
+407
+183
+clone pairs:151:80%
+598
+183
+clone pairs:152:80%
+570
+183
+clone pairs:153:80%
+515
+183
+clone pairs:154:76%
+365
+323
+clone pairs:155:71%
+66
+65
+clone pairs:156:70%
+78
+108
+clone pairs:157:75%
+2516
+108
+clone pairs:158:75%
+2573
+108
+clone pairs:159:75%
+2488
+108
+clone pairs:160:75%
+2674
+108
+clone pairs:161:75%
+2702
+108
+clone pairs:162:75%
+379
+108
+clone pairs:163:75%
+351
+108
+clone pairs:164:75%
+2342
+108
+clone pairs:165:75%
+2122
+108
+clone pairs:166:75%
+1505
+108
+clone pairs:167:75%
+1417
+108
+clone pairs:168:75%
+323
+108
+clone pairs:169:75%
+1336
+108
+clone pairs:170:75%
+1236
+108
+clone pairs:171:75%
+626
+108
+clone pairs:172:75%
+407
+108
+clone pairs:173:75%
+598
+108
+clone pairs:174:75%
+570
+108
+clone pairs:175:75%
+515
+108
+clone pairs:176:95%
+1670
+1766
+clone pairs:177:95%
+1593
+1766
+clone pairs:178:90%
+1642
+1766
+clone pairs:179:95%
+1593
+1670
+clone pairs:180:90%
+1642
+1670
+clone pairs:181:90%
+1593
+1642
+clone pairs:182:85%
+124
+208
+clone pairs:183:75%
+208
+293
+clone pairs:184:70%
+208
+431
+clone pairs:195:100%
+593
+240
+clone pairs:196:100%
+246
+77
+clone pairs:197:78%
+124
+293
+clone pairs:198:73%
+124
+431
+clone pairs:199:100%
+2516
+2573
+clone pairs:200:100%
+2488
+2516
+clone pairs:201:100%
+2516
+2674
+clone pairs:202:100%
+2516
+2702
+clone pairs:203:100%
+379
+2516
+clone pairs:204:100%
+351
+2516
+clone pairs:205:100%
+2342
+2516
+clone pairs:206:100%
+2122
+2516
+clone pairs:207:100%
+1505
+2516
+clone pairs:208:100%
+1417
+2516
+clone pairs:209:100%
+323
+2516
+clone pairs:210:100%
+1336
+2516
+clone pairs:211:100%
+1236
+2516
+clone pairs:212:100%
+626
+2516
+clone pairs:213:100%
+407
+2516
+clone pairs:214:100%
+598
+2516
+clone pairs:215:100%
+570
+2516
+clone pairs:216:100%
+515
+2516
+clone pairs:217:100%
+2488
+2573
+clone pairs:218:100%
+2573
+2674
+clone pairs:219:100%
+2573
+2702
+clone pairs:220:100%
+379
+2573
+clone pairs:221:100%
+351
+2573
+clone pairs:222:100%
+2342
+2573
+clone pairs:223:100%
+2122
+2573
+clone pairs:224:100%
+1505
+2573
+clone pairs:225:100%
+1417
+2573
+clone pairs:226:100%
+323
+2573
+clone pairs:227:100%
+1336
+2573
+clone pairs:228:100%
+1236
+2573
+clone pairs:229:100%
+626
+2573
+clone pairs:230:100%
+407
+2573
+clone pairs:231:100%
+598
+2573
+clone pairs:232:100%
+570
+2573
+clone pairs:233:100%
+515
+2573
+clone pairs:234:100%
+2488
+2674
+clone pairs:235:100%
+2488
+2702
+clone pairs:236:100%
+379
+2488
+clone pairs:237:100%
+351
+2488
+clone pairs:238:100%
+2342
+2488
+clone pairs:239:100%
+2122
+2488
+clone pairs:240:100%
+1505
+2488
+clone pairs:241:100%
+1417
+2488
+clone pairs:242:100%
+323
+2488
+clone pairs:243:100%
+1336
+2488
+clone pairs:244:100%
+1236
+2488
+clone pairs:245:100%
+626
+2488
+clone pairs:246:100%
+407
+2488
+clone pairs:247:100%
+598
+2488
+clone pairs:248:100%
+570
+2488
+clone pairs:249:100%
+515
+2488
+clone pairs:250:100%
+2674
+2702
+clone pairs:251:100%
+379
+2674
+clone pairs:252:100%
+351
+2674
+clone pairs:253:100%
+2342
+2674
+clone pairs:254:100%
+2122
+2674
+clone pairs:255:100%
+1505
+2674
+clone pairs:256:100%
+1417
+2674
+clone pairs:257:100%
+323
+2674
+clone pairs:258:100%
+1336
+2674
+clone pairs:259:100%
+1236
+2674
+clone pairs:260:100%
+626
+2674
+clone pairs:261:100%
+407
+2674
+clone pairs:262:100%
+598
+2674
+clone pairs:263:100%
+570
+2674
+clone pairs:264:100%
+515
+2674
+clone pairs:265:100%
+379
+2702
+clone pairs:266:100%
+351
+2702
+clone pairs:267:100%
+2342
+2702
+clone pairs:268:100%
+2122
+2702
+clone pairs:269:100%
+1505
+2702
+clone pairs:270:100%
+1417
+2702
+clone pairs:271:100%
+323
+2702
+clone pairs:272:100%
+1336
+2702
+clone pairs:273:100%
+1236
+2702
+clone pairs:274:100%
+626
+2702
+clone pairs:275:100%
+407
+2702
+clone pairs:276:100%
+598
+2702
+clone pairs:277:100%
+570
+2702
+clone pairs:278:100%
+515
+2702
+clone pairs:279:100%
+351
+379
+clone pairs:280:100%
+379
+2342
+clone pairs:281:100%
+379
+2122
+clone pairs:282:100%
+379
+1505
+clone pairs:283:100%
+379
+1417
+clone pairs:284:100%
+323
+379
+clone pairs:285:100%
+379
+1336
+clone pairs:286:100%
+379
+1236
+clone pairs:287:100%
+379
+626
+clone pairs:288:100%
+379
+407
+clone pairs:289:100%
+379
+598
+clone pairs:290:100%
+379
+570
+clone pairs:291:100%
+379
+515
+clone pairs:292:100%
+351
+2342
+clone pairs:293:100%
+351
+2122
+clone pairs:294:100%
+351
+1505
+clone pairs:295:100%
+351
+1417
+clone pairs:296:100%
+323
+351
+clone pairs:297:100%
+351
+1336
+clone pairs:298:100%
+351
+1236
+clone pairs:299:100%
+351
+626
+clone pairs:300:100%
+351
+407
+clone pairs:301:100%
+351
+598
+clone pairs:302:100%
+351
+570
+clone pairs:303:100%
+351
+515
+clone pairs:304:72%
+293
+431
+clone pairs:305:100%
+2122
+2342
+clone pairs:306:100%
+1505
+2342
+clone pairs:307:100%
+1417
+2342
+clone pairs:308:100%
+323
+2342
+clone pairs:309:100%
+1336
+2342
+clone pairs:310:100%
+1236
+2342
+clone pairs:311:100%
+626
+2342
+clone pairs:312:100%
+407
+2342
+clone pairs:313:100%
+598
+2342
+clone pairs:314:100%
+570
+2342
+clone pairs:315:100%
+515
+2342
+clone pairs:316:100%
+1505
+2122
+clone pairs:317:100%
+1417
+2122
+clone pairs:318:100%
+323
+2122
+clone pairs:319:100%
+1336
+2122
+clone pairs:320:100%
+1236
+2122
+clone pairs:321:100%
+626
+2122
+clone pairs:322:100%
+407
+2122
+clone pairs:323:100%
+598
+2122
+clone pairs:324:100%
+570
+2122
+clone pairs:325:100%
+515
+2122
+clone pairs:326:100%
+1417
+1505
+clone pairs:327:100%
+323
+1505
+clone pairs:328:100%
+1336
+1505
+clone pairs:329:100%
+1236
+1505
+clone pairs:330:100%
+626
+1505
+clone pairs:331:100%
+407
+1505
+clone pairs:332:100%
+598
+1505
+clone pairs:333:100%
+570
+1505
+clone pairs:334:100%
+515
+1505
+clone pairs:335:100%
+323
+1417
+clone pairs:336:100%
+1336
+1417
+clone pairs:337:100%
+1236
+1417
+clone pairs:338:100%
+626
+1417
+clone pairs:339:100%
+407
+1417
+clone pairs:340:100%
+598
+1417
+clone pairs:341:100%
+570
+1417
+clone pairs:342:100%
+515
+1417
+clone pairs:343:100%
+323
+1336
+clone pairs:344:100%
+323
+1236
+clone pairs:345:100%
+323
+626
+clone pairs:346:100%
+323
+407
+clone pairs:347:100%
+323
+598
+clone pairs:348:100%
+323
+570
+clone pairs:349:100%
+323
+515
+clone pairs:350:100%
+1236
+1336
+clone pairs:351:100%
+626
+1336
+clone pairs:352:100%
+407
+1336
+clone pairs:353:100%
+598
+1336
+clone pairs:354:100%
+570
+1336
+clone pairs:355:100%
+515
+1336
+clone pairs:356:100%
+626
+1236
+clone pairs:357:100%
+407
+1236
+clone pairs:358:100%
+598
+1236
+clone pairs:359:100%
+570
+1236
+clone pairs:360:100%
+515
+1236
+clone pairs:361:100%
+407
+626
+clone pairs:362:100%
+598
+626
+clone pairs:363:100%
+570
+626
+clone pairs:364:100%
+515
+626
+clone pairs:365:100%
+407
+598
+clone pairs:366:100%
+407
+570
+clone pairs:367:100%
+407
+515
+clone pairs:368:100%
+570
+598
+clone pairs:369:100%
+515
+598
+clone pairs:370:100%
+515
+570
+clone pairs:374:83%
+206
+233
+clone pairs:375:100%
+206
+185
+clone pairs:376:83%
+206
+253
+clone pairs:377:83%
+185
+233
+clone pairs:378:100%
+253
+233
+clone pairs:379:83%
+253
+185
+clone pairs:380:94%
+101
+297
+clone pairs:381:77%
+137
+176
+clone pairs:382:83%
+784
+364
+clone pairs:383:82%
+178
+379
+clone pairs:391:94%
+88
+86
+clone pairs:392:70%
+340
+369
+clone pairs:393:70%
+369
+1720
+clone pairs:399:100%
+155
+155
+clone pairs:414:88%
+92
+125
+clone pairs:417:88%
+92
+124
+clone pairs:419:75%
+84
+111
+clone pairs:421:93%
+44
+721
+clone pairs:422:75%
+531
+341
+clone pairs:423:100%
+491
+187
+clone pairs:427:100%
+41
+83
+clone pairs:431:86%
+59
+397
+clone pairs:432:80%
+228
+59
+clone pairs:433:100%
+36
+35
+clone pairs:434:100%
+35
+59
+clone pairs:435:100%
+35
+58
+clone pairs:436:100%
+35
+32
+clone pairs:437:80%
+46
+45
+clone pairs:439:73%
+344
+558
+clone pairs:440:93%
+228
+397
+clone pairs:441:73%
+334
+355
+clone pairs:442:100%
+36
+59
+clone pairs:443:100%
+36
+58
+clone pairs:444:100%
+36
+32
+clone pairs:445:100%
+59
+58
+clone pairs:446:100%
+32
+59
+clone pairs:450:100%
+32
+58
+clone pairs:451:86%
+340
+1720
+clone pairs:452:80%
+340
+397
+clone pairs:453:73%
+397
+1720
+clone pairs:455:93%
+34
+36
+clone pairs:456:100%
+359
+591
+clone pairs:457:73%
+483
+440
+clone pairs:458:73%
+451
+440
+clone pairs:459:73%
+166
+440
+clone pairs:460:80%
+117
+440
+clone pairs:461:80%
+135
+440
+clone pairs:462:80%
+153
+440
+clone pairs:463:73%
+401
+440
+clone pairs:464:73%
+420
+440
+clone pairs:465:73%
+2551
+440
+clone pairs:466:73%
+979
+440
+clone pairs:467:73%
+963
+440
+clone pairs:468:73%
+766
+440
+clone pairs:469:73%
+748
+440
+clone pairs:470:73%
+731
+440
+clone pairs:471:73%
+686
+440
+clone pairs:472:73%
+670
+440
+clone pairs:473:73%
+654
+440
+clone pairs:474:73%
+500
+440
+clone pairs:475:73%
+467
+440
+clone pairs:476:73%
+435
+440
+clone pairs:477:73%
+307
+440
+clone pairs:484:100%
+260
+124
+clone pairs:485:85%
+222
+124
+clone pairs:487:100%
+72
+95
+clone pairs:488:100%
+72
+118
+clone pairs:489:100%
+72
+141
+clone pairs:490:100%
+95
+118
+clone pairs:491:100%
+95
+141
+clone pairs:493:85%
+222
+260
+clone pairs:494:100%
+118
+141
+clone pairs:495:100%
+43
+43
+clone pairs:496:100%
+96
+96
+clone pairs:497:71%
+31
+32
+clone pairs:498:100%
+52
+67
+clone pairs:499:78%
+89
+67
+clone pairs:500:78%
+89
+52
+clone pairs:504:85%
+99
+87
+clone pairs:505:92%
+39
+43
+clone pairs:506:78%
+202
+142
+clone pairs:507:71%
+202
+155
+clone pairs:508:92%
+142
+155
+clone pairs:527:92%
+334
+183
+clone pairs:535:100%
+206
+clone pairs:538:76%
+156
+177
+clone pairs:540:75%
+58
+61
+clone pairs:541:100%
+702
+1922
+clone pairs:542:83%
+1922
+206
+clone pairs:543:91%
+1922
+2188
+clone pairs:547:83%
+2753
+79
+clone pairs:548:100%
+59
+56
+clone pairs:549:100%
+56
+83
+clone pairs:550:100%
+60
+56
+clone pairs:551:100%
+56
+82
+clone pairs:552:100%
+123
+130
+clone pairs:553:100%
+123
+127
+clone pairs:554:83%
+702
+206
+clone pairs:555:91%
+702
+2188
+clone pairs:556:100%
+451
+483
+clone pairs:557:100%
+166
+483
+clone pairs:558:83%
+483
+117
+clone pairs:559:83%
+483
+135
+clone pairs:560:83%
+483
+153
+clone pairs:561:75%
+483
+401
+clone pairs:562:75%
+483
+420
+clone pairs:563:91%
+483
+2551
+clone pairs:564:91%
+483
+979
+clone pairs:565:91%
+483
+963
+clone pairs:566:91%
+483
+766
+clone pairs:567:91%
+483
+748
+clone pairs:568:91%
+483
+731
+clone pairs:569:91%
+483
+686
+clone pairs:570:91%
+483
+670
+clone pairs:571:91%
+483
+654
+clone pairs:572:91%
+483
+500
+clone pairs:573:91%
+467
+483
+clone pairs:574:91%
+435
+483
+clone pairs:575:91%
+307
+483
+clone pairs:576:100%
+127
+130
+clone pairs:577:83%
+103
+97
+clone pairs:578:100%
+166
+451
+clone pairs:579:83%
+451
+117
+clone pairs:580:83%
+451
+135
+clone pairs:581:83%
+451
+153
+clone pairs:582:75%
+451
+401
+clone pairs:583:75%
+451
+420
+clone pairs:584:91%
+451
+2551
+clone pairs:585:91%
+451
+979
+clone pairs:586:91%
+451
+963
+clone pairs:587:91%
+451
+766
+clone pairs:588:91%
+451
+748
+clone pairs:589:91%
+451
+731
+clone pairs:590:91%
+451
+686
+clone pairs:591:91%
+451
+670
+clone pairs:592:91%
+451
+654
+clone pairs:593:91%
+451
+500
+clone pairs:594:91%
+451
+467
+clone pairs:595:91%
+435
+451
+clone pairs:596:91%
+307
+451
+clone pairs:601:83%
+166
+117
+clone pairs:602:83%
+166
+135
+clone pairs:603:83%
+166
+153
+clone pairs:604:75%
+166
+401
+clone pairs:605:75%
+166
+420
+clone pairs:606:91%
+166
+2551
+clone pairs:607:91%
+166
+979
+clone pairs:608:91%
+166
+963
+clone pairs:609:91%
+166
+766
+clone pairs:610:91%
+166
+748
+clone pairs:611:91%
+166
+731
+clone pairs:612:91%
+166
+686
+clone pairs:613:91%
+166
+670
+clone pairs:614:91%
+166
+654
+clone pairs:615:91%
+166
+500
+clone pairs:616:91%
+166
+467
+clone pairs:617:91%
+166
+435
+clone pairs:618:91%
+166
+307
+clone pairs:619:75%
+2188
+206
+clone pairs:620:91%
+184
+379
+clone pairs:624:100%
+94
+476
+clone pairs:625:100%
+94
+495
+clone pairs:626:83%
+94
+514
+clone pairs:627:100%
+117
+135
+clone pairs:628:100%
+117
+153
+clone pairs:629:91%
+117
+401
+clone pairs:630:91%
+117
+420
+clone pairs:631:83%
+2551
+117
+clone pairs:632:83%
+979
+117
+clone pairs:633:83%
+963
+117
+clone pairs:634:83%
+766
+117
+clone pairs:635:83%
+748
+117
+clone pairs:636:83%
+731
+117
+clone pairs:637:83%
+686
+117
+clone pairs:638:83%
+670
+117
+clone pairs:639:83%
+654
+117
+clone pairs:640:83%
+500
+117
+clone pairs:641:83%
+467
+117
+clone pairs:642:83%
+435
+117
+clone pairs:643:83%
+307
+117
+clone pairs:644:100%
+135
+153
+clone pairs:645:91%
+135
+401
+clone pairs:646:91%
+135
+420
+clone pairs:647:83%
+2551
+135
+clone pairs:648:83%
+979
+135
+clone pairs:649:83%
+963
+135
+clone pairs:650:83%
+766
+135
+clone pairs:651:83%
+748
+135
+clone pairs:652:83%
+731
+135
+clone pairs:653:83%
+686
+135
+clone pairs:654:83%
+670
+135
+clone pairs:655:83%
+654
+135
+clone pairs:656:83%
+500
+135
+clone pairs:657:83%
+467
+135
+clone pairs:658:83%
+435
+135
+clone pairs:659:83%
+307
+135
+clone pairs:663:91%
+153
+401
+clone pairs:664:91%
+153
+420
+clone pairs:665:83%
+2551
+153
+clone pairs:666:83%
+979
+153
+clone pairs:667:83%
+963
+153
+clone pairs:668:83%
+766
+153
+clone pairs:669:83%
+748
+153
+clone pairs:670:83%
+731
+153
+clone pairs:671:83%
+686
+153
+clone pairs:672:83%
+670
+153
+clone pairs:673:83%
+654
+153
+clone pairs:674:83%
+500
+153
+clone pairs:675:83%
+467
+153
+clone pairs:676:83%
+435
+153
+clone pairs:677:83%
+307
+153
+clone pairs:680:100%
+401
+420
+clone pairs:681:75%
+2551
+401
+clone pairs:682:75%
+979
+401
+clone pairs:683:75%
+963
+401
+clone pairs:684:75%
+766
+401
+clone pairs:685:75%
+748
+401
+clone pairs:686:75%
+731
+401
+clone pairs:687:75%
+686
+401
+clone pairs:688:75%
+670
+401
+clone pairs:689:75%
+654
+401
+clone pairs:690:75%
+500
+401
+clone pairs:691:75%
+467
+401
+clone pairs:692:75%
+435
+401
+clone pairs:693:75%
+307
+401
+clone pairs:694:75%
+2551
+420
+clone pairs:695:75%
+979
+420
+clone pairs:696:75%
+963
+420
+clone pairs:697:75%
+766
+420
+clone pairs:698:75%
+748
+420
+clone pairs:699:75%
+731
+420
+clone pairs:700:75%
+686
+420
+clone pairs:701:75%
+670
+420
+clone pairs:702:75%
+654
+420
+clone pairs:703:75%
+500
+420
+clone pairs:704:75%
+467
+420
+clone pairs:705:75%
+435
+420
+clone pairs:706:75%
+307
+420
+clone pairs:707:100%
+476
+495
+clone pairs:708:83%
+476
+514
+clone pairs:710:83%
+495
+514
+clone pairs:711:75%
+51
+583
+clone pairs:712:75%
+76
+583
+clone pairs:713:75%
+49
+583
+clone pairs:714:75%
+85
+583
+clone pairs:715:75%
+72
+583
+clone pairs:716:75%
+77
+583
+clone pairs:717:75%
+68
+583
+clone pairs:718:75%
+583
+149
+clone pairs:719:75%
+91
+583
+clone pairs:720:75%
+121
+583
+clone pairs:721:75%
+583
+182
+clone pairs:722:75%
+108
+583
+clone pairs:723:75%
+88
+583
+clone pairs:724:75%
+56
+583
+clone pairs:725:75%
+70
+583
+clone pairs:726:75%
+105
+583
+clone pairs:727:75%
+83
+583
+clone pairs:729:100%
+59
+83
+clone pairs:730:100%
+60
+59
+clone pairs:731:100%
+59
+82
+clone pairs:734:83%
+248
+1045
+clone pairs:735:75%
+161
+178
+clone pairs:736:75%
+119
+56
+clone pairs:737:75%
+119
+56
+clone pairs:738:100%
+60
+83
+clone pairs:739:100%
+83
+82
+clone pairs:740:100%
+60
+82
+clone pairs:741:83%
+46
+461
+clone pairs:747:75%
+75
+113
+clone pairs:748:83%
+75
+94
+clone pairs:752:75%
+94
+113
+clone pairs:753:100%
+979
+2551
+clone pairs:754:100%
+963
+2551
+clone pairs:755:72%
+2551
+558
+clone pairs:756:100%
+766
+2551
+clone pairs:757:100%
+748
+2551
+clone pairs:758:100%
+731
+2551
+clone pairs:759:100%
+686
+2551
+clone pairs:760:100%
+670
+2551
+clone pairs:761:100%
+654
+2551
+clone pairs:762:100%
+500
+2551
+clone pairs:763:100%
+467
+2551
+clone pairs:764:100%
+435
+2551
+clone pairs:765:100%
+307
+2551
+clone pairs:768:81%
+1110
+304
+clone pairs:769:90%
+1110
+1811
+clone pairs:770:90%
+543
+1110
+clone pairs:771:100%
+963
+979
+clone pairs:772:72%
+979
+558
+clone pairs:773:100%
+766
+979
+clone pairs:774:100%
+748
+979
+clone pairs:775:100%
+731
+979
+clone pairs:776:100%
+686
+979
+clone pairs:777:100%
+670
+979
+clone pairs:778:100%
+654
+979
+clone pairs:779:100%
+500
+979
+clone pairs:780:100%
+467
+979
+clone pairs:781:100%
+435
+979
+clone pairs:782:100%
+307
+979
+clone pairs:786:72%
+963
+558
+clone pairs:787:100%
+766
+963
+clone pairs:788:100%
+748
+963
+clone pairs:789:100%
+731
+963
+clone pairs:790:100%
+686
+963
+clone pairs:791:100%
+670
+963
+clone pairs:792:100%
+654
+963
+clone pairs:793:100%
+500
+963
+clone pairs:794:100%
+467
+963
+clone pairs:795:100%
+435
+963
+clone pairs:796:100%
+307
+963
+clone pairs:797:100%
+56
+56
+clone pairs:798:100%
+284
+114
+clone pairs:799:72%
+71
+81
+clone pairs:800:100%
+455
+688
+clone pairs:801:72%
+766
+558
+clone pairs:802:72%
+748
+558
+clone pairs:803:72%
+731
+558
+clone pairs:804:72%
+686
+558
+clone pairs:805:72%
+670
+558
+clone pairs:806:72%
+654
+558
+clone pairs:807:72%
+500
+558
+clone pairs:808:72%
+467
+558
+clone pairs:809:72%
+435
+558
+clone pairs:810:72%
+307
+558
+clone pairs:811:100%
+273
+1616
+clone pairs:812:100%
+524
+220
+clone pairs:814:100%
+748
+766
+clone pairs:815:100%
+731
+766
+clone pairs:816:100%
+686
+766
+clone pairs:817:100%
+670
+766
+clone pairs:818:100%
+654
+766
+clone pairs:819:100%
+500
+766
+clone pairs:820:100%
+467
+766
+clone pairs:821:100%
+435
+766
+clone pairs:822:100%
+307
+766
+clone pairs:823:100%
+731
+748
+clone pairs:824:100%
+686
+748
+clone pairs:825:100%
+670
+748
+clone pairs:826:100%
+654
+748
+clone pairs:827:100%
+500
+748
+clone pairs:828:100%
+467
+748
+clone pairs:829:100%
+435
+748
+clone pairs:830:100%
+307
+748
+clone pairs:831:100%
+686
+731
+clone pairs:832:100%
+670
+731
+clone pairs:833:100%
+654
+731
+clone pairs:834:100%
+500
+731
+clone pairs:835:100%
+467
+731
+clone pairs:836:100%
+435
+731
+clone pairs:837:100%
+307
+731
+clone pairs:839:100%
+819
+857
+clone pairs:840:100%
+670
+686
+clone pairs:841:100%
+654
+686
+clone pairs:842:100%
+500
+686
+clone pairs:843:100%
+467
+686
+clone pairs:844:100%
+435
+686
+clone pairs:845:100%
+307
+686
+clone pairs:846:100%
+654
+670
+clone pairs:847:100%
+500
+670
+clone pairs:848:100%
+467
+670
+clone pairs:849:100%
+435
+670
+clone pairs:850:100%
+307
+670
+clone pairs:851:100%
+500
+654
+clone pairs:852:100%
+467
+654
+clone pairs:853:100%
+435
+654
+clone pairs:854:100%
+307
+654
+clone pairs:855:100%
+113
+348
+clone pairs:856:100%
+467
+500
+clone pairs:857:100%
+435
+500
+clone pairs:858:100%
+307
+500
+clone pairs:859:100%
+435
+467
+clone pairs:860:100%
+307
+467
+clone pairs:861:100%
+307
+435
+clone pairs:862:100%
+278
+299
+clone pairs:863:100%
+108
+81
+clone pairs:864:100%
+108
+88
+clone pairs:865:100%
+108
+174
+clone pairs:866:100%
+88
+81
+clone pairs:867:100%
+81
+174
+clone pairs:868:100%
+88
+174
+clone pairs:872:81%
+1811
+304
+clone pairs:873:81%
+543
+304
+clone pairs:875:90%
+1572
+1746
+clone pairs:876:72%
+125
+133
+clone pairs:877:72%
+123
+133
+clone pairs:878:90%
+71
+71
+clone pairs:879:90%
+237
+321
+clone pairs:880:90%
+237
+457
+clone pairs:881:100%
+152
+237
+clone pairs:882:80%
+51
+237
+clone pairs:883:80%
+76
+237
+clone pairs:884:80%
+237
+49
+clone pairs:885:90%
+93
+237
+clone pairs:886:80%
+237
+96
+clone pairs:887:80%
+237
+85
+clone pairs:888:80%
+72
+237
+clone pairs:889:80%
+237
+77
+clone pairs:890:80%
+68
+237
+clone pairs:891:80%
+237
+149
+clone pairs:892:80%
+237
+91
+clone pairs:893:80%
+121
+237
+clone pairs:894:80%
+237
+182
+clone pairs:895:80%
+108
+237
+clone pairs:896:80%
+237
+88
+clone pairs:897:80%
+237
+56
+clone pairs:898:90%
+76
+237
+clone pairs:899:80%
+237
+70
+clone pairs:900:80%
+105
+237
+clone pairs:901:80%
+83
+237
+clone pairs:902:100%
+321
+457
+clone pairs:903:90%
+152
+321
+clone pairs:904:90%
+51
+321
+clone pairs:905:90%
+76
+321
+clone pairs:906:90%
+321
+49
+clone pairs:907:80%
+93
+321
+clone pairs:908:80%
+321
+96
+clone pairs:909:80%
+321
+85
+clone pairs:910:80%
+72
+321
+clone pairs:911:80%
+321
+77
+clone pairs:912:90%
+68
+321
+clone pairs:913:80%
+321
+149
+clone pairs:914:80%
+321
+91
+clone pairs:915:80%
+121
+321
+clone pairs:916:80%
+321
+182
+clone pairs:917:80%
+108
+321
+clone pairs:918:80%
+321
+88
+clone pairs:919:80%
+321
+56
+clone pairs:920:100%
+76
+321
+clone pairs:921:90%
+321
+70
+clone pairs:922:90%
+105
+321
+clone pairs:923:90%
+83
+321
+clone pairs:924:90%
+152
+457
+clone pairs:925:90%
+51
+457
+clone pairs:926:90%
+76
+457
+clone pairs:927:90%
+457
+49
+clone pairs:928:80%
+93
+457
+clone pairs:929:80%
+457
+96
+clone pairs:930:80%
+457
+85
+clone pairs:931:80%
+72
+457
+clone pairs:932:80%
+457
+77
+clone pairs:933:90%
+68
+457
+clone pairs:934:80%
+457
+149
+clone pairs:935:80%
+457
+91
+clone pairs:936:80%
+121
+457
+clone pairs:937:80%
+457
+182
+clone pairs:938:80%
+108
+457
+clone pairs:939:80%
+457
+88
+clone pairs:940:80%
+457
+56
+clone pairs:941:100%
+76
+457
+clone pairs:942:90%
+457
+70
+clone pairs:943:90%
+105
+457
+clone pairs:944:90%
+83
+457
+clone pairs:945:80%
+185
+70
+clone pairs:946:80%
+51
+152
+clone pairs:947:80%
+76
+152
+clone pairs:948:80%
+152
+49
+clone pairs:949:90%
+93
+152
+clone pairs:950:80%
+152
+96
+clone pairs:951:80%
+152
+85
+clone pairs:952:80%
+72
+152
+clone pairs:953:80%
+152
+77
+clone pairs:954:80%
+68
+152
+clone pairs:955:80%
+152
+149
+clone pairs:956:80%
+152
+91
+clone pairs:957:80%
+121
+152
+clone pairs:958:80%
+152
+182
+clone pairs:959:80%
+108
+152
+clone pairs:960:80%
+152
+88
+clone pairs:961:80%
+152
+56
+clone pairs:962:90%
+76
+152
+clone pairs:963:80%
+152
+70
+clone pairs:964:80%
+105
+152
+clone pairs:965:80%
+83
+152
+clone pairs:967:100%
+76
+51
+clone pairs:968:100%
+51
+49
+clone pairs:969:70%
+93
+51
+clone pairs:970:80%
+51
+96
+clone pairs:971:90%
+51
+85
+clone pairs:972:90%
+72
+51
+clone pairs:973:90%
+51
+77
+clone pairs:974:100%
+51
+68
+clone pairs:975:90%
+51
+149
+clone pairs:976:90%
+51
+91
+clone pairs:977:90%
+121
+51
+clone pairs:978:90%
+51
+182
+clone pairs:979:90%
+108
+51
+clone pairs:980:90%
+51
+88
+clone pairs:981:90%
+51
+56
+clone pairs:982:90%
+76
+51
+clone pairs:983:100%
+51
+70
+clone pairs:984:100%
+105
+51
+clone pairs:985:100%
+51
+83
+clone pairs:986:100%
+76
+49
+clone pairs:987:70%
+76
+93
+clone pairs:988:80%
+76
+96
+clone pairs:989:90%
+76
+85
+clone pairs:990:90%
+72
+76
+clone pairs:991:90%
+76
+77
+clone pairs:992:100%
+76
+68
+clone pairs:993:90%
+76
+149
+clone pairs:994:90%
+76
+91
+clone pairs:995:90%
+76
+121
+clone pairs:996:90%
+76
+182
+clone pairs:997:90%
+76
+108
+clone pairs:998:90%
+76
+88
+clone pairs:999:90%
+76
+56
+clone pairs:1000:90%
+76
+76
+clone pairs:1001:100%
+76
+70
+clone pairs:1002:100%
+105
+76
+clone pairs:1003:100%
+76
+83
+clone pairs:1004:70%
+93
+49
+clone pairs:1005:80%
+96
+49
+clone pairs:1006:90%
+85
+49
+clone pairs:1007:90%
+72
+49
+clone pairs:1008:90%
+77
+49
+clone pairs:1009:100%
+68
+49
+clone pairs:1010:90%
+49
+149
+clone pairs:1011:90%
+91
+49
+clone pairs:1012:90%
+121
+49
+clone pairs:1013:90%
+49
+182
+clone pairs:1014:90%
+108
+49
+clone pairs:1015:90%
+88
+49
+clone pairs:1016:90%
+49
+56
+clone pairs:1017:90%
+76
+49
+clone pairs:1018:100%
+49
+70
+clone pairs:1019:100%
+105
+49
+clone pairs:1020:100%
+83
+49
+clone pairs:1021:70%
+93
+96
+clone pairs:1022:70%
+93
+85
+clone pairs:1023:70%
+72
+93
+clone pairs:1024:70%
+93
+77
+clone pairs:1025:70%
+93
+68
+clone pairs:1026:70%
+93
+149
+clone pairs:1027:70%
+93
+91
+clone pairs:1028:70%
+121
+93
+clone pairs:1029:70%
+93
+182
+clone pairs:1030:70%
+108
+93
+clone pairs:1031:70%
+93
+88
+clone pairs:1032:70%
+93
+56
+clone pairs:1033:80%
+76
+93
+clone pairs:1034:70%
+93
+70
+clone pairs:1035:70%
+105
+93
+clone pairs:1036:70%
+93
+83
+clone pairs:1037:70%
+210
+963
+clone pairs:1038:100%
+125
+123
+clone pairs:1040:80%
+96
+85
+clone pairs:1041:80%
+72
+96
+clone pairs:1042:90%
+96
+77
+clone pairs:1043:80%
+68
+96
+clone pairs:1044:80%
+96
+149
+clone pairs:1045:80%
+96
+91
+clone pairs:1046:80%
+121
+96
+clone pairs:1047:80%
+96
+182
+clone pairs:1048:80%
+108
+96
+clone pairs:1049:90%
+96
+88
+clone pairs:1050:80%
+96
+56
+clone pairs:1051:80%
+76
+96
+clone pairs:1052:80%
+96
+70
+clone pairs:1053:80%
+105
+96
+clone pairs:1054:80%
+83
+96
+clone pairs:1056:70%
+1067
+1087
+clone pairs:1057:100%
+838
+877
+clone pairs:1058:100%
+136
+152
+clone pairs:1059:100%
+120
+152
+clone pairs:1060:100%
+104
+152
+clone pairs:1061:100%
+120
+136
+clone pairs:1062:100%
+104
+136
+clone pairs:1063:100%
+104
+120
+clone pairs:1064:90%
+72
+85
+clone pairs:1065:90%
+85
+77
+clone pairs:1066:90%
+68
+85
+clone pairs:1067:90%
+85
+149
+clone pairs:1068:90%
+85
+91
+clone pairs:1069:90%
+121
+85
+clone pairs:1070:90%
+85
+182
+clone pairs:1071:90%
+108
+85
+clone pairs:1072:90%
+85
+88
+clone pairs:1073:90%
+85
+56
+clone pairs:1074:80%
+76
+85
+clone pairs:1075:90%
+85
+70
+clone pairs:1076:90%
+105
+85
+clone pairs:1077:90%
+83
+85
+clone pairs:1078:100%
+2901
+2915
+clone pairs:1079:100%
+2810
+2915
+clone pairs:1080:100%
+2474
+2915
+clone pairs:1081:100%
+1908
+2915
+clone pairs:1082:100%
+1776
+2915
+clone pairs:1083:100%
+556
+2915
+clone pairs:1084:100%
+2810
+2901
+clone pairs:1085:100%
+2474
+2901
+clone pairs:1086:100%
+1908
+2901
+clone pairs:1087:100%
+1776
+2901
+clone pairs:1088:100%
+556
+2901
+clone pairs:1089:100%
+2474
+2810
+clone pairs:1090:100%
+1908
+2810
+clone pairs:1091:100%
+1776
+2810
+clone pairs:1092:100%
+556
+2810
+clone pairs:1093:100%
+1908
+2474
+clone pairs:1094:100%
+1776
+2474
+clone pairs:1095:100%
+556
+2474
+clone pairs:1096:100%
+1776
+1908
+clone pairs:1097:100%
+556
+1908
+clone pairs:1098:100%
+543
+1811
+clone pairs:1099:100%
+556
+1776
+clone pairs:1100:100%
+221
+53
+clone pairs:1102:100%
+144
+135
+clone pairs:1103:100%
+135
+135
+clone pairs:1104:100%
+250
+120
+clone pairs:1105:100%
+120
+120
+clone pairs:1114:90%
+87
+102
+clone pairs:1115:90%
+72
+77
+clone pairs:1116:90%
+72
+68
+clone pairs:1117:90%
+72
+149
+clone pairs:1118:90%
+72
+91
+clone pairs:1119:90%
+72
+121
+clone pairs:1120:90%
+72
+182
+clone pairs:1121:90%
+72
+108
+clone pairs:1122:90%
+72
+88
+clone pairs:1123:90%
+72
+56
+clone pairs:1124:80%
+72
+76
+clone pairs:1125:90%
+72
+70
+clone pairs:1126:90%
+105
+72
+clone pairs:1127:90%
+72
+83
+clone pairs:1128:90%
+68
+77
+clone pairs:1129:90%
+77
+149
+clone pairs:1130:90%
+91
+77
+clone pairs:1131:90%
+121
+77
+clone pairs:1132:90%
+77
+182
+clone pairs:1133:90%
+108
+77
+clone pairs:1134:100%
+77
+88
+clone pairs:1135:90%
+77
+56
+clone pairs:1136:80%
+76
+77
+clone pairs:1137:90%
+77
+70
+clone pairs:1138:90%
+105
+77
+clone pairs:1139:90%
+83
+77
+clone pairs:1140:100%
+176
+121
+clone pairs:1141:100%
+121
+143
+clone pairs:1142:90%
+68
+149
+clone pairs:1143:90%
+68
+91
+clone pairs:1144:90%
+121
+68
+clone pairs:1145:90%
+68
+182
+clone pairs:1146:90%
+108
+68
+clone pairs:1147:90%
+68
+88
+clone pairs:1148:90%
+68
+56
+clone pairs:1149:90%
+76
+68
+clone pairs:1150:100%
+68
+70
+clone pairs:1151:100%
+105
+68
+clone pairs:1152:100%
+68
+83
+clone pairs:1153:90%
+91
+149
+clone pairs:1154:90%
+121
+149
+clone pairs:1155:90%
+182
+149
+clone pairs:1156:90%
+108
+149
+clone pairs:1157:90%
+88
+149
+clone pairs:1158:90%
+56
+149
+clone pairs:1159:80%
+76
+149
+clone pairs:1160:90%
+70
+149
+clone pairs:1161:90%
+105
+149
+clone pairs:1162:90%
+83
+149
+clone pairs:1163:90%
+121
+91
+clone pairs:1164:90%
+91
+182
+clone pairs:1165:90%
+108
+91
+clone pairs:1166:90%
+91
+88
+clone pairs:1167:90%
+91
+56
+clone pairs:1168:80%
+76
+91
+clone pairs:1169:90%
+91
+70
+clone pairs:1170:90%
+105
+91
+clone pairs:1171:90%
+83
+91
+clone pairs:1172:100%
+176
+143
+clone pairs:1173:90%
+121
+182
+clone pairs:1174:90%
+121
+108
+clone pairs:1175:90%
+121
+88
+clone pairs:1176:90%
+121
+56
+clone pairs:1177:80%
+76
+121
+clone pairs:1178:90%
+121
+70
+clone pairs:1179:90%
+105
+121
+clone pairs:1180:90%
+121
+83
+clone pairs:1181:90%
+108
+182
+clone pairs:1182:90%
+88
+182
+clone pairs:1183:90%
+56
+182
+clone pairs:1184:80%
+76
+182
+clone pairs:1185:90%
+70
+182
+clone pairs:1186:90%
+105
+182
+clone pairs:1187:90%
+83
+182
+clone pairs:1188:90%
+108
+88
+clone pairs:1189:90%
+108
+56
+clone pairs:1190:80%
+76
+108
+clone pairs:1191:90%
+108
+70
+clone pairs:1192:90%
+105
+108
+clone pairs:1193:90%
+108
+83
+clone pairs:1194:90%
+88
+56
+clone pairs:1195:80%
+76
+88
+clone pairs:1196:90%
+88
+70
+clone pairs:1197:90%
+105
+88
+clone pairs:1198:90%
+83
+88
+clone pairs:1199:100%
+160
+179
+clone pairs:1200:70%
+130
+179
+clone pairs:1201:70%
+130
+160
+clone pairs:1202:100%
+119
+137
+clone pairs:1203:90%
+865
+1112
+clone pairs:1204:90%
+822
+1112
+clone pairs:1205:90%
+779
+1112
+clone pairs:1206:90%
+822
+865
+clone pairs:1207:90%
+779
+865
+clone pairs:1208:90%
+779
+822
+clone pairs:1209:80%
+76
+56
+clone pairs:1210:90%
+70
+56
+clone pairs:1211:90%
+105
+56
+clone pairs:1212:90%
+83
+56
+clone pairs:1213:90%
+76
+70
+clone pairs:1214:90%
+105
+76
+clone pairs:1215:90%
+76
+83
+clone pairs:1216:100%
+105
+70
+clone pairs:1217:100%
+83
+70
+clone pairs:1218:100%
+105
+83
+clone pairs:1219:100%
+250
+120
+clone pairs:1220:100%
+144
+135
