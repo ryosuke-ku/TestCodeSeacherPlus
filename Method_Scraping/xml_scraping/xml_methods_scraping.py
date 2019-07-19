@@ -19,6 +19,9 @@ url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blin
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/retrofit_functions-blind-clones/retrofit_functions-blind-clones-0.30.xml"
 # url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/RxJava_functions-blind-clones/RxJava_functions-blind-clones-0.30.xml"
 
+projectName = 'maven'
+
+
 res = req.urlopen(url)
 #詳しくは省略、上のXMLが返ってくるものと思ってください
 
@@ -72,12 +75,7 @@ for filePath in filePaths.find_all(['clone','source']):
 			numdelTestdata[key].append(registerdPath)
 			num += 1
 
-# for a in startdicPath:
-# 	print(a)
-# 	for b in startdicPath[a]:
-# 		print(b)
 
-# print(len(startdicPath))
 production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
 PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
@@ -109,7 +107,8 @@ for pairs in delPairs:
 	# print(numdelTestdata[pairs])
 	numdelTestdata.pop(pairs)
 
-# print(len(startdicPath))
+print(numdelTestdata)
+print(len(numdelTestdata))
 
 
 onlyhasTestdata = defaultdict(list)
@@ -123,551 +122,170 @@ for i in numdelTestdata:
 		if path is not None:
 			onlyhasTestdata[i].append(path)
 			onlyhasTestPdata[i].append(j)
+
+
+def OutputNicadt1File():
+	t1 = 0
+	t1keylist = []
+	for h in onlyhasTestPdata:
+		if len(onlyhasTestPdata[h]) == 1:
+			t1keylist.append(h)
+			t1 += 1
+
+	t1mapdic = defaultdict(list)
+	t1mapTestcodedic = defaultdict(list)
+	for u in t1keylist:
+		path = onlyhasTestPdata[u]
+		t1mapdic[u].append(path)
+		testpath = onlyhasTestdata[u]
+		t1mapTestcodedic[u].append(testpath)
+
+	# print(t1mapTestcodedic)
+	print(len(t1mapTestcodedic))
+
+
+	Slinelist =[]
+	Elinelist =[]
+	for k in t1mapdic:
+		for g in t1mapdic[k]:
+			# print(g[0])
+			Sline = startdicPath[g[0]]
+			Slinelist.append(Sline)
+			Eline = enddicPath[g[0]]
+			Elinelist.append(Eline)
+
+
+	num = 0
+	filenum = 1
+	for k in t1mapdic:
+		# print(k)
+		path = t1mapdic[k][0][0]
+		# print(path)
+		editpath = re.sub(r".*?:", "", path)
+		# print(editpath)
 		
-print(data2)
-
-# print(onlyhasTestPdata)
-
-
-# for a in onlyhasTestPdata:
-# 	print(a)
-# 	for b in onlyhasTestPdata[a]:
-# 		print(b)
-
-# print(onlyhasTestdata)
-# print(len(onlyhasTestdata))
+		file = open('Nicad_t1_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+		f = open("C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + editpath, "r", encoding="utf-8")
+		lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
+		f.close()
 
 
-t1 = 0
-t2 = 0
-t1Tlist = defaultdict(list)
-t2Tlist = defaultdict(list)
+		startline = int(Slinelist[num][0])-1
+		endline = int(Elinelist[num][0])
+		num +=1
 
-t1keylist = []
-t2keylist = []
-for h in onlyhasTestPdata:
-	if len(onlyhasTestPdata[h]) == 2:
-		t2keylist.append(h)
-		t2 += 1
-	
-	if len(onlyhasTestPdata[h]) == 1:
-		t1keylist.append(h)
-		t1 += 1
-	
-# print(t2keylist)
-# print(len(t2keylist))
-# print(len(t1keylist))
-# print(t1keylist)
-
-print(len(numdelTestdata))
-print(len(startdicPath))
-# for m in t1keylist:
-# 	startkey = numdelTestdata[m]
-# 	startdicPath.pop(startkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの開始行を削除
-# 	endkey = numdelTestdata[m]
-# 	enddicPath.pop(endkey[0]) # プロダクションコード片とテストコード片からなるクローンペアのプロダクションコードの修了行を削除
-# 	# print(numdelTestdata[pairs])
-# 	numdelTestdata.pop(m)
-
-print(len(startdicPath))
-print(len(enddicPath))
-print(len(numdelTestdata))
-
-t1mapdic = defaultdict(list)
-for u in t1keylist:
-	path = onlyhasTestPdata[u]
-	t1mapdic[u].append(path)
-
-
-
-# for i in t1mapdic:
-# 	if len(t1mapdic[i][0]) == 1:
-# 		print('〇')
-# 	else:
-# 		print('✖')
-
-# print(t1mapdic)
-# print(len(t1mapdic))
-
-Slinelist =[]
-Elinelist =[]
-for k in t1mapdic:
-	for g in t1mapdic[k]:
-		# print(g[0])
-		Sline = startdicPath[g[0]]
-		Slinelist.append(Sline)
-		Eline = enddicPath[g[0]]
-		Elinelist.append(Eline)
-
-# print(Slinelist)
-# print(len(Slinelist))
-# print(Elinelist)
-# print(len(Elinelist))
-
-num = 0
-filenum = 1
-for k in t1mapdic:
-	print(k)
-	path = t1mapdic[k][0][0]
-	print(path)
-	editpath = re.sub(r".*?:", "", path)
-	# print(editpath)
-	
-	file = open('Nicad_' + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
-	f = open("D:/ryosuke-ku/data_set/maven_190611/" + editpath, "r", encoding="utf-8")
-	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
-	f.close()
-
-	startline = int(Slinelist[num][0])-1
-	endline = int(Elinelist[num][0])
-	num +=1
-
-	file.write('// ' + k + '\n')
-	file.write('// ' + path + '\n')
-	file.write('\n')
-	file.write('public class Nicad_' + str(filenum) + '\n')
-	file.write('{' + '\n')
-	for x in range(startline,endline):
-		print(lines2[x].replace('\n', ''))
-		file.write(lines2[x].replace('\n', '') + '\n')
-	
-	file.write('}')
-	filenum += 1
-
-
-# t1p = 0
-# t2p = 0
-# t1Plist = defaultdict(list)
-# t2Plist = defaultdict(list)
-# for g in onlyhasTestPdata:
-# 	for v in onlyhasTestPdata[g]:
-# 		if len(onlyhasTestPdata[g]) == 2:
-# 			t2Plist[g].append(v)
-# 			t2p += 1
+		file.write('// ' + k + '\n')
+		file.write('// ' + path + '\n')
+		file.write('\n')
+		file.write('public class Nicad_t1_' + projectName + str(filenum) + '\n')
+		file.write('{' + '\n')
+		for x in range(startline,endline):
+			print(lines2[x].replace('\n', ''))
+			file.write(lines2[x].replace('\n', '') + '\n')
 		
-# 		if len(onlyhasTestPdata[g]) == 1:
-# 			t1Plist[g].append(v)
-# 			t1p += 1
+		file.write('}')
+		filenum += 1
 
-# for a in t1Plist:
-# 	print(a)
-# 	for b in t1Plist[a]:
-# 		print(b)
+	TestPathfile = open('TestPath_t1_' + projectName + '.txt','w') # Nicad_3.javaのファイルを開く
 
-# print(len(t1Plist))
-
-# for a in t1Plist:
-# 	print(a)
-# 	for b in t1Plist[a]:
-# 		print(b)
-
-# print(len(t1Plist))
-
-# print(onlyhasTestPdata)
-# num = 0
-# filenum = 1
-# for k in t1list:
-# 	print(k)
-	
-# 	file = open('Nicad_' + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
-# 	f = open("D:/ryosuke-ku/data_set/maven_190611/" + str(t1list[k]), "r", encoding="utf-8")
-# 	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
-# 	f.close()
-
-# 	startline = int(startlist[num])-1
-# 	endline = int(endlist[num])
-# 	num +=1
-	
-# 	file.write('public class Nicad_' + str(filenum) + '\n')
-# 	file.write('{' + '\n')
-# 	for x in range(startline,endline):
-# 		print(lines2[x].replace('\n', ''))
-# 		file.write(lines2[x].replace('\n', '') + '\n')
-	
-# 	file.write('}')
-# 	filenum += 1
+	for s in t1mapTestcodedic:
+		TestPathfile.write(t1mapTestcodedic[s][0][0] + '\n')
 
 
 
+def OutputNicadt2File():
+	t2 = 0
+	t2keylist = []
+	for h in onlyhasTestPdata:
+		if len(onlyhasTestPdata[h]) == 2:
+			t2keylist.append(h)
+			t2 += 1
 
-# TwoTestPath =[]
-# OneTestPath =[]
-# NoTestPath =[]
+	t2mapdic = defaultdict(list)
+	t2mapTestcodedic = defaultdict(list)
+	for u in t2keylist:
+		path = onlyhasTestPdata[u]
+		t2mapdic[u].append(path)
+		testpath = onlyhasTestdata[u]
+		t2mapTestcodedic[u].append(testpath)
 
-# two = 0
-# one = 0
-# zero = 0
-# for z in data2:
-# 	c = 0
-# 	for y in data2[z]:
-# 		if y is None:
-# 			c+=1
-	
-# 	if c == 0:
-# 		# print('2tests')
-# 		two += 1
-# 		TwoTestPath.append(y)
-# 	if c == 1:
-# 		# print('1test')
-# 		one += 1
-# 		OneTestPath.append(y)
-# 	if c == 2:
-# 		# print('Notest')
-# 		zero += 1
-# 		NoTestPath.append(y)
+	# print(t1mapTestcodedic)
+	print(len(t2mapTestcodedic))
 
 
-# print('2tests: ' + str(two))
-# print('1test: ' + str(one))
-# print('Notest: ' + str(zero))
-# print('toatl: ' + str(two + one + zero))
+	Slinelist =[]
+	Elinelist =[]
+	for k in t2mapdic:
+		for g in t2mapdic[k]:
+			# print(g[0])
+			Sline = startdicPath[g[0]]
+			Slinelist.append(Sline)
+			Eline = enddicPath[g[0]]
+			Elinelist.append(Eline)
 
 
-
-
-
-# TwoTestPath2 =[]
-# OneTestPath2 =[]
-# NoTestPath2 =[]
-# l = 0
-# for t in data2['clone pairs:1198:90%']:
-# 	# print(t)
-# 	if t is None:
-# 		l+=1
-
-# if l == 0:
-# 	# print('2tests')
-# 	two += 1
-# 	TwoTestPath2.append(t)
-# if l == 1:
-# 	# print('1test')
-# 	one += 1
-# 	OneTestPath2.append(t)
-# if l == 2:
-# 	# print('Notest')
-# 	zero += 1
-# 	NoTestPath2.append(t)
-
-# print(OneTestPath2)
-
-
-# print(data2['clone pairs:1198:90%'][0])
-# print(data2['clone pairs:1198:90%'][1])
-# print(len(AvailableProPath))
-# print(TwoTestPath)
-# print(len(TwoTestPath))
-# print(OneTestPath)
-# print(len(OneTestPath))
-
-
-# print('numMapStartline:' + str(len(numMapStartline)))
-# print('numMapEndline:' + str(len(numMapEndline)))
-
-
-# print(len(["Red", "Green", "Blue",None]))
-# vaildTestPath = []
-# for p in OneTestPath:
-# 	if p is not None:
-# 		vaildTestPath.append(p)
-# 		print(p)
-
-# print(len(vaildTestPath))
-
-# print('NotestPathlen: ' + str(len(NotestPath)))
-# delPairs = []
-# for t in delTestdata:
-# 	for h in delTestdata[t]:
-# 		if len(delTestdata[t]) != 2: # クローンペアが２つのコード片からならないものを取得する
-# 			delPairs.append(t)
+	num = 0
+	filenum = 1
+	for k in t2mapdic:
+		# print(k)
+		path = t2mapdic[k][0][0]
+		# print(path)
+		editpath = re.sub(r".*?:", "", path)
+		# print(editpath)
 		
-
-# for pairs in delPairs:
-# 	delTestdata.pop(pairs)
-# for a in numNotestPath:
-# 	print(a)
-
-# print('data: ' + str(len(data)))
-# print('delTestdata: ' + str(len(delTestdata)))
-# print(delTestdata)
-# print(len(allpathlist))
-# print(len(numNotestPath))
-# print(len(startlist))
-# print(len(endlist))
+		file = open('Nicad_t2_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+		f = open("C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + editpath, "r", encoding="utf-8")
+		lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
+		f.close()
 
 
-AvailableProPath = []
-for k in delTestdata:
-	for l in delTestdata[k]:
-		AvailableProPath.append(l)
+		startline = int(Slinelist[num][0])-1
+		endline = int(Elinelist[num][0])
+		num +=1
 
-# f = 0
-# arrabgementdata = defaultdict(list)
-# for q in AvailableProPath:
-# 	key = "clone pairs:" + str(f)
-# 	arrabgementdata[key].append(q)
-# 	f += 1
+		file.write('// ' + k + '\n')
+		file.write('// ' + path + '\n')
+		file.write('\n')
+		file.write('public class Nicad_t2_' + projectName + str(filenum) + '\n')
+		file.write('{' + '\n')
+		for x in range(startline,endline):
+			print(lines2[x].replace('\n', ''))
+			file.write(lines2[x].replace('\n', '') + '\n')
+		
+		file.write('}')
+		filenum += 1
 
-# print(arrabgementdata)
-# print(AvailableProPath)
-# print(len(AvailableProPath))
+	TestPathfile = open('TestPath_t2_' + projectName + '.txt','w') # Nicad_3.javaのファイルを開く
 
+	for s in t2mapTestcodedic:
+		TestPathfile.write(t2mapTestcodedic[s][0][0] + '\n')
 
-# production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
-# ProductionPath = production.readlines()
-# PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
-
-# production.close()
-# #print(ProductionPath)
-
-# Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
-# TestPath = Test.readlines()
-# TPath = [Tline.replace('\n', '') for Tline in TestPath]
+OutputNicadt2File()
 
 
-# # print(alltest)
+def ClassifyClonePairs():
+	# print(data2)
+	print(len(data2))
+	p = 0
+	q = 0
+	r = 0
+	for k in data2:
+		n = 0
+		for j in data2[k]:
+			print(j)
+			if j is not None:
+				n += 1
+		if n == 0:
+			p += 1
+		if n == 1:
+			q += 1
+		if n == 2:
+			r += 1
 
-# Test.close()
-# #print(TestPath)
-
-# dic = dict(zip(PPath,TPath))
-# data2 = defaultdict(list)
-
-# for i in delTestdata:
-# 	for j in delTestdata[i]:
-# 		last9path = j[-9:]
-# 		try:
-# 			path = dic.get(j)
-# 			data2[i].append(path)
-# 		except KeyError:
-# 			pass
-# 		# if path is None:
-# 		# 	pass
-# 		# else:
-# 		# 	data2[i].append(path)
-
-
-# # print(data2)
-
-# TwoTestPath =[]
-# OneTestPath =[]
-# NoTestPath =[]
-
-# two = 0
-# one = 0
-# zero = 0
-# for z in data2:
-# 	c = 0
-# 	for y in data2[z]:
-# 		if y is None:
-# 			c+=1
-	
-# 	if c == 0:
-# 		print('2tests')
-# 		two += 1
-# 		TwoTestPath.append(y)
-# 	if c == 1:
-# 		print('1test')
-# 		one += 1
-# 		OneTestPath.append(y)
-# 	if c == 2:
-# 		print('Notest')
-# 		zero += 1
-# 		NoTestPath.append(y)
+	print('テストコードが見つからないクローンペア : ' + str(p) + '(' + str(round(p/(p+q+r)*100,1)) + ')')
+	print('どちらか片方のコードフラグメントにテストコードが存在する : ' + str(q) + '(' + str(round(q/(p+q+r)*100,1)) + ')')
+	print('両方のコードフラグメントにテストコードが存在するクローンペア : ' + str(r) + '(' + str(round(r/(p+q+r)*100,1)) + ')')
+	print('合計 : '+ str(p+q+r))
 
 
-# print('2tests: ' + str(two))
-# print('1test: ' + str(one))
-# print('Notest: ' + str(zero))
-
-# print(len(AvailableProPath))
-# # print(TwoTestPath)
-# print(len(TwoTestPath))
-# # print(OneTestPath)
-# print(len(OneTestPath))
-
-
-
-# num = 0
-# filenum = 1
-# for Nicadpath in AvailableProPath:
-# 	file = open('Nicad_' + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
-# 	f = open("D:/ryosuke-ku/data_set/maven_190611/" + str(Nicadpath), "r", encoding="utf-8")
-# 	lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
-# 	f.close()
-
-# 	startline = int(startlist[num])-1
-# 	endline = int(endlist[num])
-# 	num +=1
-	
-# 	file.write('public class Nicad_' + str(filenum) + '\n')
-# 	file.write('{' + '\n')
-# 	for x in range(startline,endline):
-# 		print(lines2[x].replace('\n', ''))
-# 		file.write(lines2[x].replace('\n', '') + '\n')
-	
-# 	file.write('}')
-# 	filenum += 1
-
-
-
-
-# production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
-# ProductionPath = production.readlines()
-# PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
-
-# production.close()
-# #print(ProductionPath)
-
-# Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
-# TestPath = Test.readlines()
-# TPath = [Tline.replace('\n', '') for Tline in TestPath]
-
-
-# # print(alltest)
-
-# Test.close()
-# #print(TestPath)
-
-# dic = dict(zip(PPath,TPath))
-
-
-nt = 0
-at = 0
-pt = 0
-totalpairs = 0
-totalfragments = 0
-notest = 0
-reusetest = []
-list_nt = []
-list_at = []
-list_pt = []
-Similarity = defaultdict(list)
-Similarity_total = defaultdict(list)
-last9path =[]
-delKey =[]
-
-
-# for i in data:
-# 	rt_path = []
-# 	# print("----------------------------------------------------------------------------------------------------")
-# 	# print(i)
-# 	fragments = len(data[i])
-# 	# print(len(data[i]))
-# 	count = 0
-# 	# writer.writerow(data[i])
-# 	Similarity_key = i[-4:].replace(":","")
-# 	# print(Similarity_key)
-
-# 	for j in data[i]:
-# 		last9path = j[-9:]
-# 		# print(last9path)
-# 		if last9path == 'Test.java':
-# 			# print('ProductionPath : ' + j)
-# 			# print('テストパスです')
-# 			delKey.append(i)
-# 		else:
-# 			try:
-# 				path = dic.get(j)
-# 			except KeyError:
-# 				pass
-
-# 			if path is None:
-# 				pass
-# 			else:
-# 				reusetest.append(path)
-# 				rt_path.append(path)
-# 				count += 1
-# 				# print('ProductionPath : ' + j)
-# 				# print(path)
-	
-
-
-
-# print(Similarity_total)
-# print("-")
-# print(len(Similarity_total["100%"]))
-# print(Similarity_total["100%"])
-
-
-# print("----------------------------------------------------------------------------------------------------")
-# print("＜クローンペア＞")
-# print("すべてのクローンペアの数：" + str(nt + pt + at))
-# print("テストコードが見つからなかったクローンペアの数：" + str(nt) + " (" + str(round(nt/(nt + pt + at)*100,1)) + "％)")
-# print("どちらか片方のコードフラグメントはテストコードを持っているクローンペアの数：" + str(pt)+ " (" + str(round(pt/(nt + pt + at)*100,1)) + "％)")
-# print("両方のコードフラグメントがテストコードを持っているクローンペアの数：" + str(at) + " (" + str(round(at/(nt + pt + at)*100,1)) + "％)")
-# print("コードフラグメントの合計数："+ str(totalfragments))
-# print("他のテストを再利用できそうなフラグメントの数："+ str(notest) + " (" + str(round(notest/totalfragments*100, 1)) + "％)")
-# print("----------------------------------------------------------------------------------------------------")
-
-
-# c_nt = collections.Counter(list_nt)
-# print(c_nt)
-# print(len(list_nt))
-
-# c_pt = collections.Counter(list_pt)
-# print(c_pt)
-# print(len(list_pt))
-
-# c_at = collections.Counter(list_at)
-# print(c_at)
-# print(len(list_at))
-
-
-
-# print(len(list_nt)+len(list_at)+len(list_pt))
-
-# for reusetestpath in reusetest:
-# 	print(reusetestpath)
-# print(len(reusetest))
-
-delKey_unique = list(set(delKey))
-# print(delKey_unique)
-# print(len(delKey_unique))
-# print(len(delKey))
-delKey_unique.sort()
-# for w in delKey:
-# 	print(w)
-
-# print(len(data))
-for delKeyname in delKey_unique:
-	del data[delKeyname]
-
-# print(len(data))
-# print(data)
-# print(data.keys())
-# for x in numPairslist_unique:
-# 	print(x)
-# 	data.pop(int(x))
-
-AvaiTestPaths = []
-AvaiProductionPaths = []
-for i in data:
-	# print("----------------------------------------------------------------------------------------------------")
-	# print(i)
-	fragments = len(data[i])
-	Similarity_key = i[-4:].replace(":","")
-	# print(Similarity_key)
-
-	for j in data[i]:
-		try:
-			path = dic.get(j)
-		except KeyError:
-			pass
-
-		if path is None:
-			pass
-		else:
-			# print('ProductionPath : ' + j)
-			AvaiTestPaths.append(path)
-			AvaiProductionPaths.append(j)
-			# print('TestPath       : ' +path)
-
-# print(AvaiTestPaths)
-# print(len(AvaiTestPaths))
-# for AvaiTestPath in AvaiTestPaths:
-# 	print(AvaiTestPath)
-# print(len(AvaiTestPaths))
-
-# for AvaiProductionPath in AvaiProductionPaths:
-# 	print(AvaiProductionPath)
-# print(len(AvaiProductionPaths))
+ClassifyClonePairs()
