@@ -1,0 +1,9 @@
+ant/src/tests/junit/org/apache/tools/ant/util/regexp/JakartaRegexpMatcherTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/net/FTPTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/GlobPatternMapperTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ReplaceTest.java
+ant/src/tests/junit/org/apache/tools/tar/TarEntryTest.java

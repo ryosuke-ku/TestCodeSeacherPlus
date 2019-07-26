@@ -1,0 +1,13 @@
+ant/src/tests/junit/org/apache/tools/zip/ExtraFieldUtilsTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/AbstractCvsTaskTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/regexp/JakartaRegexpMatcherTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/AbstractFileSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/DirectoryScannerTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PatternSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/JUnitTaskTest.java

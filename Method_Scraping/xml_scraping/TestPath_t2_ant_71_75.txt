@@ -1,0 +1,8 @@
+ant/src/tests/junit/org/apache/tools/ant/types/XMLCatalogTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/PatternSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/vss/MSVSSTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ManifestTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/DeleteTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ConcatTest.java
+ant/src/tests/junit/org/apache/tools/ant/AntClassLoaderTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/selectors/PosixGroupSelectorTest.java

@@ -5,22 +5,12 @@ import collections
 import re
 import csv
 
-url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/maven_functions-blind-clones/maven_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/hadoop_functions-blind-clones/hadoop_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/ant_functions-blind-clones/ant_functions-blind-clones-0.30.xml"
-# url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/cassandra_functions-blind-clones/cassandra_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/httpcomponents-client_functions-blind-clones/httpcomponents-client_functions-blind-clones-0.30.xml"
-# url ="file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/flink_functions-blind-clones/flink_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/kafka_functions-blind-clones/kafka_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/elasticsearch_functions-blind-clones/elasticsearch_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jacoco_functions-blind-clones/jacoco_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/JCSprout_functions-blind-clones/JCSprout_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/jetty.project_functions-blind-clones/jetty.project_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/retrofit_functions-blind-clones/retrofit_functions-blind-clones-0.30.xml"
-# url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/RxJava_functions-blind-clones/RxJava_functions-blind-clones-0.30.xml"
+ProjectName = 'maven'
 
-projectName = 'maven'
+url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + ProjectName + "_functions-blind-clones/" + ProjectName + "_functions-blind-clones-0.30.xml"
 
+projectName = 'maven_0726'
+t ='t1'
 
 res = req.urlopen(url)
 #詳しくは省略、上のXMLが返ってくるものと思ってください
@@ -56,8 +46,13 @@ for filePath in filePaths.find_all(['clone','source']):
 		allpathlist.append(path)
 		data[key].append(path)
 		cnt+=1
-		cutpath = path[-9:] #pathの文字列の末尾から９文字を取得 Test.java かどうかを判定に使う
-		if cutpath == 'Test.java':
+
+		cutFtestpath = path[-9:] #pathの文字列の末尾から９文字を取得 Test.java かどうかを判定に使う
+		cutBtestpathnum = path.rfind("/")
+		cutBtestpath = path[cutBtestpathnum + 1:]
+		if cutFtestpath == 'Test.java':
+			pass
+		elif cutBtestpath[:4] == 'Test':
 			pass
 		else:
 			registerdPath = str(num) + ':' + path # 3:apache_ant/ant/src/main/org/apache/tools/ant/AntClassLoader.java 同じファイルパスを区別するため
@@ -76,12 +71,12 @@ for filePath in filePaths.find_all(['clone','source']):
 			num += 1
 
 
-production = open(r'C:\Users\ryosuke-ku\Desktop\Path\ProductionCode.txt','r',encoding="utf-8_sig")
+production = open(r'C:\Users\ryosuke-ku\Desktop\Path\newProductionPath.txt','r',encoding="utf-8_sig")
 ProductionPath = production.readlines()
 PPath = [Pline.replace('\n', '') for Pline in ProductionPath]
 production.close()
 
-Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\TestCode.txt','r',encoding="utf-8_sig")
+Test = open(r'C:\Users\ryosuke-ku\Desktop\Path\newTestPath.txt','r',encoding="utf-8_sig")
 TestPath = Test.readlines()
 TPath = [Tline.replace('\n', '') for Tline in TestPath]
 Test.close()
@@ -107,8 +102,8 @@ for pairs in delPairs:
 	# print(numdelTestdata[pairs])
 	numdelTestdata.pop(pairs)
 
-print(numdelTestdata)
-print(len(numdelTestdata))
+# print(numdelTestdata)
+# print(len(numdelTestdata))
 
 
 onlyhasTestdata = defaultdict(list)
@@ -124,6 +119,48 @@ for i in numdelTestdata:
 			onlyhasTestPdata[i].append(j)
 
 
+nt = 0
+t1 = 0
+t2 = 0
+has2noMap = defaultdict(list)
+no2hasMap =defaultdict(list)
+
+for u in numdelTestdata:
+	p1 = numdelTestdata[u][0]
+	c1 = re.sub(r".*?:", "", p1)
+	path1 = dic.get(c1)
+
+	p2 = numdelTestdata[u][1]
+	c2 = re.sub(r".*?:", "", p2)
+	path2 =dic.get(c2)
+
+	if path1 is not None and path2 is None:
+		# print(u)
+		# print('has test : ' + c1)
+		# print('No test  : ' + c2)
+		has2noMap[p1].append(u + '_t1')
+		no2hasMap[u + '_t1'].append(p2)
+		cp = has2noMap[p1]
+		notestpath = no2hasMap[cp[0]]
+		# print(notestpath)
+		# print('--------------------------------------------------------------------------------------------------------------------------------------')
+		t1 += 1
+	if path1 is None and path2 is not None:
+		has2noMap[p2].append(u + '_t1')
+		no2hasMap[u + '_t1'].append(p1)
+		cp = has2noMap[p2]
+		notestpath = no2hasMap[cp[0]]
+		t1 += 1
+	if path1 is not None and path2 is not None:
+		t2 += 1
+	if path1 is None and path2 is None:
+		nt += 1
+
+print('nt : ' + str(nt))
+print('t1 : ' + str(t1))
+print('t2 : ' + str(t2))
+print('total : ' + str(nt + t1 +t2))
+
 def OutputNicadt1File():
 	t1 = 0
 	t1keylist = []
@@ -136,6 +173,7 @@ def OutputNicadt1File():
 	t1mapTestcodedic = defaultdict(list)
 	for u in t1keylist:
 		path = onlyhasTestPdata[u]
+		# print(path)
 		t1mapdic[u].append(path)
 		testpath = onlyhasTestdata[u]
 		t1mapTestcodedic[u].append(testpath)
@@ -158,13 +196,17 @@ def OutputNicadt1File():
 	num = 0
 	filenum = 1
 	for k in t1mapdic:
-		# print(k)
 		path = t1mapdic[k][0][0]
-		# print(path)
+		cp = has2noMap[path]
+		notestpath = no2hasMap[cp[0]]
+
+
 		editpath = re.sub(r".*?:", "", path)
+		editnotestpath = re.sub(r".*?:", "", notestpath[0])
+
 		# print(editpath)
 		
-		file = open('Nicad_t1_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+		file = open('NicadOutputFile_t1_' + projectName + '/Nicad_t1_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
 		f = open("C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + editpath, "r", encoding="utf-8")
 		lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
 		f.close()
@@ -174,13 +216,15 @@ def OutputNicadt1File():
 		endline = int(Elinelist[num][0])
 		num +=1
 
+		file.write('//C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/' + editnotestpath + '\n')
+		file.write('//C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/' + editpath + '\n')
 		file.write('// ' + k + '\n')
 		file.write('// ' + path + '\n')
 		file.write('\n')
 		file.write('public class Nicad_t1_' + projectName + str(filenum) + '\n')
 		file.write('{' + '\n')
 		for x in range(startline,endline):
-			print(lines2[x].replace('\n', ''))
+			# print(lines2[x].replace('\n', ''))
 			file.write(lines2[x].replace('\n', '') + '\n')
 		
 		file.write('}')
@@ -191,7 +235,7 @@ def OutputNicadt1File():
 	for s in t1mapTestcodedic:
 		TestPathfile.write(t1mapTestcodedic[s][0][0] + '\n')
 
-
+OutputNicadt1File()
 
 def OutputNicadt2File():
 	t2 = 0
@@ -233,7 +277,7 @@ def OutputNicadt2File():
 		editpath = re.sub(r".*?:", "", path)
 		# print(editpath)
 		
-		file = open('Nicad_t2_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+		file = open('NicadOutputFile_t2_' + projectName + '/Nicad_t2_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
 		f = open("C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + editpath, "r", encoding="utf-8")
 		lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
 		f.close()
@@ -249,9 +293,11 @@ def OutputNicadt2File():
 		file.write('public class Nicad_t2_' + projectName + str(filenum) + '\n')
 		file.write('{' + '\n')
 		for x in range(startline,endline):
-			print(lines2[x].replace('\n', ''))
-			file.write(lines2[x].replace('\n', '') + '\n')
-		
+			try:
+				print(lines2[x].replace('\n', ''))
+				file.write(lines2[x].replace('\n', '') + '\n')
+			except UnicodeEncodeError:
+				pass
 		file.write('}')
 		filenum += 1
 
@@ -260,19 +306,19 @@ def OutputNicadt2File():
 	for s in t2mapTestcodedic:
 		TestPathfile.write(t2mapTestcodedic[s][0][0] + '\n')
 
-OutputNicadt2File()
+# OutputNicadt2File()
 
 
 def ClassifyClonePairs():
 	# print(data2)
-	print(len(data2))
+	# print(len(data2))
 	p = 0
 	q = 0
 	r = 0
 	for k in data2:
 		n = 0
 		for j in data2[k]:
-			print(j)
+			# print(j)
 			if j is not None:
 				n += 1
 		if n == 0:

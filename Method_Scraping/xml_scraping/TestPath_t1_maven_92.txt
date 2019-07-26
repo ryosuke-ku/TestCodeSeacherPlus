@@ -1,0 +1,1 @@
+maven/maven-compat/src/test/java/org/apache/maven/artifact/repository/MavenArtifactRepositoryTest.java

@@ -1,0 +1,7 @@
+ant/src/tests/junit/org/apache/tools/ant/util/regexp/JakartaRegexpMatcherTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/ManifestTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/condition/ParserSupportsTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/CollectionUtilsTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/RedirectorElementTest.java
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/MacroDefTest.java

@@ -1,0 +1,11 @@
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/ComparableVersionTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/OrArtifactFilterTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/building/FileModelSourceTest.java
+maven/maven-artifact/src/test/java/org/apache/maven/artifact/versioning/VersionRangeTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/artifact/DefaultMavenMetadataCacheTest.java
+maven/maven-compat/src/test/java/org/apache/maven/artifact/resolver/filter/AndArtifactFilterTest.java

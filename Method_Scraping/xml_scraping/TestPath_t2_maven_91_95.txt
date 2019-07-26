@@ -1,0 +1,9 @@
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-core/src/test/java/org/apache/maven/project/MavenProjectTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java
+maven/maven-model-builder/src/test/java/org/apache/maven/model/merge/MavenModelMergerTest.java

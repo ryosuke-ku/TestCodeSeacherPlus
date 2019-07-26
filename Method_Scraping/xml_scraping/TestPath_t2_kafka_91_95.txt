@@ -1,0 +1,12 @@
+kafka/streams/test-utils/src/test/java/org/apache/kafka/streams/test/OutputVerifierTest.java
+kafka/connect/runtime/src/test/java/org/apache/kafka/connect/runtime/distributed/IncrementalCooperativeAssignorTest.java
+kafka/clients/src/test/java/org/apache/kafka/common/utils/ImplicitLinkedHashMultiCollectionTest.java
+kafka/connect/runtime/src/test/java/org/apache/kafka/connect/runtime/distributed/DistributedHerderTest.java
+kafka/streams/src/test/java/org/apache/kafka/streams/kstream/SessionWindowedDeserializerTest.java
+kafka/streams/src/test/java/org/apache/kafka/streams/kstream/SessionWindowedSerializerTest.java
+kafka/streams/src/test/java/org/apache/kafka/streams/kstream/TimeWindowedDeserializerTest.java
+kafka/streams/src/test/java/org/apache/kafka/streams/processor/internals/metrics/StreamsMetricsImplTest.java
+kafka/streams/src/test/java/org/apache/kafka/streams/processor/internals/metrics/StreamsMetricsImplTest.java
+kafka/clients/src/test/java/org/apache/kafka/common/utils/ByteUtilsTest.java
+kafka/clients/src/test/java/org/apache/kafka/common/utils/ByteUtilsTest.java
+kafka/clients/src/test/java/org/apache/kafka/clients/admin/KafkaAdminClientTest.java

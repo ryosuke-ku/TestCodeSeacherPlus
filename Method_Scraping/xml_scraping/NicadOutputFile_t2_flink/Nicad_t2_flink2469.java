@@ -1,0 +1,16 @@
+// clone pairs:26307:80%
+// 40781:flink/flink-formats/flink-json/src/main/java/org/apache/flink/formats/json/JsonRowSerializationSchema.java
+
+public class Nicad_t2_flink2469
+{
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		final JsonRowSerializationSchema that = (JsonRowSerializationSchema) o;
+		return Objects.equals(typeInfo, that.typeInfo);
+	}
+}

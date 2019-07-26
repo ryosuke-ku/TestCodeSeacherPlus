@@ -1,0 +1,5 @@
+ant/src/tests/junit/org/apache/tools/ant/taskdefs/optional/TraXLiaisonTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/AssertionsTest.java
+ant/src/tests/junit/org/apache/tools/ant/types/ZipFileSetTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/regexp/JakartaRegexpMatcherTest.java
+ant/src/tests/junit/org/apache/tools/ant/util/regexp/Jdk14RegexpMatcherTest.java

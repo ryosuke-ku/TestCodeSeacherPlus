@@ -1,0 +1,1 @@
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java

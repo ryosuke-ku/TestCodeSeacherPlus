@@ -1,0 +1,2 @@
+maven/maven-compat/src/test/java/org/apache/maven/repository/DefaultMirrorSelectorTest.java
+maven/maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java
