@@ -4,14 +4,15 @@ from collections import defaultdict
 import collections
 import re
 import csv
+import os
 
 ProjectName = 'maven'
 
 url = "file:///C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + ProjectName + "_functions-blind-clones/" + ProjectName + "_functions-blind-clones-0.30.xml"
 
-projectName = 'maven_0726'
-t ='t1'
-
+projectName = 'maven'
+t ='t2'
+os.mkdir('NicadOutputFile_' + t + '_' + projectName)
 res = req.urlopen(url)
 #詳しくは省略、上のXMLが返ってくるものと思ってください
 
@@ -162,6 +163,7 @@ print('t2 : ' + str(t2))
 print('total : ' + str(nt + t1 +t2))
 
 def OutputNicadt1File():
+	
 	t1 = 0
 	t1keylist = []
 	for h in onlyhasTestPdata:
@@ -235,7 +237,10 @@ def OutputNicadt1File():
 	for s in t1mapTestcodedic:
 		TestPathfile.write(t1mapTestcodedic[s][0][0] + '\n')
 
-OutputNicadt1File()
+# OutputNicadt1File()
+
+
+
 
 def OutputNicadt2File():
 	t2 = 0
@@ -249,10 +254,13 @@ def OutputNicadt2File():
 	t2mapTestcodedic = defaultdict(list)
 	for u in t2keylist:
 		path = onlyhasTestPdata[u]
-		t2mapdic[u].append(path)
+		t2mapdic[u].append(path[0])
+		t2mapdic[u].append(path[1])
 		testpath = onlyhasTestdata[u]
-		t2mapTestcodedic[u].append(testpath)
+		t2mapTestcodedic[u].append(testpath[0])
+		t2mapTestcodedic[u].append(testpath[1])
 
+	# print(t2mapdic)
 	# print(t1mapTestcodedic)
 	print(len(t2mapTestcodedic))
 
@@ -261,52 +269,57 @@ def OutputNicadt2File():
 	Elinelist =[]
 	for k in t2mapdic:
 		for g in t2mapdic[k]:
-			# print(g[0])
-			Sline = startdicPath[g[0]]
+			# print(g)
+			Sline = startdicPath[g]
 			Slinelist.append(Sline)
-			Eline = enddicPath[g[0]]
+			Eline = enddicPath[g]
 			Elinelist.append(Eline)
-
+			# print(g + ':' + str(Sline[0]) + ',' + str(Eline[0]))
+	print(Slinelist)
 
 	num = 0
 	filenum = 1
+	cc = 0
 	for k in t2mapdic:
 		# print(k)
-		path = t2mapdic[k][0][0]
-		# print(path)
-		editpath = re.sub(r".*?:", "", path)
-		# print(editpath)
-		
-		file = open('NicadOutputFile_t2_' + projectName + '/Nicad_t2_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
-		f = open("C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + editpath, "r", encoding="utf-8")
-		lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
-		f.close()
+		cc += 1
+		os.mkdir('NicadOutputFile_t2_' + projectName + '/Clone Pairs ' + str(cc))
+		for l in t2mapdic[k]:
+			# path = t2mapdic[k][0][0]
+			# print(path)
+			editpath = re.sub(r".*?:", "", l)
+			print(editpath)
 
+			file = open('NicadOutputFile_t2_' + projectName + '/Clone Pairs ' + str(cc) + '/Nicad_t2_' + projectName + str(filenum) + '.java','w') # Nicad_3.javaのファイルを開く
+			f = open("C:/Users/ryosuke-ku/Desktop/NiCad-5.1/systems/" + editpath, "r", encoding="utf-8")
+			lines2 = f.readlines() # 1行毎にファイル終端まで全て読む(改行文字も含まれる)
+			f.close()
 
-		startline = int(Slinelist[num][0])-1
-		endline = int(Elinelist[num][0])
-		num +=1
+			startline = int(Slinelist[num][0])-1
+			endline = int(Elinelist[num][0])
+			num +=1
 
-		file.write('// ' + k + '\n')
-		file.write('// ' + path + '\n')
-		file.write('\n')
-		file.write('public class Nicad_t2_' + projectName + str(filenum) + '\n')
-		file.write('{' + '\n')
-		for x in range(startline,endline):
-			try:
-				print(lines2[x].replace('\n', ''))
-				file.write(lines2[x].replace('\n', '') + '\n')
-			except UnicodeEncodeError:
-				pass
-		file.write('}')
-		filenum += 1
+			file.write('//' + k + ':' + 's' +str(startline) + ':' + 'e' + str(endline) + '\n')
+			file.write('//' + l + '\n')
+			file.write('\n')
+			file.write('public class Nicad_t2_' + projectName + str(filenum) + '\n')
+			file.write('{' + '\n')
+			for x in range(startline,endline):
+				try:
+					print(lines2[x].replace('\n', ''))
+					file.write(lines2[x].replace('\n', '') + '\n')
+				except UnicodeEncodeError:
+					pass
+			file.write('}')
+			filenum += 1
 
 	TestPathfile = open('TestPath_t2_' + projectName + '.txt','w') # Nicad_3.javaのファイルを開く
 
 	for s in t2mapTestcodedic:
-		TestPathfile.write(t2mapTestcodedic[s][0][0] + '\n')
+		for test in t2mapTestcodedic[s]:
+			TestPathfile.write(test + '\n')
 
-# OutputNicadt2File()
+OutputNicadt2File()
 
 
 def ClassifyClonePairs():
